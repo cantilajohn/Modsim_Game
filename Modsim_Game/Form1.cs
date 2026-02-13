@@ -12,10 +12,23 @@ namespace Modsim_Game
             txtDex.TB.BackColor = Color.White;
             txtInt.TB.BackColor = Color.White;
             txtBaseLevel.TB.BackColor = Color.White;
+            BaseStats();
         }
 
         private void hopePictureBox2_Click(object sender, EventArgs e)
         {
+
+        }
+
+
+        void BaseStats()
+        {
+            txtSTR.Text = "1";
+            txtAgi.Text = "1";
+            txtVit.Text = "1";
+            txtInt.Text = "1";
+            txtDex.Text = "1";
+            txtLuk.Text = "1";
 
         }
 
@@ -72,5 +85,22 @@ namespace Modsim_Game
 
             }
         }
+
+        private void txtSTR_TextChanged(object sender, EventArgs e)
+        {
+
+            if (!int.TryParse(txtSTR.Text, out int strValue) || strValue < 0)
+            {
+                // If parsing fails, keep the base bonus
+                lblStrBonus.Text = "2";
+                return;
+            }
+
+            // Base bonus is 2. Increment by 1 for every 10 STR (10, 20, 30, ...)
+            int bonus = 2 + (strValue / 10);
+
+            lblStrBonus.Text = bonus.ToString();
+        }
+
     }
 }
