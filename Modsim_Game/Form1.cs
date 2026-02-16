@@ -88,19 +88,39 @@ namespace Modsim_Game
 
         private void txtSTR_TextChanged(object sender, EventArgs e)
         {
-
             if (!int.TryParse(txtSTR.Text, out int strValue) || strValue < 0)
             {
-                // If parsing fails, keep the base bonus
-                lblStrBonus.Text = "2";
+                lblAtk.Text = "0";
+                lblStrBonus.Text = "0";
+                lblTotalDamage.Text = "0";
+                lblWeight.Text = "0";
+                lblRanged.Text = "0";
                 return;
             }
 
-            // Base bonus is 2. Increment by 1 for every 10 STR (10, 20, 30, ...)
-            int bonus = 2 + (strValue / 10);
+            // Base attack from STR (+1 per STR)
+            int baseAttack = strValue;
 
-            lblStrBonus.Text = bonus.ToString();
+            // STR tier (every 10 STR)
+            int tier = strValue / 10;
+
+            // Total bonus damage = (STR / 10)^2
+            int totalBonus = tier * tier;
+
+            // Total melee damage from STR
+            int totalDamage = strValue + totalBonus;
+
+            // Weight limit
+            int weight = strValue * 30;
+
+            // Ranged bonus (every 5 STR)
+            int rangedBonus = strValue / 5;
+
+            lblAtk.Text = baseAttack.ToString();
+            lblStrBonus.Text = totalBonus.ToString();
+            lblTotalDamage.Text = totalDamage.ToString();
+            lblWeight.Text = weight.ToString();
+            lblRanged.Text = rangedBonus.ToString();
         }
-
     }
 }

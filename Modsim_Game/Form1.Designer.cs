@@ -195,6 +195,8 @@
             bigLabel73 = new ReaLTaiizor.Controls.BigLabel();
             bigLabel74 = new ReaLTaiizor.Controls.BigLabel();
             bigLabel75 = new ReaLTaiizor.Controls.BigLabel();
+            lblWeight = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel28 = new ReaLTaiizor.Controls.BigLabel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -869,7 +871,7 @@
             bigLabel45.BackColor = Color.Transparent;
             bigLabel45.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             bigLabel45.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel45.Location = new Point(19, 10);
+            bigLabel45.Location = new Point(16, 8);
             bigLabel45.Name = "bigLabel45";
             bigLabel45.Size = new Size(22, 25);
             bigLabel45.TabIndex = 0;
@@ -941,7 +943,7 @@
             bigLabel33.BackColor = Color.Transparent;
             bigLabel33.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             bigLabel33.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel33.Location = new Point(19, 10);
+            bigLabel33.Location = new Point(16, 8);
             bigLabel33.Name = "bigLabel33";
             bigLabel33.Size = new Size(22, 25);
             bigLabel33.TabIndex = 0;
@@ -989,7 +991,7 @@
             bigLabel35.BackColor = Color.Transparent;
             bigLabel35.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             bigLabel35.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel35.Location = new Point(19, 10);
+            bigLabel35.Location = new Point(16, 8);
             bigLabel35.Name = "bigLabel35";
             bigLabel35.Size = new Size(22, 25);
             bigLabel35.TabIndex = 0;
@@ -1229,7 +1231,7 @@
             bigLabel23.BackColor = Color.Transparent;
             bigLabel23.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             bigLabel23.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel23.Location = new Point(19, 10);
+            bigLabel23.Location = new Point(17, 9);
             bigLabel23.Name = "bigLabel23";
             bigLabel23.Size = new Size(22, 25);
             bigLabel23.TabIndex = 0;
@@ -1277,7 +1279,7 @@
             bigLabel24.BackColor = Color.Transparent;
             bigLabel24.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             bigLabel24.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel24.Location = new Point(19, 10);
+            bigLabel24.Location = new Point(17, 9);
             bigLabel24.Name = "bigLabel24";
             bigLabel24.Size = new Size(22, 25);
             bigLabel24.TabIndex = 0;
@@ -1421,7 +1423,7 @@
             lblMatk.BackColor = Color.Transparent;
             lblMatk.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblMatk.ForeColor = Color.FromArgb(80, 80, 80);
-            lblMatk.Location = new Point(16, 10);
+            lblMatk.Location = new Point(14, 9);
             lblMatk.Name = "lblMatk";
             lblMatk.Size = new Size(22, 25);
             lblMatk.TabIndex = 0;
@@ -1469,7 +1471,7 @@
             lblAtk.BackColor = Color.Transparent;
             lblAtk.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblAtk.ForeColor = Color.FromArgb(80, 80, 80);
-            lblAtk.Location = new Point(16, 10);
+            lblAtk.Location = new Point(14, 9);
             lblAtk.Name = "lblAtk";
             lblAtk.Size = new Size(22, 25);
             lblAtk.TabIndex = 0;
@@ -2421,13 +2423,39 @@
             bigLabel75.TabIndex = 67;
             bigLabel75.Text = "ジョブを選択";
             // 
+            // lblWeight
+            // 
+            lblWeight.AutoSize = true;
+            lblWeight.BackColor = Color.Transparent;
+            lblWeight.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblWeight.ForeColor = Color.FromArgb(80, 80, 80);
+            lblWeight.Location = new Point(980, 44);
+            lblWeight.Name = "lblWeight";
+            lblWeight.Size = new Size(67, 19);
+            lblWeight.TabIndex = 80;
+            lblWeight.Text = "WEIGHT:";
+            // 
+            // bigLabel28
+            // 
+            bigLabel28.AutoSize = true;
+            bigLabel28.BackColor = Color.Transparent;
+            bigLabel28.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            bigLabel28.ForeColor = Color.FromArgb(80, 80, 80);
+            bigLabel28.Location = new Point(1042, 44);
+            bigLabel28.Name = "bigLabel28";
+            bigLabel28.Size = new Size(17, 19);
+            bigLabel28.TabIndex = 81;
+            bigLabel28.Text = "0";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveBorder;
             ClientSize = new Size(1205, 865);
+            Controls.Add(bigLabel28);
             Controls.Add(bigLabel75);
+            Controls.Add(lblWeight);
             Controls.Add(bigLabel74);
             Controls.Add(bigLabel73);
             Controls.Add(bigLabel71);
@@ -2731,5 +2759,8 @@
         public ReaLTaiizor.Controls.AloneTextBox txtVit;
         public ReaLTaiizor.Controls.AloneTextBox txtAgi;
         public ReaLTaiizor.Controls.AloneTextBox txtSTR;
+        private ReaLTaiizor.Controls.AloneCheckBox aloneCheckBox1;
+        private ReaLTaiizor.Controls.BigLabel lblWeight;
+        private ReaLTaiizor.Controls.BigLabel bigLabel28;
     }
 }
