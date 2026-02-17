@@ -133,6 +133,9 @@
   <data name="Rectangle 6 (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Rectangle 6 (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="knight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\knight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Rectangle 6 (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Rectangle 6 (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,13 +145,16 @@
   <data name="novice" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\novice1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="GIF_0ne" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GIF_0ne.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="archer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\archer.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="thieft" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\thieft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="knight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\knight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bgbgbg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bgbgbg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

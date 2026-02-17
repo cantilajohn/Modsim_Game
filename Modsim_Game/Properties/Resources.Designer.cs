@@ -73,6 +73,26 @@ namespace Modsim_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bgbgbg {
+            get {
+                object obj = ResourceManager.GetObject("bgbgbg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GIF_0ne {
+            get {
+                object obj = ResourceManager.GetObject("GIF_0ne", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap knight {
             get {
                 object obj = ResourceManager.GetObject("knight", resourceCulture);

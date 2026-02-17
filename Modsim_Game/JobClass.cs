@@ -6,19 +6,11 @@ using System.Threading.Tasks;
 
 namespace Modsim_Game
 {
-    public class  Novice
+    public class  Classes
     {
-
-        public class BaseStats
-        {
-        }
-
-        public int STR { get; set; }
-        public int AGI { get; set; }
-        public int VIT { get; set; }
-        public int INT { get; set; }
-        public int DEX { get; set; }
-        public int LUK { get; set; }    
+        public string Name { get; set; }
+        public int Weight { get; set; }
+        public Image Image { get; set; }
 
     }
 }
