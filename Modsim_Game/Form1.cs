@@ -16,16 +16,20 @@ namespace Modsim_Game
             txtInt.TB.BackColor = Color.White;
             txtBaseLevel.TB.BackColor = Color.White;
             BaseStats();
+
+            lblFleeOther.Text = "1";
+            lblMdef.Text = "1";
+            bigLabel41.Text = "0";
+            bigLabel24.Text = "0";
+            bigLabel39.Text = "0";
+
+
         }
 
         private void hopePictureBox2_Click(object sender, EventArgs e)
         {
 
         }
-
-
-
-
         void BaseStats()
         {
             txtSTR.Text = "1";
@@ -274,6 +278,262 @@ namespace Modsim_Game
             txtDex.Text = "1";
             txtLuk.Text = "1";
         }
+        void onclick()
+        {
+            if (!int.TryParse(txtSTR.Text, out int currentStr))
+            {
+                currentStr = 1;
+            }
+            int nextStr = currentStr + 1;
+            txtSTR.Text = nextStr.ToString();
+        }
+        private void bigLabel2_Click(object sender, EventArgs e)
+        {
+            // 1. Parse current STR and Base Level
+            if (!int.TryParse(txtSTR.Text, out int currentStr)) currentStr = 1;
+            if (!int.TryParse(txtBaseLevel.Text, out int baseLevel)) baseLevel = 1;
 
+            
+            int costForNextPoint = (currentStr / 10) + 2;
+
+            int totalAvailable = 48; // Starting points for normal novice
+            for (int i = 1; i < baseLevel; i++)
+            {
+                totalAvailable += (i / 5) + 3;
+            }
+
+            // Calculate total currently spent on all stats
+            int currentSpent = CalculateTotalSpent();
+
+            // 4. CONSTRAINT: Only increment if we can afford the next point
+            if (currentSpent + costForNextPoint <= totalAvailable)
+            {
+                txtSTR.Text = (currentStr + 1).ToString();
+            }
+            else
+            {
+                // Optional: Provide feedback that points are depleted
+                lblPointsRemaining.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+
+        // Helper to sum up costs of all current stat values
+        private int CalculateTotalSpent()
+        {
+            int.TryParse(txtSTR.Text, out int s);
+            int.TryParse(txtAgi.Text, out int a);
+            int.TryParse(txtVit.Text, out int v);
+            int.TryParse(txtInt.Text, out int i);
+            int.TryParse(txtDex.Text, out int d);
+            int.TryParse(txtLuk.Text, out int l);
+
+            return CalculateStatCost(s) + CalculateStatCost(a) + CalculateStatCost(v) +
+                   CalculateStatCost(i) + CalculateStatCost(d) + CalculateStatCost(l);
+        }
+
+        private void bigLabel11_Click(object sender, EventArgs e)
+        {
+            // 1. Parse current STR and Base Level
+            if (!int.TryParse(txtAgi.Text, out int currentStr)) currentStr = 1;
+            if (!int.TryParse(txtBaseLevel.Text, out int baseLevel)) baseLevel = 1;
+
+
+            int costForNextPoint = (currentStr / 10) + 2;
+
+            int totalAvailable = 48; // Starting points for normal novice
+            for (int i = 1; i < baseLevel; i++)
+            {
+                totalAvailable += (i / 5) + 3;
+            }
+
+            // Calculate total currently spent on all stats
+            int currentSpent = CalculateTotalSpent();
+
+            if (currentSpent + costForNextPoint <= totalAvailable)
+            {
+                txtAgi.Text = (currentStr + 1).ToString();
+            }
+            else
+            {
+                // Optional: Provide feedback that points are depleted
+                lblPointsRemaining.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+
+        private void bigLabel12_Click(object sender, EventArgs e)
+        {
+            // 1. Parse current STR and Base Level
+            if (!int.TryParse(txtVit.Text, out int currentStr)) currentStr = 1;
+            if (!int.TryParse(txtBaseLevel.Text, out int baseLevel)) baseLevel = 1;
+
+
+            int costForNextPoint = (currentStr / 10) + 2;
+
+            int totalAvailable = 48; // Starting points for normal novice
+            for (int i = 1; i < baseLevel; i++)
+            {
+                totalAvailable += (i / 5) + 3;
+            }
+
+            // Calculate total currently spent on all stats
+            int currentSpent = CalculateTotalSpent();
+
+            if (currentSpent + costForNextPoint <= totalAvailable)
+            {
+                txtVit.Text = (currentStr + 1).ToString();
+            }
+            else
+            {
+                // Optional: Provide feedback that points are depleted
+                lblPointsRemaining.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+
+        private void bigLabel15_Click(object sender, EventArgs e)
+        {
+             // 1. Parse current STR and Base Level
+            if (!int.TryParse(txtInt.Text, out int currentStr)) currentStr = 1;
+            if (!int.TryParse(txtBaseLevel.Text, out int baseLevel)) baseLevel = 1;
+
+
+            int costForNextPoint = (currentStr / 10) + 2;
+
+            int totalAvailable = 48; // Starting points for normal novice
+            for (int i = 1; i < baseLevel; i++)
+            {
+                totalAvailable += (i / 5) + 3;
+            }
+
+            // Calculate total currently spent on all stats
+            int currentSpent = CalculateTotalSpent();
+
+            if (currentSpent + costForNextPoint <= totalAvailable)
+            {
+                txtInt.Text = (currentStr + 1).ToString();
+            }
+            else
+            {
+                // Optional: Provide feedback that points are depleted
+                lblPointsRemaining.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+
+        private void bigLabel13_Click(object sender, EventArgs e)
+        {
+           // 1. Parse current STR and Base Level
+            if (!int.TryParse(txtLuk.Text, out int currentStr)) currentStr = 1;
+            if (!int.TryParse(txtBaseLevel.Text, out int baseLevel)) baseLevel = 1;
+
+
+            int costForNextPoint = (currentStr / 10) + 2;
+
+            int totalAvailable = 48; // Starting points for normal novice
+            for (int i = 1; i < baseLevel; i++)
+            {
+                totalAvailable += (i / 5) + 3;
+            }
+
+            // Calculate total currently spent on all stats
+            int currentSpent = CalculateTotalSpent();
+
+            if (currentSpent + costForNextPoint <= totalAvailable)
+            {
+                txtLuk.Text = (currentStr + 1).ToString();
+            }
+            else
+            {
+                // Optional: Provide feedback that points are depleted
+                lblPointsRemaining.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+
+        private void bigLabel14_Click(object sender, EventArgs e)
+        {
+            // 1. Parse current STR and Base Level
+            if (!int.TryParse(txtDex.Text, out int currentStr)) currentStr = 1;
+            if (!int.TryParse(txtBaseLevel.Text, out int baseLevel)) baseLevel = 1;
+
+
+            int costForNextPoint = (currentStr / 10) + 2;
+
+            int totalAvailable = 48; // Starting points for normal novice
+            for (int i = 1; i < baseLevel; i++)
+            {
+                totalAvailable += (i / 5) + 3;
+            }
+
+            // Calculate total currently spent on all stats
+            int currentSpent = CalculateTotalSpent();
+
+            if (currentSpent + costForNextPoint <= totalAvailable)
+            {
+                txtDex.Text = (currentStr + 1).ToString();
+            }
+            else
+            {
+                // Optional: Provide feedback that points are depleted
+                lblPointsRemaining.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+
+        private void bigLabel45_Click(object sender, EventArgs e)
+        {
+            if (!int.TryParse(txtSTR.Text, out int currentStr))
+            {
+                currentStr = 1;
+            }
+            int nextStr = currentStr - 1;
+            txtSTR.Text = nextStr.ToString();
+        }
+
+        private void bigLabel18_Click(object sender, EventArgs e)
+        {
+            if (!int.TryParse(txtLuk.Text, out int currentStr))
+            {
+                currentStr = 1;
+            }
+            int nextStr = currentStr - 1;
+            txtLuk.Text = nextStr.ToString();
+        }
+
+        private void bigLabel37_Click(object sender, EventArgs e)
+        {
+            if (!int.TryParse(txtAgi.Text, out int currentStr))
+            {
+                currentStr = 1;
+            }
+            int nextStr = currentStr - 1;
+            txtAgi.Text = nextStr.ToString();
+        }
+
+        private void bigLabel36_Click(object sender, EventArgs e)
+        {
+            if (!int.TryParse(txtVit.Text, out int currentStr))
+            {
+                currentStr = 1;
+            }
+            int nextStr = currentStr - 1;
+            txtVit.Text = nextStr.ToString();
+        }
+
+        private void bigLabel35_Click(object sender, EventArgs e)
+        {
+            if (!int.TryParse(txtInt.Text, out int currentStr))
+            {
+                currentStr = 1;
+            }
+            int nextStr = currentStr - 1;
+            txtInt.Text = nextStr.ToString();
+        }
+
+        private void bigLabel34_Click_1(object sender, EventArgs e)
+        {
+            if (!int.TryParse(txtDex.Text, out int currentStr))
+            {
+                currentStr = 1;
+            }
+            int nextStr = currentStr - 1;
+            txtDex.Text = nextStr.ToString();
+        }
     }
 }

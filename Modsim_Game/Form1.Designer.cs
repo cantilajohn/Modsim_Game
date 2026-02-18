@@ -266,9 +266,10 @@
             panel1.Controls.Add(bigLabel51);
             panel1.Controls.Add(lblJobTitle);
             panel1.Controls.Add(bigLabel49);
-            panel1.Location = new Point(12, 190);
+            panel1.Location = new Point(10, 142);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1353, 116);
+            panel1.Size = new Size(1184, 87);
             panel1.TabIndex = 3;
             // 
             // lblWeight
@@ -277,9 +278,9 @@
             lblWeight.BackColor = Color.Transparent;
             lblWeight.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblWeight.ForeColor = Color.Black;
-            lblWeight.Location = new Point(1182, 33);
+            lblWeight.Location = new Point(1034, 25);
             lblWeight.Name = "lblWeight";
-            lblWeight.Size = new Size(20, 23);
+            lblWeight.Size = new Size(17, 19);
             lblWeight.TabIndex = 81;
             lblWeight.Text = "0";
             // 
@@ -289,9 +290,9 @@
             bigLabel78.BackColor = Color.Transparent;
             bigLabel78.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             bigLabel78.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel78.Location = new Point(525, 75);
+            bigLabel78.Location = new Point(459, 56);
             bigLabel78.Name = "bigLabel78";
-            bigLabel78.Size = new Size(38, 19);
+            bigLabel78.Size = new Size(33, 13);
             bigLabel78.TabIndex = 80;
             bigLabel78.Text = "ゲイ?";
             // 
@@ -301,9 +302,9 @@
             lblWeightTitle.BackColor = Color.Transparent;
             lblWeightTitle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblWeightTitle.ForeColor = Color.Black;
-            lblWeightTitle.Location = new Point(1154, 33);
+            lblWeightTitle.Location = new Point(1010, 25);
             lblWeightTitle.Name = "lblWeightTitle";
-            lblWeightTitle.Size = new Size(81, 23);
+            lblWeightTitle.Size = new Size(67, 19);
             lblWeightTitle.TabIndex = 80;
             lblWeightTitle.Text = "WEIGHT:";
             // 
@@ -313,9 +314,9 @@
             bigLabel71.BackColor = Color.Transparent;
             bigLabel71.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             bigLabel71.ForeColor = Color.Black;
-            bigLabel71.Location = new Point(1144, 3);
+            bigLabel71.Location = new Point(1001, 0);
             bigLabel71.Name = "bigLabel71";
-            bigLabel71.Size = new Size(117, 30);
+            bigLabel71.Size = new Size(97, 25);
             bigLabel71.TabIndex = 57;
             bigLabel71.Text = "わさあっぷっ";
             // 
@@ -325,9 +326,9 @@
             bigLabel75.BackColor = Color.Transparent;
             bigLabel75.Font = new Font("Segoe UI", 6F, FontStyle.Bold);
             bigLabel75.ForeColor = Color.Black;
-            bigLabel75.Location = new Point(285, 14);
+            bigLabel75.Location = new Point(249, 5);
             bigLabel75.Name = "bigLabel75";
-            bigLabel75.Size = new Size(60, 12);
+            bigLabel75.Size = new Size(50, 11);
             bigLabel75.TabIndex = 67;
             bigLabel75.Text = "ジョブを選択";
             // 
@@ -337,9 +338,9 @@
             bigLabel73.BackColor = Color.Transparent;
             bigLabel73.Font = new Font("Segoe UI", 6F, FontStyle.Bold);
             bigLabel73.ForeColor = Color.Black;
-            bigLabel73.Location = new Point(962, 9);
+            bigLabel73.Location = new Point(842, 7);
             bigLabel73.Name = "bigLabel73";
-            bigLabel73.Size = new Size(41, 12);
+            bigLabel73.Size = new Size(34, 11);
             bigLabel73.TabIndex = 65;
             bigLabel73.Text = "最大HP";
             // 
@@ -349,9 +350,9 @@
             bigLabel74.BackColor = Color.Transparent;
             bigLabel74.Font = new Font("Segoe UI", 6F, FontStyle.Bold);
             bigLabel74.ForeColor = Color.Black;
-            bigLabel74.Location = new Point(648, 14);
+            bigLabel74.Location = new Point(567, 6);
             bigLabel74.Name = "bigLabel74";
-            bigLabel74.Size = new Size(49, 12);
+            bigLabel74.Size = new Size(41, 11);
             bigLabel74.TabIndex = 66;
             bigLabel74.Text = "最大速度";
             // 
@@ -365,9 +366,10 @@
             aloneComboBox5.FormattingEnabled = true;
             aloneComboBox5.ItemHeight = 20;
             aloneComboBox5.Items.AddRange(new object[] { "none", "1000000", "2000000", "3000000", "4000000", "5000000", "6000000", "7000000", "8000000", "9000000", "10000000" });
-            aloneComboBox5.Location = new Point(887, 26);
+            aloneComboBox5.Location = new Point(776, 20);
+            aloneComboBox5.Margin = new Padding(3, 2, 3, 2);
             aloneComboBox5.Name = "aloneComboBox5";
-            aloneComboBox5.Size = new Size(115, 26);
+            aloneComboBox5.Size = new Size(101, 26);
             aloneComboBox5.TabIndex = 56;
             // 
             // bigLabel56
@@ -376,9 +378,9 @@
             bigLabel56.BackColor = Color.Transparent;
             bigLabel56.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel56.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel56.Location = new Point(1064, 70);
+            bigLabel56.Location = new Point(931, 52);
             bigLabel56.Name = "bigLabel56";
-            bigLabel56.Size = new Size(15, 23);
+            bigLabel56.Size = new Size(13, 19);
             bigLabel56.TabIndex = 64;
             bigLabel56.Text = ".";
             // 
@@ -388,9 +390,9 @@
             bigLabel61.BackColor = Color.Transparent;
             bigLabel61.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             bigLabel61.ForeColor = Color.Black;
-            bigLabel61.Location = new Point(779, 26);
+            bigLabel61.Location = new Point(682, 20);
             bigLabel61.Name = "bigLabel61";
-            bigLabel61.Size = new Size(106, 30);
+            bigLabel61.Size = new Size(89, 25);
             bigLabel61.TabIndex = 55;
             bigLabel61.Text = "MAX HP:";
             // 
@@ -400,9 +402,9 @@
             bigLabel57.BackColor = Color.Transparent;
             bigLabel57.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel57.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel57.Location = new Point(1280, 71);
+            bigLabel57.Location = new Point(1120, 53);
             bigLabel57.Name = "bigLabel57";
-            bigLabel57.Size = new Size(15, 23);
+            bigLabel57.Size = new Size(13, 19);
             bigLabel57.TabIndex = 63;
             bigLabel57.Text = ".";
             // 
@@ -412,9 +414,9 @@
             bigLabel58.BackColor = Color.Transparent;
             bigLabel58.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel58.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel58.Location = new Point(908, 70);
+            bigLabel58.Location = new Point(794, 52);
             bigLabel58.Name = "bigLabel58";
-            bigLabel58.Size = new Size(155, 23);
+            bigLabel58.Size = new Size(130, 19);
             bigLabel58.TabIndex = 62;
             bigLabel58.Text = "Natural SP Regen:";
             // 
@@ -424,9 +426,9 @@
             bigLabel59.BackColor = Color.Transparent;
             bigLabel59.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel59.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel59.Location = new Point(1124, 71);
+            bigLabel59.Location = new Point(984, 53);
             bigLabel59.Name = "bigLabel59";
-            bigLabel59.Size = new Size(158, 23);
+            bigLabel59.Size = new Size(133, 19);
             bigLabel59.TabIndex = 61;
             bigLabel59.Text = "Natural HP Regen:";
             // 
@@ -440,9 +442,10 @@
             aloneComboBox4.FormattingEnabled = true;
             aloneComboBox4.ItemHeight = 20;
             aloneComboBox4.Items.AddRange(new object[] { "190", "191", "192", "193", "194", "195", "196", "197", "198", "199" });
-            aloneComboBox4.Location = new Point(524, 30);
+            aloneComboBox4.Location = new Point(458, 22);
+            aloneComboBox4.Margin = new Padding(3, 2, 3, 2);
             aloneComboBox4.Name = "aloneComboBox4";
-            aloneComboBox4.Size = new Size(177, 26);
+            aloneComboBox4.Size = new Size(155, 26);
             aloneComboBox4.TabIndex = 54;
             // 
             // lblTotalHp
@@ -451,9 +454,9 @@
             lblTotalHp.BackColor = Color.Transparent;
             lblTotalHp.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblTotalHp.ForeColor = Color.FromArgb(80, 80, 80);
-            lblTotalHp.Location = new Point(780, 71);
+            lblTotalHp.Location = new Point(682, 53);
             lblTotalHp.Name = "lblTotalHp";
-            lblTotalHp.Size = new Size(15, 23);
+            lblTotalHp.Size = new Size(13, 19);
             lblTotalHp.TabIndex = 60;
             lblTotalHp.Text = ".";
             // 
@@ -463,9 +466,9 @@
             bigLabel60.BackColor = Color.Transparent;
             bigLabel60.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             bigLabel60.ForeColor = Color.Black;
-            bigLabel60.Location = new Point(379, 26);
+            bigLabel60.Location = new Point(332, 20);
             bigLabel60.Name = "bigLabel60";
-            bigLabel60.Size = new Size(144, 30);
+            bigLabel60.Size = new Size(121, 25);
             bigLabel60.TabIndex = 53;
             bigLabel60.Text = "MAX ASPED:";
             // 
@@ -475,9 +478,9 @@
             lblBaseHp.BackColor = Color.Transparent;
             lblBaseHp.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblBaseHp.ForeColor = Color.FromArgb(80, 80, 80);
-            lblBaseHp.Location = new Point(627, 71);
+            lblBaseHp.Location = new Point(549, 53);
             lblBaseHp.Name = "lblBaseHp";
-            lblBaseHp.Size = new Size(15, 23);
+            lblBaseHp.Size = new Size(13, 19);
             lblBaseHp.TabIndex = 59;
             lblBaseHp.Text = ".";
             // 
@@ -487,9 +490,9 @@
             bigLabel53.BackColor = Color.Transparent;
             bigLabel53.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel53.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel53.Location = new Point(721, 71);
+            bigLabel53.Location = new Point(631, 53);
             bigLabel53.Name = "bigLabel53";
-            bigLabel53.Size = new Size(35, 23);
+            bigLabel53.Size = new Size(30, 19);
             bigLabel53.TabIndex = 58;
             bigLabel53.Text = "SP:";
             // 
@@ -499,9 +502,9 @@
             bigLabel50.BackColor = Color.Transparent;
             bigLabel50.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel50.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel50.Location = new Point(583, 71);
+            bigLabel50.Location = new Point(510, 53);
             bigLabel50.Name = "bigLabel50";
-            bigLabel50.Size = new Size(38, 23);
+            bigLabel50.Size = new Size(33, 19);
             bigLabel50.TabIndex = 57;
             bigLabel50.Text = "HP:";
             // 
@@ -515,9 +518,10 @@
             aloneComboBox2.FormattingEnabled = true;
             aloneComboBox2.ItemHeight = 20;
             aloneComboBox2.Items.AddRange(new object[] { "-SELECT JOB-", "Novice", "Swordsman", "Magician", "Archer", "Acolyte", "Merchant", "Thieft", "Knight", "Priest" });
-            aloneComboBox2.Location = new Point(166, 26);
+            aloneComboBox2.Location = new Point(145, 20);
+            aloneComboBox2.Margin = new Padding(3, 2, 3, 2);
             aloneComboBox2.Name = "aloneComboBox2";
-            aloneComboBox2.Size = new Size(177, 26);
+            aloneComboBox2.Size = new Size(155, 26);
             aloneComboBox2.TabIndex = 52;
             aloneComboBox2.SelectedIndexChanged += aloneComboBox2_SelectedIndexChanged;
             // 
@@ -529,9 +533,10 @@
             aloneComboBox3.FormattingEnabled = true;
             aloneComboBox3.ItemHeight = 20;
             aloneComboBox3.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9" });
-            aloneComboBox3.Location = new Point(475, 71);
+            aloneComboBox3.Location = new Point(416, 53);
+            aloneComboBox3.Margin = new Padding(3, 2, 3, 2);
             aloneComboBox3.Name = "aloneComboBox3";
-            aloneComboBox3.Size = new Size(44, 26);
+            aloneComboBox3.Size = new Size(39, 26);
             aloneComboBox3.TabIndex = 51;
             // 
             // bigLabel52
@@ -540,9 +545,9 @@
             bigLabel52.BackColor = Color.Transparent;
             bigLabel52.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel52.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel52.Location = new Point(379, 71);
+            bigLabel52.Location = new Point(332, 53);
             bigLabel52.Name = "bigLabel52";
-            bigLabel52.Size = new Size(90, 23);
+            bigLabel52.Size = new Size(76, 19);
             bigLabel52.TabIndex = 56;
             bigLabel52.Text = "Job Level:";
             // 
@@ -552,9 +557,9 @@
             bigLabel48.BackColor = Color.Transparent;
             bigLabel48.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             bigLabel48.ForeColor = Color.Black;
-            bigLabel48.Location = new Point(16, 26);
+            bigLabel48.Location = new Point(14, 20);
             bigLabel48.Name = "bigLabel48";
-            bigLabel48.Size = new Size(140, 30);
+            bigLabel48.Size = new Size(117, 25);
             bigLabel48.TabIndex = 51;
             bigLabel48.Text = "SELECT JOB:";
             // 
@@ -564,12 +569,13 @@
             txtBaseLevel.EnabledCalc = true;
             txtBaseLevel.Font = new Font("Segoe UI", 9F);
             txtBaseLevel.ForeColor = Color.FromArgb(124, 133, 142);
-            txtBaseLevel.Location = new Point(300, 67);
+            txtBaseLevel.Location = new Point(262, 50);
+            txtBaseLevel.Margin = new Padding(3, 2, 3, 2);
             txtBaseLevel.MaxLength = 2;
             txtBaseLevel.MultiLine = false;
             txtBaseLevel.Name = "txtBaseLevel";
             txtBaseLevel.ReadOnly = false;
-            txtBaseLevel.Size = new Size(73, 36);
+            txtBaseLevel.Size = new Size(64, 27);
             txtBaseLevel.TabIndex = 51;
             txtBaseLevel.TextAlign = HorizontalAlignment.Center;
             txtBaseLevel.UseSystemPasswordChar = false;
@@ -581,9 +587,9 @@
             bigLabel51.BackColor = Color.Transparent;
             bigLabel51.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel51.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel51.Location = new Point(197, 71);
+            bigLabel51.Location = new Point(172, 53);
             bigLabel51.Name = "bigLabel51";
-            bigLabel51.Size = new Size(97, 23);
+            bigLabel51.Size = new Size(83, 19);
             bigLabel51.TabIndex = 55;
             bigLabel51.Text = "Base Level:";
             // 
@@ -593,9 +599,9 @@
             lblJobTitle.BackColor = Color.Transparent;
             lblJobTitle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblJobTitle.ForeColor = Color.FromArgb(80, 80, 80);
-            lblJobTitle.Location = new Point(68, 71);
+            lblJobTitle.Location = new Point(60, 53);
             lblJobTitle.Name = "lblJobTitle";
-            lblJobTitle.Size = new Size(15, 23);
+            lblJobTitle.Size = new Size(13, 19);
             lblJobTitle.TabIndex = 54;
             lblJobTitle.Text = ".";
             // 
@@ -605,9 +611,9 @@
             bigLabel49.BackColor = Color.Transparent;
             bigLabel49.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel49.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel49.Location = new Point(16, 71);
+            bigLabel49.Location = new Point(14, 53);
             bigLabel49.Name = "bigLabel49";
-            bigLabel49.Size = new Size(47, 23);
+            bigLabel49.Size = new Size(39, 19);
             bigLabel49.TabIndex = 53;
             bigLabel49.Text = "JOB:";
             // 
@@ -616,10 +622,10 @@
             bigLabel72.AutoSize = true;
             bigLabel72.BackColor = Color.Transparent;
             bigLabel72.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            bigLabel72.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel72.Location = new Point(1205, 33);
+            bigLabel72.ForeColor = Color.White;
+            bigLabel72.Location = new Point(1078, 9);
             bigLabel72.Name = "bigLabel72";
-            bigLabel72.Size = new Size(160, 30);
+            bigLabel72.Size = new Size(133, 25);
             bigLabel72.TabIndex = 58;
             bigLabel72.Text = "大丈夫ラコ？？";
             // 
@@ -645,9 +651,10 @@
             panel2.Controls.Add(aloneComboBox6);
             panel2.Controls.Add(bigLabel63);
             panel2.Controls.Add(bigLabel62);
-            panel2.Location = new Point(12, 312);
+            panel2.Location = new Point(10, 234);
+            panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1353, 101);
+            panel2.Size = new Size(1184, 76);
             panel2.TabIndex = 4;
             // 
             // bigLabel77
@@ -656,9 +663,9 @@
             bigLabel77.BackColor = Color.Transparent;
             bigLabel77.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             bigLabel77.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel77.Location = new Point(68, 10);
+            bigLabel77.Location = new Point(60, 8);
             bigLabel77.Name = "bigLabel77";
-            bigLabel77.Size = new Size(38, 19);
+            bigLabel77.Size = new Size(33, 13);
             bigLabel77.TabIndex = 68;
             bigLabel77.Text = "ゲイ?";
             // 
@@ -668,9 +675,10 @@
             ckbGloria.Checked = false;
             ckbGloria.EnabledCalc = true;
             ckbGloria.ForeColor = Color.FromArgb(124, 133, 142);
-            ckbGloria.Location = new Point(1093, 37);
+            ckbGloria.Location = new Point(956, 28);
+            ckbGloria.Margin = new Padding(3, 2, 3, 2);
             ckbGloria.Name = "ckbGloria";
-            ckbGloria.Size = new Size(18, 17);
+            ckbGloria.Size = new Size(16, 17);
             ckbGloria.TabIndex = 79;
             ckbGloria.Text = "aloneCheckBox1";
             // 
@@ -680,9 +688,9 @@
             bigLabel70.BackColor = Color.Transparent;
             bigLabel70.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel70.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel70.Location = new Point(1023, 33);
+            bigLabel70.Location = new Point(895, 25);
             bigLabel70.Name = "bigLabel70";
-            bigLabel70.Size = new Size(65, 23);
+            bigLabel70.Size = new Size(56, 19);
             bigLabel70.TabIndex = 78;
             bigLabel70.Text = "Gloria?";
             // 
@@ -692,9 +700,9 @@
             bigLabel69.BackColor = Color.Transparent;
             bigLabel69.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel69.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel69.Location = new Point(1279, 6);
+            bigLabel69.Location = new Point(1119, 4);
             bigLabel69.Name = "bigLabel69";
-            bigLabel69.Size = new Size(65, 23);
+            bigLabel69.Size = new Size(53, 19);
             bigLabel69.TabIndex = 77;
             bigLabel69.Text = "ITEMS:";
             // 
@@ -706,9 +714,10 @@
             aloneComboBox11.FormattingEnabled = true;
             aloneComboBox11.ItemHeight = 20;
             aloneComboBox11.Items.AddRange(new object[] { "-Potion Type-", "Concentration Potion", "Awakening Potion", "Berserk Potion" });
-            aloneComboBox11.Location = new Point(1187, 60);
+            aloneComboBox11.Location = new Point(1039, 45);
+            aloneComboBox11.Margin = new Padding(3, 2, 3, 2);
             aloneComboBox11.Name = "aloneComboBox11";
-            aloneComboBox11.Size = new Size(127, 26);
+            aloneComboBox11.Size = new Size(112, 26);
             aloneComboBox11.TabIndex = 75;
             // 
             // bigLabel68
@@ -717,9 +726,9 @@
             bigLabel68.BackColor = Color.Transparent;
             bigLabel68.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel68.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel68.Location = new Point(1187, 33);
+            bigLabel68.Location = new Point(1039, 25);
             bigLabel68.Name = "bigLabel68";
-            bigLabel68.Size = new Size(121, 23);
+            bigLabel68.Size = new Size(103, 19);
             bigLabel68.TabIndex = 76;
             bigLabel68.Text = "Speed Potion:";
             // 
@@ -731,9 +740,10 @@
             aloneComboBox10.FormattingEnabled = true;
             aloneComboBox10.ItemHeight = 20;
             aloneComboBox10.Items.AddRange(new object[] { "-Level-", "Lvl 1", "Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl 6", "Lvl 7", "Lvl 8", "Lvl 9", "Lvl 10" });
-            aloneComboBox10.Location = new Point(842, 60);
+            aloneComboBox10.Location = new Point(737, 45);
+            aloneComboBox10.Margin = new Padding(3, 2, 3, 2);
             aloneComboBox10.Name = "aloneComboBox10";
-            aloneComboBox10.Size = new Size(76, 26);
+            aloneComboBox10.Size = new Size(67, 26);
             aloneComboBox10.TabIndex = 73;
             // 
             // bigLabel67
@@ -742,9 +752,9 @@
             bigLabel67.BackColor = Color.Transparent;
             bigLabel67.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel67.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel67.Location = new Point(842, 33);
+            bigLabel67.Location = new Point(737, 25);
             bigLabel67.Name = "bigLabel67";
-            bigLabel67.Size = new Size(104, 23);
+            bigLabel67.Size = new Size(86, 19);
             bigLabel67.TabIndex = 74;
             bigLabel67.Text = "Wind Walk:";
             // 
@@ -756,9 +766,10 @@
             aloneComboBox8.FormattingEnabled = true;
             aloneComboBox8.ItemHeight = 20;
             aloneComboBox8.Items.AddRange(new object[] { "-Level-", "Lvl 1", "Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl 6", "Lvl 7", "Lvl 8", "Lvl 9", "Lvl 10" });
-            aloneComboBox8.Location = new Point(613, 60);
+            aloneComboBox8.Location = new Point(536, 45);
+            aloneComboBox8.Margin = new Padding(3, 2, 3, 2);
             aloneComboBox8.Name = "aloneComboBox8";
-            aloneComboBox8.Size = new Size(73, 26);
+            aloneComboBox8.Size = new Size(64, 26);
             aloneComboBox8.TabIndex = 71;
             // 
             // bigLabel65
@@ -767,9 +778,9 @@
             bigLabel65.BackColor = Color.Transparent;
             bigLabel65.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel65.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel65.Location = new Point(608, 33);
+            bigLabel65.Location = new Point(532, 25);
             bigLabel65.Name = "bigLabel65";
-            bigLabel65.Size = new Size(148, 23);
+            bigLabel65.Size = new Size(123, 19);
             bigLabel65.TabIndex = 72;
             bigLabel65.Text = "Impositio Manus:";
             // 
@@ -781,9 +792,10 @@
             aloneComboBox9.FormattingEnabled = true;
             aloneComboBox9.ItemHeight = 20;
             aloneComboBox9.Items.AddRange(new object[] { "-Level-", "Lvl 1", "Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl 6", "Lvl 7", "Lvl 8", "Lvl 9", "Lvl 10" });
-            aloneComboBox9.Location = new Point(437, 60);
+            aloneComboBox9.Location = new Point(382, 45);
+            aloneComboBox9.Margin = new Padding(3, 2, 3, 2);
             aloneComboBox9.Name = "aloneComboBox9";
-            aloneComboBox9.Size = new Size(73, 26);
+            aloneComboBox9.Size = new Size(64, 26);
             aloneComboBox9.TabIndex = 69;
             // 
             // bigLabel66
@@ -792,9 +804,9 @@
             bigLabel66.BackColor = Color.Transparent;
             bigLabel66.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel66.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel66.Location = new Point(437, 33);
+            bigLabel66.Location = new Point(382, 25);
             bigLabel66.Name = "bigLabel66";
-            bigLabel66.Size = new Size(79, 23);
+            bigLabel66.Size = new Size(66, 19);
             bigLabel66.TabIndex = 70;
             bigLabel66.Text = "Angelus:";
             // 
@@ -806,9 +818,10 @@
             aloneComboBox7.FormattingEnabled = true;
             aloneComboBox7.ItemHeight = 20;
             aloneComboBox7.Items.AddRange(new object[] { "-Level-", "Lvl 1", "Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl 6", "Lvl 7", "Lvl 8", "Lvl 9", "Lvl 10" });
-            aloneComboBox7.Location = new Point(240, 60);
+            aloneComboBox7.Location = new Point(210, 45);
+            aloneComboBox7.Margin = new Padding(3, 2, 3, 2);
             aloneComboBox7.Name = "aloneComboBox7";
-            aloneComboBox7.Size = new Size(73, 26);
+            aloneComboBox7.Size = new Size(64, 26);
             aloneComboBox7.TabIndex = 67;
             // 
             // bigLabel64
@@ -817,9 +830,9 @@
             bigLabel64.BackColor = Color.Transparent;
             bigLabel64.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel64.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel64.Location = new Point(240, 33);
+            bigLabel64.Location = new Point(210, 25);
             bigLabel64.Name = "bigLabel64";
-            bigLabel64.Size = new Size(112, 23);
+            bigLabel64.Size = new Size(95, 19);
             bigLabel64.TabIndex = 68;
             bigLabel64.Text = "Increase Agi:";
             // 
@@ -831,9 +844,10 @@
             aloneComboBox6.FormattingEnabled = true;
             aloneComboBox6.ItemHeight = 20;
             aloneComboBox6.Items.AddRange(new object[] { "-Level-", "Lvl 1", "Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl 6", "Lvl 7", "Lvl 8", "Lvl 9", "Lvl 10" });
-            aloneComboBox6.Location = new Point(81, 60);
+            aloneComboBox6.Location = new Point(71, 45);
+            aloneComboBox6.Margin = new Padding(3, 2, 3, 2);
             aloneComboBox6.Name = "aloneComboBox6";
-            aloneComboBox6.Size = new Size(73, 26);
+            aloneComboBox6.Size = new Size(64, 26);
             aloneComboBox6.TabIndex = 65;
             // 
             // bigLabel63
@@ -842,9 +856,9 @@
             bigLabel63.BackColor = Color.Transparent;
             bigLabel63.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel63.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel63.Location = new Point(81, 33);
+            bigLabel63.Location = new Point(71, 25);
             bigLabel63.Name = "bigLabel63";
-            bigLabel63.Size = new Size(80, 23);
+            bigLabel63.Size = new Size(67, 19);
             bigLabel63.TabIndex = 66;
             bigLabel63.Text = "Blessing:";
             // 
@@ -854,9 +868,9 @@
             bigLabel62.BackColor = Color.Transparent;
             bigLabel62.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel62.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel62.Location = new Point(10, 6);
+            bigLabel62.Location = new Point(9, 4);
             bigLabel62.Name = "bigLabel62";
-            bigLabel62.Size = new Size(66, 23);
+            bigLabel62.Size = new Size(54, 19);
             bigLabel62.TabIndex = 65;
             bigLabel62.Text = "BUFFS:";
             // 
@@ -936,9 +950,10 @@
             panel3.Controls.Add(panel7);
             panel3.Controls.Add(panel4);
             panel3.Controls.Add(hopePictureBox1);
-            panel3.Location = new Point(12, 419);
+            panel3.Location = new Point(10, 314);
+            panel3.Margin = new Padding(3, 2, 3, 2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1353, 538);
+            panel3.Size = new Size(1184, 404);
             panel3.TabIndex = 4;
             // 
             // bigLabel46
@@ -947,9 +962,9 @@
             bigLabel46.BackColor = Color.Transparent;
             bigLabel46.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             bigLabel46.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel46.Location = new Point(59, 14);
+            bigLabel46.Location = new Point(52, 10);
             bigLabel46.Name = "bigLabel46";
-            bigLabel46.Size = new Size(81, 19);
+            bigLabel46.Size = new Size(70, 13);
             bigLabel46.TabIndex = 86;
             bigLabel46.Text = "武器の種類";
             // 
@@ -960,12 +975,13 @@
             bigLabel18.Cursor = Cursors.Hand;
             bigLabel18.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold);
             bigLabel18.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel18.Location = new Point(583, 397);
+            bigLabel18.Location = new Point(510, 298);
             bigLabel18.Name = "bigLabel18";
-            bigLabel18.Size = new Size(28, 37);
+            bigLabel18.Size = new Size(22, 30);
             bigLabel18.TabIndex = 85;
             bigLabel18.Text = "-";
             bigLabel18.TextAlign = ContentAlignment.MiddleCenter;
+            bigLabel18.Click += bigLabel18_Click;
             // 
             // bigLabel34
             // 
@@ -974,12 +990,13 @@
             bigLabel34.Cursor = Cursors.Hand;
             bigLabel34.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold);
             bigLabel34.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel34.Location = new Point(583, 335);
+            bigLabel34.Location = new Point(510, 251);
             bigLabel34.Name = "bigLabel34";
-            bigLabel34.Size = new Size(28, 37);
+            bigLabel34.Size = new Size(22, 30);
             bigLabel34.TabIndex = 84;
             bigLabel34.Text = "-";
             bigLabel34.TextAlign = ContentAlignment.MiddleCenter;
+            bigLabel34.Click += bigLabel34_Click_1;
             // 
             // bigLabel35
             // 
@@ -988,12 +1005,13 @@
             bigLabel35.Cursor = Cursors.Hand;
             bigLabel35.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold);
             bigLabel35.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel35.Location = new Point(583, 277);
+            bigLabel35.Location = new Point(510, 208);
             bigLabel35.Name = "bigLabel35";
-            bigLabel35.Size = new Size(28, 37);
+            bigLabel35.Size = new Size(22, 30);
             bigLabel35.TabIndex = 83;
             bigLabel35.Text = "-";
             bigLabel35.TextAlign = ContentAlignment.MiddleCenter;
+            bigLabel35.Click += bigLabel35_Click;
             // 
             // bigLabel36
             // 
@@ -1002,12 +1020,13 @@
             bigLabel36.Cursor = Cursors.Hand;
             bigLabel36.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold);
             bigLabel36.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel36.Location = new Point(583, 215);
+            bigLabel36.Location = new Point(510, 161);
             bigLabel36.Name = "bigLabel36";
-            bigLabel36.Size = new Size(28, 37);
+            bigLabel36.Size = new Size(22, 30);
             bigLabel36.TabIndex = 82;
             bigLabel36.Text = "-";
             bigLabel36.TextAlign = ContentAlignment.MiddleCenter;
+            bigLabel36.Click += bigLabel36_Click;
             // 
             // bigLabel37
             // 
@@ -1016,12 +1035,13 @@
             bigLabel37.Cursor = Cursors.Hand;
             bigLabel37.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold);
             bigLabel37.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel37.Location = new Point(583, 153);
+            bigLabel37.Location = new Point(510, 115);
             bigLabel37.Name = "bigLabel37";
-            bigLabel37.Size = new Size(28, 37);
+            bigLabel37.Size = new Size(22, 30);
             bigLabel37.TabIndex = 81;
             bigLabel37.Text = "-";
             bigLabel37.TextAlign = ContentAlignment.MiddleCenter;
+            bigLabel37.Click += bigLabel37_Click;
             // 
             // bigLabel45
             // 
@@ -1030,12 +1050,13 @@
             bigLabel45.Cursor = Cursors.Hand;
             bigLabel45.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold);
             bigLabel45.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel45.Location = new Point(583, 95);
+            bigLabel45.Location = new Point(510, 71);
             bigLabel45.Name = "bigLabel45";
-            bigLabel45.Size = new Size(28, 37);
+            bigLabel45.Size = new Size(22, 30);
             bigLabel45.TabIndex = 80;
             bigLabel45.Text = "-";
             bigLabel45.TextAlign = ContentAlignment.MiddleCenter;
+            bigLabel45.Click += bigLabel45_Click;
             // 
             // panel5
             // 
@@ -1050,9 +1071,10 @@
             panel5.Controls.Add(bigLabel23);
             panel5.Controls.Add(bigLabel17);
             panel5.Controls.Add(bigLabel16);
-            panel5.Location = new Point(13, 28);
+            panel5.Location = new Point(11, 21);
+            panel5.Margin = new Padding(3, 2, 3, 2);
             panel5.Name = "panel5";
-            panel5.Size = new Size(168, 497);
+            panel5.Size = new Size(147, 373);
             panel5.TabIndex = 38;
             // 
             // bigLabel33
@@ -1061,9 +1083,9 @@
             bigLabel33.BackColor = Color.Transparent;
             bigLabel33.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             bigLabel33.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel33.Location = new Point(3, 394);
+            bigLabel33.Location = new Point(3, 296);
             bigLabel33.Name = "bigLabel33";
-            bigLabel33.Size = new Size(128, 19);
+            bigLabel33.Size = new Size(102, 13);
             bigLabel33.TabIndex = 7;
             bigLabel33.Text = "Current Buffs: ????";
             // 
@@ -1073,9 +1095,9 @@
             bigLabel25.BackColor = Color.Transparent;
             bigLabel25.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             bigLabel25.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel25.Location = new Point(3, 324);
+            bigLabel25.Location = new Point(3, 243);
             bigLabel25.Name = "bigLabel25";
-            bigLabel25.Size = new Size(98, 19);
+            bigLabel25.Size = new Size(78, 13);
             bigLabel25.TabIndex = 6;
             bigLabel25.Text = "Status Points:";
             // 
@@ -1085,9 +1107,9 @@
             lblPointsRemaining.BackColor = Color.Transparent;
             lblPointsRemaining.Font = new Font("Segoe UI", 7F, FontStyle.Bold);
             lblPointsRemaining.ForeColor = Color.FromArgb(80, 80, 80);
-            lblPointsRemaining.Location = new Point(98, 328);
+            lblPointsRemaining.Location = new Point(86, 246);
             lblPointsRemaining.Name = "lblPointsRemaining";
-            lblPointsRemaining.Size = new Size(10, 15);
+            lblPointsRemaining.Size = new Size(8, 12);
             lblPointsRemaining.TabIndex = 1;
             lblPointsRemaining.Text = ".";
             // 
@@ -1097,9 +1119,9 @@
             bigLabel26.BackColor = Color.Transparent;
             bigLabel26.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             bigLabel26.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel26.Location = new Point(3, 260);
+            bigLabel26.Location = new Point(3, 195);
             bigLabel26.Name = "bigLabel26";
-            bigLabel26.Size = new Size(139, 19);
+            bigLabel26.Size = new Size(109, 13);
             bigLabel26.TabIndex = 5;
             bigLabel26.Text = "Guild: AsianCollege";
             // 
@@ -1109,9 +1131,9 @@
             bigLabel28.BackColor = Color.Transparent;
             bigLabel28.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             bigLabel28.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel28.Location = new Point(3, 199);
+            bigLabel28.Location = new Point(3, 149);
             bigLabel28.Name = "bigLabel28";
-            bigLabel28.Size = new Size(63, 19);
+            bigLabel28.Size = new Size(50, 13);
             bigLabel28.TabIndex = 4;
             bigLabel28.Text = "Status: ?";
             // 
@@ -1121,9 +1143,9 @@
             bigLabel23.BackColor = Color.Transparent;
             bigLabel23.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             bigLabel23.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel23.Location = new Point(3, 141);
+            bigLabel23.Location = new Point(3, 106);
             bigLabel23.Name = "bigLabel23";
-            bigLabel23.Size = new Size(47, 19);
+            bigLabel23.Size = new Size(37, 13);
             bigLabel23.TabIndex = 3;
             bigLabel23.Text = "Job: ?";
             // 
@@ -1133,9 +1155,9 @@
             bigLabel17.BackColor = Color.Transparent;
             bigLabel17.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             bigLabel17.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel17.Location = new Point(3, 81);
+            bigLabel17.Location = new Point(3, 61);
             bigLabel17.Name = "bigLabel17";
-            bigLabel17.Size = new Size(58, 19);
+            bigLabel17.Size = new Size(45, 13);
             bigLabel17.TabIndex = 2;
             bigLabel17.Text = "Level: ?";
             // 
@@ -1145,9 +1167,9 @@
             bigLabel16.BackColor = Color.Transparent;
             bigLabel16.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             bigLabel16.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel16.Location = new Point(3, 23);
+            bigLabel16.Location = new Point(3, 17);
             bigLabel16.Name = "bigLabel16";
-            bigLabel16.Size = new Size(132, 19);
+            bigLabel16.Size = new Size(103, 13);
             bigLabel16.TabIndex = 1;
             bigLabel16.Text = "CHARACTER INFO:";
             // 
@@ -1160,10 +1182,11 @@
             hopeButton1.Font = new Font("Segoe UI", 12F);
             hopeButton1.HoverTextColor = Color.FromArgb(48, 49, 51);
             hopeButton1.InfoColor = Color.FromArgb(144, 147, 153);
-            hopeButton1.Location = new Point(621, 457);
+            hopeButton1.Location = new Point(543, 343);
+            hopeButton1.Margin = new Padding(3, 2, 3, 2);
             hopeButton1.Name = "hopeButton1";
             hopeButton1.PrimaryColor = SystemColors.ActiveBorder;
-            hopeButton1.Size = new Size(75, 30);
+            hopeButton1.Size = new Size(66, 22);
             hopeButton1.SuccessColor = Color.FromArgb(103, 194, 58);
             hopeButton1.TabIndex = 79;
             hopeButton1.Text = "Reset";
@@ -1178,12 +1201,13 @@
             bigLabel13.Cursor = Cursors.Hand;
             bigLabel13.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold);
             bigLabel13.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel13.Location = new Point(696, 397);
+            bigLabel13.Location = new Point(609, 298);
             bigLabel13.Name = "bigLabel13";
-            bigLabel13.Size = new Size(36, 37);
+            bigLabel13.Size = new Size(29, 30);
             bigLabel13.TabIndex = 78;
             bigLabel13.Text = "+";
             bigLabel13.TextAlign = ContentAlignment.MiddleCenter;
+            bigLabel13.Click += bigLabel13_Click;
             // 
             // bigLabel14
             // 
@@ -1192,12 +1216,13 @@
             bigLabel14.Cursor = Cursors.Hand;
             bigLabel14.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold);
             bigLabel14.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel14.Location = new Point(696, 335);
+            bigLabel14.Location = new Point(609, 251);
             bigLabel14.Name = "bigLabel14";
-            bigLabel14.Size = new Size(36, 37);
+            bigLabel14.Size = new Size(29, 30);
             bigLabel14.TabIndex = 77;
             bigLabel14.Text = "+";
             bigLabel14.TextAlign = ContentAlignment.MiddleCenter;
+            bigLabel14.Click += bigLabel14_Click;
             // 
             // bigLabel15
             // 
@@ -1206,12 +1231,13 @@
             bigLabel15.Cursor = Cursors.Hand;
             bigLabel15.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold);
             bigLabel15.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel15.Location = new Point(696, 277);
+            bigLabel15.Location = new Point(609, 208);
             bigLabel15.Name = "bigLabel15";
-            bigLabel15.Size = new Size(36, 37);
+            bigLabel15.Size = new Size(29, 30);
             bigLabel15.TabIndex = 76;
             bigLabel15.Text = "+";
             bigLabel15.TextAlign = ContentAlignment.MiddleCenter;
+            bigLabel15.Click += bigLabel15_Click;
             // 
             // bigLabel12
             // 
@@ -1220,12 +1246,13 @@
             bigLabel12.Cursor = Cursors.Hand;
             bigLabel12.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold);
             bigLabel12.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel12.Location = new Point(696, 215);
+            bigLabel12.Location = new Point(609, 161);
             bigLabel12.Name = "bigLabel12";
-            bigLabel12.Size = new Size(36, 37);
+            bigLabel12.Size = new Size(29, 30);
             bigLabel12.TabIndex = 75;
             bigLabel12.Text = "+";
             bigLabel12.TextAlign = ContentAlignment.MiddleCenter;
+            bigLabel12.Click += bigLabel12_Click;
             // 
             // bigLabel11
             // 
@@ -1234,12 +1261,13 @@
             bigLabel11.Cursor = Cursors.Hand;
             bigLabel11.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold);
             bigLabel11.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel11.Location = new Point(696, 153);
+            bigLabel11.Location = new Point(609, 115);
             bigLabel11.Name = "bigLabel11";
-            bigLabel11.Size = new Size(36, 37);
+            bigLabel11.Size = new Size(29, 30);
             bigLabel11.TabIndex = 74;
             bigLabel11.Text = "+";
             bigLabel11.TextAlign = ContentAlignment.MiddleCenter;
+            bigLabel11.Click += bigLabel11_Click;
             // 
             // bigLabel2
             // 
@@ -1248,12 +1276,13 @@
             bigLabel2.Cursor = Cursors.Hand;
             bigLabel2.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold);
             bigLabel2.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel2.Location = new Point(696, 95);
+            bigLabel2.Location = new Point(609, 71);
             bigLabel2.Name = "bigLabel2";
-            bigLabel2.Size = new Size(36, 37);
+            bigLabel2.Size = new Size(29, 30);
             bigLabel2.TabIndex = 1;
             bigLabel2.Text = "+";
             bigLabel2.TextAlign = ContentAlignment.MiddleCenter;
+            bigLabel2.Click += bigLabel2_Click;
             // 
             // lblPerfectDodge
             // 
@@ -1261,9 +1290,9 @@
             lblPerfectDodge.BackColor = Color.Transparent;
             lblPerfectDodge.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblPerfectDodge.ForeColor = Color.FromArgb(80, 80, 80);
-            lblPerfectDodge.Location = new Point(1302, 356);
+            lblPerfectDodge.Location = new Point(1139, 267);
             lblPerfectDodge.Name = "lblPerfectDodge";
-            lblPerfectDodge.Size = new Size(13, 19);
+            lblPerfectDodge.Size = new Size(10, 13);
             lblPerfectDodge.TabIndex = 73;
             lblPerfectDodge.Text = ".";
             // 
@@ -1273,9 +1302,9 @@
             lblCastReduction.BackColor = Color.Transparent;
             lblCastReduction.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblCastReduction.ForeColor = Color.FromArgb(80, 80, 80);
-            lblCastReduction.Location = new Point(1279, 356);
+            lblCastReduction.Location = new Point(1119, 267);
             lblCastReduction.Name = "lblCastReduction";
-            lblCastReduction.Size = new Size(13, 19);
+            lblCastReduction.Size = new Size(10, 13);
             lblCastReduction.TabIndex = 72;
             lblCastReduction.Text = ".";
             // 
@@ -1285,9 +1314,9 @@
             lblRangedAtk.BackColor = Color.Transparent;
             lblRangedAtk.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblRangedAtk.ForeColor = Color.FromArgb(80, 80, 80);
-            lblRangedAtk.Location = new Point(1253, 356);
+            lblRangedAtk.Location = new Point(1096, 267);
             lblRangedAtk.Name = "lblRangedAtk";
-            lblRangedAtk.Size = new Size(13, 19);
+            lblRangedAtk.Size = new Size(10, 13);
             lblRangedAtk.TabIndex = 71;
             lblRangedAtk.Text = ".";
             // 
@@ -1297,9 +1326,9 @@
             lblTotalDamage.BackColor = Color.Transparent;
             lblTotalDamage.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblTotalDamage.ForeColor = Color.FromArgb(80, 80, 80);
-            lblTotalDamage.Location = new Point(1221, 356);
+            lblTotalDamage.Location = new Point(1068, 267);
             lblTotalDamage.Name = "lblTotalDamage";
-            lblTotalDamage.Size = new Size(13, 19);
+            lblTotalDamage.Size = new Size(10, 13);
             lblTotalDamage.TabIndex = 70;
             lblTotalDamage.Text = ".";
             // 
@@ -1309,9 +1338,9 @@
             bigLabel27.BackColor = Color.Transparent;
             bigLabel27.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             bigLabel27.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel27.Location = new Point(1237, 509);
+            bigLabel27.Location = new Point(1082, 382);
             bigLabel27.Name = "bigLabel27";
-            bigLabel27.Size = new Size(102, 19);
+            bigLabel27.Size = new Size(78, 13);
             bigLabel27.TabIndex = 69;
             bigLabel27.Text = "TotalDamage:";
             // 
@@ -1321,9 +1350,9 @@
             bigLabel76.BackColor = Color.Transparent;
             bigLabel76.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             bigLabel76.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel76.Location = new Point(1083, 390);
+            bigLabel76.Location = new Point(948, 300);
             bigLabel76.Name = "bigLabel76";
-            bigLabel76.Size = new Size(81, 19);
+            bigLabel76.Size = new Size(70, 13);
             bigLabel76.TabIndex = 68;
             bigLabel76.Text = "武器の種類";
             // 
@@ -1335,9 +1364,10 @@
             aloneComboBox1.FormattingEnabled = true;
             aloneComboBox1.ItemHeight = 20;
             aloneComboBox1.Items.AddRange(new object[] { "Hand", "Dagger", "One-Handed-Sword", "One-Handed-Axe", "One-Handed-Mace", "Two-Handed-Mace", "Rod & Staff", "Two-Handed-Staff" });
-            aloneComboBox1.Location = new Point(1033, 361);
+            aloneComboBox1.Location = new Point(904, 271);
+            aloneComboBox1.Margin = new Padding(3, 2, 3, 2);
             aloneComboBox1.Name = "aloneComboBox1";
-            aloneComboBox1.Size = new Size(132, 26);
+            aloneComboBox1.Size = new Size(116, 26);
             aloneComboBox1.TabIndex = 50;
             // 
             // bigLabel47
@@ -1346,9 +1376,9 @@
             bigLabel47.BackColor = Color.Transparent;
             bigLabel47.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             bigLabel47.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel47.Location = new Point(853, 356);
+            bigLabel47.Location = new Point(746, 267);
             bigLabel47.Name = "bigLabel47";
-            bigLabel47.Size = new Size(174, 30);
+            bigLabel47.Size = new Size(145, 25);
             bigLabel47.TabIndex = 2;
             bigLabel47.Text = "WEAPON TYPE:";
             // 
@@ -1358,9 +1388,9 @@
             bigLabel38.BackColor = Color.Transparent;
             bigLabel38.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             bigLabel38.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel38.Location = new Point(1239, 221);
+            bigLabel38.Location = new Point(1084, 166);
             bigLabel38.Name = "bigLabel38";
-            bigLabel38.Size = new Size(29, 30);
+            bigLabel38.Size = new Size(25, 25);
             bigLabel38.TabIndex = 48;
             bigLabel38.Text = "+";
             // 
@@ -1370,9 +1400,10 @@
             panel49.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel49.BackgroundImageLayout = ImageLayout.Stretch;
             panel49.Controls.Add(lblFleeOther);
-            panel49.Location = new Point(1269, 208);
+            panel49.Location = new Point(1110, 156);
+            panel49.Margin = new Padding(3, 2, 3, 2);
             panel49.Name = "panel49";
-            panel49.Size = new Size(63, 53);
+            panel49.Size = new Size(55, 40);
             panel49.TabIndex = 47;
             // 
             // lblFleeOther
@@ -1381,9 +1412,9 @@
             lblFleeOther.BackColor = Color.Transparent;
             lblFleeOther.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblFleeOther.ForeColor = Color.FromArgb(80, 80, 80);
-            lblFleeOther.Location = new Point(13, 9);
+            lblFleeOther.Location = new Point(11, 7);
             lblFleeOther.Name = "lblFleeOther";
-            lblFleeOther.Size = new Size(26, 30);
+            lblFleeOther.Size = new Size(22, 25);
             lblFleeOther.TabIndex = 0;
             lblFleeOther.Text = "0";
             // 
@@ -1393,9 +1424,10 @@
             panel56.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel56.BackgroundImageLayout = ImageLayout.Stretch;
             panel56.Controls.Add(lblFlee);
-            panel56.Location = new Point(1179, 208);
+            panel56.Location = new Point(1032, 156);
+            panel56.Margin = new Padding(3, 2, 3, 2);
             panel56.Name = "panel56";
-            panel56.Size = new Size(56, 53);
+            panel56.Size = new Size(49, 40);
             panel56.TabIndex = 46;
             // 
             // lblFlee
@@ -1404,9 +1436,9 @@
             lblFlee.BackColor = Color.Transparent;
             lblFlee.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblFlee.ForeColor = Color.FromArgb(80, 80, 80);
-            lblFlee.Location = new Point(1, 13);
+            lblFlee.Location = new Point(1, 10);
             lblFlee.Name = "lblFlee";
-            lblFlee.Size = new Size(19, 30);
+            lblFlee.Size = new Size(17, 25);
             lblFlee.TabIndex = 0;
             lblFlee.Text = ".";
             // 
@@ -1416,9 +1448,9 @@
             bigLabel31.BackColor = Color.Transparent;
             bigLabel31.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             bigLabel31.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel31.Location = new Point(1239, 161);
+            bigLabel31.Location = new Point(1084, 121);
             bigLabel31.Name = "bigLabel31";
-            bigLabel31.Size = new Size(29, 30);
+            bigLabel31.Size = new Size(25, 25);
             bigLabel31.TabIndex = 45;
             bigLabel31.Text = "+";
             // 
@@ -1428,9 +1460,9 @@
             bigLabel32.BackColor = Color.Transparent;
             bigLabel32.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             bigLabel32.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel32.Location = new Point(1237, 101);
+            bigLabel32.Location = new Point(1082, 76);
             bigLabel32.Name = "bigLabel32";
-            bigLabel32.Size = new Size(29, 30);
+            bigLabel32.Size = new Size(25, 25);
             bigLabel32.TabIndex = 32;
             bigLabel32.Text = "+";
             // 
@@ -1440,9 +1472,10 @@
             panel44.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel44.BackgroundImageLayout = ImageLayout.Stretch;
             panel44.Controls.Add(lblMdef);
-            panel44.Location = new Point(1269, 148);
+            panel44.Location = new Point(1110, 111);
+            panel44.Margin = new Padding(3, 2, 3, 2);
             panel44.Name = "panel44";
-            panel44.Size = new Size(63, 53);
+            panel44.Size = new Size(55, 40);
             panel44.TabIndex = 43;
             // 
             // lblMdef
@@ -1451,9 +1484,9 @@
             lblMdef.BackColor = Color.Transparent;
             lblMdef.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblMdef.ForeColor = Color.FromArgb(80, 80, 80);
-            lblMdef.Location = new Point(15, 11);
+            lblMdef.Location = new Point(13, 8);
             lblMdef.Name = "lblMdef";
-            lblMdef.Size = new Size(26, 30);
+            lblMdef.Size = new Size(22, 25);
             lblMdef.TabIndex = 0;
             lblMdef.Text = "0";
             // 
@@ -1463,9 +1496,10 @@
             panel46.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel46.BackgroundImageLayout = ImageLayout.Stretch;
             panel46.Controls.Add(lblDef);
-            panel46.Location = new Point(1269, 88);
+            panel46.Location = new Point(1110, 66);
+            panel46.Margin = new Padding(3, 2, 3, 2);
             panel46.Name = "panel46";
-            panel46.Size = new Size(63, 53);
+            panel46.Size = new Size(55, 40);
             panel46.TabIndex = 41;
             // 
             // lblDef
@@ -1474,9 +1508,9 @@
             lblDef.BackColor = Color.Transparent;
             lblDef.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblDef.ForeColor = Color.FromArgb(80, 80, 80);
-            lblDef.Location = new Point(15, 11);
+            lblDef.Location = new Point(13, 8);
             lblDef.Name = "lblDef";
-            lblDef.Size = new Size(26, 30);
+            lblDef.Size = new Size(22, 25);
             lblDef.TabIndex = 0;
             lblDef.Text = "1";
             // 
@@ -1486,9 +1520,10 @@
             panel47.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel47.BackgroundImageLayout = ImageLayout.Stretch;
             panel47.Controls.Add(lblAspd);
-            panel47.Location = new Point(1179, 268);
+            panel47.Location = new Point(1032, 201);
+            panel47.Margin = new Padding(3, 2, 3, 2);
             panel47.Name = "panel47";
-            panel47.Size = new Size(152, 53);
+            panel47.Size = new Size(133, 40);
             panel47.TabIndex = 44;
             // 
             // lblAspd
@@ -1497,9 +1532,9 @@
             lblAspd.BackColor = Color.Transparent;
             lblAspd.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblAspd.ForeColor = Color.FromArgb(80, 80, 80);
-            lblAspd.Location = new Point(84, 15);
+            lblAspd.Location = new Point(74, 11);
             lblAspd.Name = "lblAspd";
-            lblAspd.Size = new Size(19, 30);
+            lblAspd.Size = new Size(17, 25);
             lblAspd.TabIndex = 0;
             lblAspd.Text = ".";
             // 
@@ -1509,9 +1544,10 @@
             panel50.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel50.BackgroundImageLayout = ImageLayout.Stretch;
             panel50.Controls.Add(bigLabel39);
-            panel50.Location = new Point(1179, 148);
+            panel50.Location = new Point(1032, 111);
+            panel50.Margin = new Padding(3, 2, 3, 2);
             panel50.Name = "panel50";
-            panel50.Size = new Size(56, 53);
+            panel50.Size = new Size(49, 40);
             panel50.TabIndex = 40;
             // 
             // bigLabel39
@@ -1520,9 +1556,9 @@
             bigLabel39.BackColor = Color.Transparent;
             bigLabel39.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             bigLabel39.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel39.Location = new Point(5, 13);
+            bigLabel39.Location = new Point(4, 10);
             bigLabel39.Name = "bigLabel39";
-            bigLabel39.Size = new Size(19, 30);
+            bigLabel39.Size = new Size(17, 25);
             bigLabel39.TabIndex = 0;
             bigLabel39.Text = ".";
             // 
@@ -1532,9 +1568,10 @@
             panel51.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel51.BackgroundImageLayout = ImageLayout.Stretch;
             panel51.Controls.Add(bigLabel40);
-            panel51.Location = new Point(1095, 268);
+            panel51.Location = new Point(958, 201);
+            panel51.Margin = new Padding(3, 2, 3, 2);
             panel51.Name = "panel51";
-            panel51.Size = new Size(79, 53);
+            panel51.Size = new Size(69, 40);
             panel51.TabIndex = 36;
             // 
             // bigLabel40
@@ -1543,9 +1580,9 @@
             bigLabel40.BackColor = Color.Transparent;
             bigLabel40.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel40.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel40.Location = new Point(14, 15);
+            bigLabel40.Location = new Point(12, 11);
             bigLabel40.Name = "bigLabel40";
-            bigLabel40.Size = new Size(55, 23);
+            bigLabel40.Size = new Size(46, 19);
             bigLabel40.TabIndex = 0;
             bigLabel40.Text = "ASPD";
             // 
@@ -1555,9 +1592,10 @@
             panel52.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel52.BackgroundImageLayout = ImageLayout.Stretch;
             panel52.Controls.Add(bigLabel41);
-            panel52.Location = new Point(1179, 88);
+            panel52.Location = new Point(1032, 66);
+            panel52.Margin = new Padding(3, 2, 3, 2);
             panel52.Name = "panel52";
-            panel52.Size = new Size(56, 53);
+            panel52.Size = new Size(49, 40);
             panel52.TabIndex = 39;
             // 
             // bigLabel41
@@ -1566,9 +1604,9 @@
             bigLabel41.BackColor = Color.Transparent;
             bigLabel41.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             bigLabel41.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel41.Location = new Point(7, 13);
+            bigLabel41.Location = new Point(6, 10);
             bigLabel41.Name = "bigLabel41";
-            bigLabel41.Size = new Size(19, 30);
+            bigLabel41.Size = new Size(17, 25);
             bigLabel41.TabIndex = 0;
             bigLabel41.Text = ".";
             // 
@@ -1578,9 +1616,10 @@
             panel53.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel53.BackgroundImageLayout = ImageLayout.Stretch;
             panel53.Controls.Add(bigLabel42);
-            panel53.Location = new Point(1095, 208);
+            panel53.Location = new Point(958, 156);
+            panel53.Margin = new Padding(3, 2, 3, 2);
             panel53.Name = "panel53";
-            panel53.Size = new Size(79, 53);
+            panel53.Size = new Size(69, 40);
             panel53.TabIndex = 35;
             // 
             // bigLabel42
@@ -1589,9 +1628,9 @@
             bigLabel42.BackColor = Color.Transparent;
             bigLabel42.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel42.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel42.Location = new Point(14, 15);
+            bigLabel42.Location = new Point(12, 11);
             bigLabel42.Name = "bigLabel42";
-            bigLabel42.Size = new Size(46, 23);
+            bigLabel42.Size = new Size(37, 19);
             bigLabel42.TabIndex = 0;
             bigLabel42.Text = "FLEE";
             // 
@@ -1601,9 +1640,10 @@
             panel54.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel54.BackgroundImageLayout = ImageLayout.Stretch;
             panel54.Controls.Add(bigLabel43);
-            panel54.Location = new Point(1095, 148);
+            panel54.Location = new Point(958, 111);
+            panel54.Margin = new Padding(3, 2, 3, 2);
             panel54.Name = "panel54";
-            panel54.Size = new Size(79, 53);
+            panel54.Size = new Size(69, 40);
             panel54.TabIndex = 34;
             // 
             // bigLabel43
@@ -1612,9 +1652,9 @@
             bigLabel43.BackColor = Color.Transparent;
             bigLabel43.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel43.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel43.Location = new Point(10, 15);
+            bigLabel43.Location = new Point(9, 11);
             bigLabel43.Name = "bigLabel43";
-            bigLabel43.Size = new Size(57, 23);
+            bigLabel43.Size = new Size(46, 19);
             bigLabel43.TabIndex = 0;
             bigLabel43.Text = "MDEF";
             // 
@@ -1624,9 +1664,10 @@
             panel55.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel55.BackgroundImageLayout = ImageLayout.Stretch;
             panel55.Controls.Add(bigLabel44);
-            panel55.Location = new Point(1095, 88);
+            panel55.Location = new Point(958, 66);
+            panel55.Margin = new Padding(3, 2, 3, 2);
             panel55.Name = "panel55";
-            panel55.Size = new Size(79, 53);
+            panel55.Size = new Size(69, 40);
             panel55.TabIndex = 33;
             // 
             // bigLabel44
@@ -1635,9 +1676,9 @@
             bigLabel44.BackColor = Color.Transparent;
             bigLabel44.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel44.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel44.Location = new Point(14, 15);
+            bigLabel44.Location = new Point(12, 11);
             bigLabel44.Name = "bigLabel44";
-            bigLabel44.Size = new Size(41, 23);
+            bigLabel44.Size = new Size(33, 19);
             bigLabel44.TabIndex = 0;
             bigLabel44.Text = "DEF";
             // 
@@ -1647,9 +1688,9 @@
             bigLabel30.BackColor = Color.Transparent;
             bigLabel30.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             bigLabel30.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel30.Location = new Point(997, 161);
+            bigLabel30.Location = new Point(872, 121);
             bigLabel30.Name = "bigLabel30";
-            bigLabel30.Size = new Size(29, 30);
+            bigLabel30.Size = new Size(25, 25);
             bigLabel30.TabIndex = 31;
             bigLabel30.Text = "~";
             // 
@@ -1659,9 +1700,9 @@
             bigLabel29.BackColor = Color.Transparent;
             bigLabel29.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             bigLabel29.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel29.Location = new Point(994, 101);
+            bigLabel29.Location = new Point(870, 76);
             bigLabel29.Name = "bigLabel29";
-            bigLabel29.Size = new Size(29, 30);
+            bigLabel29.Size = new Size(25, 25);
             bigLabel29.TabIndex = 1;
             bigLabel29.Text = "+";
             // 
@@ -1671,9 +1712,10 @@
             panel38.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel38.BackgroundImageLayout = ImageLayout.Stretch;
             panel38.Controls.Add(lblMaxMatk);
-            panel38.Location = new Point(1026, 148);
+            panel38.Location = new Point(898, 111);
+            panel38.Margin = new Padding(3, 2, 3, 2);
             panel38.Name = "panel38";
-            panel38.Size = new Size(63, 53);
+            panel38.Size = new Size(55, 40);
             panel38.TabIndex = 28;
             // 
             // lblMaxMatk
@@ -1682,9 +1724,9 @@
             lblMaxMatk.BackColor = Color.Transparent;
             lblMaxMatk.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblMaxMatk.ForeColor = Color.FromArgb(80, 80, 80);
-            lblMaxMatk.Location = new Point(17, 12);
+            lblMaxMatk.Location = new Point(15, 9);
             lblMaxMatk.Name = "lblMaxMatk";
-            lblMaxMatk.Size = new Size(19, 30);
+            lblMaxMatk.Size = new Size(17, 25);
             lblMaxMatk.TabIndex = 0;
             lblMaxMatk.Text = ".";
             // 
@@ -1694,9 +1736,10 @@
             panel39.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel39.BackgroundImageLayout = ImageLayout.Stretch;
             panel39.Controls.Add(bigLabel24);
-            panel39.Location = new Point(1026, 88);
+            panel39.Location = new Point(898, 66);
+            panel39.Margin = new Padding(3, 2, 3, 2);
             panel39.Name = "panel39";
-            panel39.Size = new Size(63, 53);
+            panel39.Size = new Size(55, 40);
             panel39.TabIndex = 27;
             // 
             // bigLabel24
@@ -1705,9 +1748,9 @@
             bigLabel24.BackColor = Color.Transparent;
             bigLabel24.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             bigLabel24.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel24.Location = new Point(17, 12);
+            bigLabel24.Location = new Point(15, 9);
             bigLabel24.Name = "bigLabel24";
-            bigLabel24.Size = new Size(19, 30);
+            bigLabel24.Size = new Size(17, 25);
             bigLabel24.TabIndex = 0;
             bigLabel24.Text = ".";
             // 
@@ -1717,9 +1760,10 @@
             panel29.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel29.BackgroundImageLayout = ImageLayout.Stretch;
             panel29.Controls.Add(lblReqLUK);
-            panel29.Location = new Point(735, 388);
+            panel29.Location = new Point(643, 291);
+            panel29.Margin = new Padding(3, 2, 3, 2);
             panel29.Name = "panel29";
-            panel29.Size = new Size(111, 53);
+            panel29.Size = new Size(97, 40);
             panel29.TabIndex = 24;
             // 
             // lblReqLUK
@@ -1728,9 +1772,9 @@
             lblReqLUK.BackColor = Color.Transparent;
             lblReqLUK.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblReqLUK.ForeColor = Color.FromArgb(80, 80, 80);
-            lblReqLUK.Location = new Point(44, 13);
+            lblReqLUK.Location = new Point(38, 10);
             lblReqLUK.Name = "lblReqLUK";
-            lblReqLUK.Size = new Size(19, 30);
+            lblReqLUK.Size = new Size(17, 25);
             lblReqLUK.TabIndex = 0;
             lblReqLUK.Text = ".";
             // 
@@ -1740,9 +1784,10 @@
             panel40.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel40.BackgroundImageLayout = ImageLayout.Stretch;
             panel40.Controls.Add(lblCrit);
-            panel40.Location = new Point(937, 268);
+            panel40.Location = new Point(820, 201);
+            panel40.Margin = new Padding(3, 2, 3, 2);
             panel40.Name = "panel40";
-            panel40.Size = new Size(152, 53);
+            panel40.Size = new Size(133, 40);
             panel40.TabIndex = 28;
             // 
             // lblCrit
@@ -1751,9 +1796,9 @@
             lblCrit.BackColor = Color.Transparent;
             lblCrit.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblCrit.ForeColor = Color.FromArgb(80, 80, 80);
-            lblCrit.Location = new Point(99, 9);
+            lblCrit.Location = new Point(87, 7);
             lblCrit.Name = "lblCrit";
-            lblCrit.Size = new Size(26, 30);
+            lblCrit.Size = new Size(22, 25);
             lblCrit.TabIndex = 0;
             lblCrit.Text = "0";
             // 
@@ -1763,9 +1808,10 @@
             panel41.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel41.BackgroundImageLayout = ImageLayout.Stretch;
             panel41.Controls.Add(lblHit);
-            panel41.Location = new Point(937, 208);
+            panel41.Location = new Point(820, 156);
+            panel41.Margin = new Padding(3, 2, 3, 2);
             panel41.Name = "panel41";
-            panel41.Size = new Size(152, 53);
+            panel41.Size = new Size(133, 40);
             panel41.TabIndex = 27;
             // 
             // lblHit
@@ -1774,9 +1820,9 @@
             lblHit.BackColor = Color.Transparent;
             lblHit.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblHit.ForeColor = Color.FromArgb(80, 80, 80);
-            lblHit.Location = new Point(111, 13);
+            lblHit.Location = new Point(97, 10);
             lblHit.Name = "lblHit";
-            lblHit.Size = new Size(26, 30);
+            lblHit.Size = new Size(22, 25);
             lblHit.TabIndex = 0;
             lblHit.Text = "0";
             // 
@@ -1786,9 +1832,10 @@
             panel28.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel28.BackgroundImageLayout = ImageLayout.Stretch;
             panel28.Controls.Add(lblReqVIT);
-            panel28.Location = new Point(735, 208);
+            panel28.Location = new Point(643, 156);
+            panel28.Margin = new Padding(3, 2, 3, 2);
             panel28.Name = "panel28";
-            panel28.Size = new Size(111, 53);
+            panel28.Size = new Size(97, 40);
             panel28.TabIndex = 21;
             // 
             // lblReqVIT
@@ -1797,9 +1844,9 @@
             lblReqVIT.BackColor = Color.Transparent;
             lblReqVIT.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblReqVIT.ForeColor = Color.FromArgb(80, 80, 80);
-            lblReqVIT.Location = new Point(44, 13);
+            lblReqVIT.Location = new Point(38, 10);
             lblReqVIT.Name = "lblReqVIT";
-            lblReqVIT.Size = new Size(19, 30);
+            lblReqVIT.Size = new Size(17, 25);
             lblReqVIT.TabIndex = 0;
             lblReqVIT.Text = ".";
             // 
@@ -1809,9 +1856,10 @@
             panel42.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel42.BackgroundImageLayout = ImageLayout.Stretch;
             panel42.Controls.Add(lblMinMatk);
-            panel42.Location = new Point(937, 148);
+            panel42.Location = new Point(820, 111);
+            panel42.Margin = new Padding(3, 2, 3, 2);
             panel42.Name = "panel42";
-            panel42.Size = new Size(56, 53);
+            panel42.Size = new Size(49, 40);
             panel42.TabIndex = 26;
             // 
             // lblMinMatk
@@ -1820,9 +1868,9 @@
             lblMinMatk.BackColor = Color.Transparent;
             lblMinMatk.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblMinMatk.ForeColor = Color.FromArgb(80, 80, 80);
-            lblMinMatk.Location = new Point(2, 11);
+            lblMinMatk.Location = new Point(2, 8);
             lblMinMatk.Name = "lblMinMatk";
-            lblMinMatk.Size = new Size(19, 30);
+            lblMinMatk.Size = new Size(17, 25);
             lblMinMatk.TabIndex = 0;
             lblMinMatk.Text = ".";
             // 
@@ -1832,9 +1880,10 @@
             panel34.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel34.BackgroundImageLayout = ImageLayout.Stretch;
             panel34.Controls.Add(bigLabel19);
-            panel34.Location = new Point(853, 268);
+            panel34.Location = new Point(746, 201);
+            panel34.Margin = new Padding(3, 2, 3, 2);
             panel34.Name = "panel34";
-            panel34.Size = new Size(79, 53);
+            panel34.Size = new Size(69, 40);
             panel34.TabIndex = 22;
             // 
             // bigLabel19
@@ -1843,9 +1892,9 @@
             bigLabel19.BackColor = Color.Transparent;
             bigLabel19.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel19.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel19.Location = new Point(14, 15);
+            bigLabel19.Location = new Point(12, 11);
             bigLabel19.Name = "bigLabel19";
-            bigLabel19.Size = new Size(47, 23);
+            bigLabel19.Size = new Size(39, 19);
             bigLabel19.TabIndex = 0;
             bigLabel19.Text = "CRIT";
             // 
@@ -1855,9 +1904,10 @@
             panel43.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel43.BackgroundImageLayout = ImageLayout.Stretch;
             panel43.Controls.Add(lblAtk);
-            panel43.Location = new Point(937, 88);
+            panel43.Location = new Point(820, 66);
+            panel43.Margin = new Padding(3, 2, 3, 2);
             panel43.Name = "panel43";
-            panel43.Size = new Size(56, 53);
+            panel43.Size = new Size(49, 40);
             panel43.TabIndex = 25;
             // 
             // lblAtk
@@ -1866,9 +1916,9 @@
             lblAtk.BackColor = Color.Transparent;
             lblAtk.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblAtk.ForeColor = Color.FromArgb(80, 80, 80);
-            lblAtk.Location = new Point(2, 12);
+            lblAtk.Location = new Point(2, 9);
             lblAtk.Name = "lblAtk";
-            lblAtk.Size = new Size(19, 30);
+            lblAtk.Size = new Size(17, 25);
             lblAtk.TabIndex = 0;
             lblAtk.Text = ".";
             // 
@@ -1878,9 +1928,10 @@
             panel30.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel30.BackgroundImageLayout = ImageLayout.Stretch;
             panel30.Controls.Add(lblReqDEX);
-            panel30.Location = new Point(735, 328);
+            panel30.Location = new Point(643, 246);
+            panel30.Margin = new Padding(3, 2, 3, 2);
             panel30.Name = "panel30";
-            panel30.Size = new Size(111, 53);
+            panel30.Size = new Size(97, 40);
             panel30.TabIndex = 23;
             // 
             // lblReqDEX
@@ -1889,9 +1940,9 @@
             lblReqDEX.BackColor = Color.Transparent;
             lblReqDEX.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblReqDEX.ForeColor = Color.FromArgb(80, 80, 80);
-            lblReqDEX.Location = new Point(44, 13);
+            lblReqDEX.Location = new Point(38, 10);
             lblReqDEX.Name = "lblReqDEX";
-            lblReqDEX.Size = new Size(19, 30);
+            lblReqDEX.Size = new Size(17, 25);
             lblReqDEX.TabIndex = 0;
             lblReqDEX.Text = ".";
             // 
@@ -1901,9 +1952,10 @@
             panel35.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel35.BackgroundImageLayout = ImageLayout.Stretch;
             panel35.Controls.Add(bigLabel20);
-            panel35.Location = new Point(853, 208);
+            panel35.Location = new Point(746, 156);
+            panel35.Margin = new Padding(3, 2, 3, 2);
             panel35.Name = "panel35";
-            panel35.Size = new Size(79, 53);
+            panel35.Size = new Size(69, 40);
             panel35.TabIndex = 21;
             // 
             // bigLabel20
@@ -1912,9 +1964,9 @@
             bigLabel20.BackColor = Color.Transparent;
             bigLabel20.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel20.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel20.Location = new Point(14, 15);
+            bigLabel20.Location = new Point(12, 11);
             bigLabel20.Name = "bigLabel20";
-            bigLabel20.Size = new Size(38, 23);
+            bigLabel20.Size = new Size(32, 19);
             bigLabel20.TabIndex = 0;
             bigLabel20.Text = "HIT";
             // 
@@ -1924,9 +1976,10 @@
             panel27.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel27.BackgroundImageLayout = ImageLayout.Stretch;
             panel27.Controls.Add(lblReqAGI);
-            panel27.Location = new Point(735, 148);
+            panel27.Location = new Point(643, 111);
+            panel27.Margin = new Padding(3, 2, 3, 2);
             panel27.Name = "panel27";
-            panel27.Size = new Size(111, 53);
+            panel27.Size = new Size(97, 40);
             panel27.TabIndex = 21;
             // 
             // lblReqAGI
@@ -1935,9 +1988,9 @@
             lblReqAGI.BackColor = Color.Transparent;
             lblReqAGI.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblReqAGI.ForeColor = Color.FromArgb(80, 80, 80);
-            lblReqAGI.Location = new Point(44, 13);
+            lblReqAGI.Location = new Point(38, 10);
             lblReqAGI.Name = "lblReqAGI";
-            lblReqAGI.Size = new Size(19, 30);
+            lblReqAGI.Size = new Size(17, 25);
             lblReqAGI.TabIndex = 0;
             lblReqAGI.Text = ".";
             // 
@@ -1947,9 +2000,10 @@
             panel36.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel36.BackgroundImageLayout = ImageLayout.Stretch;
             panel36.Controls.Add(bigLabel21);
-            panel36.Location = new Point(853, 148);
+            panel36.Location = new Point(746, 111);
+            panel36.Margin = new Padding(3, 2, 3, 2);
             panel36.Name = "panel36";
-            panel36.Size = new Size(79, 53);
+            panel36.Size = new Size(69, 40);
             panel36.TabIndex = 20;
             // 
             // bigLabel21
@@ -1958,9 +2012,9 @@
             bigLabel21.BackColor = Color.Transparent;
             bigLabel21.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel21.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel21.Location = new Point(10, 15);
+            bigLabel21.Location = new Point(9, 11);
             bigLabel21.Name = "bigLabel21";
-            bigLabel21.Size = new Size(58, 23);
+            bigLabel21.Size = new Size(48, 19);
             bigLabel21.TabIndex = 0;
             bigLabel21.Text = "MATK";
             // 
@@ -1970,9 +2024,10 @@
             panel31.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel31.BackgroundImageLayout = ImageLayout.Stretch;
             panel31.Controls.Add(lblReqINT);
-            panel31.Location = new Point(735, 268);
+            panel31.Location = new Point(643, 201);
+            panel31.Margin = new Padding(3, 2, 3, 2);
             panel31.Name = "panel31";
-            panel31.Size = new Size(111, 53);
+            panel31.Size = new Size(97, 40);
             panel31.TabIndex = 22;
             // 
             // lblReqINT
@@ -1981,9 +2036,9 @@
             lblReqINT.BackColor = Color.Transparent;
             lblReqINT.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblReqINT.ForeColor = Color.FromArgb(80, 80, 80);
-            lblReqINT.Location = new Point(44, 13);
+            lblReqINT.Location = new Point(38, 10);
             lblReqINT.Name = "lblReqINT";
-            lblReqINT.Size = new Size(19, 30);
+            lblReqINT.Size = new Size(17, 25);
             lblReqINT.TabIndex = 0;
             lblReqINT.Text = ".";
             // 
@@ -1993,9 +2048,10 @@
             panel37.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel37.BackgroundImageLayout = ImageLayout.Stretch;
             panel37.Controls.Add(bigLabel22);
-            panel37.Location = new Point(853, 88);
+            panel37.Location = new Point(746, 66);
+            panel37.Margin = new Padding(3, 2, 3, 2);
             panel37.Name = "panel37";
-            panel37.Size = new Size(79, 53);
+            panel37.Size = new Size(69, 40);
             panel37.TabIndex = 19;
             // 
             // bigLabel22
@@ -2004,9 +2060,9 @@
             bigLabel22.BackColor = Color.Transparent;
             bigLabel22.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel22.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel22.Location = new Point(14, 15);
+            bigLabel22.Location = new Point(12, 11);
             bigLabel22.Name = "bigLabel22";
-            bigLabel22.Size = new Size(42, 23);
+            bigLabel22.Size = new Size(35, 19);
             bigLabel22.TabIndex = 0;
             bigLabel22.Text = "ATK";
             // 
@@ -2016,9 +2072,10 @@
             panel26.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel26.BackgroundImageLayout = ImageLayout.Stretch;
             panel26.Controls.Add(lblReqSTR);
-            panel26.Location = new Point(735, 88);
+            panel26.Location = new Point(643, 66);
+            panel26.Margin = new Padding(3, 2, 3, 2);
             panel26.Name = "panel26";
-            panel26.Size = new Size(111, 53);
+            panel26.Size = new Size(97, 40);
             panel26.TabIndex = 20;
             // 
             // lblReqSTR
@@ -2027,9 +2084,9 @@
             lblReqSTR.BackColor = Color.Transparent;
             lblReqSTR.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblReqSTR.ForeColor = Color.FromArgb(80, 80, 80);
-            lblReqSTR.Location = new Point(44, 13);
+            lblReqSTR.Location = new Point(38, 10);
             lblReqSTR.Name = "lblReqSTR";
-            lblReqSTR.Size = new Size(19, 30);
+            lblReqSTR.Size = new Size(17, 25);
             lblReqSTR.TabIndex = 0;
             lblReqSTR.Text = ".";
             // 
@@ -2039,12 +2096,13 @@
             txtLuk.EnabledCalc = true;
             txtLuk.Font = new Font("Segoe UI", 9F);
             txtLuk.ForeColor = Color.FromArgb(124, 133, 142);
-            txtLuk.Location = new Point(621, 388);
+            txtLuk.Location = new Point(543, 291);
+            txtLuk.Margin = new Padding(3, 2, 3, 2);
             txtLuk.MaxLength = 2;
             txtLuk.MultiLine = false;
             txtLuk.Name = "txtLuk";
             txtLuk.ReadOnly = false;
-            txtLuk.Size = new Size(73, 53);
+            txtLuk.Size = new Size(64, 40);
             txtLuk.TabIndex = 19;
             txtLuk.TextAlign = HorizontalAlignment.Center;
             txtLuk.UseSystemPasswordChar = false;
@@ -2056,12 +2114,13 @@
             txtDex.EnabledCalc = true;
             txtDex.Font = new Font("Segoe UI", 9F);
             txtDex.ForeColor = Color.FromArgb(124, 133, 142);
-            txtDex.Location = new Point(621, 328);
+            txtDex.Location = new Point(543, 246);
+            txtDex.Margin = new Padding(3, 2, 3, 2);
             txtDex.MaxLength = 2;
             txtDex.MultiLine = false;
             txtDex.Name = "txtDex";
             txtDex.ReadOnly = false;
-            txtDex.Size = new Size(73, 53);
+            txtDex.Size = new Size(64, 40);
             txtDex.TabIndex = 17;
             txtDex.TextAlign = HorizontalAlignment.Center;
             txtDex.UseSystemPasswordChar = false;
@@ -2073,9 +2132,10 @@
             panel12.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel12.BackgroundImageLayout = ImageLayout.Stretch;
             panel12.Controls.Add(bigLabel9);
-            panel12.Location = new Point(506, 388);
+            panel12.Location = new Point(443, 291);
+            panel12.Margin = new Padding(3, 2, 3, 2);
             panel12.Name = "panel12";
-            panel12.Size = new Size(69, 53);
+            panel12.Size = new Size(60, 40);
             panel12.TabIndex = 18;
             // 
             // bigLabel9
@@ -2084,9 +2144,9 @@
             bigLabel9.BackColor = Color.Transparent;
             bigLabel9.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel9.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel9.Location = new Point(14, 15);
+            bigLabel9.Location = new Point(12, 11);
             bigLabel9.Name = "bigLabel9";
-            bigLabel9.Size = new Size(42, 23);
+            bigLabel9.Size = new Size(35, 19);
             bigLabel9.TabIndex = 0;
             bigLabel9.Text = "LUK";
             // 
@@ -2096,9 +2156,10 @@
             panel13.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel13.BackgroundImageLayout = ImageLayout.Stretch;
             panel13.Controls.Add(bigLabel10);
-            panel13.Location = new Point(506, 328);
+            panel13.Location = new Point(443, 246);
+            panel13.Margin = new Padding(3, 2, 3, 2);
             panel13.Name = "panel13";
-            panel13.Size = new Size(69, 53);
+            panel13.Size = new Size(60, 40);
             panel13.TabIndex = 16;
             // 
             // bigLabel10
@@ -2107,9 +2168,9 @@
             bigLabel10.BackColor = Color.Transparent;
             bigLabel10.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel10.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel10.Location = new Point(11, 15);
+            bigLabel10.Location = new Point(10, 11);
             bigLabel10.Name = "bigLabel10";
-            bigLabel10.Size = new Size(43, 23);
+            bigLabel10.Size = new Size(35, 19);
             bigLabel10.TabIndex = 0;
             bigLabel10.Text = "DEX";
             // 
@@ -2119,12 +2180,13 @@
             txtInt.EnabledCalc = true;
             txtInt.Font = new Font("Segoe UI", 9F);
             txtInt.ForeColor = Color.FromArgb(124, 133, 142);
-            txtInt.Location = new Point(621, 268);
+            txtInt.Location = new Point(543, 201);
+            txtInt.Margin = new Padding(3, 2, 3, 2);
             txtInt.MaxLength = 2;
             txtInt.MultiLine = false;
             txtInt.Name = "txtInt";
             txtInt.ReadOnly = false;
-            txtInt.Size = new Size(73, 53);
+            txtInt.Size = new Size(64, 40);
             txtInt.TabIndex = 15;
             txtInt.TextAlign = HorizontalAlignment.Center;
             txtInt.UseSystemPasswordChar = false;
@@ -2136,12 +2198,13 @@
             txtVit.EnabledCalc = true;
             txtVit.Font = new Font("Segoe UI", 9F);
             txtVit.ForeColor = Color.FromArgb(124, 133, 142);
-            txtVit.Location = new Point(621, 208);
+            txtVit.Location = new Point(543, 156);
+            txtVit.Margin = new Padding(3, 2, 3, 2);
             txtVit.MaxLength = 2;
             txtVit.MultiLine = false;
             txtVit.Name = "txtVit";
             txtVit.ReadOnly = false;
-            txtVit.Size = new Size(73, 53);
+            txtVit.Size = new Size(64, 40);
             txtVit.TabIndex = 13;
             txtVit.TextAlign = HorizontalAlignment.Center;
             txtVit.UseSystemPasswordChar = false;
@@ -2153,9 +2216,10 @@
             panel10.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel10.BackgroundImageLayout = ImageLayout.Stretch;
             panel10.Controls.Add(bigLabel7);
-            panel10.Location = new Point(506, 268);
+            panel10.Location = new Point(443, 201);
+            panel10.Margin = new Padding(3, 2, 3, 2);
             panel10.Name = "panel10";
-            panel10.Size = new Size(69, 53);
+            panel10.Size = new Size(60, 40);
             panel10.TabIndex = 14;
             // 
             // bigLabel7
@@ -2164,9 +2228,9 @@
             bigLabel7.BackColor = Color.Transparent;
             bigLabel7.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel7.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel7.Location = new Point(14, 15);
+            bigLabel7.Location = new Point(12, 11);
             bigLabel7.Name = "bigLabel7";
-            bigLabel7.Size = new Size(38, 23);
+            bigLabel7.Size = new Size(32, 19);
             bigLabel7.TabIndex = 0;
             bigLabel7.Text = "INT";
             // 
@@ -2176,9 +2240,10 @@
             panel11.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel11.BackgroundImageLayout = ImageLayout.Stretch;
             panel11.Controls.Add(bigLabel8);
-            panel11.Location = new Point(506, 208);
+            panel11.Location = new Point(443, 156);
+            panel11.Margin = new Padding(3, 2, 3, 2);
             panel11.Name = "panel11";
-            panel11.Size = new Size(69, 53);
+            panel11.Size = new Size(60, 40);
             panel11.TabIndex = 12;
             // 
             // bigLabel8
@@ -2187,9 +2252,9 @@
             bigLabel8.BackColor = Color.Transparent;
             bigLabel8.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel8.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel8.Location = new Point(14, 15);
+            bigLabel8.Location = new Point(12, 11);
             bigLabel8.Name = "bigLabel8";
-            bigLabel8.Size = new Size(36, 23);
+            bigLabel8.Size = new Size(30, 19);
             bigLabel8.TabIndex = 0;
             bigLabel8.Text = "VIT";
             // 
@@ -2199,12 +2264,13 @@
             txtAgi.EnabledCalc = true;
             txtAgi.Font = new Font("Segoe UI", 9F);
             txtAgi.ForeColor = Color.FromArgb(124, 133, 142);
-            txtAgi.Location = new Point(621, 148);
+            txtAgi.Location = new Point(543, 111);
+            txtAgi.Margin = new Padding(3, 2, 3, 2);
             txtAgi.MaxLength = 2;
             txtAgi.MultiLine = false;
             txtAgi.Name = "txtAgi";
             txtAgi.ReadOnly = false;
-            txtAgi.Size = new Size(73, 53);
+            txtAgi.Size = new Size(64, 40);
             txtAgi.TabIndex = 11;
             txtAgi.TextAlign = HorizontalAlignment.Center;
             txtAgi.UseSystemPasswordChar = false;
@@ -2216,12 +2282,13 @@
             txtSTR.EnabledCalc = true;
             txtSTR.Font = new Font("Segoe UI", 9F);
             txtSTR.ForeColor = Color.FromArgb(124, 133, 142);
-            txtSTR.Location = new Point(621, 88);
+            txtSTR.Location = new Point(543, 66);
+            txtSTR.Margin = new Padding(3, 2, 3, 2);
             txtSTR.MaxLength = 2;
             txtSTR.MultiLine = false;
             txtSTR.Name = "txtSTR";
             txtSTR.ReadOnly = false;
-            txtSTR.Size = new Size(73, 53);
+            txtSTR.Size = new Size(64, 40);
             txtSTR.TabIndex = 9;
             txtSTR.TextAlign = HorizontalAlignment.Center;
             txtSTR.UseSystemPasswordChar = false;
@@ -2233,9 +2300,10 @@
             panel9.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel9.BackgroundImageLayout = ImageLayout.Stretch;
             panel9.Controls.Add(bigLabel6);
-            panel9.Location = new Point(506, 148);
+            panel9.Location = new Point(443, 111);
+            panel9.Margin = new Padding(3, 2, 3, 2);
             panel9.Name = "panel9";
-            panel9.Size = new Size(69, 53);
+            panel9.Size = new Size(60, 40);
             panel9.TabIndex = 10;
             // 
             // bigLabel6
@@ -2244,9 +2312,9 @@
             bigLabel6.BackColor = Color.Transparent;
             bigLabel6.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel6.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel6.Location = new Point(14, 15);
+            bigLabel6.Location = new Point(12, 11);
             bigLabel6.Name = "bigLabel6";
-            bigLabel6.Size = new Size(39, 23);
+            bigLabel6.Size = new Size(33, 19);
             bigLabel6.TabIndex = 0;
             bigLabel6.Text = "AGI";
             // 
@@ -2256,9 +2324,10 @@
             panel8.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel8.BackgroundImageLayout = ImageLayout.Stretch;
             panel8.Controls.Add(bigLabel5);
-            panel8.Location = new Point(506, 88);
+            panel8.Location = new Point(443, 66);
+            panel8.Margin = new Padding(3, 2, 3, 2);
             panel8.Name = "panel8";
-            panel8.Size = new Size(69, 53);
+            panel8.Size = new Size(60, 40);
             panel8.TabIndex = 6;
             // 
             // bigLabel5
@@ -2267,9 +2336,9 @@
             bigLabel5.BackColor = Color.Transparent;
             bigLabel5.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bigLabel5.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel5.Location = new Point(14, 15);
+            bigLabel5.Location = new Point(12, 11);
             bigLabel5.Name = "bigLabel5";
-            bigLabel5.Size = new Size(41, 23);
+            bigLabel5.Size = new Size(34, 19);
             bigLabel5.TabIndex = 0;
             bigLabel5.Text = "STR";
             // 
@@ -2279,9 +2348,10 @@
             panel6.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel6.BackgroundImageLayout = ImageLayout.Stretch;
             panel6.Controls.Add(bigLabel4);
-            panel6.Location = new Point(853, 28);
+            panel6.Location = new Point(746, 21);
+            panel6.Margin = new Padding(3, 2, 3, 2);
             panel6.Name = "panel6";
-            panel6.Size = new Size(480, 53);
+            panel6.Size = new Size(420, 40);
             panel6.TabIndex = 8;
             // 
             // bigLabel4
@@ -2290,9 +2360,9 @@
             bigLabel4.BackColor = Color.Transparent;
             bigLabel4.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             bigLabel4.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel4.Location = new Point(134, 12);
+            bigLabel4.Location = new Point(117, 9);
             bigLabel4.Name = "bigLabel4";
-            bigLabel4.Size = new Size(250, 30);
+            bigLabel4.Size = new Size(212, 25);
             bigLabel4.TabIndex = 2;
             bigLabel4.Text = "STATUS INFORMATION";
             // 
@@ -2302,9 +2372,10 @@
             panel7.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel7.BackgroundImageLayout = ImageLayout.Stretch;
             panel7.Controls.Add(bigLabel3);
-            panel7.Location = new Point(735, 28);
+            panel7.Location = new Point(643, 21);
+            panel7.Margin = new Padding(3, 2, 3, 2);
             panel7.Name = "panel7";
-            panel7.Size = new Size(111, 53);
+            panel7.Size = new Size(97, 40);
             panel7.TabIndex = 7;
             // 
             // bigLabel3
@@ -2313,9 +2384,9 @@
             bigLabel3.BackColor = Color.Transparent;
             bigLabel3.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             bigLabel3.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel3.Location = new Point(11, 12);
+            bigLabel3.Location = new Point(10, 9);
             bigLabel3.Name = "bigLabel3";
-            bigLabel3.Size = new Size(101, 30);
+            bigLabel3.Size = new Size(85, 25);
             bigLabel3.TabIndex = 1;
             bigLabel3.Text = "PTS REQ";
             // 
@@ -2325,9 +2396,10 @@
             panel4.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel4.BackgroundImageLayout = ImageLayout.Stretch;
             panel4.Controls.Add(bigLabel1);
-            panel4.Location = new Point(506, 28);
+            panel4.Location = new Point(443, 21);
+            panel4.Margin = new Padding(3, 2, 3, 2);
             panel4.Name = "panel4";
-            panel4.Size = new Size(226, 53);
+            panel4.Size = new Size(198, 40);
             panel4.TabIndex = 5;
             // 
             // bigLabel1
@@ -2336,19 +2408,20 @@
             bigLabel1.BackColor = Color.Transparent;
             bigLabel1.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             bigLabel1.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel1.Location = new Point(77, 12);
+            bigLabel1.Location = new Point(67, 9);
             bigLabel1.Name = "bigLabel1";
-            bigLabel1.Size = new Size(74, 30);
+            bigLabel1.Size = new Size(65, 25);
             bigLabel1.TabIndex = 0;
             bigLabel1.Text = "STATS";
             // 
             // hopePictureBox1
             // 
             hopePictureBox1.BackColor = Color.Gray;
-            hopePictureBox1.Location = new Point(187, 28);
+            hopePictureBox1.Location = new Point(164, 21);
+            hopePictureBox1.Margin = new Padding(3, 2, 3, 2);
             hopePictureBox1.Name = "hopePictureBox1";
             hopePictureBox1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            hopePictureBox1.Size = new Size(313, 483);
+            hopePictureBox1.Size = new Size(274, 362);
             hopePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             hopePictureBox1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             hopePictureBox1.TabIndex = 0;
@@ -2358,17 +2431,18 @@
             // Form1
             // 
             AllowDrop = true;
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = SystemColors.ActiveBorder;
             BackgroundImage = Properties.Resources.bgbgbg;
-            ClientSize = new Size(1377, 1102);
+            ClientSize = new Size(1205, 825);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(bigLabel72);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
