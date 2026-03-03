@@ -8,36 +8,32 @@ namespace Modsim_Game
         public Form1()
         {
             InitializeComponent();
-            txtAgi.TB.BackColor = Color.White;
+            txtAGI.TB.BackColor = Color.White;
             txtSTR.TB.BackColor = Color.White;
-            txtVit.TB.BackColor = Color.White;
-            txtLuk.TB.BackColor = Color.White;
-            txtDex.TB.BackColor = Color.White;
-            txtInt.TB.BackColor = Color.White;
+            txtVIT.TB.BackColor = Color.White;
+            txtLUK.TB.BackColor = Color.White;
+            txtDEX.TB.BackColor = Color.White;
+            txtINT.TB.BackColor = Color.White;
             txtBaseLevel.TB.BackColor = Color.White;
             BaseStats();
 
-            lblFleeOther.Text = "1";
-            lblMdef.Text = "1";
-            bigLabel41.Text = "0";
-            bigLabel24.Text = "0";
-            bigLabel39.Text = "0";
+            lblFLEE2.Text = "1";
+            lblMDEFValue2.Text = "1";
+            lblValueDEF1.Text = "0";
+            lblAtk2.Text = "0";
+            lblMDEFValue1.Text = "0";
 
 
         }
 
-        private void hopePictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
         void BaseStats()
         {
             txtSTR.Text = "1";
-            txtAgi.Text = "1";
-            txtVit.Text = "1";
-            txtInt.Text = "1";
-            txtDex.Text = "1";
-            txtLuk.Text = "1";
+            txtAGI.Text = "1";
+            txtVIT.Text = "1";
+            txtINT.Text = "1";
+            txtDEX.Text = "1";
+            txtLUK.Text = "1";
             txtBaseLevel.Text = "1";
         }
 
@@ -45,11 +41,11 @@ namespace Modsim_Game
         {
             // 1. Parse all inputs (Default to 0 if invalid or empty)
             int.TryParse(txtSTR.Text, out int str);
-            int.TryParse(txtDex.Text, out int dex);
-            int.TryParse(txtVit.Text, out int vit);
-            int.TryParse(txtInt.Text, out int intel);
-            int.TryParse(txtAgi.Text, out int agi);
-            int.TryParse(txtLuk.Text, out int luk);
+            int.TryParse(txtDEX.Text, out int dex);
+            int.TryParse(txtVIT.Text, out int vit);
+            int.TryParse(txtINT.Text, out int intel);
+            int.TryParse(txtAGI.Text, out int agi);
+            int.TryParse(txtLUK.Text, out int luk);
             int.TryParse(txtBaseLevel.Text, out int baseLevel);
 
             //   STAT POINTS CALCULATION   
@@ -77,22 +73,22 @@ namespace Modsim_Game
                 lblPointsRemaining.Text = $"Overspent: Reset";
                 // Optional: Block further calculation or show a warning
                 txtSTR.TB.ReadOnly = true;
-                txtDex.TB.ReadOnly = true;
-                txtVit.TB.ReadOnly = true;
-                txtLuk.TB.ReadOnly = true;
-                txtInt.TB.ReadOnly = true;
-                txtAgi.TB.ReadOnly = true;
+                txtDEX.TB.ReadOnly = true;
+                txtVIT.TB.ReadOnly = true;
+                txtLUK.TB.ReadOnly = true;
+                txtINT.TB.ReadOnly = true;
+                txtAGI.TB.ReadOnly = true;
             }
             else
             {
                 lblPointsRemaining.ForeColor = System.Drawing.Color.Black;
                 lblPointsRemaining.Text = remainingPoints.ToString();
                 txtSTR.TB.ReadOnly = false;
-                txtDex.TB.ReadOnly = false;
-                txtVit.TB.ReadOnly = false;
-                txtLuk.TB.ReadOnly = false;
-                txtInt.TB.ReadOnly = false;
-                txtAgi.TB.ReadOnly = false;
+                txtDEX.TB.ReadOnly = false;
+                txtVIT.TB.ReadOnly = false;
+                txtLUK.TB.ReadOnly = false;
+                txtINT.TB.ReadOnly = false;
+                txtAGI.TB.ReadOnly = false;
             }
 
             int increment = 2 + (str >= 11 ? ((str - 11) / 10) + 1 : 0);
@@ -172,17 +168,17 @@ namespace Modsim_Game
             int maxMatk = intel + (int)Math.Pow(intel / 5, 2);
 
             //    UPDATE UI   
-            lblAtk.Text = (totalStrDamage + meleeBonusFromDex + meleeBonusFromLuk).ToString();
+            lblAtk1.Text = (totalStrDamage + meleeBonusFromDex + meleeBonusFromLuk).ToString();
             lblWeight.Text = weightLimit.ToString();
             lblHit.Text = dex.ToString();
             lblRangedAtk.Text = rangedAtk.ToString();
             lblCastReduction.Text = $"{castReduction:F1}%";
-            lblDef.Text = finalDef.ToString();
+            lblValueDEF2.Text = finalDef.ToString();
             lblBaseHp.Text = Math.Floor(totalHp).ToString();
-            lblMinMatk.Text = minMatk.ToString();
-            lblMaxMatk.Text = maxMatk.ToString();
-            lblFlee.Text = totalFlee.ToString();
-            lblAspd.Text = Math.Floor(totalAspd).ToString();
+            lblMinMatk1.Text = minMatk.ToString();
+            lblMinMatk2.Text = maxMatk.ToString();
+            lblFLEE1.Text = totalFlee.ToString();
+            lblASPD.Text = Math.Floor(totalAspd).ToString();
             lblCrit.Text = $"{critRate:F1}";
             lblPerfectDodge.Text = $"{perfectDodge:F1}%";
         }
@@ -208,56 +204,47 @@ namespace Modsim_Game
         private void txtLuk_TextChanged(object sender, EventArgs e) => UpdateAllStats();
 
 
-        private void crownDropDownList1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void aloneComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedGif = aloneComboBox2.SelectedItem.ToString();
+            string selectedGif = cmbSelectJob.SelectedItem.ToString();
             switch (selectedGif)
             {
                 case "Novice":
-                    hopePictureBox1.Image = Properties.Resources.GIF_0ne;
+                    pbJobs.Image = Properties.Resources.GIF_0ne;
                     lblJobTitle.Text = selectedGif;
                     int weight = Convert.ToInt32(lblWeight.Text);
                     weight = 2030;
                     break;
                 case "Swordsman":
-                    hopePictureBox1.Image = Properties.Resources.swordsman;
+                    pbJobs.Image = Properties.Resources.swordsman;
                     lblJobTitle.Text = selectedGif;
                     break;
                 case "Magician":
-                    hopePictureBox1.Image = Properties.Resources.magician2;
+                    pbJobs.Image = Properties.Resources.magician2;
                     lblJobTitle.Text = selectedGif;
                     break;
                 case "Archer":
-                    hopePictureBox1.Image = Properties.Resources.archer;
+                    pbJobs.Image = Properties.Resources.archer;
                     lblJobTitle.Text = selectedGif;
                     break;
                 case "Acolyte":
-                    hopePictureBox1.Image = Properties.Resources.magician;
+                    pbJobs.Image = Properties.Resources.magician;
                     lblJobTitle.Text = selectedGif;
                     break;
                 case "Merchant":
-                    hopePictureBox1.Image = Properties.Resources.merchant;
+                    pbJobs.Image = Properties.Resources.merchant;
                     lblJobTitle.Text = selectedGif;
                     break;
                 case "Thieft":
-                    hopePictureBox1.Image = Properties.Resources.thieft;
+                    pbJobs.Image = Properties.Resources.thieft;
                     lblJobTitle.Text = selectedGif;
                     break;
                 case "Knight":
-                    hopePictureBox1.Image = Properties.Resources.knight;
+                    pbJobs.Image = Properties.Resources.knight;
                     lblJobTitle.Text = selectedGif;
                     break;
                 case "Priest":
-                    hopePictureBox1.Image = Properties.Resources.knight;
+                    pbJobs.Image = Properties.Resources.knight;
                     lblJobTitle.Text = selectedGif;
                     break;
 
@@ -272,11 +259,11 @@ namespace Modsim_Game
         private void hopeButton1_Click(object sender, EventArgs e)
         {
             txtSTR.Text = "1";
-            txtAgi.Text = "1";
-            txtVit.Text = "1";
-            txtInt.Text = "1";
-            txtDex.Text = "1";
-            txtLuk.Text = "1";
+            txtAGI.Text = "1";
+            txtVIT.Text = "1";
+            txtINT.Text = "1";
+            txtDEX.Text = "1";
+            txtLUK.Text = "1";
         }
         void onclick()
         {
@@ -293,7 +280,7 @@ namespace Modsim_Game
             if (!int.TryParse(txtSTR.Text, out int currentStr)) currentStr = 1;
             if (!int.TryParse(txtBaseLevel.Text, out int baseLevel)) baseLevel = 1;
 
-            
+
             int costForNextPoint = (currentStr / 10) + 2;
 
             int totalAvailable = 48; // Starting points for normal novice
@@ -321,11 +308,11 @@ namespace Modsim_Game
         private int CalculateTotalSpent()
         {
             int.TryParse(txtSTR.Text, out int s);
-            int.TryParse(txtAgi.Text, out int a);
-            int.TryParse(txtVit.Text, out int v);
-            int.TryParse(txtInt.Text, out int i);
-            int.TryParse(txtDex.Text, out int d);
-            int.TryParse(txtLuk.Text, out int l);
+            int.TryParse(txtAGI.Text, out int a);
+            int.TryParse(txtVIT.Text, out int v);
+            int.TryParse(txtINT.Text, out int i);
+            int.TryParse(txtDEX.Text, out int d);
+            int.TryParse(txtLUK.Text, out int l);
 
             return CalculateStatCost(s) + CalculateStatCost(a) + CalculateStatCost(v) +
                    CalculateStatCost(i) + CalculateStatCost(d) + CalculateStatCost(l);
@@ -334,7 +321,7 @@ namespace Modsim_Game
         private void bigLabel11_Click(object sender, EventArgs e)
         {
             // 1. Parse current STR and Base Level
-            if (!int.TryParse(txtAgi.Text, out int currentStr)) currentStr = 1;
+            if (!int.TryParse(txtAGI.Text, out int currentStr)) currentStr = 1;
             if (!int.TryParse(txtBaseLevel.Text, out int baseLevel)) baseLevel = 1;
 
 
@@ -351,7 +338,7 @@ namespace Modsim_Game
 
             if (currentSpent + costForNextPoint <= totalAvailable)
             {
-                txtAgi.Text = (currentStr + 1).ToString();
+                txtAGI.Text = (currentStr + 1).ToString();
             }
             else
             {
@@ -363,7 +350,7 @@ namespace Modsim_Game
         private void bigLabel12_Click(object sender, EventArgs e)
         {
             // 1. Parse current STR and Base Level
-            if (!int.TryParse(txtVit.Text, out int currentStr)) currentStr = 1;
+            if (!int.TryParse(txtVIT.Text, out int currentStr)) currentStr = 1;
             if (!int.TryParse(txtBaseLevel.Text, out int baseLevel)) baseLevel = 1;
 
 
@@ -380,7 +367,7 @@ namespace Modsim_Game
 
             if (currentSpent + costForNextPoint <= totalAvailable)
             {
-                txtVit.Text = (currentStr + 1).ToString();
+                txtVIT.Text = (currentStr + 1).ToString();
             }
             else
             {
@@ -391,8 +378,8 @@ namespace Modsim_Game
 
         private void bigLabel15_Click(object sender, EventArgs e)
         {
-             // 1. Parse current STR and Base Level
-            if (!int.TryParse(txtInt.Text, out int currentStr)) currentStr = 1;
+            // 1. Parse current STR and Base Level
+            if (!int.TryParse(txtINT.Text, out int currentStr)) currentStr = 1;
             if (!int.TryParse(txtBaseLevel.Text, out int baseLevel)) baseLevel = 1;
 
 
@@ -409,7 +396,7 @@ namespace Modsim_Game
 
             if (currentSpent + costForNextPoint <= totalAvailable)
             {
-                txtInt.Text = (currentStr + 1).ToString();
+                txtINT.Text = (currentStr + 1).ToString();
             }
             else
             {
@@ -420,8 +407,8 @@ namespace Modsim_Game
 
         private void bigLabel13_Click(object sender, EventArgs e)
         {
-           // 1. Parse current STR and Base Level
-            if (!int.TryParse(txtLuk.Text, out int currentStr)) currentStr = 1;
+            // 1. Parse current STR and Base Level
+            if (!int.TryParse(txtLUK.Text, out int currentStr)) currentStr = 1;
             if (!int.TryParse(txtBaseLevel.Text, out int baseLevel)) baseLevel = 1;
 
 
@@ -438,7 +425,7 @@ namespace Modsim_Game
 
             if (currentSpent + costForNextPoint <= totalAvailable)
             {
-                txtLuk.Text = (currentStr + 1).ToString();
+                txtLUK.Text = (currentStr + 1).ToString();
             }
             else
             {
@@ -450,7 +437,7 @@ namespace Modsim_Game
         private void bigLabel14_Click(object sender, EventArgs e)
         {
             // 1. Parse current STR and Base Level
-            if (!int.TryParse(txtDex.Text, out int currentStr)) currentStr = 1;
+            if (!int.TryParse(txtDEX.Text, out int currentStr)) currentStr = 1;
             if (!int.TryParse(txtBaseLevel.Text, out int baseLevel)) baseLevel = 1;
 
 
@@ -467,7 +454,7 @@ namespace Modsim_Game
 
             if (currentSpent + costForNextPoint <= totalAvailable)
             {
-                txtDex.Text = (currentStr + 1).ToString();
+                txtDEX.Text = (currentStr + 1).ToString();
             }
             else
             {
@@ -488,52 +475,53 @@ namespace Modsim_Game
 
         private void bigLabel18_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(txtLuk.Text, out int currentStr))
+            if (!int.TryParse(txtLUK.Text, out int currentStr))
             {
                 currentStr = 1;
             }
             int nextStr = currentStr - 1;
-            txtLuk.Text = nextStr.ToString();
+            txtLUK.Text = nextStr.ToString();
         }
 
         private void bigLabel37_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(txtAgi.Text, out int currentStr))
+            if (!int.TryParse(txtAGI.Text, out int currentStr))
             {
                 currentStr = 1;
             }
             int nextStr = currentStr - 1;
-            txtAgi.Text = nextStr.ToString();
+            txtAGI.Text = nextStr.ToString();
         }
 
         private void bigLabel36_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(txtVit.Text, out int currentStr))
+            if (!int.TryParse(txtVIT.Text, out int currentStr))
             {
                 currentStr = 1;
             }
             int nextStr = currentStr - 1;
-            txtVit.Text = nextStr.ToString();
+            txtVIT.Text = nextStr.ToString();
         }
 
         private void bigLabel35_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(txtInt.Text, out int currentStr))
+            if (!int.TryParse(txtINT.Text, out int currentStr))
             {
                 currentStr = 1;
             }
             int nextStr = currentStr - 1;
-            txtInt.Text = nextStr.ToString();
+            txtINT.Text = nextStr.ToString();
         }
 
         private void bigLabel34_Click_1(object sender, EventArgs e)
         {
-            if (!int.TryParse(txtDex.Text, out int currentStr))
+            if (!int.TryParse(txtDEX.Text, out int currentStr))
             {
                 currentStr = 1;
             }
             int nextStr = currentStr - 1;
-            txtDex.Text = nextStr.ToString();
+            txtDEX.Text = nextStr.ToString();
         }
+
     }
 }
