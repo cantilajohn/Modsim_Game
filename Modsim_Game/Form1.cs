@@ -3,9 +3,9 @@ using System.Windows.Input;
 
 namespace Modsim_Game
 {
-    public partial class Form1 : Form
+    public partial class StatSimForm : Form
     {
-        public Form1()
+        public StatSimForm()
         {
             InitializeComponent();
             txtAGI.TB.BackColor = Color.White;

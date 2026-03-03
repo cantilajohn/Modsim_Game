@@ -1,6 +1,6 @@
 ﻿namespace Modsim_Game
 {
-    partial class Form1
+    partial class StatSimForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -1597,7 +1597,6 @@
             pnlDEFValue1.Name = "pnlDEFValue1";
             pnlDEFValue1.Size = new Size(49, 40);
             pnlDEFValue1.TabIndex = 39;
-            pnlDEFValue1.Paint += pnlDEFValue_Paint;
             // 
             // lblValueDEF1
             // 
@@ -2429,7 +2428,7 @@
             pbJobs.TabStop = false;
             pbJobs.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             // 
-            // Form1
+            // StatSimForm
             // 
             AllowDrop = true;
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -2444,9 +2443,9 @@
             Controls.Add(lblUnknown8);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 2, 3, 2);
-            Name = "Form1";
+            Name = "StatSimForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "StatSimForm";
             pnlBuffs.ResumeLayout(false);
             pnlBuffs.PerformLayout();
             pnlBuff2.ResumeLayout(false);
