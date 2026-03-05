@@ -24,6 +24,7 @@ namespace Modsim_Game
             lblMDEFValue1.Text = "0";
 
 
+
         }
 
         void BaseStats()
@@ -48,133 +49,107 @@ namespace Modsim_Game
             int.TryParse(txtLUK.Text, out int luk);
             int.TryParse(txtBaseLevel.Text, out int baseLevel);
 
-            //   STAT POINTS CALCULATION   
-            // Leveling formula: ROUNDDOWN(x / 5) + 3 points gained per level
+            // --- STAT POINTS CALCULATION ---
             int totalPointsGained = 0;
             for (int i = 1; i < baseLevel; i++)
             {
                 totalPointsGained += (i / 5) + 3;
             }
-
-            // Normal starting points
             int totalAvailablePoints = totalPointsGained + 48;
-
-            // Calculate cost based on: [(stat - 1) / 10] + 2
             int currentPointsSpent = CalculateStatCost(str) + CalculateStatCost(dex) +
                                      CalculateStatCost(vit) + CalculateStatCost(intel) +
                                      CalculateStatCost(agi) + CalculateStatCost(luk);
-
             int remainingPoints = totalAvailablePoints - currentPointsSpent;
 
-            //    VALIDATION CHECK   
+            // --- VALIDATION ---
             if (remainingPoints < 0)
             {
                 lblPointsRemaining.ForeColor = System.Drawing.Color.Red;
                 lblPointsRemaining.Text = $"Overspent: Reset";
-                // Optional: Block further calculation or show a warning
-                txtSTR.TB.ReadOnly = true;
-                txtDEX.TB.ReadOnly = true;
-                txtVIT.TB.ReadOnly = true;
-                txtLUK.TB.ReadOnly = true;
-                txtINT.TB.ReadOnly = true;
-                txtAGI.TB.ReadOnly = true;
+                txtSTR.TB.ReadOnly = txtDEX.TB.ReadOnly = txtVIT.TB.ReadOnly =
+                txtLUK.TB.ReadOnly = txtINT.TB.ReadOnly = txtAGI.TB.ReadOnly = true;
             }
             else
             {
                 lblPointsRemaining.ForeColor = System.Drawing.Color.Black;
                 lblPointsRemaining.Text = remainingPoints.ToString();
-                txtSTR.TB.ReadOnly = false;
-                txtDEX.TB.ReadOnly = false;
-                txtVIT.TB.ReadOnly = false;
-                txtLUK.TB.ReadOnly = false;
-                txtINT.TB.ReadOnly = false;
-                txtAGI.TB.ReadOnly = false;
+                txtSTR.TB.ReadOnly = txtDEX.TB.ReadOnly = txtVIT.TB.ReadOnly =
+                txtLUK.TB.ReadOnly = txtINT.TB.ReadOnly = txtAGI.TB.ReadOnly = false;
             }
 
-            int increment = 2 + (str >= 11 ? ((str - 11) / 10) + 1 : 0);
-            lblReqSTR.Text = increment.ToString();
+            // --- Required stats for next increment ---
+            lblReqSTR.Text = (2 + (str >= 11 ? ((str - 11) / 10) + 1 : 0)).ToString();
+            lblReqAGI.Text = (2 + (agi >= 11 ? ((agi - 11) / 10) + 1 : 0)).ToString();
+            lblReqINT.Text = (2 + (intel >= 11 ? ((intel - 11) / 10) + 1 : 0)).ToString();
+            lblReqDEX.Text = (2 + (dex >= 11 ? ((dex - 11) / 10) + 1 : 0)).ToString();
+            lblReqVIT.Text = (2 + (vit >= 11 ? ((vit - 11) / 10) + 1 : 0)).ToString();
+            lblReqLUK.Text = (2 + (luk >= 11 ? ((luk - 11) / 10) + 1 : 0)).ToString();
 
-            int increment2 = 2 + (agi >= 11 ? ((agi - 11) / 10) + 1 : 0);
-            lblReqAGI.Text = increment2.ToString();
-
-            int increment3 = 2 + (intel >= 11 ? ((intel - 11) / 10) + 1 : 0);
-            lblReqINT.Text = increment3.ToString();
-
-            int increment4 = 2 + (dex >= 11 ? ((dex - 11) / 10) + 1 : 0);
-            lblReqDEX.Text = increment4.ToString();
-
-            int increment5 = 2 + (vit >= 11 ? ((vit - 11) / 10) + 1 : 0);
-            lblReqVIT.Text = increment5.ToString();
-
-            int increment6 = 2 + (luk >= 11 ? ((luk - 11) / 10) + 1 : 0);
-            lblReqLUK.Text = increment6.ToString();
-
-            //    STR CALCULATIONS   
+            // --- STR Calculations ---
             int strTier = str / 10;
             int totalStrDamage = str + (strTier * strTier);
-            int weightLimit = 2030 + (str * 30); // Base + 30 per STR
+            int weightLimit = 2030 + (str * 30);
 
-            //    DEX CALCULATIONS   
+            // --- DEX Calculations ---
             int dexTier = dex / 10;
             int rangedAtk = dex + (dexTier * dexTier);
             int meleeBonusFromDex = dex / 5;
             double castReduction = Math.Min(100, (dex / 150.0) * 100);
 
-            //    AGI & ASPD CALCULATIONS   
+            // --- AGI & ASPD ---
             int totalFlee = 2 + agi;
             double aspdPercentReduction = (agi * 0.4) + (dex * 0.1);
             double totalAspd = 150 + (150 * (aspdPercentReduction / 100));
 
-            //    LUK CALCULATIONS   
+            // --- LUK ---
             double critRate = (luk * 0.3) + 1;
             double perfectDodge = luk * 0.1;
             int meleeBonusFromLuk = luk / 5;
 
-            // VIT & HP CALCULATIONS
-            double hpJobA = 5.0;
-            int hpJobB = 5;
+            // --- VIT & HP ---
+            double baseHP = 40;            // level 1 base HP
+            double hpPerLevelIncrement = 5;
 
-            double baseHP = 35 + (baseLevel * hpJobB);
-
-            // Cumulative growth
-            for (int i = 2; i <= baseLevel; i++)
+            // Add +5 per level above 1
+            if (baseLevel > 1)
             {
-                baseHP += Math.Round(hpJobA * i);
+                baseHP += hpPerLevelIncrement * (baseLevel - 1);
             }
 
+            int baseSP = 11;  // level 1 SP
+            int totalSP = baseSP + (baseLevel - 1);
+
+
+            // Apply VIT bonus (%)
             double totalHp = baseHP * (1 + (vit * 0.01));
 
-            // Soft DEF calculation
+            // Soft DEF
             double softDef = (vit <= 50) ? (vit * 0.8) : (vit * 0.85);
-
-            //    Ensure minimum DEF = 1   
             double finalDef = Math.Max(1, Math.Floor(softDef));
 
-            //    Output   
 
-            /*double hpJobA = 5.0;
-            int hpJobB = 5;
-            double baseHP = 35 + (baseLevel * hpJobB); // Base HP formula
-            for (int i = 2; i <= baseLevel; i++)
-            {
-                baseHP += Math.Round(hpJobA * i); // Cumulative growth
-            }
-            double totalHp = baseHP * (1 + (vit * 0.01));
-            double softDef = (vit <= 50) ? (vit * 0.8) : (vit * 0.85);*/
 
-            //    INT CALCULATIONS   
-            // Min MATK bonus every 7, Max every 5
+            // VIT-based HP regeneration (+1 base, +1 per 5 VIT)
+            int hpRegen = 1 + (vit / 5);
+
+            // INT-based SP regeneration (+1 base, +1 per 6 INT)
+            int spRegen = 1 + (intel / 6);
+
+            // --- INT Calculations ---
             int minMatk = intel + (int)Math.Pow(intel / 7, 2);
             int maxMatk = intel + (int)Math.Pow(intel / 5, 2);
 
-            //    UPDATE UI   
+            // --- UPDATE UI ---
             lblAtk1.Text = (totalStrDamage + meleeBonusFromDex + meleeBonusFromLuk).ToString();
             lblWeight.Text = weightLimit.ToString();
             lblHit.Text = dex.ToString();
             lblRangedAtk.Text = rangedAtk.ToString();
             lblCastReduction.Text = $"{castReduction:F1}%";
             lblValueDEF2.Text = finalDef.ToString();
-            lblBaseHp.Text = Math.Floor(totalHp).ToString();
+            lblTotalHP.Text = Math.Floor(totalHp).ToString(); // total HP                                         
+            lblTotalSp.Text = totalSP.ToString();             // Update UI
+            lblHpRegen.Text = hpRegen.ToString();             // HP regen
+            lblSpRegen.Text = spRegen.ToString();            // SP regen
             lblMinMatk1.Text = minMatk.ToString();
             lblMinMatk2.Text = maxMatk.ToString();
             lblFLEE1.Text = totalFlee.ToString();

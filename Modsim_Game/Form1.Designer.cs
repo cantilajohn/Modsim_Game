@@ -39,13 +39,13 @@
             cmbMaxHP = new ReaLTaiizor.Controls.AloneComboBox();
             lblSpRegen = new ReaLTaiizor.Controls.BigLabel();
             lblMaxHP = new ReaLTaiizor.Controls.BigLabel();
-            lblNatHp = new ReaLTaiizor.Controls.BigLabel();
+            lblHpRegen = new ReaLTaiizor.Controls.BigLabel();
             lnlNatSpRegen = new ReaLTaiizor.Controls.BigLabel();
             lblNatHpRegen = new ReaLTaiizor.Controls.BigLabel();
             cmbMaxASPED = new ReaLTaiizor.Controls.AloneComboBox();
-            lblTotalHp = new ReaLTaiizor.Controls.BigLabel();
+            lblTotalSp = new ReaLTaiizor.Controls.BigLabel();
             lblMaxASPED = new ReaLTaiizor.Controls.BigLabel();
-            lblBaseHp = new ReaLTaiizor.Controls.BigLabel();
+            lblTotalHP = new ReaLTaiizor.Controls.BigLabel();
             lblSP = new ReaLTaiizor.Controls.BigLabel();
             lblHP = new ReaLTaiizor.Controls.BigLabel();
             cmbSelectJob = new ReaLTaiizor.Controls.AloneComboBox();
@@ -57,24 +57,6 @@
             lblJobTitle = new ReaLTaiizor.Controls.BigLabel();
             lblJob = new ReaLTaiizor.Controls.BigLabel();
             lblUnknown8 = new ReaLTaiizor.Controls.BigLabel();
-            pnlBuff2 = new Panel();
-            lblBuff = new ReaLTaiizor.Controls.BigLabel();
-            ckbGloria = new ReaLTaiizor.Controls.AloneCheckBox();
-            lblGloria = new ReaLTaiizor.Controls.BigLabel();
-            lblItems = new ReaLTaiizor.Controls.BigLabel();
-            aloneComboBox11 = new ReaLTaiizor.Controls.AloneComboBox();
-            lblSpeedPotion = new ReaLTaiizor.Controls.BigLabel();
-            cmbWindWalk = new ReaLTaiizor.Controls.AloneComboBox();
-            lblWindWalk = new ReaLTaiizor.Controls.BigLabel();
-            cmbImpositioManus = new ReaLTaiizor.Controls.AloneComboBox();
-            lblImpositioManus = new ReaLTaiizor.Controls.BigLabel();
-            cmbAngelus = new ReaLTaiizor.Controls.AloneComboBox();
-            lblAngelus = new ReaLTaiizor.Controls.BigLabel();
-            cmbIncreaseAgi = new ReaLTaiizor.Controls.AloneComboBox();
-            lblIncreaseAgi = new ReaLTaiizor.Controls.BigLabel();
-            cmbBlessings = new ReaLTaiizor.Controls.AloneComboBox();
-            lblBlessings = new ReaLTaiizor.Controls.BigLabel();
-            lblBuffs = new ReaLTaiizor.Controls.BigLabel();
             pnlStatusSimulatorControls = new Panel();
             lblUnknown7 = new ReaLTaiizor.Controls.BigLabel();
             lblDecLUK = new ReaLTaiizor.Controls.BigLabel();
@@ -192,7 +174,6 @@
             lblSTATS = new ReaLTaiizor.Controls.BigLabel();
             pbJobs = new ReaLTaiizor.Controls.HopePictureBox();
             pnlBuffs.SuspendLayout();
-            pnlBuff2.SuspendLayout();
             pnlStatusSimulatorControls.SuspendLayout();
             pnlCharacterInfo.SuspendLayout();
             pnlFLEEValue2.SuspendLayout();
@@ -249,13 +230,13 @@
             pnlBuffs.Controls.Add(cmbMaxHP);
             pnlBuffs.Controls.Add(lblSpRegen);
             pnlBuffs.Controls.Add(lblMaxHP);
-            pnlBuffs.Controls.Add(lblNatHp);
+            pnlBuffs.Controls.Add(lblHpRegen);
             pnlBuffs.Controls.Add(lnlNatSpRegen);
             pnlBuffs.Controls.Add(lblNatHpRegen);
             pnlBuffs.Controls.Add(cmbMaxASPED);
-            pnlBuffs.Controls.Add(lblTotalHp);
+            pnlBuffs.Controls.Add(lblTotalSp);
             pnlBuffs.Controls.Add(lblMaxASPED);
-            pnlBuffs.Controls.Add(lblBaseHp);
+            pnlBuffs.Controls.Add(lblTotalHP);
             pnlBuffs.Controls.Add(lblSP);
             pnlBuffs.Controls.Add(lblHP);
             pnlBuffs.Controls.Add(cmbSelectJob);
@@ -396,17 +377,17 @@
             lblMaxHP.TabIndex = 55;
             lblMaxHP.Text = "MAX HP:";
             // 
-            // lblNatHp
+            // lblHpRegen
             // 
-            lblNatHp.AutoSize = true;
-            lblNatHp.BackColor = Color.Transparent;
-            lblNatHp.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblNatHp.ForeColor = Color.FromArgb(80, 80, 80);
-            lblNatHp.Location = new Point(1120, 53);
-            lblNatHp.Name = "lblNatHp";
-            lblNatHp.Size = new Size(13, 19);
-            lblNatHp.TabIndex = 63;
-            lblNatHp.Text = ".";
+            lblHpRegen.AutoSize = true;
+            lblHpRegen.BackColor = Color.Transparent;
+            lblHpRegen.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblHpRegen.ForeColor = Color.FromArgb(80, 80, 80);
+            lblHpRegen.Location = new Point(1120, 53);
+            lblHpRegen.Name = "lblHpRegen";
+            lblHpRegen.Size = new Size(13, 19);
+            lblHpRegen.TabIndex = 63;
+            lblHpRegen.Text = ".";
             // 
             // lnlNatSpRegen
             // 
@@ -448,17 +429,17 @@
             cmbMaxASPED.Size = new Size(155, 26);
             cmbMaxASPED.TabIndex = 54;
             // 
-            // lblTotalHp
+            // lblTotalSp
             // 
-            lblTotalHp.AutoSize = true;
-            lblTotalHp.BackColor = Color.Transparent;
-            lblTotalHp.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblTotalHp.ForeColor = Color.FromArgb(80, 80, 80);
-            lblTotalHp.Location = new Point(682, 53);
-            lblTotalHp.Name = "lblTotalHp";
-            lblTotalHp.Size = new Size(13, 19);
-            lblTotalHp.TabIndex = 60;
-            lblTotalHp.Text = ".";
+            lblTotalSp.AutoSize = true;
+            lblTotalSp.BackColor = Color.Transparent;
+            lblTotalSp.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblTotalSp.ForeColor = Color.FromArgb(80, 80, 80);
+            lblTotalSp.Location = new Point(682, 53);
+            lblTotalSp.Name = "lblTotalSp";
+            lblTotalSp.Size = new Size(13, 19);
+            lblTotalSp.TabIndex = 60;
+            lblTotalSp.Text = ".";
             // 
             // lblMaxASPED
             // 
@@ -472,17 +453,17 @@
             lblMaxASPED.TabIndex = 53;
             lblMaxASPED.Text = "MAX ASPED:";
             // 
-            // lblBaseHp
+            // lblTotalHP
             // 
-            lblBaseHp.AutoSize = true;
-            lblBaseHp.BackColor = Color.Transparent;
-            lblBaseHp.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblBaseHp.ForeColor = Color.FromArgb(80, 80, 80);
-            lblBaseHp.Location = new Point(549, 53);
-            lblBaseHp.Name = "lblBaseHp";
-            lblBaseHp.Size = new Size(13, 19);
-            lblBaseHp.TabIndex = 59;
-            lblBaseHp.Text = ".";
+            lblTotalHP.AutoSize = true;
+            lblTotalHP.BackColor = Color.Transparent;
+            lblTotalHP.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblTotalHP.ForeColor = Color.FromArgb(80, 80, 80);
+            lblTotalHP.Location = new Point(549, 53);
+            lblTotalHP.Name = "lblTotalHP";
+            lblTotalHP.Size = new Size(13, 19);
+            lblTotalHP.TabIndex = 59;
+            lblTotalHP.Text = ".";
             // 
             // lblSP
             // 
@@ -629,251 +610,6 @@
             lblUnknown8.TabIndex = 58;
             lblUnknown8.Text = "大丈夫ラコ？？";
             // 
-            // pnlBuff2
-            // 
-            pnlBuff2.BackColor = Color.Transparent;
-            pnlBuff2.BackgroundImage = Properties.Resources.welcome_section;
-            pnlBuff2.BackgroundImageLayout = ImageLayout.Stretch;
-            pnlBuff2.Controls.Add(lblBuff);
-            pnlBuff2.Controls.Add(ckbGloria);
-            pnlBuff2.Controls.Add(lblGloria);
-            pnlBuff2.Controls.Add(lblItems);
-            pnlBuff2.Controls.Add(aloneComboBox11);
-            pnlBuff2.Controls.Add(lblSpeedPotion);
-            pnlBuff2.Controls.Add(cmbWindWalk);
-            pnlBuff2.Controls.Add(lblWindWalk);
-            pnlBuff2.Controls.Add(cmbImpositioManus);
-            pnlBuff2.Controls.Add(lblImpositioManus);
-            pnlBuff2.Controls.Add(cmbAngelus);
-            pnlBuff2.Controls.Add(lblAngelus);
-            pnlBuff2.Controls.Add(cmbIncreaseAgi);
-            pnlBuff2.Controls.Add(lblIncreaseAgi);
-            pnlBuff2.Controls.Add(cmbBlessings);
-            pnlBuff2.Controls.Add(lblBlessings);
-            pnlBuff2.Controls.Add(lblBuffs);
-            pnlBuff2.Location = new Point(10, 234);
-            pnlBuff2.Margin = new Padding(3, 2, 3, 2);
-            pnlBuff2.Name = "pnlBuff2";
-            pnlBuff2.Size = new Size(1184, 76);
-            pnlBuff2.TabIndex = 4;
-            // 
-            // lblBuff
-            // 
-            lblBuff.AutoSize = true;
-            lblBuff.BackColor = Color.Transparent;
-            lblBuff.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
-            lblBuff.ForeColor = Color.FromArgb(80, 80, 80);
-            lblBuff.Location = new Point(60, 8);
-            lblBuff.Name = "lblBuff";
-            lblBuff.Size = new Size(34, 13);
-            lblBuff.TabIndex = 68;
-            lblBuff.Text = "ゲイ?";
-            // 
-            // ckbGloria
-            // 
-            ckbGloria.BackColor = Color.Transparent;
-            ckbGloria.Checked = false;
-            ckbGloria.EnabledCalc = true;
-            ckbGloria.ForeColor = Color.FromArgb(124, 133, 142);
-            ckbGloria.Location = new Point(956, 28);
-            ckbGloria.Margin = new Padding(3, 2, 3, 2);
-            ckbGloria.Name = "ckbGloria";
-            ckbGloria.Size = new Size(16, 17);
-            ckbGloria.TabIndex = 79;
-            ckbGloria.Text = "aloneCheckBox1";
-            // 
-            // lblGloria
-            // 
-            lblGloria.AutoSize = true;
-            lblGloria.BackColor = Color.Transparent;
-            lblGloria.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblGloria.ForeColor = Color.FromArgb(80, 80, 80);
-            lblGloria.Location = new Point(895, 25);
-            lblGloria.Name = "lblGloria";
-            lblGloria.Size = new Size(56, 19);
-            lblGloria.TabIndex = 78;
-            lblGloria.Text = "Gloria?";
-            // 
-            // lblItems
-            // 
-            lblItems.AutoSize = true;
-            lblItems.BackColor = Color.Transparent;
-            lblItems.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblItems.ForeColor = Color.FromArgb(80, 80, 80);
-            lblItems.Location = new Point(1119, 4);
-            lblItems.Name = "lblItems";
-            lblItems.Size = new Size(53, 19);
-            lblItems.TabIndex = 77;
-            lblItems.Text = "ITEMS:";
-            // 
-            // aloneComboBox11
-            // 
-            aloneComboBox11.DrawMode = DrawMode.OwnerDrawFixed;
-            aloneComboBox11.DropDownStyle = ComboBoxStyle.DropDownList;
-            aloneComboBox11.EnabledCalc = true;
-            aloneComboBox11.FormattingEnabled = true;
-            aloneComboBox11.ItemHeight = 20;
-            aloneComboBox11.Items.AddRange(new object[] { "-Potion Type-", "Concentration Potion", "Awakening Potion", "Berserk Potion" });
-            aloneComboBox11.Location = new Point(1039, 45);
-            aloneComboBox11.Margin = new Padding(3, 2, 3, 2);
-            aloneComboBox11.Name = "aloneComboBox11";
-            aloneComboBox11.Size = new Size(112, 26);
-            aloneComboBox11.TabIndex = 75;
-            // 
-            // lblSpeedPotion
-            // 
-            lblSpeedPotion.AutoSize = true;
-            lblSpeedPotion.BackColor = Color.Transparent;
-            lblSpeedPotion.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblSpeedPotion.ForeColor = Color.FromArgb(80, 80, 80);
-            lblSpeedPotion.Location = new Point(1039, 25);
-            lblSpeedPotion.Name = "lblSpeedPotion";
-            lblSpeedPotion.Size = new Size(103, 19);
-            lblSpeedPotion.TabIndex = 76;
-            lblSpeedPotion.Text = "Speed Potion:";
-            // 
-            // cmbWindWalk
-            // 
-            cmbWindWalk.DrawMode = DrawMode.OwnerDrawFixed;
-            cmbWindWalk.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbWindWalk.EnabledCalc = true;
-            cmbWindWalk.FormattingEnabled = true;
-            cmbWindWalk.ItemHeight = 20;
-            cmbWindWalk.Items.AddRange(new object[] { "-Level-", "Lvl 1", "Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl 6", "Lvl 7", "Lvl 8", "Lvl 9", "Lvl 10" });
-            cmbWindWalk.Location = new Point(737, 45);
-            cmbWindWalk.Margin = new Padding(3, 2, 3, 2);
-            cmbWindWalk.Name = "cmbWindWalk";
-            cmbWindWalk.Size = new Size(67, 26);
-            cmbWindWalk.TabIndex = 73;
-            // 
-            // lblWindWalk
-            // 
-            lblWindWalk.AutoSize = true;
-            lblWindWalk.BackColor = Color.Transparent;
-            lblWindWalk.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblWindWalk.ForeColor = Color.FromArgb(80, 80, 80);
-            lblWindWalk.Location = new Point(737, 25);
-            lblWindWalk.Name = "lblWindWalk";
-            lblWindWalk.Size = new Size(86, 19);
-            lblWindWalk.TabIndex = 74;
-            lblWindWalk.Text = "Wind Walk:";
-            // 
-            // cmbImpositioManus
-            // 
-            cmbImpositioManus.DrawMode = DrawMode.OwnerDrawFixed;
-            cmbImpositioManus.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbImpositioManus.EnabledCalc = true;
-            cmbImpositioManus.FormattingEnabled = true;
-            cmbImpositioManus.ItemHeight = 20;
-            cmbImpositioManus.Items.AddRange(new object[] { "-Level-", "Lvl 1", "Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl 6", "Lvl 7", "Lvl 8", "Lvl 9", "Lvl 10" });
-            cmbImpositioManus.Location = new Point(536, 45);
-            cmbImpositioManus.Margin = new Padding(3, 2, 3, 2);
-            cmbImpositioManus.Name = "cmbImpositioManus";
-            cmbImpositioManus.Size = new Size(64, 26);
-            cmbImpositioManus.TabIndex = 71;
-            // 
-            // lblImpositioManus
-            // 
-            lblImpositioManus.AutoSize = true;
-            lblImpositioManus.BackColor = Color.Transparent;
-            lblImpositioManus.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblImpositioManus.ForeColor = Color.FromArgb(80, 80, 80);
-            lblImpositioManus.Location = new Point(532, 25);
-            lblImpositioManus.Name = "lblImpositioManus";
-            lblImpositioManus.Size = new Size(123, 19);
-            lblImpositioManus.TabIndex = 72;
-            lblImpositioManus.Text = "Impositio Manus:";
-            // 
-            // cmbAngelus
-            // 
-            cmbAngelus.DrawMode = DrawMode.OwnerDrawFixed;
-            cmbAngelus.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbAngelus.EnabledCalc = true;
-            cmbAngelus.FormattingEnabled = true;
-            cmbAngelus.ItemHeight = 20;
-            cmbAngelus.Items.AddRange(new object[] { "-Level-", "Lvl 1", "Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl 6", "Lvl 7", "Lvl 8", "Lvl 9", "Lvl 10" });
-            cmbAngelus.Location = new Point(382, 45);
-            cmbAngelus.Margin = new Padding(3, 2, 3, 2);
-            cmbAngelus.Name = "cmbAngelus";
-            cmbAngelus.Size = new Size(64, 26);
-            cmbAngelus.TabIndex = 69;
-            // 
-            // lblAngelus
-            // 
-            lblAngelus.AutoSize = true;
-            lblAngelus.BackColor = Color.Transparent;
-            lblAngelus.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblAngelus.ForeColor = Color.FromArgb(80, 80, 80);
-            lblAngelus.Location = new Point(382, 25);
-            lblAngelus.Name = "lblAngelus";
-            lblAngelus.Size = new Size(66, 19);
-            lblAngelus.TabIndex = 70;
-            lblAngelus.Text = "Angelus:";
-            // 
-            // cmbIncreaseAgi
-            // 
-            cmbIncreaseAgi.DrawMode = DrawMode.OwnerDrawFixed;
-            cmbIncreaseAgi.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbIncreaseAgi.EnabledCalc = true;
-            cmbIncreaseAgi.FormattingEnabled = true;
-            cmbIncreaseAgi.ItemHeight = 20;
-            cmbIncreaseAgi.Items.AddRange(new object[] { "-Level-", "Lvl 1", "Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl 6", "Lvl 7", "Lvl 8", "Lvl 9", "Lvl 10" });
-            cmbIncreaseAgi.Location = new Point(210, 45);
-            cmbIncreaseAgi.Margin = new Padding(3, 2, 3, 2);
-            cmbIncreaseAgi.Name = "cmbIncreaseAgi";
-            cmbIncreaseAgi.Size = new Size(64, 26);
-            cmbIncreaseAgi.TabIndex = 67;
-            // 
-            // lblIncreaseAgi
-            // 
-            lblIncreaseAgi.AutoSize = true;
-            lblIncreaseAgi.BackColor = Color.Transparent;
-            lblIncreaseAgi.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblIncreaseAgi.ForeColor = Color.FromArgb(80, 80, 80);
-            lblIncreaseAgi.Location = new Point(210, 25);
-            lblIncreaseAgi.Name = "lblIncreaseAgi";
-            lblIncreaseAgi.Size = new Size(95, 19);
-            lblIncreaseAgi.TabIndex = 68;
-            lblIncreaseAgi.Text = "Increase Agi:";
-            // 
-            // cmbBlessings
-            // 
-            cmbBlessings.DrawMode = DrawMode.OwnerDrawFixed;
-            cmbBlessings.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbBlessings.EnabledCalc = true;
-            cmbBlessings.FormattingEnabled = true;
-            cmbBlessings.ItemHeight = 20;
-            cmbBlessings.Items.AddRange(new object[] { "-Level-", "Lvl 1", "Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl 6", "Lvl 7", "Lvl 8", "Lvl 9", "Lvl 10" });
-            cmbBlessings.Location = new Point(71, 45);
-            cmbBlessings.Margin = new Padding(3, 2, 3, 2);
-            cmbBlessings.Name = "cmbBlessings";
-            cmbBlessings.Size = new Size(64, 26);
-            cmbBlessings.TabIndex = 65;
-            // 
-            // lblBlessings
-            // 
-            lblBlessings.AutoSize = true;
-            lblBlessings.BackColor = Color.Transparent;
-            lblBlessings.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblBlessings.ForeColor = Color.FromArgb(80, 80, 80);
-            lblBlessings.Location = new Point(71, 25);
-            lblBlessings.Name = "lblBlessings";
-            lblBlessings.Size = new Size(67, 19);
-            lblBlessings.TabIndex = 66;
-            lblBlessings.Text = "Blessing:";
-            // 
-            // lblBuffs
-            // 
-            lblBuffs.AutoSize = true;
-            lblBuffs.BackColor = Color.Transparent;
-            lblBuffs.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblBuffs.ForeColor = Color.FromArgb(80, 80, 80);
-            lblBuffs.Location = new Point(9, 4);
-            lblBuffs.Name = "lblBuffs";
-            lblBuffs.Size = new Size(54, 19);
-            lblBuffs.TabIndex = 65;
-            lblBuffs.Text = "BUFFS:";
-            // 
             // pnlStatusSimulatorControls
             // 
             pnlStatusSimulatorControls.BackColor = Color.Transparent;
@@ -950,7 +686,7 @@
             pnlStatusSimulatorControls.Controls.Add(pnlPtsReq);
             pnlStatusSimulatorControls.Controls.Add(pnlStats);
             pnlStatusSimulatorControls.Controls.Add(pbJobs);
-            pnlStatusSimulatorControls.Location = new Point(10, 314);
+            pnlStatusSimulatorControls.Location = new Point(12, 243);
             pnlStatusSimulatorControls.Margin = new Padding(3, 2, 3, 2);
             pnlStatusSimulatorControls.Name = "pnlStatusSimulatorControls";
             pnlStatusSimulatorControls.Size = new Size(1184, 404);
@@ -2433,12 +2169,10 @@
             AllowDrop = true;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoScroll = true;
             BackColor = SystemColors.ActiveBorder;
             BackgroundImage = Properties.Resources.bgbgbg;
-            ClientSize = new Size(1205, 788);
+            ClientSize = new Size(1205, 667);
             Controls.Add(pnlStatusSimulatorControls);
-            Controls.Add(pnlBuff2);
             Controls.Add(pnlBuffs);
             Controls.Add(lblUnknown8);
             FormBorderStyle = FormBorderStyle.None;
@@ -2448,8 +2182,6 @@
             Text = "StatSimForm";
             pnlBuffs.ResumeLayout(false);
             pnlBuffs.PerformLayout();
-            pnlBuff2.ResumeLayout(false);
-            pnlBuff2.PerformLayout();
             pnlStatusSimulatorControls.ResumeLayout(false);
             pnlStatusSimulatorControls.PerformLayout();
             pnlCharacterInfo.ResumeLayout(false);
@@ -2534,7 +2266,6 @@
         #endregion
 
         private Panel pnlBuffs;
-        private Panel pnlBuff2;
         private Panel pnlStatusSimulatorControls;
         private ReaLTaiizor.Controls.HopePictureBox pbJobs;
         private Panel pnlStatusInformation;
@@ -2626,40 +2357,23 @@
         private ReaLTaiizor.Controls.BigLabel lblJobTitle;
         private ReaLTaiizor.Controls.BigLabel lblJob;
         private ReaLTaiizor.Controls.BigLabel lblSpRegen;
-        private ReaLTaiizor.Controls.BigLabel lblNatHp;
+        private ReaLTaiizor.Controls.BigLabel lblHpRegen;
         private ReaLTaiizor.Controls.BigLabel lnlNatSpRegen;
         private ReaLTaiizor.Controls.BigLabel lblNatHpRegen;
-        private ReaLTaiizor.Controls.BigLabel lblTotalHp;
-        private ReaLTaiizor.Controls.BigLabel lblBaseHp;
+        private ReaLTaiizor.Controls.BigLabel lblTotalSp;
+        private ReaLTaiizor.Controls.BigLabel lblTotalHP;
         private ReaLTaiizor.Controls.BigLabel lblSP;
         private ReaLTaiizor.Controls.BigLabel lblHP;
         private ReaLTaiizor.Controls.AloneComboBox cmbMaxASPED;
         private ReaLTaiizor.Controls.BigLabel lblMaxASPED;
         private ReaLTaiizor.Controls.AloneComboBox cmbMaxHP;
         private ReaLTaiizor.Controls.BigLabel lblMaxHP;
-        private ReaLTaiizor.Controls.AloneComboBox cmbWindWalk;
-        private ReaLTaiizor.Controls.BigLabel lblWindWalk;
-        private ReaLTaiizor.Controls.AloneComboBox cmbImpositioManus;
-        private ReaLTaiizor.Controls.BigLabel lblImpositioManus;
-        private ReaLTaiizor.Controls.AloneComboBox cmbAngelus;
-        private ReaLTaiizor.Controls.BigLabel lblAngelus;
-        private ReaLTaiizor.Controls.AloneComboBox cmbIncreaseAgi;
-        private ReaLTaiizor.Controls.BigLabel lblIncreaseAgi;
-        private ReaLTaiizor.Controls.AloneComboBox cmbBlessings;
-        private ReaLTaiizor.Controls.BigLabel lblBlessings;
-        private ReaLTaiizor.Controls.BigLabel lblBuffs;
-        private ReaLTaiizor.Controls.BigLabel lblGloria;
-        private ReaLTaiizor.Controls.BigLabel lblItems;
-        private ReaLTaiizor.Controls.AloneComboBox aloneComboBox11;
-        private ReaLTaiizor.Controls.BigLabel lblSpeedPotion;
-        private ReaLTaiizor.Controls.AloneCheckBox ckbGloria;
         private ReaLTaiizor.Controls.BigLabel lblUnknown8;
         private ReaLTaiizor.Controls.BigLabel lblUnknown4;
         private ReaLTaiizor.Controls.BigLabel lblUnknown6;
         private ReaLTaiizor.Controls.BigLabel lblUnknown3;
         private ReaLTaiizor.Controls.BigLabel lblUnknown2;
         private ReaLTaiizor.Controls.BigLabel lblUnknown1;
-        private ReaLTaiizor.Controls.BigLabel lblBuff;
         private ReaLTaiizor.Controls.BigLabel lblUnknown5;
         public ReaLTaiizor.Controls.AloneTextBox txtLUK;
         public ReaLTaiizor.Controls.AloneTextBox txtDEX;
