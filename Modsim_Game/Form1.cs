@@ -1,3 +1,5 @@
+using System.Reflection.Metadata;
+using System.Security.Policy;
 using System.Text.RegularExpressions;
 using System.Windows.Input;
 
@@ -15,18 +17,15 @@ namespace Modsim_Game
             txtDEX.TB.BackColor = Color.White;
             txtINT.TB.BackColor = Color.White;
             txtBaseLevel.TB.BackColor = Color.White;
-            BaseStats();
 
+            BaseStats();
             lblFLEE2.Text = "1";
             lblMDEFValue2.Text = "1";
             lblValueDEF1.Text = "0";
             lblAtk2.Text = "0";
             lblMDEFValue1.Text = "0";
 
-
-
         }
-
         void BaseStats()
         {
             txtSTR.Text = "1";
@@ -37,7 +36,6 @@ namespace Modsim_Game
             txtLUK.Text = "1";
             txtBaseLevel.Text = "1";
         }
-
         private void UpdateAllStats()
         {
             // 1. Parse all inputs (Default to 0 if invalid or empty)
@@ -96,13 +94,19 @@ namespace Modsim_Game
             int meleeBonusFromDex = dex / 5;
             double castReduction = Math.Min(100, (dex / 150.0) * 100);
 
-            // --- AGI & ASPD ---
-            int totalFlee = 2 + agi;
-            double aspdPercentReduction = (agi * 0.4) + (dex * 0.1);
-            double totalAspd = 150 + (150 * (aspdPercentReduction / 100));
+            // --- AGI & ASPD (Updated for Weapon Selection) ---
+            int totalFlee = 2 + agi; // Base 2 + 1 per AGI
+
+            // Every 5 AGI provides +1 ASPD
+            int aspdBonus = agi / 5;
+
+            // Calculate total using the dynamic weapon base
+            double totalAspd = weaponBaseASPD + aspdBonus;
+
+            lblASPD.Text = Math.Floor(totalAspd).ToString();
 
             // --- LUK ---
-            double critRate = (luk * 0.3) + 1;
+            string critRate = $"{(luk * 0.3) + 1:F0}" ;
             double perfectDodge = luk * 0.1;
             int meleeBonusFromLuk = luk / 5;
 
@@ -497,6 +501,27 @@ namespace Modsim_Game
             int nextStr = currentStr - 1;
             txtDEX.Text = nextStr.ToString();
         }
+        int weaponBaseASPD = 150;
+        private void cmbWeapon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Use SelectedItem or Text to check the value
+            if (cmbWeapon.Text == "Hand")
+            {
+                weaponBaseASPD = 150;
+            }
+            else if (cmbWeapon.Text == "Dagger")
+            {
+                weaponBaseASPD = 135;
+            }
+            UpdateAllStats();
 
+
+            //One - Handed - Sword
+            //One - Handed - Axe
+            //One - Handed - Mace
+            //Two - Handed - Mace
+            //Rod & Staff
+            //Two - Handed - Staff
+        }
     }
 }
