@@ -185,7 +185,7 @@ namespace Modsim_Game
             switch (selectedGif)
             {
                 case "Novice":
-                    pbJobs.Image = Properties.Resources.GIF_0ne;
+                    pbJobs.Image = Properties.Resources.gifFinal;
                     lblJobTitle.Text = selectedGif;
                     int weight = Convert.ToInt32(lblWeight.Text);
                     weight = 2030;

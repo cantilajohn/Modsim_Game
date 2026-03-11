@@ -83,9 +83,49 @@ namespace Modsim_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bgFinal {
+            get {
+                object obj = ResourceManager.GetObject("bgFinal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bgForCharacter {
+            get {
+                object obj = ResourceManager.GetObject("bgForCharacter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap GIF_0ne {
             get {
                 object obj = ResourceManager.GetObject("GIF_0ne", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gifFinal {
+            get {
+                object obj = ResourceManager.GetObject("gifFinal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iRO_Wiki_Guard {
+            get {
+                object obj = ResourceManager.GetObject("iRO_Wiki_Guard", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +176,26 @@ namespace Modsim_Game.Properties {
         internal static System.Drawing.Bitmap novice {
             get {
                 object obj = ResourceManager.GetObject("novice", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Novice3 {
+            get {
+                object obj = ResourceManager.GetObject("Novice3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap noviceGif {
+            get {
+                object obj = ResourceManager.GetObject("noviceGif", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
