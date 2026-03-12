@@ -106,7 +106,7 @@ namespace Modsim_Game
             lblASPD.Text = Math.Floor(totalAspd).ToString();
 
             // --- LUK ---
-            string critRate = $"{(luk * 0.3) + 1:F0}" ;
+            string critRate = $"{(luk * 0.3) + 1:F0}";
             double perfectDodge = luk * 0.1;
             int meleeBonusFromLuk = luk / 5;
 
@@ -189,43 +189,36 @@ namespace Modsim_Game
             switch (selectedGif)
             {
                 case "Novice":
-                    pbJobs.Image = Properties.Resources.gifFinal;
+                    pbJobs.Image = Properties.Resources.noviceRagnarok;
                     lblJobTitle.Text = selectedGif;
                     int weight = Convert.ToInt32(lblWeight.Text);
                     weight = 2030;
                     break;
                 case "Swordsman":
-                    pbJobs.Image = Properties.Resources.swordsman;
+                    pbJobs.Image = Properties.Resources.swordmanRagnarok;
                     lblJobTitle.Text = selectedGif;
                     break;
                 case "Magician":
-                    pbJobs.Image = Properties.Resources.magician2;
+                    pbJobs.Image = Properties.Resources.magicianRagnarok;
                     lblJobTitle.Text = selectedGif;
                     break;
                 case "Archer":
-                    pbJobs.Image = Properties.Resources.archer;
+                    pbJobs.Image = Properties.Resources.archerRagnarok;
                     lblJobTitle.Text = selectedGif;
                     break;
                 case "Acolyte":
-                    pbJobs.Image = Properties.Resources.magician;
+                    pbJobs.Image = Properties.Resources.AcolyteRagnarok;
                     lblJobTitle.Text = selectedGif;
                     break;
                 case "Merchant":
-                    pbJobs.Image = Properties.Resources.merchant;
+                    pbJobs.Image = Properties.Resources.merchantRagnarok;
                     lblJobTitle.Text = selectedGif;
                     break;
                 case "Thieft":
-                    pbJobs.Image = Properties.Resources.thieft;
+                    pbJobs.Image = Properties.Resources.thiefRagnarok;
                     lblJobTitle.Text = selectedGif;
                     break;
-                case "Knight":
-                    pbJobs.Image = Properties.Resources.knight;
-                    lblJobTitle.Text = selectedGif;
-                    break;
-                case "Priest":
-                    pbJobs.Image = Properties.Resources.knight;
-                    lblJobTitle.Text = selectedGif;
-                    break;
+
 
             }
         }

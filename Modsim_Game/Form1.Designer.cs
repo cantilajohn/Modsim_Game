@@ -273,7 +273,7 @@
             lblUnknown5.ForeColor = Color.FromArgb(80, 80, 80);
             lblUnknown5.Location = new Point(459, 56);
             lblUnknown5.Name = "lblUnknown5";
-            lblUnknown5.Size = new Size(33, 13);
+            lblUnknown5.Size = new Size(34, 13);
             lblUnknown5.TabIndex = 80;
             lblUnknown5.Text = "ゲイ?";
             // 
@@ -297,7 +297,7 @@
             lblUnknown4.ForeColor = Color.Black;
             lblUnknown4.Location = new Point(1001, 0);
             lblUnknown4.Name = "lblUnknown4";
-            lblUnknown4.Size = new Size(97, 25);
+            lblUnknown4.Size = new Size(103, 25);
             lblUnknown4.TabIndex = 57;
             lblUnknown4.Text = "わさあっぷっ";
             // 
@@ -498,7 +498,7 @@
             cmbSelectJob.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             cmbSelectJob.FormattingEnabled = true;
             cmbSelectJob.ItemHeight = 20;
-            cmbSelectJob.Items.AddRange(new object[] { "-SELECT JOB-", "Novice", "Swordsman", "Magician", "Archer", "Acolyte", "Merchant", "Thieft", "Knight", "Priest" });
+            cmbSelectJob.Items.AddRange(new object[] { "-SELECT JOB-", "Novice", "Swordsman", "Magician", "Archer", "Acolyte", "Merchant", "Thieft" });
             cmbSelectJob.Location = new Point(145, 20);
             cmbSelectJob.Margin = new Padding(3, 2, 3, 2);
             cmbSelectJob.Name = "cmbSelectJob";
@@ -606,7 +606,7 @@
             lblUnknown8.ForeColor = Color.White;
             lblUnknown8.Location = new Point(1078, 9);
             lblUnknown8.Name = "lblUnknown8";
-            lblUnknown8.Size = new Size(133, 25);
+            lblUnknown8.Size = new Size(140, 25);
             lblUnknown8.TabIndex = 58;
             lblUnknown8.Text = "大丈夫ラコ？？";
             // 
@@ -700,7 +700,7 @@
             lblUnknown7.ForeColor = Color.FromArgb(80, 80, 80);
             lblUnknown7.Location = new Point(52, 10);
             lblUnknown7.Name = "lblUnknown7";
-            lblUnknown7.Size = new Size(70, 13);
+            lblUnknown7.Size = new Size(75, 13);
             lblUnknown7.TabIndex = 86;
             lblUnknown7.Text = "武器の種類";
             // 
@@ -1088,7 +1088,7 @@
             lblUnknown6.ForeColor = Color.FromArgb(80, 80, 80);
             lblUnknown6.Location = new Point(948, 300);
             lblUnknown6.Name = "lblUnknown6";
-            lblUnknown6.Size = new Size(70, 13);
+            lblUnknown6.Size = new Size(75, 13);
             lblUnknown6.TabIndex = 68;
             lblUnknown6.Text = "武器の種類";
             // 
