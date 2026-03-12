@@ -63,6 +63,9 @@ namespace Modsim_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap aaaaaaa {
+            get {
+                object obj = ResourceManager.GetObject("aaaaaaa", resourceCulture);
         internal static System.Drawing.Bitmap AcolyteRagnarok {
             get {
                 object obj = ResourceManager.GetObject("AcolyteRagnarok", resourceCulture);
