@@ -495,7 +495,7 @@
             cmbSelectJob.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             cmbSelectJob.FormattingEnabled = true;
             cmbSelectJob.ItemHeight = 20;
-            cmbSelectJob.Items.AddRange(new object[] { "-SELECT JOB-", "Novice", "Swordsman", "Magician", "Archer", "Acolyte", "Merchant", "Thieft" });
+            cmbSelectJob.Items.AddRange(new object[] { "-SELECT JOB-", "Novice", "Swordsman", "Magician", "Archer", "Acolyte", "Merchant", "Thief" });
             cmbSelectJob.Location = new Point(166, 27);
             cmbSelectJob.Name = "cmbSelectJob";
             cmbSelectJob.Size = new Size(177, 26);

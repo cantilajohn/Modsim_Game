@@ -227,35 +227,42 @@ namespace Modsim_Game
             switch (selectedJob)
             {
                 case "Novice":
+                    pbJobs.Image = Properties.Resources.noviceRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "One-Handed-Sword", "One-Handed-Axe", "One-Handed-Mace", "Two-Handed-Mace", "Rod&Staff", "Two-Handed-Staff" });
                     jobBaseWeight = 2000; jobBaseSP = 11; 
                     break;
 
                 case "Swordsman":
+                    pbJobs.Image = Properties.Resources.swordmanRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "One-Handed-Sword", "Two-Handed-Sword", "One-Handed-Spear", "Two-Handed-Spear", "One-Handed-Axe", "Two-Handed-Axe", "One-Handed-Mace", "Two-Handed-Mace" });
                     jobBaseWeight = 2800; jobBaseSP = 10;  
                     break;
                 
                 case "Magician":
+                    pbJobs.Image = Properties.Resources.magicianRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "Rod&Staff", "Two-Handed-Staff" });
                     jobBaseWeight = 2200; jobBaseSP = 15;  
                     break;
                 case "Archer":
+                    pbJobs.Image = Properties.Resources.archerRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "Bow" });
                     jobBaseWeight = 2330; jobBaseSP = 12;  
                     break;
 
                 case "Acolyte":
+                    pbJobs.Image = Properties.Resources.AcolyteRagnarok2;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "One-Handed-Mace", "Two-Handed-Mace", "Rod&Staff", "Two-Handed-Staff" });
                     jobBaseWeight = 2200; jobBaseSP = 14;  
                     break;
 
                 case "Merchant":
+                    pbJobs.Image = Properties.Resources.merchantRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "One-Handed-Sword", "One-Handed-Axe", "Two-Handed-Axe", "One-Handed-Mace", "Two-Handed-Mace" });
                     jobBaseWeight = 2500; jobBaseSP = 12;  
                     break;
 
                 case "Thief":
+                    pbJobs.Image = Properties.Resources.thiefRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "One-Handed-Sword", "One-Handed-Axe", "Bow" });
                     jobBaseWeight = 2400; jobBaseSP = 14;  
                     break;
