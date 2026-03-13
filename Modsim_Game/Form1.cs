@@ -128,11 +128,18 @@ namespace Modsim_Game
             // Melee Bonus: +1 ATK every 5 LUK
             int meleeBonusFromLuk = luk / 5;
 
-            // --- VIT & HP ---
-            // Linear HP: Starting 40 at Level 1, +5 per level increment
-            double baseHP = 40 + ((baseLevel - 1) * 5);
-            // Apply VIT bonus: +1% per point
-            double totalHp = baseHP * (1 + (vit * 0.01));
+            // --- The Calculation ---
+            double levelFactor = baseLevel - 1;
+
+            // Formula: Base + Linear Growth + Quadratic Curve
+            double baseHP = 40 + (levelFactor * baseHpIncrement) + (hpGainMultiplier * Math.Pow(levelFactor, 2));
+
+            // Cast to int to match the spreadsheet steps
+            int finalBaseHP = (int)Math.Floor(baseHP);
+
+            // Apply VIT Bonus (1% per point)
+            double totalHp = finalBaseHP * (1 + (vit * 0.01));
+
             // HP regen: +1 base, +1 per 5 VIT
             int hpRegen = 1 + (vit / 5);
 
@@ -216,6 +223,8 @@ namespace Modsim_Game
         int jobBaseSP = 11; // Base SP at Level 1
         int jobASPDModifier = 0; //bonus based on the Class
         int weaponBaseASPD = 100; // Default base ASPD 
+        double hpGainMultiplier = 0;
+        int baseHpIncrement = 5; // The standard gain   
         private void aloneComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbSelectJob.SelectedItem == null) return;
@@ -229,42 +238,56 @@ namespace Modsim_Game
                 case "Novice":
                     pbJobs.Image = Properties.Resources.noviceRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "One-Handed-Sword", "One-Handed-Axe", "One-Handed-Mace", "Two-Handed-Mace", "Rod&Staff", "Two-Handed-Staff" });
-                    jobBaseWeight = 2000; jobBaseSP = 11; 
+                    jobBaseWeight = 2000; jobBaseSP = 11;
+                    hpGainMultiplier = 0;
+                    baseHpIncrement = 5;
                     break;
 
                 case "Swordsman":
                     pbJobs.Image = Properties.Resources.swordmanRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "One-Handed-Sword", "Two-Handed-Sword", "One-Handed-Spear", "Two-Handed-Spear", "One-Handed-Axe", "Two-Handed-Axe", "One-Handed-Mace", "Two-Handed-Mace" });
-                    jobBaseWeight = 2800; jobBaseSP = 10;  
+                    jobBaseWeight = 2800; jobBaseSP = 10;
+                    hpGainMultiplier = 0.36;
+                    baseHpIncrement = 5;
                     break;
                 
                 case "Magician":
                     pbJobs.Image = Properties.Resources.magicianRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "Rod&Staff", "Two-Handed-Staff" });
-                    jobBaseWeight = 2200; jobBaseSP = 15;  
+                    jobBaseWeight = 2200; jobBaseSP = 15;
+                    hpGainMultiplier = 0.155;
+                    baseHpIncrement = 5;
                     break;
                 case "Archer":
                     pbJobs.Image = Properties.Resources.archerRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "Bow" });
-                    jobBaseWeight = 2330; jobBaseSP = 12;  
+                    jobBaseWeight = 2330; jobBaseSP = 12;
+                    hpGainMultiplier = 0.26;
+                    baseHpIncrement = 5;
                     break;
 
                 case "Acolyte":
                     pbJobs.Image = Properties.Resources.AcolyteRagnarok2;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "One-Handed-Mace", "Two-Handed-Mace", "Rod&Staff", "Two-Handed-Staff" });
-                    jobBaseWeight = 2200; jobBaseSP = 14;  
+                    jobBaseWeight = 2200; jobBaseSP = 14;
+                    hpGainMultiplier = 0.206;
+                    baseHpIncrement = 5;
                     break;
 
                 case "Merchant":
                     pbJobs.Image = Properties.Resources.merchantRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "One-Handed-Sword", "One-Handed-Axe", "Two-Handed-Axe", "One-Handed-Mace", "Two-Handed-Mace" });
-                    jobBaseWeight = 2500; jobBaseSP = 12;  
+                    jobBaseWeight = 2500; jobBaseSP = 12;
+                    hpGainMultiplier = 0.206;
+                    baseHpIncrement = 5;
                     break;
 
                 case "Thief":
                     pbJobs.Image = Properties.Resources.thiefRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "One-Handed-Sword", "One-Handed-Axe", "Bow" });
-                    jobBaseWeight = 2400; jobBaseSP = 14;  
+                    jobBaseWeight = 2400; jobBaseSP = 14;
+                    hpGainMultiplier = 0.26;
+                    baseHpIncrement = 5;
                     break;
 
                     // Add other cases (Magician, Archer, etc.)
@@ -294,6 +317,8 @@ namespace Modsim_Game
                  // THIEF
                 { ("Thief", "Hand"), 160 }, { ("Thief", "Dagger"), 150 }, { ("Thief", "One-Handed-Sword"), 135 }, { ("Thief", "One-Handed-Axe"), 120 }, { ("Thief", "Bow"), 120 },
         };
+
+
 
         private void cmbWeapon_SelectedIndexChanged(object sender, EventArgs e)
         {
