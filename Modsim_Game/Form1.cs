@@ -116,14 +116,21 @@ namespace Modsim_Game
             // --- FINAL UI UPDATE ---
             lblTotalHP.Text = Math.Floor(totalHp).ToString();
             lblTotalSp.Text = MAX_SP.ToString();
+            // --- DEF AND MDEF ---
+
+            int def = vit;
+            int mdef = intel;
+
+            lblValueDEF2.Text = def.ToString();
+            lblMDEFValue2.Text = mdef.ToString();
 
             lblAtk1.Text = (totalStrDamage + (dex / 5) + (luk / 5)).ToString();
             lblWeight.Text = totalWeightLimit.ToString();
             lblHit.Text = dex.ToString();
             lblRangedAtk.Text = (dex + (int)Math.Pow(dex / 10, 2)).ToString();
             lblCastReduction.Text = $"{castReduction:F1}%";
-            lblValueDEF2.Text = Math.Max(1, Math.Floor(softDef)).ToString();
-            lblHpRegen.Text = (1 + (vit / 5)).ToString();
+/*            lblValueDEF2.Text = Math.Max(1, Math.Floor(softDef)).ToString();
+*/            lblHpRegen.Text = (1 + (vit / 5)).ToString();
             lblSpRegen.Text = (1 + (intel / 6)).ToString();
             lblMinMatk1.Text = (intel + (int)Math.Pow(intel / 7, 2)).ToString();
             lblMinMatk2.Text = (intel + (int)Math.Pow(intel / 5, 2)).ToString();
