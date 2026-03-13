@@ -173,6 +173,20 @@
             pnlStats = new Panel();
             lblSTATS = new ReaLTaiizor.Controls.BigLabel();
             pbJobs = new ReaLTaiizor.Controls.HopePictureBox();
+            panel1 = new Panel();
+            lblJobBonus7 = new ReaLTaiizor.Controls.BigLabel();
+            panel2 = new Panel();
+            lblJobBonus3 = new ReaLTaiizor.Controls.BigLabel();
+            panel3 = new Panel();
+            lblJobBonus6 = new ReaLTaiizor.Controls.BigLabel();
+            panel4 = new Panel();
+            lblJobBonus2 = new ReaLTaiizor.Controls.BigLabel();
+            panel5 = new Panel();
+            lblJobBonus4 = new ReaLTaiizor.Controls.BigLabel();
+            panel6 = new Panel();
+            lblJobBonus1 = new ReaLTaiizor.Controls.BigLabel();
+            panel7 = new Panel();
+            lblJobBonusTitle = new ReaLTaiizor.Controls.BigLabel();
             pnlBuffs.SuspendLayout();
             pnlStatusSimulatorControls.SuspendLayout();
             pnlCharacterInfo.SuspendLayout();
@@ -213,6 +227,13 @@
             pnlPtsReq.SuspendLayout();
             pnlStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbJobs).BeginInit();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
+            panel4.SuspendLayout();
+            panel5.SuspendLayout();
+            panel6.SuspendLayout();
+            panel7.SuspendLayout();
             SuspendLayout();
             // 
             // pnlBuffs
@@ -247,10 +268,10 @@
             pnlBuffs.Controls.Add(lblBaseLevel);
             pnlBuffs.Controls.Add(lblJobTitle);
             pnlBuffs.Controls.Add(lblJob);
-            pnlBuffs.Location = new Point(10, 142);
+            pnlBuffs.Location = new Point(10, 127);
             pnlBuffs.Margin = new Padding(3, 2, 3, 2);
             pnlBuffs.Name = "pnlBuffs";
-            pnlBuffs.Size = new Size(1184, 87);
+            pnlBuffs.Size = new Size(1309, 102);
             pnlBuffs.TabIndex = 3;
             // 
             // lblWeight
@@ -259,7 +280,7 @@
             lblWeight.BackColor = Color.Transparent;
             lblWeight.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblWeight.ForeColor = Color.Black;
-            lblWeight.Location = new Point(1086, 25);
+            lblWeight.Location = new Point(1133, 37);
             lblWeight.Name = "lblWeight";
             lblWeight.Size = new Size(17, 19);
             lblWeight.TabIndex = 81;
@@ -271,7 +292,7 @@
             lblUnknown5.BackColor = Color.Transparent;
             lblUnknown5.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblUnknown5.ForeColor = Color.FromArgb(80, 80, 80);
-            lblUnknown5.Location = new Point(459, 56);
+            lblUnknown5.Location = new Point(510, 61);
             lblUnknown5.Name = "lblUnknown5";
             lblUnknown5.Size = new Size(33, 13);
             lblUnknown5.TabIndex = 80;
@@ -283,7 +304,7 @@
             lblWeightTitle.BackColor = Color.Transparent;
             lblWeightTitle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblWeightTitle.ForeColor = Color.Black;
-            lblWeightTitle.Location = new Point(989, 26);
+            lblWeightTitle.Location = new Point(1036, 38);
             lblWeightTitle.Name = "lblWeightTitle";
             lblWeightTitle.Size = new Size(67, 19);
             lblWeightTitle.TabIndex = 80;
@@ -295,7 +316,7 @@
             lblUnknown4.BackColor = Color.Transparent;
             lblUnknown4.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblUnknown4.ForeColor = Color.Black;
-            lblUnknown4.Location = new Point(1001, 0);
+            lblUnknown4.Location = new Point(1046, 7);
             lblUnknown4.Name = "lblUnknown4";
             lblUnknown4.Size = new Size(97, 25);
             lblUnknown4.TabIndex = 57;
@@ -319,7 +340,7 @@
             lblUnknown3.BackColor = Color.Transparent;
             lblUnknown3.Font = new Font("Segoe UI", 6F, FontStyle.Bold);
             lblUnknown3.ForeColor = Color.Black;
-            lblUnknown3.Location = new Point(842, 7);
+            lblUnknown3.Location = new Point(878, 7);
             lblUnknown3.Name = "lblUnknown3";
             lblUnknown3.Size = new Size(34, 11);
             lblUnknown3.TabIndex = 65;
@@ -331,7 +352,7 @@
             lblUnknown2.BackColor = Color.Transparent;
             lblUnknown2.Font = new Font("Segoe UI", 6F, FontStyle.Bold);
             lblUnknown2.ForeColor = Color.Black;
-            lblUnknown2.Location = new Point(567, 6);
+            lblUnknown2.Location = new Point(616, 6);
             lblUnknown2.Name = "lblUnknown2";
             lblUnknown2.Size = new Size(41, 11);
             lblUnknown2.TabIndex = 66;
@@ -347,7 +368,7 @@
             cmbMaxHP.FormattingEnabled = true;
             cmbMaxHP.ItemHeight = 20;
             cmbMaxHP.Items.AddRange(new object[] { "none", "1000000", "2000000", "3000000", "4000000", "5000000", "6000000", "7000000", "8000000", "9000000", "10000000" });
-            cmbMaxHP.Location = new Point(776, 20);
+            cmbMaxHP.Location = new Point(814, 25);
             cmbMaxHP.Margin = new Padding(3, 2, 3, 2);
             cmbMaxHP.Name = "cmbMaxHP";
             cmbMaxHP.Size = new Size(101, 26);
@@ -359,7 +380,7 @@
             lblSpRegen.BackColor = Color.Transparent;
             lblSpRegen.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblSpRegen.ForeColor = Color.FromArgb(80, 80, 80);
-            lblSpRegen.Location = new Point(931, 52);
+            lblSpRegen.Location = new Point(961, 57);
             lblSpRegen.Name = "lblSpRegen";
             lblSpRegen.Size = new Size(13, 19);
             lblSpRegen.TabIndex = 64;
@@ -371,7 +392,7 @@
             lblMaxHP.BackColor = Color.Transparent;
             lblMaxHP.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblMaxHP.ForeColor = Color.Black;
-            lblMaxHP.Location = new Point(682, 20);
+            lblMaxHP.Location = new Point(720, 25);
             lblMaxHP.Name = "lblMaxHP";
             lblMaxHP.Size = new Size(89, 25);
             lblMaxHP.TabIndex = 55;
@@ -383,7 +404,7 @@
             lblHpRegen.BackColor = Color.Transparent;
             lblHpRegen.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblHpRegen.ForeColor = Color.FromArgb(80, 80, 80);
-            lblHpRegen.Location = new Point(1120, 53);
+            lblHpRegen.Location = new Point(1167, 65);
             lblHpRegen.Name = "lblHpRegen";
             lblHpRegen.Size = new Size(13, 19);
             lblHpRegen.TabIndex = 63;
@@ -395,7 +416,7 @@
             lnlNatSpRegen.BackColor = Color.Transparent;
             lnlNatSpRegen.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lnlNatSpRegen.ForeColor = Color.FromArgb(80, 80, 80);
-            lnlNatSpRegen.Location = new Point(794, 52);
+            lnlNatSpRegen.Location = new Point(832, 57);
             lnlNatSpRegen.Name = "lnlNatSpRegen";
             lnlNatSpRegen.Size = new Size(130, 19);
             lnlNatSpRegen.TabIndex = 62;
@@ -407,7 +428,7 @@
             lblNatHpRegen.BackColor = Color.Transparent;
             lblNatHpRegen.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblNatHpRegen.ForeColor = Color.FromArgb(80, 80, 80);
-            lblNatHpRegen.Location = new Point(984, 53);
+            lblNatHpRegen.Location = new Point(1031, 65);
             lblNatHpRegen.Name = "lblNatHpRegen";
             lblNatHpRegen.Size = new Size(133, 19);
             lblNatHpRegen.TabIndex = 61;
@@ -423,7 +444,7 @@
             cmbMaxASPED.FormattingEnabled = true;
             cmbMaxASPED.ItemHeight = 20;
             cmbMaxASPED.Items.AddRange(new object[] { "190", "191", "192", "193", "194", "195", "196", "197", "198", "199" });
-            cmbMaxASPED.Location = new Point(458, 22);
+            cmbMaxASPED.Location = new Point(509, 27);
             cmbMaxASPED.Margin = new Padding(3, 2, 3, 2);
             cmbMaxASPED.Name = "cmbMaxASPED";
             cmbMaxASPED.Size = new Size(155, 26);
@@ -435,7 +456,7 @@
             lblTotalSp.BackColor = Color.Transparent;
             lblTotalSp.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblTotalSp.ForeColor = Color.FromArgb(80, 80, 80);
-            lblTotalSp.Location = new Point(682, 53);
+            lblTotalSp.Location = new Point(728, 60);
             lblTotalSp.Name = "lblTotalSp";
             lblTotalSp.Size = new Size(13, 19);
             lblTotalSp.TabIndex = 60;
@@ -447,7 +468,7 @@
             lblMaxASPED.BackColor = Color.Transparent;
             lblMaxASPED.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblMaxASPED.ForeColor = Color.Black;
-            lblMaxASPED.Location = new Point(332, 20);
+            lblMaxASPED.Location = new Point(383, 25);
             lblMaxASPED.Name = "lblMaxASPED";
             lblMaxASPED.Size = new Size(121, 25);
             lblMaxASPED.TabIndex = 53;
@@ -459,7 +480,7 @@
             lblTotalHP.BackColor = Color.Transparent;
             lblTotalHP.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblTotalHP.ForeColor = Color.FromArgb(80, 80, 80);
-            lblTotalHP.Location = new Point(549, 53);
+            lblTotalHP.Location = new Point(610, 59);
             lblTotalHP.Name = "lblTotalHP";
             lblTotalHP.Size = new Size(13, 19);
             lblTotalHP.TabIndex = 59;
@@ -471,7 +492,7 @@
             lblSP.BackColor = Color.Transparent;
             lblSP.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblSP.ForeColor = Color.FromArgb(80, 80, 80);
-            lblSP.Location = new Point(631, 53);
+            lblSP.Location = new Point(692, 59);
             lblSP.Name = "lblSP";
             lblSP.Size = new Size(30, 19);
             lblSP.TabIndex = 58;
@@ -483,7 +504,7 @@
             lblHP.BackColor = Color.Transparent;
             lblHP.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblHP.ForeColor = Color.FromArgb(80, 80, 80);
-            lblHP.Location = new Point(510, 53);
+            lblHP.Location = new Point(571, 59);
             lblHP.Name = "lblHP";
             lblHP.Size = new Size(33, 19);
             lblHP.TabIndex = 57;
@@ -499,7 +520,7 @@
             cmbSelectJob.FormattingEnabled = true;
             cmbSelectJob.ItemHeight = 20;
             cmbSelectJob.Items.AddRange(new object[] { "-SELECT JOB-", "Novice", "Swordsman", "Magician", "Archer", "Acolyte", "Merchant", "Thief" });
-            cmbSelectJob.Location = new Point(145, 20);
+            cmbSelectJob.Location = new Point(147, 25);
             cmbSelectJob.Margin = new Padding(3, 2, 3, 2);
             cmbSelectJob.Name = "cmbSelectJob";
             cmbSelectJob.Size = new Size(155, 26);
@@ -513,7 +534,8 @@
             cmbJobLevel.EnabledCalc = true;
             cmbJobLevel.FormattingEnabled = true;
             cmbJobLevel.ItemHeight = 20;
-            cmbJobLevel.Location = new Point(416, 53);
+            cmbJobLevel.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9" });
+            cmbJobLevel.Location = new Point(467, 58);
             cmbJobLevel.Margin = new Padding(3, 2, 3, 2);
             cmbJobLevel.Name = "cmbJobLevel";
             cmbJobLevel.Size = new Size(39, 26);
@@ -525,7 +547,7 @@
             lblJobLevel.BackColor = Color.Transparent;
             lblJobLevel.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblJobLevel.ForeColor = Color.FromArgb(80, 80, 80);
-            lblJobLevel.Location = new Point(332, 53);
+            lblJobLevel.Location = new Point(383, 58);
             lblJobLevel.Name = "lblJobLevel";
             lblJobLevel.Size = new Size(76, 19);
             lblJobLevel.TabIndex = 56;
@@ -537,7 +559,7 @@
             lblSelectJob.BackColor = Color.Transparent;
             lblSelectJob.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblSelectJob.ForeColor = Color.Black;
-            lblSelectJob.Location = new Point(14, 20);
+            lblSelectJob.Location = new Point(16, 25);
             lblSelectJob.Name = "lblSelectJob";
             lblSelectJob.Size = new Size(117, 25);
             lblSelectJob.TabIndex = 51;
@@ -549,7 +571,7 @@
             txtBaseLevel.EnabledCalc = true;
             txtBaseLevel.Font = new Font("Segoe UI", 9F);
             txtBaseLevel.ForeColor = Color.FromArgb(124, 133, 142);
-            txtBaseLevel.Location = new Point(262, 50);
+            txtBaseLevel.Location = new Point(264, 55);
             txtBaseLevel.Margin = new Padding(3, 2, 3, 2);
             txtBaseLevel.MaxLength = 2;
             txtBaseLevel.MultiLine = false;
@@ -567,7 +589,7 @@
             lblBaseLevel.BackColor = Color.Transparent;
             lblBaseLevel.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblBaseLevel.ForeColor = Color.FromArgb(80, 80, 80);
-            lblBaseLevel.Location = new Point(172, 53);
+            lblBaseLevel.Location = new Point(174, 58);
             lblBaseLevel.Name = "lblBaseLevel";
             lblBaseLevel.Size = new Size(83, 19);
             lblBaseLevel.TabIndex = 55;
@@ -579,7 +601,7 @@
             lblJobTitle.BackColor = Color.Transparent;
             lblJobTitle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblJobTitle.ForeColor = Color.FromArgb(80, 80, 80);
-            lblJobTitle.Location = new Point(60, 53);
+            lblJobTitle.Location = new Point(62, 58);
             lblJobTitle.Name = "lblJobTitle";
             lblJobTitle.Size = new Size(13, 19);
             lblJobTitle.TabIndex = 54;
@@ -591,7 +613,7 @@
             lblJob.BackColor = Color.Transparent;
             lblJob.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblJob.ForeColor = Color.FromArgb(80, 80, 80);
-            lblJob.Location = new Point(14, 53);
+            lblJob.Location = new Point(16, 58);
             lblJob.Name = "lblJob";
             lblJob.Size = new Size(39, 19);
             lblJob.TabIndex = 53;
@@ -614,12 +636,19 @@
             pnlStatusSimulatorControls.BackColor = Color.Transparent;
             pnlStatusSimulatorControls.BackgroundImage = Properties.Resources.welcome_section;
             pnlStatusSimulatorControls.BackgroundImageLayout = ImageLayout.Stretch;
+            pnlStatusSimulatorControls.Controls.Add(panel1);
             pnlStatusSimulatorControls.Controls.Add(lblUnknown7);
+            pnlStatusSimulatorControls.Controls.Add(panel2);
             pnlStatusSimulatorControls.Controls.Add(lblDecLUK);
+            pnlStatusSimulatorControls.Controls.Add(panel3);
             pnlStatusSimulatorControls.Controls.Add(lblDecDEX);
+            pnlStatusSimulatorControls.Controls.Add(panel4);
             pnlStatusSimulatorControls.Controls.Add(lblDecINT);
+            pnlStatusSimulatorControls.Controls.Add(panel5);
             pnlStatusSimulatorControls.Controls.Add(lblDecVIT);
+            pnlStatusSimulatorControls.Controls.Add(panel6);
             pnlStatusSimulatorControls.Controls.Add(lblDecAGI);
+            pnlStatusSimulatorControls.Controls.Add(panel7);
             pnlStatusSimulatorControls.Controls.Add(lblDecSTR);
             pnlStatusSimulatorControls.Controls.Add(pnlCharacterInfo);
             pnlStatusSimulatorControls.Controls.Add(btnReset);
@@ -688,7 +717,7 @@
             pnlStatusSimulatorControls.Location = new Point(12, 243);
             pnlStatusSimulatorControls.Margin = new Padding(3, 2, 3, 2);
             pnlStatusSimulatorControls.Name = "pnlStatusSimulatorControls";
-            pnlStatusSimulatorControls.Size = new Size(1184, 404);
+            pnlStatusSimulatorControls.Size = new Size(1307, 404);
             pnlStatusSimulatorControls.TabIndex = 4;
             // 
             // lblUnknown7
@@ -1025,7 +1054,7 @@
             lblPerfectDodge.BackColor = Color.Transparent;
             lblPerfectDodge.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblPerfectDodge.ForeColor = Color.FromArgb(80, 80, 80);
-            lblPerfectDodge.Location = new Point(1139, 267);
+            lblPerfectDodge.Location = new Point(1261, 267);
             lblPerfectDodge.Name = "lblPerfectDodge";
             lblPerfectDodge.Size = new Size(10, 13);
             lblPerfectDodge.TabIndex = 73;
@@ -1037,7 +1066,7 @@
             lblCastReduction.BackColor = Color.Transparent;
             lblCastReduction.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblCastReduction.ForeColor = Color.FromArgb(80, 80, 80);
-            lblCastReduction.Location = new Point(1119, 267);
+            lblCastReduction.Location = new Point(1241, 267);
             lblCastReduction.Name = "lblCastReduction";
             lblCastReduction.Size = new Size(10, 13);
             lblCastReduction.TabIndex = 72;
@@ -1049,7 +1078,7 @@
             lblRangedAtk.BackColor = Color.Transparent;
             lblRangedAtk.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblRangedAtk.ForeColor = Color.FromArgb(80, 80, 80);
-            lblRangedAtk.Location = new Point(1096, 267);
+            lblRangedAtk.Location = new Point(1218, 267);
             lblRangedAtk.Name = "lblRangedAtk";
             lblRangedAtk.Size = new Size(10, 13);
             lblRangedAtk.TabIndex = 71;
@@ -1061,7 +1090,7 @@
             lblTotalDamage.BackColor = Color.Transparent;
             lblTotalDamage.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblTotalDamage.ForeColor = Color.FromArgb(80, 80, 80);
-            lblTotalDamage.Location = new Point(1068, 267);
+            lblTotalDamage.Location = new Point(1190, 267);
             lblTotalDamage.Name = "lblTotalDamage";
             lblTotalDamage.Size = new Size(10, 13);
             lblTotalDamage.TabIndex = 70;
@@ -1073,7 +1102,7 @@
             lblTotalDmg.BackColor = Color.Transparent;
             lblTotalDmg.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblTotalDmg.ForeColor = Color.FromArgb(80, 80, 80);
-            lblTotalDmg.Location = new Point(1084, 361);
+            lblTotalDmg.Location = new Point(1206, 361);
             lblTotalDmg.Name = "lblTotalDmg";
             lblTotalDmg.Size = new Size(78, 13);
             lblTotalDmg.TabIndex = 69;
@@ -1085,7 +1114,7 @@
             lblUnknown6.BackColor = Color.Transparent;
             lblUnknown6.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblUnknown6.ForeColor = Color.FromArgb(80, 80, 80);
-            lblUnknown6.Location = new Point(948, 300);
+            lblUnknown6.Location = new Point(1070, 300);
             lblUnknown6.Name = "lblUnknown6";
             lblUnknown6.Size = new Size(70, 13);
             lblUnknown6.TabIndex = 68;
@@ -1098,7 +1127,7 @@
             cmbWeapon.EnabledCalc = true;
             cmbWeapon.FormattingEnabled = true;
             cmbWeapon.ItemHeight = 20;
-            cmbWeapon.Location = new Point(904, 271);
+            cmbWeapon.Location = new Point(1026, 271);
             cmbWeapon.Margin = new Padding(3, 2, 3, 2);
             cmbWeapon.Name = "cmbWeapon";
             cmbWeapon.Size = new Size(149, 26);
@@ -1111,7 +1140,7 @@
             lblWeaponType.BackColor = Color.Transparent;
             lblWeaponType.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblWeaponType.ForeColor = Color.FromArgb(80, 80, 80);
-            lblWeaponType.Location = new Point(746, 267);
+            lblWeaponType.Location = new Point(868, 267);
             lblWeaponType.Name = "lblWeaponType";
             lblWeaponType.Size = new Size(145, 25);
             lblWeaponType.TabIndex = 2;
@@ -1123,7 +1152,7 @@
             lblFLEEsymbol.BackColor = Color.Transparent;
             lblFLEEsymbol.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblFLEEsymbol.ForeColor = Color.FromArgb(80, 80, 80);
-            lblFLEEsymbol.Location = new Point(1084, 166);
+            lblFLEEsymbol.Location = new Point(1206, 166);
             lblFLEEsymbol.Name = "lblFLEEsymbol";
             lblFLEEsymbol.Size = new Size(25, 25);
             lblFLEEsymbol.TabIndex = 48;
@@ -1135,7 +1164,7 @@
             pnlFLEEValue2.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlFLEEValue2.BackgroundImageLayout = ImageLayout.Stretch;
             pnlFLEEValue2.Controls.Add(lblFLEE2);
-            pnlFLEEValue2.Location = new Point(1110, 156);
+            pnlFLEEValue2.Location = new Point(1232, 156);
             pnlFLEEValue2.Margin = new Padding(3, 2, 3, 2);
             pnlFLEEValue2.Name = "pnlFLEEValue2";
             pnlFLEEValue2.Size = new Size(55, 40);
@@ -1159,7 +1188,7 @@
             pnlFLEEValue1.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlFLEEValue1.BackgroundImageLayout = ImageLayout.Stretch;
             pnlFLEEValue1.Controls.Add(lblFLEE1);
-            pnlFLEEValue1.Location = new Point(1032, 156);
+            pnlFLEEValue1.Location = new Point(1154, 156);
             pnlFLEEValue1.Margin = new Padding(3, 2, 3, 2);
             pnlFLEEValue1.Name = "pnlFLEEValue1";
             pnlFLEEValue1.Size = new Size(49, 40);
@@ -1183,7 +1212,7 @@
             lblMDEFsymbol.BackColor = Color.Transparent;
             lblMDEFsymbol.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblMDEFsymbol.ForeColor = Color.FromArgb(80, 80, 80);
-            lblMDEFsymbol.Location = new Point(1084, 121);
+            lblMDEFsymbol.Location = new Point(1206, 121);
             lblMDEFsymbol.Name = "lblMDEFsymbol";
             lblMDEFsymbol.Size = new Size(25, 25);
             lblMDEFsymbol.TabIndex = 45;
@@ -1195,7 +1224,7 @@
             lblDEFsymbol.BackColor = Color.Transparent;
             lblDEFsymbol.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblDEFsymbol.ForeColor = Color.FromArgb(80, 80, 80);
-            lblDEFsymbol.Location = new Point(1082, 76);
+            lblDEFsymbol.Location = new Point(1204, 76);
             lblDEFsymbol.Name = "lblDEFsymbol";
             lblDEFsymbol.Size = new Size(25, 25);
             lblDEFsymbol.TabIndex = 32;
@@ -1207,7 +1236,7 @@
             pnlMDEFValue2.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlMDEFValue2.BackgroundImageLayout = ImageLayout.Stretch;
             pnlMDEFValue2.Controls.Add(lblMDEFValue2);
-            pnlMDEFValue2.Location = new Point(1110, 111);
+            pnlMDEFValue2.Location = new Point(1232, 111);
             pnlMDEFValue2.Margin = new Padding(3, 2, 3, 2);
             pnlMDEFValue2.Name = "pnlMDEFValue2";
             pnlMDEFValue2.Size = new Size(55, 40);
@@ -1231,7 +1260,7 @@
             pnlDEFValue2.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlDEFValue2.BackgroundImageLayout = ImageLayout.Stretch;
             pnlDEFValue2.Controls.Add(lblValueDEF2);
-            pnlDEFValue2.Location = new Point(1110, 66);
+            pnlDEFValue2.Location = new Point(1232, 66);
             pnlDEFValue2.Margin = new Padding(3, 2, 3, 2);
             pnlDEFValue2.Name = "pnlDEFValue2";
             pnlDEFValue2.Size = new Size(55, 40);
@@ -1255,7 +1284,7 @@
             pnlASPDValue.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlASPDValue.BackgroundImageLayout = ImageLayout.Stretch;
             pnlASPDValue.Controls.Add(lblASPD);
-            pnlASPDValue.Location = new Point(1032, 201);
+            pnlASPDValue.Location = new Point(1154, 201);
             pnlASPDValue.Margin = new Padding(3, 2, 3, 2);
             pnlASPDValue.Name = "pnlASPDValue";
             pnlASPDValue.Size = new Size(133, 40);
@@ -1279,7 +1308,7 @@
             pnlMDEFValue1.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlMDEFValue1.BackgroundImageLayout = ImageLayout.Stretch;
             pnlMDEFValue1.Controls.Add(lblMDEFValue1);
-            pnlMDEFValue1.Location = new Point(1032, 111);
+            pnlMDEFValue1.Location = new Point(1154, 111);
             pnlMDEFValue1.Margin = new Padding(3, 2, 3, 2);
             pnlMDEFValue1.Name = "pnlMDEFValue1";
             pnlMDEFValue1.Size = new Size(49, 40);
@@ -1303,7 +1332,7 @@
             pnlValueASPD.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlValueASPD.BackgroundImageLayout = ImageLayout.Stretch;
             pnlValueASPD.Controls.Add(lblNameASPD);
-            pnlValueASPD.Location = new Point(958, 201);
+            pnlValueASPD.Location = new Point(1080, 201);
             pnlValueASPD.Margin = new Padding(3, 2, 3, 2);
             pnlValueASPD.Name = "pnlValueASPD";
             pnlValueASPD.Size = new Size(69, 40);
@@ -1327,7 +1356,7 @@
             pnlDEFValue1.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlDEFValue1.BackgroundImageLayout = ImageLayout.Stretch;
             pnlDEFValue1.Controls.Add(lblValueDEF1);
-            pnlDEFValue1.Location = new Point(1032, 66);
+            pnlDEFValue1.Location = new Point(1154, 66);
             pnlDEFValue1.Margin = new Padding(3, 2, 3, 2);
             pnlDEFValue1.Name = "pnlDEFValue1";
             pnlDEFValue1.Size = new Size(49, 40);
@@ -1351,7 +1380,7 @@
             pnlValueFLEE.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlValueFLEE.BackgroundImageLayout = ImageLayout.Stretch;
             pnlValueFLEE.Controls.Add(lblNameFLEE);
-            pnlValueFLEE.Location = new Point(958, 156);
+            pnlValueFLEE.Location = new Point(1080, 156);
             pnlValueFLEE.Margin = new Padding(3, 2, 3, 2);
             pnlValueFLEE.Name = "pnlValueFLEE";
             pnlValueFLEE.Size = new Size(69, 40);
@@ -1375,7 +1404,7 @@
             pnlValueMDEF.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlValueMDEF.BackgroundImageLayout = ImageLayout.Stretch;
             pnlValueMDEF.Controls.Add(lblNameMDEF);
-            pnlValueMDEF.Location = new Point(958, 111);
+            pnlValueMDEF.Location = new Point(1080, 111);
             pnlValueMDEF.Margin = new Padding(3, 2, 3, 2);
             pnlValueMDEF.Name = "pnlValueMDEF";
             pnlValueMDEF.Size = new Size(69, 40);
@@ -1399,7 +1428,7 @@
             pnlValueDEF.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlValueDEF.BackgroundImageLayout = ImageLayout.Stretch;
             pnlValueDEF.Controls.Add(lblNameDEF);
-            pnlValueDEF.Location = new Point(958, 66);
+            pnlValueDEF.Location = new Point(1080, 66);
             pnlValueDEF.Margin = new Padding(3, 2, 3, 2);
             pnlValueDEF.Name = "pnlValueDEF";
             pnlValueDEF.Size = new Size(69, 40);
@@ -1423,7 +1452,7 @@
             lblMATKsymbol.BackColor = Color.Transparent;
             lblMATKsymbol.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblMATKsymbol.ForeColor = Color.FromArgb(80, 80, 80);
-            lblMATKsymbol.Location = new Point(872, 121);
+            lblMATKsymbol.Location = new Point(994, 121);
             lblMATKsymbol.Name = "lblMATKsymbol";
             lblMATKsymbol.Size = new Size(25, 25);
             lblMATKsymbol.TabIndex = 31;
@@ -1435,7 +1464,7 @@
             lblATKSymbol.BackColor = Color.Transparent;
             lblATKSymbol.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblATKSymbol.ForeColor = Color.FromArgb(80, 80, 80);
-            lblATKSymbol.Location = new Point(870, 76);
+            lblATKSymbol.Location = new Point(992, 76);
             lblATKSymbol.Name = "lblATKSymbol";
             lblATKSymbol.Size = new Size(25, 25);
             lblATKSymbol.TabIndex = 1;
@@ -1447,7 +1476,7 @@
             pnlValueMATK2.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlValueMATK2.BackgroundImageLayout = ImageLayout.Stretch;
             pnlValueMATK2.Controls.Add(lblMinMatk2);
-            pnlValueMATK2.Location = new Point(898, 111);
+            pnlValueMATK2.Location = new Point(1020, 111);
             pnlValueMATK2.Margin = new Padding(3, 2, 3, 2);
             pnlValueMATK2.Name = "pnlValueMATK2";
             pnlValueMATK2.Size = new Size(55, 40);
@@ -1471,7 +1500,7 @@
             pnlValueATK2.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlValueATK2.BackgroundImageLayout = ImageLayout.Stretch;
             pnlValueATK2.Controls.Add(lblAtk2);
-            pnlValueATK2.Location = new Point(898, 66);
+            pnlValueATK2.Location = new Point(1020, 66);
             pnlValueATK2.Margin = new Padding(3, 2, 3, 2);
             pnlValueATK2.Name = "pnlValueATK2";
             pnlValueATK2.Size = new Size(55, 40);
@@ -1495,7 +1524,7 @@
             pnlReqLUK.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlReqLUK.BackgroundImageLayout = ImageLayout.Stretch;
             pnlReqLUK.Controls.Add(lblReqLUK);
-            pnlReqLUK.Location = new Point(643, 291);
+            pnlReqLUK.Location = new Point(765, 291);
             pnlReqLUK.Margin = new Padding(3, 2, 3, 2);
             pnlReqLUK.Name = "pnlReqLUK";
             pnlReqLUK.Size = new Size(97, 40);
@@ -1507,7 +1536,7 @@
             lblReqLUK.BackColor = Color.Transparent;
             lblReqLUK.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblReqLUK.ForeColor = Color.FromArgb(80, 80, 80);
-            lblReqLUK.Location = new Point(38, 10);
+            lblReqLUK.Location = new Point(42, 10);
             lblReqLUK.Name = "lblReqLUK";
             lblReqLUK.Size = new Size(17, 25);
             lblReqLUK.TabIndex = 0;
@@ -1519,7 +1548,7 @@
             pnlValueCRIT.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlValueCRIT.BackgroundImageLayout = ImageLayout.Stretch;
             pnlValueCRIT.Controls.Add(lblCrit);
-            pnlValueCRIT.Location = new Point(820, 201);
+            pnlValueCRIT.Location = new Point(942, 201);
             pnlValueCRIT.Margin = new Padding(3, 2, 3, 2);
             pnlValueCRIT.Name = "pnlValueCRIT";
             pnlValueCRIT.Size = new Size(133, 40);
@@ -1543,7 +1572,7 @@
             pnlValueHIT.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlValueHIT.BackgroundImageLayout = ImageLayout.Stretch;
             pnlValueHIT.Controls.Add(lblHit);
-            pnlValueHIT.Location = new Point(820, 156);
+            pnlValueHIT.Location = new Point(942, 156);
             pnlValueHIT.Margin = new Padding(3, 2, 3, 2);
             pnlValueHIT.Name = "pnlValueHIT";
             pnlValueHIT.Size = new Size(133, 40);
@@ -1567,7 +1596,7 @@
             pnlReqVIT.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlReqVIT.BackgroundImageLayout = ImageLayout.Stretch;
             pnlReqVIT.Controls.Add(lblReqVIT);
-            pnlReqVIT.Location = new Point(643, 156);
+            pnlReqVIT.Location = new Point(765, 156);
             pnlReqVIT.Margin = new Padding(3, 2, 3, 2);
             pnlReqVIT.Name = "pnlReqVIT";
             pnlReqVIT.Size = new Size(97, 40);
@@ -1579,7 +1608,7 @@
             lblReqVIT.BackColor = Color.Transparent;
             lblReqVIT.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblReqVIT.ForeColor = Color.FromArgb(80, 80, 80);
-            lblReqVIT.Location = new Point(38, 10);
+            lblReqVIT.Location = new Point(42, 10);
             lblReqVIT.Name = "lblReqVIT";
             lblReqVIT.Size = new Size(17, 25);
             lblReqVIT.TabIndex = 0;
@@ -1591,7 +1620,7 @@
             pnlValueMATK1.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlValueMATK1.BackgroundImageLayout = ImageLayout.Stretch;
             pnlValueMATK1.Controls.Add(lblMinMatk1);
-            pnlValueMATK1.Location = new Point(820, 111);
+            pnlValueMATK1.Location = new Point(942, 111);
             pnlValueMATK1.Margin = new Padding(3, 2, 3, 2);
             pnlValueMATK1.Name = "pnlValueMATK1";
             pnlValueMATK1.Size = new Size(49, 40);
@@ -1615,7 +1644,7 @@
             pnlCRIT.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlCRIT.BackgroundImageLayout = ImageLayout.Stretch;
             pnlCRIT.Controls.Add(lblNameCRIT);
-            pnlCRIT.Location = new Point(746, 201);
+            pnlCRIT.Location = new Point(868, 201);
             pnlCRIT.Margin = new Padding(3, 2, 3, 2);
             pnlCRIT.Name = "pnlCRIT";
             pnlCRIT.Size = new Size(69, 40);
@@ -1639,7 +1668,7 @@
             pnlValueATK1.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlValueATK1.BackgroundImageLayout = ImageLayout.Stretch;
             pnlValueATK1.Controls.Add(lblAtk1);
-            pnlValueATK1.Location = new Point(820, 66);
+            pnlValueATK1.Location = new Point(942, 66);
             pnlValueATK1.Margin = new Padding(3, 2, 3, 2);
             pnlValueATK1.Name = "pnlValueATK1";
             pnlValueATK1.Size = new Size(49, 40);
@@ -1663,7 +1692,7 @@
             pnlReqDEX.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlReqDEX.BackgroundImageLayout = ImageLayout.Stretch;
             pnlReqDEX.Controls.Add(lblReqDEX);
-            pnlReqDEX.Location = new Point(643, 246);
+            pnlReqDEX.Location = new Point(765, 246);
             pnlReqDEX.Margin = new Padding(3, 2, 3, 2);
             pnlReqDEX.Name = "pnlReqDEX";
             pnlReqDEX.Size = new Size(97, 40);
@@ -1675,7 +1704,7 @@
             lblReqDEX.BackColor = Color.Transparent;
             lblReqDEX.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblReqDEX.ForeColor = Color.FromArgb(80, 80, 80);
-            lblReqDEX.Location = new Point(38, 10);
+            lblReqDEX.Location = new Point(42, 10);
             lblReqDEX.Name = "lblReqDEX";
             lblReqDEX.Size = new Size(17, 25);
             lblReqDEX.TabIndex = 0;
@@ -1687,7 +1716,7 @@
             pnlHIT.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlHIT.BackgroundImageLayout = ImageLayout.Stretch;
             pnlHIT.Controls.Add(lblNameHIT);
-            pnlHIT.Location = new Point(746, 156);
+            pnlHIT.Location = new Point(868, 156);
             pnlHIT.Margin = new Padding(3, 2, 3, 2);
             pnlHIT.Name = "pnlHIT";
             pnlHIT.Size = new Size(69, 40);
@@ -1711,7 +1740,7 @@
             pnlReqAGI.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlReqAGI.BackgroundImageLayout = ImageLayout.Stretch;
             pnlReqAGI.Controls.Add(lblReqAGI);
-            pnlReqAGI.Location = new Point(643, 111);
+            pnlReqAGI.Location = new Point(765, 111);
             pnlReqAGI.Margin = new Padding(3, 2, 3, 2);
             pnlReqAGI.Name = "pnlReqAGI";
             pnlReqAGI.Size = new Size(97, 40);
@@ -1723,7 +1752,7 @@
             lblReqAGI.BackColor = Color.Transparent;
             lblReqAGI.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblReqAGI.ForeColor = Color.FromArgb(80, 80, 80);
-            lblReqAGI.Location = new Point(38, 10);
+            lblReqAGI.Location = new Point(42, 10);
             lblReqAGI.Name = "lblReqAGI";
             lblReqAGI.Size = new Size(17, 25);
             lblReqAGI.TabIndex = 0;
@@ -1735,7 +1764,7 @@
             pnlMATK.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlMATK.BackgroundImageLayout = ImageLayout.Stretch;
             pnlMATK.Controls.Add(lblNameMATK);
-            pnlMATK.Location = new Point(746, 111);
+            pnlMATK.Location = new Point(868, 111);
             pnlMATK.Margin = new Padding(3, 2, 3, 2);
             pnlMATK.Name = "pnlMATK";
             pnlMATK.Size = new Size(69, 40);
@@ -1759,7 +1788,7 @@
             pnlPrINT.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlPrINT.BackgroundImageLayout = ImageLayout.Stretch;
             pnlPrINT.Controls.Add(lblReqINT);
-            pnlPrINT.Location = new Point(643, 201);
+            pnlPrINT.Location = new Point(765, 201);
             pnlPrINT.Margin = new Padding(3, 2, 3, 2);
             pnlPrINT.Name = "pnlPrINT";
             pnlPrINT.Size = new Size(97, 40);
@@ -1771,7 +1800,7 @@
             lblReqINT.BackColor = Color.Transparent;
             lblReqINT.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblReqINT.ForeColor = Color.FromArgb(80, 80, 80);
-            lblReqINT.Location = new Point(38, 10);
+            lblReqINT.Location = new Point(42, 10);
             lblReqINT.Name = "lblReqINT";
             lblReqINT.Size = new Size(17, 25);
             lblReqINT.TabIndex = 0;
@@ -1783,7 +1812,7 @@
             pnlATK.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlATK.BackgroundImageLayout = ImageLayout.Stretch;
             pnlATK.Controls.Add(lblNameATK);
-            pnlATK.Location = new Point(746, 66);
+            pnlATK.Location = new Point(868, 66);
             pnlATK.Margin = new Padding(3, 2, 3, 2);
             pnlATK.Name = "pnlATK";
             pnlATK.Size = new Size(69, 40);
@@ -1807,7 +1836,7 @@
             pnlReqSTR.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlReqSTR.BackgroundImageLayout = ImageLayout.Stretch;
             pnlReqSTR.Controls.Add(lblReqSTR);
-            pnlReqSTR.Location = new Point(643, 66);
+            pnlReqSTR.Location = new Point(765, 66);
             pnlReqSTR.Margin = new Padding(3, 2, 3, 2);
             pnlReqSTR.Name = "pnlReqSTR";
             pnlReqSTR.Size = new Size(97, 40);
@@ -1819,7 +1848,7 @@
             lblReqSTR.BackColor = Color.Transparent;
             lblReqSTR.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblReqSTR.ForeColor = Color.FromArgb(80, 80, 80);
-            lblReqSTR.Location = new Point(38, 10);
+            lblReqSTR.Location = new Point(42, 10);
             lblReqSTR.Name = "lblReqSTR";
             lblReqSTR.Size = new Size(17, 25);
             lblReqSTR.TabIndex = 0;
@@ -2083,7 +2112,7 @@
             pnlStatusInformation.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlStatusInformation.BackgroundImageLayout = ImageLayout.Stretch;
             pnlStatusInformation.Controls.Add(lblStatusInformation);
-            pnlStatusInformation.Location = new Point(746, 21);
+            pnlStatusInformation.Location = new Point(868, 21);
             pnlStatusInformation.Margin = new Padding(3, 2, 3, 2);
             pnlStatusInformation.Name = "pnlStatusInformation";
             pnlStatusInformation.Size = new Size(420, 40);
@@ -2107,7 +2136,7 @@
             pnlPtsReq.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlPtsReq.BackgroundImageLayout = ImageLayout.Stretch;
             pnlPtsReq.Controls.Add(lblPtsReq);
-            pnlPtsReq.Location = new Point(643, 21);
+            pnlPtsReq.Location = new Point(765, 21);
             pnlPtsReq.Margin = new Padding(3, 2, 3, 2);
             pnlPtsReq.Name = "pnlPtsReq";
             pnlPtsReq.Size = new Size(97, 40);
@@ -2119,7 +2148,7 @@
             lblPtsReq.BackColor = Color.Transparent;
             lblPtsReq.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblPtsReq.ForeColor = Color.FromArgb(80, 80, 80);
-            lblPtsReq.Location = new Point(10, 9);
+            lblPtsReq.Location = new Point(8, 9);
             lblPtsReq.Name = "lblPtsReq";
             lblPtsReq.Size = new Size(85, 25);
             lblPtsReq.TabIndex = 1;
@@ -2164,6 +2193,174 @@
             pbJobs.TabStop = false;
             pbJobs.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Transparent;
+            panel1.BackgroundImage = Properties.Resources.Rectangle_6__4_;
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel1.Controls.Add(lblJobBonus7);
+            panel1.Location = new Point(647, 291);
+            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(114, 40);
+            panel1.TabIndex = 31;
+            // 
+            // lblJobBonus7
+            // 
+            lblJobBonus7.AutoSize = true;
+            lblJobBonus7.BackColor = Color.Transparent;
+            lblJobBonus7.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblJobBonus7.ForeColor = Color.FromArgb(80, 80, 80);
+            lblJobBonus7.Location = new Point(49, 9);
+            lblJobBonus7.Name = "lblJobBonus7";
+            lblJobBonus7.Size = new Size(17, 25);
+            lblJobBonus7.TabIndex = 0;
+            lblJobBonus7.Text = ".";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Transparent;
+            panel2.BackgroundImage = Properties.Resources.Rectangle_6__4_;
+            panel2.BackgroundImageLayout = ImageLayout.Stretch;
+            panel2.Controls.Add(lblJobBonus3);
+            panel2.Location = new Point(647, 156);
+            panel2.Margin = new Padding(3, 2, 3, 2);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(114, 40);
+            panel2.TabIndex = 27;
+            // 
+            // lblJobBonus3
+            // 
+            lblJobBonus3.AutoSize = true;
+            lblJobBonus3.BackColor = Color.Transparent;
+            lblJobBonus3.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblJobBonus3.ForeColor = Color.FromArgb(80, 80, 80);
+            lblJobBonus3.Location = new Point(49, 9);
+            lblJobBonus3.Name = "lblJobBonus3";
+            lblJobBonus3.Size = new Size(17, 25);
+            lblJobBonus3.TabIndex = 0;
+            lblJobBonus3.Text = ".";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Transparent;
+            panel3.BackgroundImage = Properties.Resources.Rectangle_6__4_;
+            panel3.BackgroundImageLayout = ImageLayout.Stretch;
+            panel3.Controls.Add(lblJobBonus6);
+            panel3.Location = new Point(647, 246);
+            panel3.Margin = new Padding(3, 2, 3, 2);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(114, 40);
+            panel3.TabIndex = 30;
+            // 
+            // lblJobBonus6
+            // 
+            lblJobBonus6.AutoSize = true;
+            lblJobBonus6.BackColor = Color.Transparent;
+            lblJobBonus6.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblJobBonus6.ForeColor = Color.FromArgb(80, 80, 80);
+            lblJobBonus6.Location = new Point(49, 9);
+            lblJobBonus6.Name = "lblJobBonus6";
+            lblJobBonus6.Size = new Size(17, 25);
+            lblJobBonus6.TabIndex = 0;
+            lblJobBonus6.Text = ".";
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.Transparent;
+            panel4.BackgroundImage = Properties.Resources.Rectangle_6__4_;
+            panel4.BackgroundImageLayout = ImageLayout.Stretch;
+            panel4.Controls.Add(lblJobBonus2);
+            panel4.Location = new Point(647, 111);
+            panel4.Margin = new Padding(3, 2, 3, 2);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(114, 40);
+            panel4.TabIndex = 28;
+            // 
+            // lblJobBonus2
+            // 
+            lblJobBonus2.AutoSize = true;
+            lblJobBonus2.BackColor = Color.Transparent;
+            lblJobBonus2.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblJobBonus2.ForeColor = Color.FromArgb(80, 80, 80);
+            lblJobBonus2.Location = new Point(49, 9);
+            lblJobBonus2.Name = "lblJobBonus2";
+            lblJobBonus2.Size = new Size(17, 25);
+            lblJobBonus2.TabIndex = 0;
+            lblJobBonus2.Text = ".";
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.Transparent;
+            panel5.BackgroundImage = Properties.Resources.Rectangle_6__4_;
+            panel5.BackgroundImageLayout = ImageLayout.Stretch;
+            panel5.Controls.Add(lblJobBonus4);
+            panel5.Location = new Point(647, 201);
+            panel5.Margin = new Padding(3, 2, 3, 2);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(114, 40);
+            panel5.TabIndex = 29;
+            // 
+            // lblJobBonus4
+            // 
+            lblJobBonus4.AutoSize = true;
+            lblJobBonus4.BackColor = Color.Transparent;
+            lblJobBonus4.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblJobBonus4.ForeColor = Color.FromArgb(80, 80, 80);
+            lblJobBonus4.Location = new Point(49, 9);
+            lblJobBonus4.Name = "lblJobBonus4";
+            lblJobBonus4.Size = new Size(17, 25);
+            lblJobBonus4.TabIndex = 0;
+            lblJobBonus4.Text = ".";
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.Transparent;
+            panel6.BackgroundImage = Properties.Resources.Rectangle_6__4_;
+            panel6.BackgroundImageLayout = ImageLayout.Stretch;
+            panel6.Controls.Add(lblJobBonus1);
+            panel6.Location = new Point(647, 66);
+            panel6.Margin = new Padding(3, 2, 3, 2);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(114, 40);
+            panel6.TabIndex = 26;
+            // 
+            // lblJobBonus1
+            // 
+            lblJobBonus1.AutoSize = true;
+            lblJobBonus1.BackColor = Color.Transparent;
+            lblJobBonus1.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblJobBonus1.ForeColor = Color.FromArgb(80, 80, 80);
+            lblJobBonus1.Location = new Point(50, 10);
+            lblJobBonus1.Name = "lblJobBonus1";
+            lblJobBonus1.Size = new Size(17, 25);
+            lblJobBonus1.TabIndex = 0;
+            lblJobBonus1.Text = ".";
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.Transparent;
+            panel7.BackgroundImage = Properties.Resources.Rectangle_6__4_;
+            panel7.BackgroundImageLayout = ImageLayout.Stretch;
+            panel7.Controls.Add(lblJobBonusTitle);
+            panel7.Location = new Point(647, 21);
+            panel7.Margin = new Padding(3, 2, 3, 2);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(112, 40);
+            panel7.TabIndex = 25;
+            // 
+            // lblJobBonusTitle
+            // 
+            lblJobBonusTitle.AutoSize = true;
+            lblJobBonusTitle.BackColor = Color.Transparent;
+            lblJobBonusTitle.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblJobBonusTitle.ForeColor = Color.FromArgb(80, 80, 80);
+            lblJobBonusTitle.Location = new Point(0, 8);
+            lblJobBonusTitle.Name = "lblJobBonusTitle";
+            lblJobBonusTitle.Size = new Size(114, 25);
+            lblJobBonusTitle.TabIndex = 1;
+            lblJobBonusTitle.Text = "JOB BONUS";
+            // 
             // StatSimForm
             // 
             AllowDrop = true;
@@ -2171,7 +2368,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveBorder;
             BackgroundImage = Properties.Resources.bgFinal;
-            ClientSize = new Size(1205, 667);
+            ClientSize = new Size(1332, 667);
             Controls.Add(pnlStatusSimulatorControls);
             Controls.Add(pnlBuffs);
             Controls.Add(lblUnknown8);
@@ -2259,6 +2456,20 @@
             pnlStats.ResumeLayout(false);
             pnlStats.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbJobs).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -2411,5 +2622,19 @@
         private ReaLTaiizor.Controls.BigLabel lblDecVIT;
         private ReaLTaiizor.Controls.BigLabel lblDecAGI;
         private ReaLTaiizor.Controls.BigLabel lblDecSTR;
+        private Panel panel1;
+        private ReaLTaiizor.Controls.BigLabel lblJobBonus7;
+        private Panel panel2;
+        private ReaLTaiizor.Controls.BigLabel lblJobBonus3;
+        private Panel panel3;
+        private ReaLTaiizor.Controls.BigLabel lblJobBonus6;
+        private Panel panel4;
+        private ReaLTaiizor.Controls.BigLabel lblJobBonus2;
+        private Panel panel5;
+        private ReaLTaiizor.Controls.BigLabel lblJobBonus4;
+        private Panel panel6;
+        private ReaLTaiizor.Controls.BigLabel lblJobBonus1;
+        private Panel panel7;
+        private ReaLTaiizor.Controls.BigLabel lblJobBonusTitle;
     }
 }
