@@ -25,6 +25,15 @@ namespace Modsim_Game
             lblValueDEF1.Text = "0";
             lblAtk2.Text = "0";
             lblMDEFValue1.Text = "0";
+
+            //Job Bonus BASE
+            lblJobBonus1.Text = "0";
+            lblJobBonus2.Text = "0";
+            lblJobBonus3.Text = "0";
+            lblJobBonus4.Text = "0";
+            lblJobBonus5.Text = "0";
+            lblJobBonus6.Text = "0";
+
         }
         void BaseStats()
         {
@@ -127,8 +136,7 @@ namespace Modsim_Game
             lblTotalSp.Text = MAX_SP.ToString();
             // --- DEF AND MDEF ---
 
-            int def = vit;
-            int mdef = intel;
+          
 
             lblValueDEF2.Text = def.ToString();
             lblMDEFValue2.Text = mdef.ToString();

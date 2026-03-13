@@ -58,12 +58,26 @@
             lblJob = new ReaLTaiizor.Controls.BigLabel();
             lblUnknown8 = new ReaLTaiizor.Controls.BigLabel();
             pnlStatusSimulatorControls = new Panel();
+            panel1 = new Panel();
+            lblJobBonus6 = new ReaLTaiizor.Controls.BigLabel();
             lblUnknown7 = new ReaLTaiizor.Controls.BigLabel();
+            panel2 = new Panel();
+            lblJobBonus3 = new ReaLTaiizor.Controls.BigLabel();
             lblDecLUK = new ReaLTaiizor.Controls.BigLabel();
+            panel3 = new Panel();
+            lblJobBonus5 = new ReaLTaiizor.Controls.BigLabel();
             lblDecDEX = new ReaLTaiizor.Controls.BigLabel();
+            panel4 = new Panel();
+            lblJobBonus2 = new ReaLTaiizor.Controls.BigLabel();
             lblDecINT = new ReaLTaiizor.Controls.BigLabel();
+            panel5 = new Panel();
+            lblJobBonus4 = new ReaLTaiizor.Controls.BigLabel();
             lblDecVIT = new ReaLTaiizor.Controls.BigLabel();
+            panel6 = new Panel();
+            lblJobBonus1 = new ReaLTaiizor.Controls.BigLabel();
             lblDecAGI = new ReaLTaiizor.Controls.BigLabel();
+            panel7 = new Panel();
+            lblJobBonusTitle = new ReaLTaiizor.Controls.BigLabel();
             lblDecSTR = new ReaLTaiizor.Controls.BigLabel();
             pnlCharacterInfo = new Panel();
             lblCurrentBuffsInfo = new ReaLTaiizor.Controls.BigLabel();
@@ -173,22 +187,15 @@
             pnlStats = new Panel();
             lblSTATS = new ReaLTaiizor.Controls.BigLabel();
             pbJobs = new ReaLTaiizor.Controls.HopePictureBox();
-            panel1 = new Panel();
-            lblJobBonus7 = new ReaLTaiizor.Controls.BigLabel();
-            panel2 = new Panel();
-            lblJobBonus3 = new ReaLTaiizor.Controls.BigLabel();
-            panel3 = new Panel();
-            lblJobBonus6 = new ReaLTaiizor.Controls.BigLabel();
-            panel4 = new Panel();
-            lblJobBonus2 = new ReaLTaiizor.Controls.BigLabel();
-            panel5 = new Panel();
-            lblJobBonus4 = new ReaLTaiizor.Controls.BigLabel();
-            panel6 = new Panel();
-            lblJobBonus1 = new ReaLTaiizor.Controls.BigLabel();
-            panel7 = new Panel();
-            lblJobBonusTitle = new ReaLTaiizor.Controls.BigLabel();
             pnlBuffs.SuspendLayout();
             pnlStatusSimulatorControls.SuspendLayout();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
+            panel4.SuspendLayout();
+            panel5.SuspendLayout();
+            panel6.SuspendLayout();
+            panel7.SuspendLayout();
             pnlCharacterInfo.SuspendLayout();
             pnlFLEEValue2.SuspendLayout();
             pnlFLEEValue1.SuspendLayout();
@@ -227,13 +234,6 @@
             pnlPtsReq.SuspendLayout();
             pnlStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbJobs).BeginInit();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
-            panel3.SuspendLayout();
-            panel4.SuspendLayout();
-            panel5.SuspendLayout();
-            panel6.SuspendLayout();
-            panel7.SuspendLayout();
             SuspendLayout();
             // 
             // pnlBuffs
@@ -720,6 +720,30 @@
             pnlStatusSimulatorControls.Size = new Size(1307, 404);
             pnlStatusSimulatorControls.TabIndex = 4;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Transparent;
+            panel1.BackgroundImage = Properties.Resources.Rectangle_6__4_;
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel1.Controls.Add(lblJobBonus6);
+            panel1.Location = new Point(647, 291);
+            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(114, 40);
+            panel1.TabIndex = 31;
+            // 
+            // lblJobBonus6
+            // 
+            lblJobBonus6.AutoSize = true;
+            lblJobBonus6.BackColor = Color.Transparent;
+            lblJobBonus6.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblJobBonus6.ForeColor = Color.FromArgb(80, 80, 80);
+            lblJobBonus6.Location = new Point(49, 9);
+            lblJobBonus6.Name = "lblJobBonus6";
+            lblJobBonus6.Size = new Size(17, 25);
+            lblJobBonus6.TabIndex = 0;
+            lblJobBonus6.Text = ".";
+            // 
             // lblUnknown7
             // 
             lblUnknown7.AutoSize = true;
@@ -731,6 +755,30 @@
             lblUnknown7.Size = new Size(70, 13);
             lblUnknown7.TabIndex = 86;
             lblUnknown7.Text = "武器の種類";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Transparent;
+            panel2.BackgroundImage = Properties.Resources.Rectangle_6__4_;
+            panel2.BackgroundImageLayout = ImageLayout.Stretch;
+            panel2.Controls.Add(lblJobBonus3);
+            panel2.Location = new Point(647, 156);
+            panel2.Margin = new Padding(3, 2, 3, 2);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(114, 40);
+            panel2.TabIndex = 27;
+            // 
+            // lblJobBonus3
+            // 
+            lblJobBonus3.AutoSize = true;
+            lblJobBonus3.BackColor = Color.Transparent;
+            lblJobBonus3.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblJobBonus3.ForeColor = Color.FromArgb(80, 80, 80);
+            lblJobBonus3.Location = new Point(49, 9);
+            lblJobBonus3.Name = "lblJobBonus3";
+            lblJobBonus3.Size = new Size(17, 25);
+            lblJobBonus3.TabIndex = 0;
+            lblJobBonus3.Text = ".";
             // 
             // lblDecLUK
             // 
@@ -747,6 +795,30 @@
             lblDecLUK.TextAlign = ContentAlignment.MiddleCenter;
             lblDecLUK.Click += bigLabel18_Click;
             // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Transparent;
+            panel3.BackgroundImage = Properties.Resources.Rectangle_6__4_;
+            panel3.BackgroundImageLayout = ImageLayout.Stretch;
+            panel3.Controls.Add(lblJobBonus5);
+            panel3.Location = new Point(647, 246);
+            panel3.Margin = new Padding(3, 2, 3, 2);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(114, 40);
+            panel3.TabIndex = 30;
+            // 
+            // lblJobBonus5
+            // 
+            lblJobBonus5.AutoSize = true;
+            lblJobBonus5.BackColor = Color.Transparent;
+            lblJobBonus5.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblJobBonus5.ForeColor = Color.FromArgb(80, 80, 80);
+            lblJobBonus5.Location = new Point(49, 9);
+            lblJobBonus5.Name = "lblJobBonus5";
+            lblJobBonus5.Size = new Size(17, 25);
+            lblJobBonus5.TabIndex = 0;
+            lblJobBonus5.Text = ".";
+            // 
             // lblDecDEX
             // 
             lblDecDEX.AutoSize = true;
@@ -761,6 +833,30 @@
             lblDecDEX.Text = "-";
             lblDecDEX.TextAlign = ContentAlignment.MiddleCenter;
             lblDecDEX.Click += bigLabel34_Click_1;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.Transparent;
+            panel4.BackgroundImage = Properties.Resources.Rectangle_6__4_;
+            panel4.BackgroundImageLayout = ImageLayout.Stretch;
+            panel4.Controls.Add(lblJobBonus2);
+            panel4.Location = new Point(647, 111);
+            panel4.Margin = new Padding(3, 2, 3, 2);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(114, 40);
+            panel4.TabIndex = 28;
+            // 
+            // lblJobBonus2
+            // 
+            lblJobBonus2.AutoSize = true;
+            lblJobBonus2.BackColor = Color.Transparent;
+            lblJobBonus2.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblJobBonus2.ForeColor = Color.FromArgb(80, 80, 80);
+            lblJobBonus2.Location = new Point(49, 9);
+            lblJobBonus2.Name = "lblJobBonus2";
+            lblJobBonus2.Size = new Size(17, 25);
+            lblJobBonus2.TabIndex = 0;
+            lblJobBonus2.Text = ".";
             // 
             // lblDecINT
             // 
@@ -777,6 +873,30 @@
             lblDecINT.TextAlign = ContentAlignment.MiddleCenter;
             lblDecINT.Click += bigLabel35_Click;
             // 
+            // panel5
+            // 
+            panel5.BackColor = Color.Transparent;
+            panel5.BackgroundImage = Properties.Resources.Rectangle_6__4_;
+            panel5.BackgroundImageLayout = ImageLayout.Stretch;
+            panel5.Controls.Add(lblJobBonus4);
+            panel5.Location = new Point(647, 201);
+            panel5.Margin = new Padding(3, 2, 3, 2);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(114, 40);
+            panel5.TabIndex = 29;
+            // 
+            // lblJobBonus4
+            // 
+            lblJobBonus4.AutoSize = true;
+            lblJobBonus4.BackColor = Color.Transparent;
+            lblJobBonus4.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblJobBonus4.ForeColor = Color.FromArgb(80, 80, 80);
+            lblJobBonus4.Location = new Point(49, 9);
+            lblJobBonus4.Name = "lblJobBonus4";
+            lblJobBonus4.Size = new Size(17, 25);
+            lblJobBonus4.TabIndex = 0;
+            lblJobBonus4.Text = ".";
+            // 
             // lblDecVIT
             // 
             lblDecVIT.AutoSize = true;
@@ -792,6 +912,30 @@
             lblDecVIT.TextAlign = ContentAlignment.MiddleCenter;
             lblDecVIT.Click += bigLabel36_Click;
             // 
+            // panel6
+            // 
+            panel6.BackColor = Color.Transparent;
+            panel6.BackgroundImage = Properties.Resources.Rectangle_6__4_;
+            panel6.BackgroundImageLayout = ImageLayout.Stretch;
+            panel6.Controls.Add(lblJobBonus1);
+            panel6.Location = new Point(647, 66);
+            panel6.Margin = new Padding(3, 2, 3, 2);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(114, 40);
+            panel6.TabIndex = 26;
+            // 
+            // lblJobBonus1
+            // 
+            lblJobBonus1.AutoSize = true;
+            lblJobBonus1.BackColor = Color.Transparent;
+            lblJobBonus1.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblJobBonus1.ForeColor = Color.FromArgb(80, 80, 80);
+            lblJobBonus1.Location = new Point(50, 10);
+            lblJobBonus1.Name = "lblJobBonus1";
+            lblJobBonus1.Size = new Size(17, 25);
+            lblJobBonus1.TabIndex = 0;
+            lblJobBonus1.Text = ".";
+            // 
             // lblDecAGI
             // 
             lblDecAGI.AutoSize = true;
@@ -806,6 +950,30 @@
             lblDecAGI.Text = "-";
             lblDecAGI.TextAlign = ContentAlignment.MiddleCenter;
             lblDecAGI.Click += bigLabel37_Click;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.Transparent;
+            panel7.BackgroundImage = Properties.Resources.Rectangle_6__4_;
+            panel7.BackgroundImageLayout = ImageLayout.Stretch;
+            panel7.Controls.Add(lblJobBonusTitle);
+            panel7.Location = new Point(647, 21);
+            panel7.Margin = new Padding(3, 2, 3, 2);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(112, 40);
+            panel7.TabIndex = 25;
+            // 
+            // lblJobBonusTitle
+            // 
+            lblJobBonusTitle.AutoSize = true;
+            lblJobBonusTitle.BackColor = Color.Transparent;
+            lblJobBonusTitle.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblJobBonusTitle.ForeColor = Color.FromArgb(80, 80, 80);
+            lblJobBonusTitle.Location = new Point(0, 8);
+            lblJobBonusTitle.Name = "lblJobBonusTitle";
+            lblJobBonusTitle.Size = new Size(114, 25);
+            lblJobBonusTitle.TabIndex = 1;
+            lblJobBonusTitle.Text = "JOB BONUS";
             // 
             // lblDecSTR
             // 
@@ -2193,174 +2361,6 @@
             pbJobs.TabStop = false;
             pbJobs.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.Transparent;
-            panel1.BackgroundImage = Properties.Resources.Rectangle_6__4_;
-            panel1.BackgroundImageLayout = ImageLayout.Stretch;
-            panel1.Controls.Add(lblJobBonus7);
-            panel1.Location = new Point(647, 291);
-            panel1.Margin = new Padding(3, 2, 3, 2);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(114, 40);
-            panel1.TabIndex = 31;
-            // 
-            // lblJobBonus7
-            // 
-            lblJobBonus7.AutoSize = true;
-            lblJobBonus7.BackColor = Color.Transparent;
-            lblJobBonus7.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            lblJobBonus7.ForeColor = Color.FromArgb(80, 80, 80);
-            lblJobBonus7.Location = new Point(49, 9);
-            lblJobBonus7.Name = "lblJobBonus7";
-            lblJobBonus7.Size = new Size(17, 25);
-            lblJobBonus7.TabIndex = 0;
-            lblJobBonus7.Text = ".";
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.Transparent;
-            panel2.BackgroundImage = Properties.Resources.Rectangle_6__4_;
-            panel2.BackgroundImageLayout = ImageLayout.Stretch;
-            panel2.Controls.Add(lblJobBonus3);
-            panel2.Location = new Point(647, 156);
-            panel2.Margin = new Padding(3, 2, 3, 2);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(114, 40);
-            panel2.TabIndex = 27;
-            // 
-            // lblJobBonus3
-            // 
-            lblJobBonus3.AutoSize = true;
-            lblJobBonus3.BackColor = Color.Transparent;
-            lblJobBonus3.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            lblJobBonus3.ForeColor = Color.FromArgb(80, 80, 80);
-            lblJobBonus3.Location = new Point(49, 9);
-            lblJobBonus3.Name = "lblJobBonus3";
-            lblJobBonus3.Size = new Size(17, 25);
-            lblJobBonus3.TabIndex = 0;
-            lblJobBonus3.Text = ".";
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.Transparent;
-            panel3.BackgroundImage = Properties.Resources.Rectangle_6__4_;
-            panel3.BackgroundImageLayout = ImageLayout.Stretch;
-            panel3.Controls.Add(lblJobBonus6);
-            panel3.Location = new Point(647, 246);
-            panel3.Margin = new Padding(3, 2, 3, 2);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(114, 40);
-            panel3.TabIndex = 30;
-            // 
-            // lblJobBonus6
-            // 
-            lblJobBonus6.AutoSize = true;
-            lblJobBonus6.BackColor = Color.Transparent;
-            lblJobBonus6.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            lblJobBonus6.ForeColor = Color.FromArgb(80, 80, 80);
-            lblJobBonus6.Location = new Point(49, 9);
-            lblJobBonus6.Name = "lblJobBonus6";
-            lblJobBonus6.Size = new Size(17, 25);
-            lblJobBonus6.TabIndex = 0;
-            lblJobBonus6.Text = ".";
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.Transparent;
-            panel4.BackgroundImage = Properties.Resources.Rectangle_6__4_;
-            panel4.BackgroundImageLayout = ImageLayout.Stretch;
-            panel4.Controls.Add(lblJobBonus2);
-            panel4.Location = new Point(647, 111);
-            panel4.Margin = new Padding(3, 2, 3, 2);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(114, 40);
-            panel4.TabIndex = 28;
-            // 
-            // lblJobBonus2
-            // 
-            lblJobBonus2.AutoSize = true;
-            lblJobBonus2.BackColor = Color.Transparent;
-            lblJobBonus2.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            lblJobBonus2.ForeColor = Color.FromArgb(80, 80, 80);
-            lblJobBonus2.Location = new Point(49, 9);
-            lblJobBonus2.Name = "lblJobBonus2";
-            lblJobBonus2.Size = new Size(17, 25);
-            lblJobBonus2.TabIndex = 0;
-            lblJobBonus2.Text = ".";
-            // 
-            // panel5
-            // 
-            panel5.BackColor = Color.Transparent;
-            panel5.BackgroundImage = Properties.Resources.Rectangle_6__4_;
-            panel5.BackgroundImageLayout = ImageLayout.Stretch;
-            panel5.Controls.Add(lblJobBonus4);
-            panel5.Location = new Point(647, 201);
-            panel5.Margin = new Padding(3, 2, 3, 2);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(114, 40);
-            panel5.TabIndex = 29;
-            // 
-            // lblJobBonus4
-            // 
-            lblJobBonus4.AutoSize = true;
-            lblJobBonus4.BackColor = Color.Transparent;
-            lblJobBonus4.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            lblJobBonus4.ForeColor = Color.FromArgb(80, 80, 80);
-            lblJobBonus4.Location = new Point(49, 9);
-            lblJobBonus4.Name = "lblJobBonus4";
-            lblJobBonus4.Size = new Size(17, 25);
-            lblJobBonus4.TabIndex = 0;
-            lblJobBonus4.Text = ".";
-            // 
-            // panel6
-            // 
-            panel6.BackColor = Color.Transparent;
-            panel6.BackgroundImage = Properties.Resources.Rectangle_6__4_;
-            panel6.BackgroundImageLayout = ImageLayout.Stretch;
-            panel6.Controls.Add(lblJobBonus1);
-            panel6.Location = new Point(647, 66);
-            panel6.Margin = new Padding(3, 2, 3, 2);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(114, 40);
-            panel6.TabIndex = 26;
-            // 
-            // lblJobBonus1
-            // 
-            lblJobBonus1.AutoSize = true;
-            lblJobBonus1.BackColor = Color.Transparent;
-            lblJobBonus1.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            lblJobBonus1.ForeColor = Color.FromArgb(80, 80, 80);
-            lblJobBonus1.Location = new Point(50, 10);
-            lblJobBonus1.Name = "lblJobBonus1";
-            lblJobBonus1.Size = new Size(17, 25);
-            lblJobBonus1.TabIndex = 0;
-            lblJobBonus1.Text = ".";
-            // 
-            // panel7
-            // 
-            panel7.BackColor = Color.Transparent;
-            panel7.BackgroundImage = Properties.Resources.Rectangle_6__4_;
-            panel7.BackgroundImageLayout = ImageLayout.Stretch;
-            panel7.Controls.Add(lblJobBonusTitle);
-            panel7.Location = new Point(647, 21);
-            panel7.Margin = new Padding(3, 2, 3, 2);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(112, 40);
-            panel7.TabIndex = 25;
-            // 
-            // lblJobBonusTitle
-            // 
-            lblJobBonusTitle.AutoSize = true;
-            lblJobBonusTitle.BackColor = Color.Transparent;
-            lblJobBonusTitle.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            lblJobBonusTitle.ForeColor = Color.FromArgb(80, 80, 80);
-            lblJobBonusTitle.Location = new Point(0, 8);
-            lblJobBonusTitle.Name = "lblJobBonusTitle";
-            lblJobBonusTitle.Size = new Size(114, 25);
-            lblJobBonusTitle.TabIndex = 1;
-            lblJobBonusTitle.Text = "JOB BONUS";
-            // 
             // StatSimForm
             // 
             AllowDrop = true;
@@ -2381,6 +2381,20 @@
             pnlBuffs.PerformLayout();
             pnlStatusSimulatorControls.ResumeLayout(false);
             pnlStatusSimulatorControls.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
             pnlCharacterInfo.ResumeLayout(false);
             pnlCharacterInfo.PerformLayout();
             pnlFLEEValue2.ResumeLayout(false);
@@ -2456,20 +2470,6 @@
             pnlStats.ResumeLayout(false);
             pnlStats.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbJobs).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -2623,11 +2623,11 @@
         private ReaLTaiizor.Controls.BigLabel lblDecAGI;
         private ReaLTaiizor.Controls.BigLabel lblDecSTR;
         private Panel panel1;
-        private ReaLTaiizor.Controls.BigLabel lblJobBonus7;
+        private ReaLTaiizor.Controls.BigLabel lblJobBonus6;
         private Panel panel2;
         private ReaLTaiizor.Controls.BigLabel lblJobBonus3;
         private Panel panel3;
-        private ReaLTaiizor.Controls.BigLabel lblJobBonus6;
+        private ReaLTaiizor.Controls.BigLabel lblJobBonus5;
         private Panel panel4;
         private ReaLTaiizor.Controls.BigLabel lblJobBonus2;
         private Panel panel5;
