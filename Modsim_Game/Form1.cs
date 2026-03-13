@@ -49,138 +49,90 @@ namespace Modsim_Game
             if (!int.TryParse(txtLUK.Text, out int luk)) luk = 1;
             if (!int.TryParse(txtBaseLevel.Text, out int baseLevel)) baseLevel = 1;
 
-            // --- STAT POINTS CALCULATION ---
-            int totalPointsGained = 0;
-            for (int i = 1; i < baseLevel; i++)
-            {
-                totalPointsGained += (i / 5) + 3;
-            }
-            int totalAvailablePoints = totalPointsGained + 48;
+            // --- STAT POINTS & UI STATE ---
+            int totalAvailablePoints = CalculateTotalAvailablePoints(baseLevel) + 48;
             int currentPointsSpent = CalculateStatCost(str) + CalculateStatCost(dex) +
                                      CalculateStatCost(vit) + CalculateStatCost(intel) +
                                      CalculateStatCost(agi) + CalculateStatCost(luk);
             int remainingPoints = totalAvailablePoints - currentPointsSpent;
 
-            // --- VALIDATION ---
-            if (remainingPoints < 0)
-            {
-                lblPointsRemaining.ForeColor = System.Drawing.Color.Red;
-                lblPointsRemaining.Text = $"Overspent: Reset";
-                txtSTR.TB.ReadOnly = txtDEX.TB.ReadOnly = txtVIT.TB.ReadOnly =
-                txtLUK.TB.ReadOnly = txtINT.TB.ReadOnly = txtAGI.TB.ReadOnly = true;
-            }
-            else
-            {
-                lblPointsRemaining.ForeColor = System.Drawing.Color.Black;
-                lblPointsRemaining.Text = remainingPoints.ToString();
-                txtSTR.TB.ReadOnly = txtDEX.TB.ReadOnly = txtVIT.TB.ReadOnly =
-                txtLUK.TB.ReadOnly = txtINT.TB.ReadOnly = txtAGI.TB.ReadOnly = false;
-            }
 
-            // --- Required stats for next increment ---
-            lblReqSTR.Text = (2 + (str >= 11 ? ((str - 11) / 10) + 1 : 0)).ToString();
-            lblReqAGI.Text = (2 + (agi >= 11 ? ((agi - 11) / 10) + 1 : 0)).ToString();
-            lblReqINT.Text = (2 + (intel >= 11 ? ((intel - 11) / 10) + 1 : 0)).ToString();
-            lblReqDEX.Text = (2 + (dex >= 11 ? ((dex - 11) / 10) + 1 : 0)).ToString();
-            lblReqVIT.Text = (2 + (vit >= 11 ? ((vit - 11) / 10) + 1 : 0)).ToString();
-            lblReqLUK.Text = (2 + (luk >= 11 ? ((luk - 11) / 10) + 1 : 0)).ToString();
+            int increment = 2 + (str >= 11 ? ((str - 11) / 10) + 1 : 0);
+            lblReqSTR.Text = increment.ToString();
+
+            int increment2 = 2 + (agi >= 11 ? ((agi - 11) / 10) + 1 : 0);
+            lblReqAGI.Text = increment2.ToString();
+
+            int increment3 = 2 + (intel >= 11 ? ((intel - 11) / 10) + 1 : 0);
+            lblReqINT.Text = increment3.ToString();
+
+            int increment4 = 2 + (dex >= 11 ? ((dex - 11) / 10) + 1 : 0);
+            lblReqDEX.Text = increment4.ToString();
+
+            int increment5 = 2 + (vit >= 11 ? ((vit - 11) / 10) + 1 : 0);
+            lblReqVIT.Text = increment5.ToString();
+
+            int increment6 = 2 + (luk >= 11 ? ((luk - 11) / 10) + 1 : 0);
+            lblReqLUK.Text = increment6.ToString();
 
 
+            lblPointsRemaining.Text = remainingPoints.ToString();
+            lblPointsRemaining.ForeColor = (remainingPoints < 0) ? Color.Red : Color.Black;
+            bool isOverspent = remainingPoints < 0;
+            txtSTR.TB.ReadOnly = txtDEX.TB.ReadOnly = txtVIT.TB.ReadOnly =
+            txtLUK.TB.ReadOnly = txtINT.TB.ReadOnly = txtAGI.TB.ReadOnly = isOverspent;
 
+            // --- BASE JOB PROPERTIES ---
+            string selectedJob = cmbSelectJob.SelectedItem?.ToString() ?? "Novice";
 
-            // --- STR Calculations ---
-            // Bonus Atk: Every 10 STR adds [STR/10]^2
-            int strTier = str / 10;
-            int totalStrDamage = str + (strTier * strTier);
-            // 2. Calculate the Bonus: 30 weight units for every 1 point of STR
-            int strWeightBonus = str * 30;
+            // --- HP CALCULATION (Static Table) ---
+            int tableBaseHP = JobStatTable.GetMaxHP(selectedJob, baseLevel);
+           /* if (chkBaby.Checked) tableBaseHP = (int)(tableBaseHP * 0.7);*/
+            double totalHp = tableBaseHP * (1 + (vit * 0.01));
 
-            // 3. Add to the Job's Base Weight (e.g., 2030 for Novice, 2830 for Swordsman)
-            int totalWeightLimit = jobBaseWeight + strWeightBonus;
+            // --- MAX SP CALCULATION (Using your formula) ---
+            double SP_JOB = JobStatTable.GetSpJobModifier(selectedJob);
+            double BASE_SP = jobBaseSP + (baseLevel * SP_JOB);
+            int SP_MOD_A = 0; // Flat bonuses from equipment
+            int SP_MOD_B = 0; // % bonuses from equipment
 
-            // --- DEX Calculations ---
-            // Ranged ATK (Bows, Guns, etc): DEX + [DEX/10]^2
-            int dexTier = dex / 10;
-            int rangedAtk = dex + (dexTier * dexTier);
-            // Melee Bonus: +1 ATK every 5 DEX
-            int meleeBonusFromDex = dex / 5;
-            // Cast Time Reduction: -1/150 per point (150 = Instant)
+            // Step 2: Apply INT bonus
+            double MAX_SP = Math.Floor(BASE_SP * (1 + intel * 0.01));
+
+            // Step 3: Additive modifiers
+            MAX_SP += SP_MOD_A;
+
+            // Step 4: Multiplicative modifiers
+            MAX_SP = Math.Floor(MAX_SP * (1 + SP_MOD_B * 0.01));
+
+            // Step 5: Baby Penalty (if applicable)
+           /* if (chkBaby.Checked) MAX_SP = Math.Floor(MAX_SP * 0.7);*/
+
+            // --- OTHER STATS ---
+            int totalStrDamage = str + (int)Math.Pow(str / 10, 2);
+            int totalWeightLimit = jobBaseWeight + (str * 30);
+            double totalAspd = weaponBaseASPD + jobASPDModifier + (agi / 5.0);
             double castReduction = Math.Min(100, (dex / 150.0) * 100);
-
-            // --- AGI & ASPD (Weapon + Job + Stats) ---
-            // Flee: Base 2 + 1 per AGI
-            int totalFlee = 2 + agi;
-
-            // Stat Bonus: +1 ASPD every 5 AGI
-            int aspdStatBonus = agi / 5;
-
-            // Formula: Weapon Base + Job Modifier + AGI/5 Stat Bonus
-            double totalAspd = weaponBaseASPD + jobASPDModifier + aspdStatBonus;
-
-            // Update UI
-            lblASPD.Text = Math.Floor(totalAspd).ToString();
-
-            // --- LUK Calculations ---
-            // Critical Rate: [LUK * 0.3] + 1
-            double critValue = (luk * 0.3) + 1;
-            // Perfect Dodge: +0.1% per point
-            double perfectDodge = luk * 0.1;
-            // Melee Bonus: +1 ATK every 5 LUK
-            int meleeBonusFromLuk = luk / 5;
-
-            // --- The Calculation ---
-            double levelFactor = baseLevel - 1;
-
-            // Formula: Base + Linear Growth + Quadratic Curve
-            double baseHP = 40 + (levelFactor * baseHpIncrement) + (hpGainMultiplier * Math.Pow(levelFactor, 2));
-
-            // Cast to int to match the spreadsheet steps
-            int finalBaseHP = (int)Math.Floor(baseHP);
-
-            // Apply VIT Bonus (1% per point)
-            double totalHp = finalBaseHP * (1 + (vit * 0.01));
-
-            // HP regen: +1 base, +1 per 5 VIT
-            int hpRegen = 1 + (vit / 5);
-
-            // --- INT & SP ---
-            // Linear SP: Job Base SP + (Level - 1)
-            int baseSP = jobBaseSP + (baseLevel - 1);
-            // Apply INT bonus: +1% per point
-            double totalSP = baseSP * (1 + (intel * 0.01));
-            // SP regen: +1 base, +1 per 6 INT
-            int spRegen = 1 + (intel / 6);
-            // MATK: Min bonus every 7, Max bonus every 5
-            int minMatk = intel + (int)Math.Pow(intel / 7, 2);
-            int maxMatk = intel + (int)Math.Pow(intel / 5, 2);
-
-            // --- DEF ---
-            // Soft DEF logic based on VIT thresholds
             double softDef = (vit <= 50) ? (vit * 0.8) : (vit * 0.85);
-            double finalDef = Math.Max(1, Math.Floor(softDef));
 
-            // --- UPDATE UI ---
-            lblAtk1.Text = (totalStrDamage + meleeBonusFromDex + meleeBonusFromLuk).ToString();
+            // --- FINAL UI UPDATE ---
+            lblTotalHP.Text = Math.Floor(totalHp).ToString();
+            lblTotalSp.Text = MAX_SP.ToString();
+
+            lblAtk1.Text = (totalStrDamage + (dex / 5) + (luk / 5)).ToString();
             lblWeight.Text = totalWeightLimit.ToString();
             lblHit.Text = dex.ToString();
-            lblRangedAtk.Text = rangedAtk.ToString();
+            lblRangedAtk.Text = (dex + (int)Math.Pow(dex / 10, 2)).ToString();
             lblCastReduction.Text = $"{castReduction:F1}%";
-            lblValueDEF2.Text = finalDef.ToString();
-            lblTotalHP.Text = Math.Floor(totalHp).ToString();
-            lblTotalSp.Text = Math.Floor(totalSP).ToString();
-            lblHpRegen.Text = hpRegen.ToString();
-            lblSpRegen.Text = spRegen.ToString();
-            lblMinMatk1.Text = minMatk.ToString();
-            lblMinMatk2.Text = maxMatk.ToString();
-            lblFLEE1.Text = totalFlee.ToString();
+            lblValueDEF2.Text = Math.Max(1, Math.Floor(softDef)).ToString();
+            lblHpRegen.Text = (1 + (vit / 5)).ToString();
+            lblSpRegen.Text = (1 + (intel / 6)).ToString();
+            lblMinMatk1.Text = (intel + (int)Math.Pow(intel / 7, 2)).ToString();
+            lblMinMatk2.Text = (intel + (int)Math.Pow(intel / 5, 2)).ToString();
+            lblFLEE1.Text = (2 + agi).ToString();
             lblASPD.Text = Math.Floor(totalAspd).ToString();
-            lblCrit.Text = Math.Floor(critValue).ToString("F1");
-            lblPerfectDodge.Text = $"{perfectDodge:F1}%";
-
-            // Update Remaining Points Label
-            int remaining = CalculateTotalAvailablePoints(baseLevel) - CalculateTotalSpent();
-            lblPointsRemaining.Text = remaining.ToString();
-            lblPointsRemaining.ForeColor = (remaining < 0) ? Color.Red : Color.Black;
+            lblCrit.Text = ((luk * 0.3) + 1).ToString("F1");
+            lblPerfectDodge.Text = $"{(luk * 0.1):F1}%";
         }
 
         // Helper method for cost progression
@@ -218,9 +170,58 @@ namespace Modsim_Game
         private void txtLuk_TextChanged(object sender, EventArgs e) => UpdateAllStats();
 
 
+        public static class JobStatTable
+        {
+            // Arrays representing the HP columns from your image (Index 0 = Level 1)
+            private static readonly int[] NoviceHP = { 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200, 205, 210, 215, 220, 225, 230, 235, 240, 245, 250, 255, 260, 265, 270, 275, 280, 285, 290, 295, 300, 305, 310, 315, 320, 325, 330, 335, 340, 345, 350, 355, 360, 365, 370, 375, 380, 385, 390, 395, 400, 405, 410, 415, 420, 425, 430, 435, 440, 445, 450, 455, 460, 465, 470, 475, 480, 485, 490, 495, 500, 505, 510, 515, 520, 525, 530 };
+
+            private static readonly int[] SwordsmanHP = { 40, 46, 53, 61, 70, 79, 89, 100, 111, 123, 136, 149, 163, 178, 194, 210, 227, 245, 263, 282, 302, 322, 343, 365, 388, 411, 435, 460, 485, 511, 538, 565, 593, 622, 652, 682, 713, 745, 777, 810, 844, 878, 913, 949, 986, 1023, 1061, 1100, 1139, 1179, 1220, 1261, 1303, 1346, 1390, 1434, 1479, 1525, 1571, 1618, 1666, 1714, 1763, 1813, 1864, 1915, 1967, 2020, 2073, 2127, 2182, 2237, 2293, 2350, 2408, 2466, 2525, 2585, 2645, 2706, 2768, 2830, 2893, 2957, 3022, 3087, 3153, 3220, 3287, 3355, 3424, 3493, 3563, 3634, 3706, 3778, 3851, 3925, 3999 };
+
+            private static readonly int[] MagicianHP = { 40, 46, 52, 58, 65, 72, 79, 86, 94, 102, 110, 119, 128, 137, 147, 157, 167, 177, 188, 199, 210, 222, 234, 246, 259, 272, 285, 298, 312, 326, 340, 355, 370, 385, 401, 417, 433, 449, 466, 483, 500, 518, 536, 554, 573, 592, 611, 630, 650, 670, 690, 711, 732, 753, 775, 797, 819, 841, 864, 887, 910, 934, 958, 982, 1007, 1032, 1057, 1082, 1108, 1134, 1160, 1187, 1214, 1241, 1269, 1297, 1325, 1353, 1382, 1411, 1440, 1470, 1500, 1530, 1561, 1592, 1623, 1654, 1686, 1718, 1750, 1783, 1816, 1849, 1883, 1917, 1951, 1985, 2020 };
+
+            private static readonly int[] ArcherThiefHP = { 40, 46, 53, 60, 68, 76, 85, 94, 104, 114, 125, 136, 148, 160, 173, 186, 200, 214, 229, 244, 260, 276, 293, 310, 328, 346, 365, 384, 404, 424, 445, 466, 488, 510, 533, 556, 580, 604, 629, 654, 680, 706, 733, 760, 788, 816, 845, 874, 904, 934, 965, 996, 1028, 1060, 1093, 1126, 1160, 1194, 1229, 1264, 1300, 1336, 1373, 1410, 1448, 1486, 1525, 1564, 1604, 1644, 1685, 1726, 1768, 1810, 1853, 1896, 1940, 1984, 2029, 2074, 2120, 2166, 2213, 2260, 2308, 2356, 2405, 2454, 2504, 2554, 2605, 2656, 2708, 2760, 2813, 2866, 2920, 2974, 3029 };
+
+            private static readonly int[] AcolyteMerchantHP = { 40, 46, 52, 59, 66, 73, 81, 89, 98, 107, 116, 126, 136, 147, 158, 169, 181, 193, 206, 219, 232, 246, 260, 275, 290, 305, 321, 337, 354, 371, 388, 406, 424, 443, 462, 481, 501, 521, 542, 563, 584, 606, 628, 651, 674, 697, 721, 745, 770, 795, 820, 846, 872, 899, 926, 953, 981, 1009, 1038, 1067, 1096, 1126, 1156, 1187, 1218, 1249, 1281, 1313, 1346, 1379, 1412, 1446, 1480, 1515, 1550, 1585, 1621, 1657, 1694, 1731, 1768, 1806, 1844, 1883, 1922, 1961, 2001, 2041, 2082, 2123, 2164, 2206, 2248, 2291, 2334, 2377, 2421, 2465, 2510 };
+
+            public static int GetMaxHP(string jobClass, int level)
+            {
+                // Safety checks
+                if (level < 1) level = 1;
+                if (level > 99) level = 99;
+                int index = level - 1;
+
+                switch (jobClass)
+                {
+                    case "Swordsman": return SwordsmanHP[index];
+                    case "Magician": return MagicianHP[index];
+                    case "Archer":
+                    case "Thief": return ArcherThiefHP[index];
+                    case "Acolyte":
+                    case "Merchant": return AcolyteMerchantHP[index];
+                    default: return NoviceHP[index];
+                }
+            }
+
+            public static double GetSpJobModifier(string jobClass)
+            {
+                switch (jobClass)
+                {
+                    case "Magician": return 6.0;  // Reaches ~900 SP
+                    case "Acolyte": return 5.0;  // Reaches ~700 SP
+                    case "Archer": return 2.0;  // Reaches ~400 SP
+                    case "Thief": return 2.0;  // Reaches ~300 SP
+                    case "Merchant": return 3.0;  // Reaches ~300 SP
+                    case "Swordsman": return 2.0; // Hits exactly 210 SP at lvl 99
+                    default: return 1.0; // Novice: Hits 110 SP
+                }
+            }
+        }
+
+
+
 
         int jobBaseWeight = -30;
-        int jobBaseSP = 11; // Base SP at Level 1
+        int jobBaseSP; // Base SP at Level 1
         int jobASPDModifier = 0; //bonus based on the Class
         int weaponBaseASPD = 100; // Default base ASPD 
         double hpGainMultiplier = 0;
@@ -232,70 +233,59 @@ namespace Modsim_Game
             string selectedJob = cmbSelectJob.SelectedItem.ToString();
             cmbWeapon.Items.Clear();
 
-            // 2. Set Job-specific properties and Weapon Lists
             switch (selectedJob)
             {
                 case "Novice":
                     pbJobs.Image = Properties.Resources.noviceRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "One-Handed-Sword", "One-Handed-Axe", "One-Handed-Mace", "Two-Handed-Mace", "Rod&Staff", "Two-Handed-Staff" });
-                    jobBaseWeight = 2000; jobBaseSP = 11;
-                    hpGainMultiplier = 0;
-                    baseHpIncrement = 5;
+                    jobBaseWeight = 2000;
+                    jobBaseSP = 10; // Matches image table
                     break;
 
                 case "Swordsman":
                     pbJobs.Image = Properties.Resources.swordmanRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "One-Handed-Sword", "Two-Handed-Sword", "One-Handed-Spear", "Two-Handed-Spear", "One-Handed-Axe", "Two-Handed-Axe", "One-Handed-Mace", "Two-Handed-Mace" });
-                    jobBaseWeight = 2800; jobBaseSP = 10;
-                    hpGainMultiplier = 0.36;
-                    baseHpIncrement = 5;
+                    jobBaseWeight = 2800;
+                    jobBaseSP = 10; // Matches image table
                     break;
-                
+
                 case "Magician":
                     pbJobs.Image = Properties.Resources.magicianRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "Rod&Staff", "Two-Handed-Staff" });
-                    jobBaseWeight = 2200; jobBaseSP = 15;
-                    hpGainMultiplier = 0.155;
-                    baseHpIncrement = 5;
+                    jobBaseWeight = 2200;
+                    jobBaseSP = 10; // Matches image table
                     break;
+
                 case "Archer":
                     pbJobs.Image = Properties.Resources.archerRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "Bow" });
-                    jobBaseWeight = 2330; jobBaseSP = 12;
-                    hpGainMultiplier = 0.26;
-                    baseHpIncrement = 5;
+                    jobBaseWeight = 2330;
+                    jobBaseSP = 10; // Matches image table
                     break;
 
                 case "Acolyte":
                     pbJobs.Image = Properties.Resources.AcolyteRagnarok2;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "One-Handed-Mace", "Two-Handed-Mace", "Rod&Staff", "Two-Handed-Staff" });
-                    jobBaseWeight = 2200; jobBaseSP = 14;
-                    hpGainMultiplier = 0.206;
-                    baseHpIncrement = 5;
+                    jobBaseWeight = 2200;
+                    jobBaseSP = 15; // Matches image table
                     break;
 
                 case "Merchant":
                     pbJobs.Image = Properties.Resources.merchantRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "One-Handed-Sword", "One-Handed-Axe", "Two-Handed-Axe", "One-Handed-Mace", "Two-Handed-Mace" });
-                    jobBaseWeight = 2500; jobBaseSP = 12;
-                    hpGainMultiplier = 0.206;
-                    baseHpIncrement = 5;
+                    jobBaseWeight = 2500;
+                    jobBaseSP = 10; // Matches image table
                     break;
 
                 case "Thief":
                     pbJobs.Image = Properties.Resources.thiefRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "One-Handed-Sword", "One-Handed-Axe", "Bow" });
-                    jobBaseWeight = 2400; jobBaseSP = 14;
-                    hpGainMultiplier = 0.26;
-                    baseHpIncrement = 5;
+                    jobBaseWeight = 2400;
+                    jobBaseSP = 10; // Matches image table
                     break;
-
-                    // Add other cases (Magician, Archer, etc.)
             }
 
-            // Auto-select first weapon to avoid null errors
             if (cmbWeapon.Items.Count > 0) cmbWeapon.SelectedIndex = 0;
-
             UpdateAllStats();
         }
 
