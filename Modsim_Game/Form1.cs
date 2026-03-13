@@ -115,6 +115,15 @@ namespace Modsim_Game
             double castReduction = Math.Min(100, (dex / 150.0) * 100);
             double softDef = (vit <= 50) ? (vit * 0.8) : (vit * 0.85);
 
+            // --- DEF AND MDEF ---
+            int def = vit;
+            int mdef = intel;
+
+
+
+            lblValueDEF2.Text = def.ToString();
+            lblMDEFValue2.Text = mdef.ToString();
+
             // --- FINAL UI UPDATE ---
             lblTotalHP.Text = Math.Floor(totalHp).ToString();
             lblTotalSp.Text = MAX_SP.ToString();
