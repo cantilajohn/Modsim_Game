@@ -19,14 +19,12 @@ namespace Modsim_Game
             txtDEX.TB.BackColor = Color.White;
             txtINT.TB.BackColor = Color.White;
             txtBaseLevel.TB.BackColor = Color.White;
-
             BaseStats();
             lblFLEE2.Text = "1";
             lblMDEFValue2.Text = "1";
             lblValueDEF1.Text = "0";
             lblAtk2.Text = "0";
             lblMDEFValue1.Text = "0";
-
         }
         void BaseStats()
         {
@@ -127,14 +125,21 @@ namespace Modsim_Game
             // --- FINAL UI UPDATE ---
             lblTotalHP.Text = Math.Floor(totalHp).ToString();
             lblTotalSp.Text = MAX_SP.ToString();
+            // --- DEF AND MDEF ---
+
+            int def = vit;
+            int mdef = intel;
+
+            lblValueDEF2.Text = def.ToString();
+            lblMDEFValue2.Text = mdef.ToString();
 
             lblAtk1.Text = (totalStrDamage + (dex / 5) + (luk / 5)).ToString();
             lblWeight.Text = totalWeightLimit.ToString();
             lblHit.Text = dex.ToString();
             lblRangedAtk.Text = (dex + (int)Math.Pow(dex / 10, 2)).ToString();
             lblCastReduction.Text = $"{castReduction:F1}%";
-            lblValueDEF2.Text = Math.Max(1, Math.Floor(softDef)).ToString();
-            lblHpRegen.Text = (1 + (vit / 5)).ToString();
+/*            lblValueDEF2.Text = Math.Max(1, Math.Floor(softDef)).ToString();
+*/            lblHpRegen.Text = (1 + (vit / 5)).ToString();
             lblSpRegen.Text = (1 + (intel / 6)).ToString();
             lblMinMatk1.Text = (intel + (int)Math.Pow(intel / 7, 2)).ToString();
             lblMinMatk2.Text = (intel + (int)Math.Pow(intel / 5, 2)).ToString();
@@ -241,54 +246,56 @@ namespace Modsim_Game
 
             string selectedJob = cmbSelectJob.SelectedItem.ToString();
             cmbWeapon.Items.Clear();
+            cmbJobLevel.Items.Clear();
 
             switch (selectedJob)
             {
                 case "Novice":
                     pbJobs.Image = Properties.Resources.noviceRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "One-Handed-Sword", "One-Handed-Axe", "One-Handed-Mace", "Two-Handed-Mace", "Rod&Staff", "Two-Handed-Staff" });
+                    cmbJobLevel.Items.AddRange(new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", });
                     jobBaseWeight = 2000;
                     jobBaseSP = 10; // Matches image table
                     break;
-
                 case "Swordsman":
                     pbJobs.Image = Properties.Resources.swordmanRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "One-Handed-Sword", "Two-Handed-Sword", "One-Handed-Spear", "Two-Handed-Spear", "One-Handed-Axe", "Two-Handed-Axe", "One-Handed-Mace", "Two-Handed-Mace" });
+                    cmbJobLevel.Items.AddRange(new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9","10","11","12","13", "14", "15", "16", "17", "18", "19", "20", });
                     jobBaseWeight = 2800;
                     jobBaseSP = 10; // Matches image table
                     break;
-
                 case "Magician":
                     pbJobs.Image = Properties.Resources.magicianRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "Rod&Staff", "Two-Handed-Staff" });
+                    cmbJobLevel.Items.AddRange(new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", });
                     jobBaseWeight = 2200;
                     jobBaseSP = 10; // Matches image table
                     break;
-
                 case "Archer":
                     pbJobs.Image = Properties.Resources.archerRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "Bow" });
+                    cmbJobLevel.Items.AddRange(new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", });
                     jobBaseWeight = 2330;
                     jobBaseSP = 10; // Matches image table
                     break;
-
                 case "Acolyte":
                     pbJobs.Image = Properties.Resources.AcolyteRagnarok2;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "One-Handed-Mace", "Two-Handed-Mace", "Rod&Staff", "Two-Handed-Staff" });
+                    cmbJobLevel.Items.AddRange(new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", });
                     jobBaseWeight = 2200;
                     jobBaseSP = 15; // Matches image table
                     break;
-
                 case "Merchant":
                     pbJobs.Image = Properties.Resources.merchantRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "One-Handed-Sword", "One-Handed-Axe", "Two-Handed-Axe", "One-Handed-Mace", "Two-Handed-Mace" });
+                    cmbJobLevel.Items.AddRange(new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", });
                     jobBaseWeight = 2500;
                     jobBaseSP = 10; // Matches image table
                     break;
-
                 case "Thief":
                     pbJobs.Image = Properties.Resources.thiefRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "One-Handed-Sword", "One-Handed-Axe", "Bow" });
+                    cmbJobLevel.Items.AddRange(new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", });
                     jobBaseWeight = 2400;
                     jobBaseSP = 10; // Matches image table
                     break;
