@@ -56,8 +56,14 @@ namespace Modsim_Game
             if (!int.TryParse(txtLUK.Text, out int luk)) luk = 1;
             if (!int.TryParse(txtBaseLevel.Text, out int baseLevel)) baseLevel = 1;
 
-            // --- STAT POINTS & UI STATE ---
-            int totalAvailablePoints = CalculateTotalAvailablePoints(baseLevel) + 48;
+            // 2. Get Job Level from ComboBox
+            string job = cmbSelectJob.SelectedItem?.ToString() ?? "Novice";
+
+            // 3. Get Bonuses (Currently detailed for Swordsman)
+            int bonusSTR = 0, bonusAGI = 0, bonusVIT = 0, bonusINT = 0, bonusDEX = 0, bonusLUK = 0;
+
+            //   STAT POINTS & UI STATE  
+            int totalAvailablePoints = CalculateTotalAvailablePoints(baseLevel);
             int currentPointsSpent = CalculateStatCost(str) + CalculateStatCost(dex) +
                                      CalculateStatCost(vit) + CalculateStatCost(intel) +
                                      CalculateStatCost(agi) + CalculateStatCost(luk);
@@ -86,75 +92,85 @@ namespace Modsim_Game
             lblPointsRemaining.Text = remainingPoints.ToString();
             lblPointsRemaining.ForeColor = (remainingPoints < 0) ? Color.Red : Color.Black;
             bool isOverspent = remainingPoints < 0;
+
             txtSTR.TB.ReadOnly = txtDEX.TB.ReadOnly = txtVIT.TB.ReadOnly =
             txtLUK.TB.ReadOnly = txtINT.TB.ReadOnly = txtAGI.TB.ReadOnly = isOverspent;
 
-            // --- BASE JOB PROPERTIES ---
+            //   BASE JOB PROPERTIES  
             string selectedJob = cmbSelectJob.SelectedItem?.ToString() ?? "Novice";
 
-            // --- HP CALCULATION (Static Table) ---
-            int tableBaseHP = JobStatTable.GetMaxHP(selectedJob, baseLevel);
-           /* if (chkBaby.Checked) tableBaseHP = (int)(tableBaseHP * 0.7);*/
-            double totalHp = tableBaseHP * (1 + (vit * 0.01));
+            // Get Job Level Safely from your ComboBox
+            int jLvl = cmbJobLevel.SelectedItem != null ? int.Parse(cmbJobLevel.SelectedItem.ToString()) : 1;
 
-            // --- MAX SP CALCULATION (Using your formula) ---
+            //   3. Get Bonuses (Now completely universal!)  
+            int bSTR = JobStatTable.GetBonus(selectedJob, "STR", jLvl);
+            int bAGI = JobStatTable.GetBonus(selectedJob, "AGI", jLvl);
+            int bVIT = JobStatTable.GetBonus(selectedJob, "VIT", jLvl);
+            int bINT = JobStatTable.GetBonus(selectedJob, "INT", jLvl);
+            int bDEX = JobStatTable.GetBonus(selectedJob, "DEX", jLvl);
+            int bLUK = JobStatTable.GetBonus(selectedJob, "LUK", jLvl);
+
+            // Total stats for formulas
+            int tStr = str + bSTR;
+            int tAgi = agi + bAGI;
+            int tVit = vit + bVIT;
+            int tInt = intel + bINT;
+            int tDex = dex + bDEX;
+            int tLuk = luk + bLUK;
+
+            //  3. UPDATED CALCULATIONS 
+
+            // HP Calculation
+            int tableBaseHP = JobStatTable.GetMaxHP(selectedJob, baseLevel);
+            double totalHp = tableBaseHP * (1 + (tVit * 0.01)); // Use tVit
+
+            // MAX SP Calculation
             double SP_JOB = JobStatTable.GetSpJobModifier(selectedJob);
             double BASE_SP = jobBaseSP + (baseLevel * SP_JOB);
-            int SP_MOD_A = 0; // Flat bonuses from equipment
-            int SP_MOD_B = 0; // % bonuses from equipment
-
-            // Step 2: Apply INT bonus
-            double MAX_SP = Math.Floor(BASE_SP * (1 + intel * 0.01));
-
-            // Step 3: Additive modifiers
+            int SP_MOD_A = 0;
+            int SP_MOD_B = 0;
+            double MAX_SP = Math.Floor(BASE_SP * (1 + tInt * 0.01)); // Use tInt
             MAX_SP += SP_MOD_A;
-
-            // Step 4: Multiplicative modifiers
             MAX_SP = Math.Floor(MAX_SP * (1 + SP_MOD_B * 0.01));
 
-            // Step 5: Baby Penalty (if applicable)
-           /* if (chkBaby.Checked) MAX_SP = Math.Floor(MAX_SP * 0.7);*/
+            // Battle Stats
+            int totalStrDamage = tStr + (int)Math.Pow(tStr / 10, 2); // Use tStr
+            int totalWeightLimit = jobBaseWeight + (tStr * 30);
+            double totalAspd = weaponBaseASPD + jobASPDModifier + (tAgi / 5.0); // Use tAgi
+            double castReduction = Math.Min(100, (tDex / 150.0) * 100);
 
-            // --- OTHER STATS ---
-            int totalStrDamage = str + (int)Math.Pow(str / 10, 2);
-            int totalWeightLimit = jobBaseWeight + (str * 30);
-            double totalAspd = weaponBaseASPD + jobASPDModifier + (agi / 5.0);
-            double castReduction = Math.Min(100, (dex / 150.0) * 100);
-            double softDef = (vit <= 50) ? (vit * 0.8) : (vit * 0.85);
+            // DEF AND MDEF (Matches image: Soft Def = Total VIT, Soft Mdef = Total INT)
+            int def = tVit;
+            int mdef = tInt;
 
-            // --- DEF AND MDEF ---
-            int def = vit;
-            int mdef = intel;
-
-
-
-            lblValueDEF2.Text = def.ToString();
-            lblMDEFValue2.Text = mdef.ToString();
-
-            // --- FINAL UI UPDATE ---
+            //   4. FINAL UI UPDATE  
             lblTotalHP.Text = Math.Floor(totalHp).ToString();
             lblTotalSp.Text = MAX_SP.ToString();
-            // --- DEF AND MDEF ---
 
-          
+            // Update Bonus Labels (The "+" values)
+            lblJobBonus1.Text = $"+{bSTR}";
+            lblJobBonus2.Text = $"+{bAGI}";
+            lblJobBonus3.Text = $"+{bVIT}";
+            lblJobBonus4.Text = $"+{bINT}";
+            lblJobBonus5.Text = $"+{bDEX}";
+            lblJobBonus6.Text = $"+{bLUK}";
 
             lblValueDEF2.Text = def.ToString();
             lblMDEFValue2.Text = mdef.ToString();
 
-            lblAtk1.Text = (totalStrDamage + (dex / 5) + (luk / 5)).ToString();
+            lblAtk1.Text = (totalStrDamage + (tDex / 5) + (tLuk / 5)).ToString();
             lblWeight.Text = totalWeightLimit.ToString();
-            lblHit.Text = dex.ToString();
-            lblRangedAtk.Text = (dex + (int)Math.Pow(dex / 10, 2)).ToString();
+            lblHit.Text = (baseLevel + tDex).ToString(); // RO Formula: Level + DEX
+            lblRangedAtk.Text = (tDex + (int)Math.Pow(tDex / 10, 2)).ToString();
             lblCastReduction.Text = $"{castReduction:F1}%";
-/*            lblValueDEF2.Text = Math.Max(1, Math.Floor(softDef)).ToString();
-*/            lblHpRegen.Text = (1 + (vit / 5)).ToString();
-            lblSpRegen.Text = (1 + (intel / 6)).ToString();
-            lblMinMatk1.Text = (intel + (int)Math.Pow(intel / 7, 2)).ToString();
-            lblMinMatk2.Text = (intel + (int)Math.Pow(intel / 5, 2)).ToString();
-            lblFLEE1.Text = (2 + agi).ToString();
+            lblHpRegen.Text = (1 + (tVit / 5)).ToString();
+            lblSpRegen.Text = (1 + (tInt / 6)).ToString();
+            lblMinMatk1.Text = (tInt + (int)Math.Pow(tInt / 7, 2)).ToString();
+            lblMinMatk2.Text = (tInt + (int)Math.Pow(tInt / 5, 2)).ToString();
+            lblFLEE1.Text = (baseLevel + tAgi).ToString(); // RO Formula: Level + AGI
             lblASPD.Text = Math.Floor(totalAspd).ToString();
-            lblCrit.Text = ((luk * 0.3) + 1).ToString("F1");
-            lblPerfectDodge.Text = $"{(luk * 0.1):F1}%";
+            lblCrit.Text = ((tLuk * 0.3) + 1).ToString("F1");
+            lblPerfectDodge.Text = $"{(tLuk * 0.1):F1}%";
         }
 
         // Helper method for cost progression
@@ -194,6 +210,137 @@ namespace Modsim_Game
 
         public static class JobStatTable
         {
+            //   SWORDSMAN  
+            private static readonly int[] SwdStr = { 6, 12, 19, 27, 34, 42, 50 };
+            private static readonly int[] SwdAgi = { 10, 30 };
+            private static readonly int[] SwdVit = { 3, 15, 25, 40 };
+            private static readonly int[] SwdDex = { 8, 22, 38 };
+            private static readonly int[] SwdLuk = { 5, 45 };
+
+            // MAGICIAN
+            private static readonly int[] MagInt = { 6, 12, 18, 25, 32, 40, 48, 50 }; 
+            private static readonly int[] MagAgi = { 8, 18, 28, 42 };               
+            private static readonly int[] MagDex = { 5, 22, 38 };                   
+            private static readonly int[] MagLuk = { 15, 30, 45 };
+
+
+            // ARCHER 
+            private static readonly int[] ArcDex = { 8, 16, 24, 32, 40, 48, 50 }; // Total +7
+            private static readonly int[] ArcStr = { 12, 28, 44 };               // Total +3
+            private static readonly int[] ArcAgi = { 5, 20, 35 };               // Total +3
+            private static readonly int[] ArcInt = { 15, 45 };                  // Total +2
+            private static readonly int[] ArcVit = { 25 };                      // Total +1
+            private static readonly int[] ArcLuk = { 10, 42 };                  // Total +2            
+
+            //   MERCHANT  
+            private static readonly int[] MerStr = { 11, 22, 33, 44, 50 };       // Total +5
+            private static readonly int[] MerDex = { 5, 15, 25, 35, 45 };       // Total +5
+            private static readonly int[] MerVit = { 10, 20, 30, 40 };          // Total +4
+            private static readonly int[] MerLuk = { 18, 48 };                  // Total +2
+            private static readonly int[] MerAgi = { 28 };                      // Total +1
+            private static readonly int[] MerInt = { 38 };
+
+            //   THIEF  
+            private static readonly int[] ThiAgi = { 14, 28, 42, 50 };           // Total +4
+            private static readonly int[] ThiStr = { 5, 18, 32, 45 };           // Total +4
+            private static readonly int[] ThiDex = { 8, 22, 35, 48 };           // Total +4
+            private static readonly int[] ThiLuk = { 12, 25, 40 };              // Total +3
+            private static readonly int[] ThiVit = { 20, 38 };                  // Total +2
+            private static readonly int[] ThiInt = { 46 };
+
+            //   ACOLYTE  
+            private static readonly int[] AcoLuk = { 12, 25, 40, 50 };           // Total +4
+            private static readonly int[] AcoStr = { 5, 20, 35 };               // Total +3
+            private static readonly int[] AcoVit = { 8, 22, 38 };               // Total +3
+            private static readonly int[] AcoInt = { 10, 28, 45 };              // Total +3
+            private static readonly int[] AcoDex = { 15, 30, 48 };              // Total +3
+            private static readonly int[] AcoAgi = { 18, 42 };
+
+            public static int GetBonus(string job, string stat, int jobLevel)
+            {
+                int[] milestones = null;
+                string s = stat.ToUpper();
+
+                switch (job)
+                {
+                    case "Swordsman":
+                        if (s == "STR") milestones = SwdStr;
+                        else if (s == "AGI") milestones = SwdAgi;
+                        else if (s == "VIT") milestones = SwdVit;
+                        else if (s == "DEX") milestones = SwdDex;
+                        else if (s == "LUK") milestones = SwdLuk;
+                        break;
+                    case "Magician":
+                    case "Mage":
+                        if (s == "INT") milestones = MagInt;
+                        else if (s == "AGI") milestones = MagAgi;
+                        else if (s == "DEX") milestones = MagDex; else if (s == "LUK") milestones = MagLuk;
+                        break;
+                    case "Archer":
+                        if (s == "DEX") milestones = ArcDex;
+                        else if (s == "STR") milestones = ArcStr;
+                        else if (s == "AGI") milestones = ArcAgi;
+                        else if (s == "INT") milestones = ArcInt;
+                        else if (s == "VIT") milestones = ArcVit; else if (s == "LUK") milestones = ArcLuk;
+                        break;
+                    case "Merchant":
+                        if (s == "STR") milestones = MerStr;
+                        else if (s == "DEX") milestones = MerDex;
+                        else if (s == "VIT") milestones = MerVit;
+                        else if (s == "LUK") milestones = MerLuk;
+                        else if (s == "AGI") milestones = MerAgi; else if (s == "INT") milestones = MerInt;
+                        break;
+                    case "Thief":
+                        if (s == "AGI") milestones = ThiAgi;
+                        else if (s == "STR") milestones = ThiStr;
+                        else if (s == "DEX") milestones = ThiDex;
+                        else if (s == "LUK") milestones = ThiLuk;
+                        else if (s == "VIT") milestones = ThiVit; else if (s == "INT") milestones = ThiInt;
+                        break;
+                    case "Acolyte":
+                        if (s == "INT") milestones = AcoInt;
+                        else if (s == "DEX") milestones = AcoDex;
+                        else if (s == "STR") milestones = AcoStr;
+                        else if (s == "AGI") milestones = AcoAgi;
+                        else if (s == "VIT") milestones = AcoVit;
+                        else if (s == "LUK") milestones = AcoLuk;
+                        break;
+                }
+
+                if (milestones == null) return 0;
+
+                int count = 0;
+                foreach (int m in milestones) { if (jobLevel >= m) count++; }
+                return count;
+            }
+
+            private static readonly int[] SwordsmanStrLevels = { 1, 6, 12, 19, 27, 34, 42 }; 
+            private static readonly int[] SwordsmanAgiLevels = { 10, 30 };                 
+            private static readonly int[] SwordsmanVitLevels = { 3, 15, 25, 40 };          
+            private static readonly int[] SwordsmanDexLevels = { 8, 22, 38 };              
+            private static readonly int[] SwordsmanLukLevels = { 5, 45 };                
+
+            public static int GetSwordsmanBonus(string stat, int currentJobLevel)
+            {
+                int[] levels;
+                switch (stat.ToUpper())
+                {
+                    case "STR": levels = SwordsmanStrLevels; break;
+                    case "AGI": levels = SwordsmanAgiLevels; break;
+                    case "VIT": levels = SwordsmanVitLevels; break;
+                    case "DEX": levels = SwordsmanDexLevels; break;
+                    case "LUK": levels = SwordsmanLukLevels; break;
+                    default: return 0;
+                }
+
+                // Count how many "level-up" milestones the current job level has passed
+                int count = 0;
+                foreach (int lvl in levels)
+                {
+                    if (currentJobLevel >= lvl) count++;
+                }
+                return count;
+            }
             // Arrays representing the HP columns from your image (Index 0 = Level 1)
             private static readonly int[] NoviceHP = { 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200, 205, 210, 215, 220, 225, 230, 235, 240, 245, 250, 255, 260, 265, 270, 275, 280, 285, 290, 295, 300, 305, 310, 315, 320, 325, 330, 335, 340, 345, 350, 355, 360, 365, 370, 375, 380, 385, 390, 395, 400, 405, 410, 415, 420, 425, 430, 435, 440, 445, 450, 455, 460, 465, 470, 475, 480, 485, 490, 495, 500, 505, 510, 515, 520, 525, 530 };
 
@@ -228,20 +375,16 @@ namespace Modsim_Game
             {
                 switch (jobClass)
                 {
-                    case "Magician": return 6.0;  // Reaches ~900 SP
-                    case "Acolyte": return 5.0;  // Reaches ~700 SP
-                    case "Archer": return 2.0;  // Reaches ~400 SP
-                    case "Thief": return 2.0;  // Reaches ~300 SP
-                    case "Merchant": return 3.0;  // Reaches ~300 SP
-                    case "Swordsman": return 2.0; // Hits exactly 210 SP at lvl 99
-                    default: return 1.0; // Novice: Hits 110 SP
+                    case "Magician": return 6.0;  
+                    case "Acolyte": return 5.0;  
+                    case "Archer": return 2.0; 
+                    case "Thief": return 2.0;  
+                    case "Merchant": return 3.0;  
+                    case "Swordsman": return 2.0; 
+                    default: return 1.0; 
                 }
             }
         }
-
-
-
-
         int jobBaseWeight = -30;
         int jobBaseSP; // Base SP at Level 1
         int jobASPDModifier = 0; //bonus based on the Class
@@ -261,64 +404,97 @@ namespace Modsim_Game
                 case "Novice":
                     pbJobs.Image = Properties.Resources.noviceRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "One-Handed-Sword", "One-Handed-Axe", "One-Handed-Mace", "Two-Handed-Mace", "Rod&Staff", "Two-Handed-Staff" });
-                    cmbJobLevel.Items.AddRange(new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", });
+                    cmbJobLevel.Items.Clear();
+                    for (int i = 1; i <= 10; i++)
+                    {
+                        cmbJobLevel.Items.Add(i.ToString());
+                    }
+                    cmbJobLevel.SelectedIndex = 0; // Default to Job Level 1
                     jobBaseWeight = 2000;
-                    jobBaseSP = 10; // Matches image table
+                    jobBaseSP = 10; // Matches  table
                     break;
                 case "Swordsman":
                     pbJobs.Image = Properties.Resources.swordmanRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "One-Handed-Sword", "Two-Handed-Sword", "One-Handed-Spear", "Two-Handed-Spear", "One-Handed-Axe", "Two-Handed-Axe", "One-Handed-Mace", "Two-Handed-Mace" });
-                    cmbJobLevel.Items.AddRange(new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9","10","11","12","13", "14", "15", "16", "17", "18", "19", "20", });
+                    cmbJobLevel.Items.Clear();
+                    for (int i = 1; i <= 50; i++)
+                    {
+                        cmbJobLevel.Items.Add(i.ToString());
+                    }
+                    cmbJobLevel.SelectedIndex = 0; // Default to Job Level 1
                     jobBaseWeight = 2800;
-                    jobBaseSP = 10; // Matches image table
+                    jobBaseSP = 10; // Matches  table
                     break;
                 case "Magician":
                     pbJobs.Image = Properties.Resources.magicianRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "Rod&Staff", "Two-Handed-Staff" });
-                    cmbJobLevel.Items.AddRange(new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", });
+                    cmbJobLevel.Items.Clear();
+                    for (int i = 1; i <= 50; i++)
+                    {
+                        cmbJobLevel.Items.Add(i.ToString());
+                    }
+                    cmbJobLevel.SelectedIndex = 0; // Default to Job Level 1
                     jobBaseWeight = 2200;
-                    jobBaseSP = 10; // Matches image table
+                    jobBaseSP = 10; // Matches  table
                     break;
                 case "Archer":
                     pbJobs.Image = Properties.Resources.archerRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "Bow" });
-                    cmbJobLevel.Items.AddRange(new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", });
+                    cmbJobLevel.Items.Clear();
+                    for (int i = 1; i <= 50; i++)
+                    {
+                        cmbJobLevel.Items.Add(i.ToString());
+                    }
+                    cmbJobLevel.SelectedIndex = 0; // Default to Job Level 1
                     jobBaseWeight = 2330;
-                    jobBaseSP = 10; // Matches image table
+                    jobBaseSP = 10; // Matches  table
                     break;
                 case "Acolyte":
                     pbJobs.Image = Properties.Resources.AcolyteRagnarok2;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "One-Handed-Mace", "Two-Handed-Mace", "Rod&Staff", "Two-Handed-Staff" });
-                    cmbJobLevel.Items.AddRange(new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", });
+                    cmbJobLevel.Items.Clear();
+                    for (int i = 1; i <= 50; i++)
+                    {
+                        cmbJobLevel.Items.Add(i.ToString());
+                    }
+                    cmbJobLevel.SelectedIndex = 0; // Default to Job Level 1
                     jobBaseWeight = 2200;
-                    jobBaseSP = 15; // Matches image table
+                    jobBaseSP = 15; // Matches  table
                     break;
                 case "Merchant":
                     pbJobs.Image = Properties.Resources.merchantRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "One-Handed-Sword", "One-Handed-Axe", "Two-Handed-Axe", "One-Handed-Mace", "Two-Handed-Mace" });
-                    cmbJobLevel.Items.AddRange(new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", });
+                    cmbJobLevel.Items.Clear();
+                    for (int i = 1; i <= 50; i++)
+                    {
+                        cmbJobLevel.Items.Add(i.ToString());
+                    }
+                    cmbJobLevel.SelectedIndex = 0; // Default to Job Level 1
                     jobBaseWeight = 2500;
-                    jobBaseSP = 10; // Matches image table
+                    jobBaseSP = 10; // Matches  table
                     break;
                 case "Thief":
                     pbJobs.Image = Properties.Resources.thiefRagnarok;
                     cmbWeapon.Items.AddRange(new string[] { "Hand", "Dagger", "One-Handed-Sword", "One-Handed-Axe", "Bow" });
-                    cmbJobLevel.Items.AddRange(new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", });
+                    cmbJobLevel.Items.Clear();
+                    for (int i = 1; i <= 50; i++)
+                    {
+                        cmbJobLevel.Items.Add(i.ToString());
+                    }
+                    cmbJobLevel.SelectedIndex = 0; // Default to Job Level 1
                     jobBaseWeight = 2400;
-                    jobBaseSP = 10; // Matches image table
+                    jobBaseSP = 10; // Matches  table
                     break;
             }
 
             if (cmbWeapon.Items.Count > 0) cmbWeapon.SelectedIndex = 0;
             UpdateAllStats();
         }
-
-        //ASPD table 
         private readonly Dictionary<(string Job, string Weapon), int> JobWeaponASPD = new Dictionary<(string, string), int>
         {
                  // NOVICE
                 { ("Novice", "Hand"), 150 }, { ("Novice", "Dagger"), 135 }, { ("Novice", "One-Handed-Sword"), 130 },{ ("Novice", "One-Handed-Axe"), 120 },{ ("Novice", "One-Handed-Mace"), 130 },{ ("Novice", "Two-Handed-Mace"), 130 },{ ("Novice", "Rod&Staff"), 135 },{ ("Novice", "Two-Handed-Staff"), 135 },
-                 // SWORDSMAN (Example values - adjust as needed)
+                 // SWORDSMAN 
                 { ("Swordsman", "Hand"), 160 }, { ("Swordsman", "Dagger"), 150 }, { ("Swordsman", "One-Handed-Sword"), 145 }, { ("Swordsman", "Two-Handed-Sword"), 140 },{ ("Swordsman", "One-Handed-Spear"), 135 },{ ("Swordsman", "Two-Handed-Spear"), 130 },{ ("Swordsman", "One-Handed-Axe"), 130 },{ ("Swordsman", "Two-Handed-Axe"), 125 },{ ("Swordsman", "One-Handed-Maxe"), 135 },{ ("Swordsman", "Two-Handed-Mace"), 130 },
                  // MAGICIAN
                  { ("Magician", "Hand"), 140 }, { ("Magician", "Dagger"), 130 }, { ("Magician", "Rod&Staff"), 120 }, { ("Magician", "Two-Handed-Staff"), 130 },
@@ -331,9 +507,6 @@ namespace Modsim_Game
                  // THIEF
                 { ("Thief", "Hand"), 160 }, { ("Thief", "Dagger"), 150 }, { ("Thief", "One-Handed-Sword"), 135 }, { ("Thief", "One-Handed-Axe"), 120 }, { ("Thief", "Bow"), 120 },
         };
-
-
-
         private void cmbWeapon_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbSelectJob.SelectedItem == null || cmbWeapon.SelectedItem == null) return;
@@ -637,5 +810,9 @@ namespace Modsim_Game
             txtDEX.Text = nextStr.ToString();
         }
 
+        private void cmbJobLevel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateAllStats();
+        }
     }
 }
