@@ -127,6 +127,9 @@
   <data name="iRO_Wiki_Guard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iRO_Wiki_Guard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="4831" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4831.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="knight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\knight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,8 +154,14 @@
   <data name="archer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\archer.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="4832" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4832.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="magicianRagnarok" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\magicianRagnarok.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AcolyteRagnarok2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AcolyteRagnarok2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="thiefRagnarok" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\thiefRagnarok.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,7 +208,7 @@
   <data name="archerRagnarok" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\archerRagnarok.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AcolyteRagnarok2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AcolyteRagnarok2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="4834" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4834.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
