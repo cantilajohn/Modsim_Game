@@ -12,6 +12,44 @@ namespace Modsim_Game
         public StatSimForm()
         {
             InitializeComponent();
+            BaseStats();
+        }
+
+        //Label values for the base stats and calculations
+        void BaseStats()
+        {
+
+            //Label values for the base stats and calculations
+            txtSTR.Text = "1";
+            txtAGI.Text = "1";
+            txtVIT.Text = "1";
+            txtINT.Text = "1";
+            txtDEX.Text = "1";
+            txtLUK.Text = "1";
+            txtBaseLevel.Text = "1";
+            lblHit.Text = "0";
+            lblValueDEF2.Text = "0";
+            lblValueDEF1.Text = "0";
+            lblReqSTR.Text = "0";
+            lblReqAGI.Text = "0";
+            lblReqVIT.Text = "0";
+            lblReqINT.Text = "0";
+            lblReqDEX.Text = "0";
+            lblReqLUK.Text = "0";
+            lblAtk1.Text = "0";
+            lblAtk2.Text = "0";
+            lblMinMatk1.Text = "0";
+            lblMinMatk2.Text = "0";
+            lblFLEE1.Text = "0";
+            lblFLEE2.Text = "0";
+            lblCrit.Text = "0";
+            lblMDEFValue1.Text = "0";
+            lblMDEFValue2.Text = "0";
+            lblSpRegen.Text = "0";
+            lblHpRegen.Text = "0";
+
+
+            //UI changes for the TextBoxes
             txtAGI.TB.BackColor = Color.White;
             txtSTR.TB.BackColor = Color.White;
             txtVIT.TB.BackColor = Color.White;
@@ -19,12 +57,7 @@ namespace Modsim_Game
             txtDEX.TB.BackColor = Color.White;
             txtINT.TB.BackColor = Color.White;
             txtBaseLevel.TB.BackColor = Color.White;
-            BaseStats();
-            lblFLEE2.Text = "1";
-            lblMDEFValue2.Text = "1";
-            lblValueDEF1.Text = "0";
-            lblAtk2.Text = "0";
-            lblMDEFValue1.Text = "0";
+
 
             //Job Bonus BASE
             lblJobBonus1.Text = "0";
@@ -33,17 +66,6 @@ namespace Modsim_Game
             lblJobBonus4.Text = "0";
             lblJobBonus5.Text = "0";
             lblJobBonus6.Text = "0";
-
-        }
-        void BaseStats()
-        {
-            txtSTR.Text = "1";
-            txtAGI.Text = "1";
-            txtVIT.Text = "1";
-            txtINT.Text = "1";
-            txtDEX.Text = "1";
-            txtLUK.Text = "1";
-            txtBaseLevel.Text = "1";
         }
         private void UpdateAllStats()
         {
@@ -56,11 +78,8 @@ namespace Modsim_Game
             if (!int.TryParse(txtLUK.Text, out int luk)) luk = 1;
             if (!int.TryParse(txtBaseLevel.Text, out int baseLevel)) baseLevel = 1;
 
-            // 2. Get Job Level from ComboBox
+            // Get Job Level from ComboBox
             string job = cmbSelectJob.SelectedItem?.ToString() ?? "Novice";
-
-            // 3. Get Bonuses (Currently detailed for Swordsman)
-            int bonusSTR = 0, bonusAGI = 0, bonusVIT = 0, bonusINT = 0, bonusDEX = 0, bonusLUK = 0;
 
             //   STAT POINTS & UI STATE  
             int totalAvailablePoints = CalculateTotalAvailablePoints(baseLevel);
@@ -70,6 +89,7 @@ namespace Modsim_Game
             int remainingPoints = totalAvailablePoints - currentPointsSpent;
 
 
+            // Calculate required points for next increment and update labels
             int increment = 2 + (str >= 11 ? ((str - 11) / 10) + 1 : 0);
             lblReqSTR.Text = increment.ToString();
 
@@ -88,12 +108,11 @@ namespace Modsim_Game
             int increment6 = 2 + (luk >= 11 ? ((luk - 11) / 10) + 1 : 0);
             lblReqLUK.Text = increment6.ToString();
 
-
+            // Update remaining points label and color
             lblPointsRemaining.Text = remainingPoints.ToString();
             lblPointsRemaining.ForeColor = (remainingPoints < 0) ? Color.Red : Color.Black;
             bool isOverspent = remainingPoints < 0;
-
-            txtSTR.TB.ReadOnly = txtDEX.TB.ReadOnly = txtVIT.TB.ReadOnly =
+            txtSTR.TB.ReadOnly = txtDEX.TB.ReadOnly = txtVIT.TB.ReadOnly = isOverspent;
             txtLUK.TB.ReadOnly = txtINT.TB.ReadOnly = txtAGI.TB.ReadOnly = isOverspent;
 
             //   BASE JOB PROPERTIES  
@@ -119,7 +138,6 @@ namespace Modsim_Game
             int tLuk = luk + bLUK;
 
             //  UPDATED CALCULATIONS 
-
             // HP Calculation
             int tableBaseHP = JobStatTable.GetMaxHP(selectedJob, baseLevel);
             double totalHp = tableBaseHP * (1 + (tVit * 0.01)); // Use tVit
@@ -154,10 +172,8 @@ namespace Modsim_Game
             lblJobBonus4.Text = $"+{bINT}";
             lblJobBonus5.Text = $"+{bDEX}";
             lblJobBonus6.Text = $"+{bLUK}";
-
             lblValueDEF2.Text = def.ToString();
             lblMDEFValue2.Text = mdef.ToString();
-
             lblAtk1.Text = (totalStrDamage + (tDex / 5) + (tLuk / 5)).ToString();
             lblWeight.Text = totalWeightLimit.ToString();
             lblHit.Text = (baseLevel + tDex).ToString(); // RO Formula Level + DEX
@@ -169,7 +185,7 @@ namespace Modsim_Game
             lblMinMatk2.Text = (tInt + (int)Math.Pow(tInt / 5, 2)).ToString();
             lblFLEE1.Text = (baseLevel + tAgi).ToString(); // RO Formula Level + AGI
             lblASPD.Text = Math.Floor(totalAspd).ToString();
-            lblCrit.Text = ((tLuk * 0.3) + 1).ToString("F1");
+            lblCrit.Text = Math.Floor((tLuk * 0.3) + 1).ToString("F1");
             lblPerfectDodge.Text = $"{(tLuk * 0.1):F1}%";
         }
 
@@ -183,18 +199,17 @@ namespace Modsim_Game
             }
             return totalCost;
         }
+        //Calculate total available points based on the level progression
         private int CalculateTotalAvailablePoints(int level)
         {
             // Starting points at Level 1
             int totalPoints = 48;
-
             // Loop from Level 1 up to the current Level
             for (int i = 1; i < level; i++)
             {
                 // Gain baseLVL / 5 + 3 points per level up
                 totalPoints += (i / 5) + 3;
             }
-
             return totalPoints;
         }
 
@@ -211,51 +226,51 @@ namespace Modsim_Game
         public static class JobStatTable
         {
             //   SWORDSMAN  
-            private static readonly int[] SwdStr = { 6, 12, 19, 27, 34, 42, 50 };
-            private static readonly int[] SwdAgi = { 10, 30 };
-            private static readonly int[] SwdVit = { 3, 15, 25, 40 };
-            private static readonly int[] SwdDex = { 8, 22, 38 };
-            private static readonly int[] SwdLuk = { 5, 45 };
+            private static readonly int[] SwdStr = { 2, 14, 33, 40, 47, 49, 50 };
+            private static readonly int[] SwdAgi = { 30, 46 };
+            private static readonly int[] SwdVit = { 6, 18, 38, 42 };
+            private static readonly int[] SwdDex = { 10, 22, 36 };
+            private static readonly int[] SwdLuk = { 26, 44 };
 
-            // MAGICIAN
-            private static readonly int[] MagInt = { 6, 12, 18, 25, 32, 40, 48, 50 };
-            private static readonly int[] MagAgi = { 8, 18, 28, 42 };
-            private static readonly int[] MagDex = { 5, 22, 38 };
-            private static readonly int[] MagLuk = { 15, 30, 45 };
+            //   MAGICIAN  
+            private static readonly int[] MagAgi = { 18, 26, 40, 47 };
+            private static readonly int[] MagInt = { 2, 14, 22, 33, 38, 44, 46, 50 };
+            private static readonly int[] MagDex = { 6, 10, 36 };
+            private static readonly int[] MagLuk = { 30, 42, 49 };
 
-
-            // ARCHER 
-            private static readonly int[] ArcDex = { 8, 16, 24, 32, 40, 48, 50 };  
-            private static readonly int[] ArcStr = { 12, 28, 44 };               
-            private static readonly int[] ArcAgi = { 5, 20, 35 };               
-            private static readonly int[] ArcInt = { 15, 45 };                   
-            private static readonly int[] ArcVit = { 25 };                      
-            private static readonly int[] ArcLuk = { 10, 42 };                               
-
-            //   MERCHANT  
-            private static readonly int[] MerStr = { 11, 22, 33, 44, 50 };       
-            private static readonly int[] MerDex = { 5, 15, 25, 35, 45 };       
-            private static readonly int[] MerVit = { 10, 20, 30, 40 };         
-            private static readonly int[] MerLuk = { 18, 48 };                   
-            private static readonly int[] MerAgi = { 28 };                      
-            private static readonly int[] MerInt = { 38 };
-
-            //   THIEF  
-            private static readonly int[] ThiAgi = { 14, 28, 42, 50 };          
-            private static readonly int[] ThiStr = { 5, 18, 32, 45 };          
-            private static readonly int[] ThiDex = { 8, 22, 35, 48 };          
-            private static readonly int[] ThiLuk = { 12, 25, 40 };              
-            private static readonly int[] ThiVit = { 20, 38 };                   
-            private static readonly int[] ThiInt = { 46 };
+            //   ARCHER  
+            private static readonly int[] ArcStr = { 6, 38, 40 };
+            private static readonly int[] ArcAgi = { 26, 33, 49 };
+            private static readonly int[] ArcVit = { 46 };
+            private static readonly int[] ArcInt = { 10, 47 };
+            private static readonly int[] ArcDex = { 2, 14, 18, 30, 36, 42, 50 };
+            private static readonly int[] ArcLuk = { 22, 44 };
 
             //   ACOLYTE  
-            private static readonly int[] AcoLuk = { 12, 25, 40, 50 };          
-            private static readonly int[] AcoStr = { 5, 20, 35 };               
-            private static readonly int[] AcoVit = { 8, 22, 38 };               
-            private static readonly int[] AcoInt = { 10, 28, 45 };              
-            private static readonly int[] AcoDex = { 15, 30, 48 };              
-            private static readonly int[] AcoAgi = { 18, 42 };
+            private static readonly int[] AcoStr = { 26, 42, 49 };
+            private static readonly int[] AcoAgi = { 22, 40 };
+            private static readonly int[] AcoVit = { 6, 30, 44 };
+            private static readonly int[] AcoInt = { 10, 33, 46 };
+            private static readonly int[] AcoDex = { 14, 36, 46 };
+            private static readonly int[] AcoLuk = { 2, 18, 38, 50 };
 
+            //   MERCHANT  
+            private static readonly int[] MerStr = { 10, 22, 40, 44, 49 };
+            private static readonly int[] MerAgi = { 33 };
+            private static readonly int[] MerVit = { 2, 18, 30, 47 };
+            private static readonly int[] MerInt = { 26 };
+            private static readonly int[] MerDex = { 6, 14, 38, 42, 50 };
+            private static readonly int[] MerLuk = { 36, 46 };
+
+            //   THIEF  
+            private static readonly int[] ThiStr = { 6, 30, 38, 47 };
+            private static readonly int[] ThiAgi = { 2, 33, 36, 50 };
+            private static readonly int[] ThiVit = { 14, 44 };
+            private static readonly int[] ThiInt = { 18 };
+            private static readonly int[] ThiDex = { 10, 22, 42, 49 };
+            private static readonly int[] ThiLuk = { 26, 40, 46 };
+
+            //Get the bonus for a specific job, stat, and job level
             public static int GetBonus(string job, string stat, int jobLevel)
             {
                 int[] milestones = null;
@@ -271,76 +286,57 @@ namespace Modsim_Game
                         else if (s == "LUK") milestones = SwdLuk;
                         break;
                     case "Magician":
-                    case "Mage":
-                        if (s == "INT") milestones = MagInt;
-                        else if (s == "AGI") milestones = MagAgi;
+                        if (s == "AGI") milestones = MagAgi;
+                        else if (s == "INT") milestones = MagInt;
                         else if (s == "DEX") milestones = MagDex; else if (s == "LUK") milestones = MagLuk;
                         break;
                     case "Archer":
-                        if (s == "DEX") milestones = ArcDex;
-                        else if (s == "STR") milestones = ArcStr;
+                        if (s == "STR") milestones = ArcStr;
                         else if (s == "AGI") milestones = ArcAgi;
+                        else if (s == "VIT") milestones = ArcVit;
                         else if (s == "INT") milestones = ArcInt;
-                        else if (s == "VIT") milestones = ArcVit; else if (s == "LUK") milestones = ArcLuk;
+                        else if (s == "DEX") milestones = ArcDex; else if (s == "LUK") milestones = ArcLuk;
+                        break;
+                    case "Acolyte":
+                        if (s == "STR") milestones = AcoStr;
+                        else if (s == "AGI") milestones = AcoAgi;
+                        else if (s == "VIT") milestones = AcoVit;
+                        else if (s == "INT") milestones = AcoInt;
+                        else if (s == "DEX") milestones = AcoDex; else if (s == "LUK") milestones = AcoLuk;
                         break;
                     case "Merchant":
                         if (s == "STR") milestones = MerStr;
-                        else if (s == "DEX") milestones = MerDex;
+                        else if (s == "AGI") milestones = MerAgi;
                         else if (s == "VIT") milestones = MerVit;
-                        else if (s == "LUK") milestones = MerLuk;
-                        else if (s == "AGI") milestones = MerAgi; else if (s == "INT") milestones = MerInt;
+                        else if (s == "INT") milestones = MerInt;
+                        else if (s == "DEX") milestones = MerDex; else if (s == "LUK") milestones = MerLuk;
                         break;
                     case "Thief":
-                        if (s == "AGI") milestones = ThiAgi;
-                        else if (s == "STR") milestones = ThiStr;
-                        else if (s == "DEX") milestones = ThiDex;
-                        else if (s == "LUK") milestones = ThiLuk;
-                        else if (s == "VIT") milestones = ThiVit; else if (s == "INT") milestones = ThiInt;
-                        break;
-                    case "Acolyte":
-                        if (s == "INT") milestones = AcoInt;
-                        else if (s == "DEX") milestones = AcoDex;
-                        else if (s == "STR") milestones = AcoStr;
-                        else if (s == "AGI") milestones = AcoAgi;
-                        else if (s == "VIT") milestones = AcoVit;
-                        else if (s == "LUK") milestones = AcoLuk;
+                        if (s == "STR") milestones = ThiStr;
+                        else if (s == "AGI") milestones = ThiAgi;
+                        else if (s == "VIT") milestones = ThiVit;
+                        else if (s == "INT") milestones = ThiInt;
+                        else if (s == "DEX") milestones = ThiDex; else if (s == "LUK") milestones = ThiLuk;
                         break;
                 }
-
+                //conditional to check how many milestones the current job level has passed and return that as the bonus
                 if (milestones == null) return 0;
 
                 int count = 0;
-                foreach (int m in milestones) { if (jobLevel >= m) count++; }
+                foreach (int m in milestones)
+                {
+                    if (jobLevel >= m) count++;
+                }
                 return count;
             }
-
+            // For easier access,
             private static readonly int[] SwordsmanStrLevels = { 1, 6, 12, 19, 27, 34, 42 };
             private static readonly int[] SwordsmanAgiLevels = { 10, 30 };
             private static readonly int[] SwordsmanVitLevels = { 3, 15, 25, 40 };
             private static readonly int[] SwordsmanDexLevels = { 8, 22, 38 };
             private static readonly int[] SwordsmanLukLevels = { 5, 45 };
 
-            public static int GetSwordsmanBonus(string stat, int currentJobLevel)
-            {
-                int[] levels;
-                switch (stat.ToUpper())
-                {
-                    case "STR": levels = SwordsmanStrLevels; break;
-                    case "AGI": levels = SwordsmanAgiLevels; break;
-                    case "VIT": levels = SwordsmanVitLevels; break;
-                    case "DEX": levels = SwordsmanDexLevels; break;
-                    case "LUK": levels = SwordsmanLukLevels; break;
-                    default: return 0;
-                }
 
-                // Count how many level-up milestones the current job level has passed
-                int count = 0;
-                foreach (int lvl in levels)
-                {
-                    if (currentJobLevel >= lvl) count++;
-                }
-                return count;
-            }
             // Arrays representing the HP columns from your image Index 0 = Level 1
             private static readonly int[] NoviceHP = { 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200, 205, 210, 215, 220, 225, 230, 235, 240, 245, 250, 255, 260, 265, 270, 275, 280, 285, 290, 295, 300, 305, 310, 315, 320, 325, 330, 335, 340, 345, 350, 355, 360, 365, 370, 375, 380, 385, 390, 395, 400, 405, 410, 415, 420, 425, 430, 435, 440, 445, 450, 455, 460, 465, 470, 475, 480, 485, 490, 495, 500, 505, 510, 515, 520, 525, 530 };
 
@@ -388,7 +384,8 @@ namespace Modsim_Game
         int jobBaseWeight = -30;
         int jobBaseSP; // Base SP at Level 1
         int jobASPDModifier = 0; //bonus based on the Class
-        int weaponBaseASPD = 100; // Default base ASPD 
+        int weaponBaseASPD = 0; // Default base ASPD 
+
         private void aloneComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbSelectJob.SelectedItem == null) return;
@@ -501,6 +498,7 @@ namespace Modsim_Game
             if (cmbWeapon.Items.Count > 0) cmbWeapon.SelectedIndex = 0;
             UpdateAllStats();
         }
+        //Used for ASPD lookup based on Job and Weapon combo
         private readonly Dictionary<(string Job, string Weapon), int> JobWeaponASPD = new Dictionary<(string, string), int>
         {
                  // NOVICE
@@ -508,9 +506,9 @@ namespace Modsim_Game
                  // SWORDSMAN 
                 { ("Swordsman", "Hand"), 160 }, { ("Swordsman", "Dagger"), 150 }, { ("Swordsman", "One-Handed-Sword"), 145 }, { ("Swordsman", "Two-Handed-Sword"), 140 },{ ("Swordsman", "One-Handed-Spear"), 135 },{ ("Swordsman", "Two-Handed-Spear"), 130 },{ ("Swordsman", "One-Handed-Axe"), 130 },{ ("Swordsman", "Two-Handed-Axe"), 125 },{ ("Swordsman", "One-Handed-Maxe"), 135 },{ ("Swordsman", "Two-Handed-Mace"), 130 },
                  // MAGICIAN
-                 { ("Magician", "Hand"), 140 }, { ("Magician", "Dagger"), 130 }, { ("Magician", "Rod&Staff"), 120 }, { ("Magician", "Two-Handed-Staff"), 130 },
+                 { ("Magician", "Hand"), 150 }, { ("Magician", "Dagger"), 140 }, { ("Magician", "Rod&Staff"), 130 }, { ("Magician", "Two-Handed-Staff"), 130 },
                  // ARCHER
-                 { ("Archer", "Hand"), 150 }, { ("Archer", "Dagger"), 140 }, { ("Archer", "Bow"), 130 },
+                 { ("Archer", "Hand"), 160 }, { ("Archer", "Dagger"), 140 }, { ("Archer", "Bow"), 130 },
                  // ACOLYTE
                  { ("Acolyte", "Hand"), 160 }, { ("Acolyte", "One-Handed-Mace"), 140 }, { ("Acolyte", "Two-Handed-Mace"), 140 }, { ("Acolyte", "Rod&Staff"), 140 },{ ("Merchant", "Two-Handed-Staff"), 140 },
                  // MERCHANT
@@ -518,6 +516,7 @@ namespace Modsim_Game
                  // THIEF
                 { ("Thief", "Hand"), 160 }, { ("Thief", "Dagger"), 150 }, { ("Thief", "One-Handed-Sword"), 135 }, { ("Thief", "One-Handed-Axe"), 120 }, { ("Thief", "Bow"), 120 },
         };
+        // When either Job or Weapon changes, we need to look up the new ASPD and update stats
         private void cmbWeapon_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbSelectJob.SelectedItem == null || cmbWeapon.SelectedItem == null) return;
@@ -538,16 +537,7 @@ namespace Modsim_Game
             UpdateAllStats();
         }
 
-        private void CmbWeapon_ControlAdded(object? sender, ControlEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void bigLabel34_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        // Reset button to set all stats back to 1
         private void hopeButton1_Click(object sender, EventArgs e)
         {
             txtSTR.Text = "1";
@@ -561,10 +551,9 @@ namespace Modsim_Game
         //For Increment buttons STR
         private void bigLabel2_Click(object sender, EventArgs e)
         {
-            // 1. Parse current STR and Base Level
+            //Parse current STR and Base Level
             if (!int.TryParse(txtSTR.Text, out int currentStr)) currentStr = 1;
             if (!int.TryParse(txtBaseLevel.Text, out int baseLevel)) baseLevel = 1;
-
 
             int costForNextPoint = (currentStr / 10) + 2;
 
@@ -817,15 +806,19 @@ namespace Modsim_Game
             int nextStr = currentStr - 1;
             txtDEX.Text = nextStr.ToString();
         }
-
+        // Whenever the Job Level changes, we need to recalculate bonuses and stats
         private void cmbJobLevel_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateAllStats();
         }
 
-        private void lblSP_Click(object sender, EventArgs e)
+        private void txtSTR_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            // Check if the character is NOT a digit and NOT a control key (like Backspace)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // This "swallows" the keypress so it never appears
+            }
         }
     }
 }
