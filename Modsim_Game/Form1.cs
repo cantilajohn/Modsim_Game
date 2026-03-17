@@ -218,9 +218,9 @@ namespace Modsim_Game
             private static readonly int[] SwdLuk = { 5, 45 };
 
             // MAGICIAN
-            private static readonly int[] MagInt = { 6, 12, 18, 25, 32, 40, 48, 50 }; 
-            private static readonly int[] MagAgi = { 8, 18, 28, 42 };               
-            private static readonly int[] MagDex = { 5, 22, 38 };                   
+            private static readonly int[] MagInt = { 6, 12, 18, 25, 32, 40, 48, 50 };
+            private static readonly int[] MagAgi = { 8, 18, 28, 42 };
+            private static readonly int[] MagDex = { 5, 22, 38 };
             private static readonly int[] MagLuk = { 15, 30, 45 };
 
 
@@ -314,11 +314,11 @@ namespace Modsim_Game
                 return count;
             }
 
-            private static readonly int[] SwordsmanStrLevels = { 1, 6, 12, 19, 27, 34, 42 }; 
-            private static readonly int[] SwordsmanAgiLevels = { 10, 30 };                 
-            private static readonly int[] SwordsmanVitLevels = { 3, 15, 25, 40 };          
-            private static readonly int[] SwordsmanDexLevels = { 8, 22, 38 };              
-            private static readonly int[] SwordsmanLukLevels = { 5, 45 };                
+            private static readonly int[] SwordsmanStrLevels = { 1, 6, 12, 19, 27, 34, 42 };
+            private static readonly int[] SwordsmanAgiLevels = { 10, 30 };
+            private static readonly int[] SwordsmanVitLevels = { 3, 15, 25, 40 };
+            private static readonly int[] SwordsmanDexLevels = { 8, 22, 38 };
+            private static readonly int[] SwordsmanLukLevels = { 5, 45 };
 
             public static int GetSwordsmanBonus(string stat, int currentJobLevel)
             {
@@ -375,13 +375,13 @@ namespace Modsim_Game
             {
                 switch (jobClass)
                 {
-                    case "Magician": return 6.0;  
-                    case "Acolyte": return 5.0;  
-                    case "Archer": return 2.0; 
-                    case "Thief": return 2.0;  
-                    case "Merchant": return 3.0;  
-                    case "Swordsman": return 2.0; 
-                    default: return 1.0; 
+                    case "Magician": return 6.0;
+                    case "Acolyte": return 5.0;
+                    case "Archer": return 2.0;
+                    case "Thief": return 2.0;
+                    case "Merchant": return 3.0;
+                    case "Swordsman": return 2.0;
+                    default: return 1.0;
                 }
             }
         }
@@ -410,6 +410,7 @@ namespace Modsim_Game
                     cmbJobLevel.SelectedIndex = 0; // Default to Job Level 1
                     jobBaseWeight = 2000;
                     jobBaseSP = 10; // Matches  table
+                    lblJobTitle.Text = "Novice";
                     break;
                 case "Swordsman":
                     pbJobs.Image = Properties.Resources.swordmanRagnarok;
@@ -422,6 +423,8 @@ namespace Modsim_Game
                     cmbJobLevel.SelectedIndex = 0; // Default to Job Level 1
                     jobBaseWeight = 2800;
                     jobBaseSP = 10; // Matches  table
+                    lblJobTitle.Text = "Swordman";
+
                     break;
                 case "Magician":
                     pbJobs.Image = Properties.Resources.magicianRagnarok;
@@ -434,6 +437,8 @@ namespace Modsim_Game
                     cmbJobLevel.SelectedIndex = 0; // Default to Job Level 1
                     jobBaseWeight = 2200;
                     jobBaseSP = 10; // Matches  table
+                    lblJobTitle.Text = "Magician";
+
                     break;
                 case "Archer":
                     pbJobs.Image = Properties.Resources.archerRagnarok;
@@ -446,6 +451,8 @@ namespace Modsim_Game
                     cmbJobLevel.SelectedIndex = 0; // Default to Job Level 1
                     jobBaseWeight = 2330;
                     jobBaseSP = 10; // Matches  table
+                    lblJobTitle.Text = "Archer";
+
                     break;
                 case "Acolyte":
                     pbJobs.Image = Properties.Resources.AcolyteRagnarok2;
@@ -458,6 +465,8 @@ namespace Modsim_Game
                     cmbJobLevel.SelectedIndex = 0; // Default to Job Level 1
                     jobBaseWeight = 2200;
                     jobBaseSP = 15; // Matches  table
+                    lblJobTitle.Text = "Acolyte";
+
                     break;
                 case "Merchant":
                     pbJobs.Image = Properties.Resources.merchantRagnarok;
@@ -470,6 +479,8 @@ namespace Modsim_Game
                     cmbJobLevel.SelectedIndex = 0; // Default to Job Level 1
                     jobBaseWeight = 2500;
                     jobBaseSP = 10; // Matches  table
+                    lblJobTitle.Text = "Merchant";
+
                     break;
                 case "Thief":
                     pbJobs.Image = Properties.Resources.thiefRagnarok;
@@ -482,6 +493,8 @@ namespace Modsim_Game
                     cmbJobLevel.SelectedIndex = 0; // Default to Job Level 1
                     jobBaseWeight = 2400;
                     jobBaseSP = 10; // Matches  table
+                    lblJobTitle.Text = "Thief";
+
                     break;
             }
 
@@ -808,6 +821,11 @@ namespace Modsim_Game
         private void cmbJobLevel_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateAllStats();
+        }
+
+        private void lblSP_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
