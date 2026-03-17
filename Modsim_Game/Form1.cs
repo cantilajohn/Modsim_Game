@@ -118,7 +118,7 @@ namespace Modsim_Game
             int tDex = dex + bDEX;
             int tLuk = luk + bLUK;
 
-            //  3. UPDATED CALCULATIONS 
+            //  UPDATED CALCULATIONS 
 
             // HP Calculation
             int tableBaseHP = JobStatTable.GetMaxHP(selectedJob, baseLevel);
@@ -143,7 +143,7 @@ namespace Modsim_Game
             int def = tVit;
             int mdef = tInt;
 
-            //   4. FINAL UI UPDATE  
+            //  FINAL UI UPDATE  
             lblTotalHP.Text = Math.Floor(totalHp).ToString();
             lblTotalSp.Text = MAX_SP.ToString();
 
@@ -160,14 +160,14 @@ namespace Modsim_Game
 
             lblAtk1.Text = (totalStrDamage + (tDex / 5) + (tLuk / 5)).ToString();
             lblWeight.Text = totalWeightLimit.ToString();
-            lblHit.Text = (baseLevel + tDex).ToString(); // RO Formula: Level + DEX
+            lblHit.Text = (baseLevel + tDex).ToString(); // RO Formula Level + DEX
             lblRangedAtk.Text = (tDex + (int)Math.Pow(tDex / 10, 2)).ToString();
             lblCastReduction.Text = $"{castReduction:F1}%";
             lblHpRegen.Text = (1 + (tVit / 5)).ToString();
             lblSpRegen.Text = (1 + (tInt / 6)).ToString();
             lblMinMatk1.Text = (tInt + (int)Math.Pow(tInt / 7, 2)).ToString();
             lblMinMatk2.Text = (tInt + (int)Math.Pow(tInt / 5, 2)).ToString();
-            lblFLEE1.Text = (baseLevel + tAgi).ToString(); // RO Formula: Level + AGI
+            lblFLEE1.Text = (baseLevel + tAgi).ToString(); // RO Formula Level + AGI
             lblASPD.Text = Math.Floor(totalAspd).ToString();
             lblCrit.Text = ((tLuk * 0.3) + 1).ToString("F1");
             lblPerfectDodge.Text = $"{(tLuk * 0.1):F1}%";
@@ -191,7 +191,7 @@ namespace Modsim_Game
             // Loop from Level 1 up to the current Level
             for (int i = 1; i < level; i++)
             {
-                // Gain (Level / 5) + 3 points per level up
+                // Gain baseLVL / 5 + 3 points per level up
                 totalPoints += (i / 5) + 3;
             }
 
@@ -225,35 +225,35 @@ namespace Modsim_Game
 
 
             // ARCHER 
-            private static readonly int[] ArcDex = { 8, 16, 24, 32, 40, 48, 50 }; // Total +7
-            private static readonly int[] ArcStr = { 12, 28, 44 };               // Total +3
-            private static readonly int[] ArcAgi = { 5, 20, 35 };               // Total +3
-            private static readonly int[] ArcInt = { 15, 45 };                  // Total +2
-            private static readonly int[] ArcVit = { 25 };                      // Total +1
-            private static readonly int[] ArcLuk = { 10, 42 };                  // Total +2            
+            private static readonly int[] ArcDex = { 8, 16, 24, 32, 40, 48, 50 };  
+            private static readonly int[] ArcStr = { 12, 28, 44 };               
+            private static readonly int[] ArcAgi = { 5, 20, 35 };               
+            private static readonly int[] ArcInt = { 15, 45 };                   
+            private static readonly int[] ArcVit = { 25 };                      
+            private static readonly int[] ArcLuk = { 10, 42 };                               
 
             //   MERCHANT  
-            private static readonly int[] MerStr = { 11, 22, 33, 44, 50 };       // Total +5
-            private static readonly int[] MerDex = { 5, 15, 25, 35, 45 };       // Total +5
-            private static readonly int[] MerVit = { 10, 20, 30, 40 };          // Total +4
-            private static readonly int[] MerLuk = { 18, 48 };                  // Total +2
-            private static readonly int[] MerAgi = { 28 };                      // Total +1
+            private static readonly int[] MerStr = { 11, 22, 33, 44, 50 };       
+            private static readonly int[] MerDex = { 5, 15, 25, 35, 45 };       
+            private static readonly int[] MerVit = { 10, 20, 30, 40 };         
+            private static readonly int[] MerLuk = { 18, 48 };                   
+            private static readonly int[] MerAgi = { 28 };                      
             private static readonly int[] MerInt = { 38 };
 
             //   THIEF  
-            private static readonly int[] ThiAgi = { 14, 28, 42, 50 };           // Total +4
-            private static readonly int[] ThiStr = { 5, 18, 32, 45 };           // Total +4
-            private static readonly int[] ThiDex = { 8, 22, 35, 48 };           // Total +4
-            private static readonly int[] ThiLuk = { 12, 25, 40 };              // Total +3
-            private static readonly int[] ThiVit = { 20, 38 };                  // Total +2
+            private static readonly int[] ThiAgi = { 14, 28, 42, 50 };          
+            private static readonly int[] ThiStr = { 5, 18, 32, 45 };          
+            private static readonly int[] ThiDex = { 8, 22, 35, 48 };          
+            private static readonly int[] ThiLuk = { 12, 25, 40 };              
+            private static readonly int[] ThiVit = { 20, 38 };                   
             private static readonly int[] ThiInt = { 46 };
 
             //   ACOLYTE  
-            private static readonly int[] AcoLuk = { 12, 25, 40, 50 };           // Total +4
-            private static readonly int[] AcoStr = { 5, 20, 35 };               // Total +3
-            private static readonly int[] AcoVit = { 8, 22, 38 };               // Total +3
-            private static readonly int[] AcoInt = { 10, 28, 45 };              // Total +3
-            private static readonly int[] AcoDex = { 15, 30, 48 };              // Total +3
+            private static readonly int[] AcoLuk = { 12, 25, 40, 50 };          
+            private static readonly int[] AcoStr = { 5, 20, 35 };               
+            private static readonly int[] AcoVit = { 8, 22, 38 };               
+            private static readonly int[] AcoInt = { 10, 28, 45 };              
+            private static readonly int[] AcoDex = { 15, 30, 48 };              
             private static readonly int[] AcoAgi = { 18, 42 };
 
             public static int GetBonus(string job, string stat, int jobLevel)
@@ -333,7 +333,7 @@ namespace Modsim_Game
                     default: return 0;
                 }
 
-                // Count how many "level-up" milestones the current job level has passed
+                // Count how many level-up milestones the current job level has passed
                 int count = 0;
                 foreach (int lvl in levels)
                 {
@@ -341,7 +341,7 @@ namespace Modsim_Game
                 }
                 return count;
             }
-            // Arrays representing the HP columns from your image (Index 0 = Level 1)
+            // Arrays representing the HP columns from your image Index 0 = Level 1
             private static readonly int[] NoviceHP = { 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200, 205, 210, 215, 220, 225, 230, 235, 240, 245, 250, 255, 260, 265, 270, 275, 280, 285, 290, 295, 300, 305, 310, 315, 320, 325, 330, 335, 340, 345, 350, 355, 360, 365, 370, 375, 380, 385, 390, 395, 400, 405, 410, 415, 420, 425, 430, 435, 440, 445, 450, 455, 460, 465, 470, 475, 480, 485, 490, 495, 500, 505, 510, 515, 520, 525, 530 };
 
             private static readonly int[] SwordsmanHP = { 40, 46, 53, 61, 70, 79, 89, 100, 111, 123, 136, 149, 163, 178, 194, 210, 227, 245, 263, 282, 302, 322, 343, 365, 388, 411, 435, 460, 485, 511, 538, 565, 593, 622, 652, 682, 713, 745, 777, 810, 844, 878, 913, 949, 986, 1023, 1061, 1100, 1139, 1179, 1220, 1261, 1303, 1346, 1390, 1434, 1479, 1525, 1571, 1618, 1666, 1714, 1763, 1813, 1864, 1915, 1967, 2020, 2073, 2127, 2182, 2237, 2293, 2350, 2408, 2466, 2525, 2585, 2645, 2706, 2768, 2830, 2893, 2957, 3022, 3087, 3153, 3220, 3287, 3355, 3424, 3493, 3563, 3634, 3706, 3778, 3851, 3925, 3999 };
@@ -389,8 +389,6 @@ namespace Modsim_Game
         int jobBaseSP; // Base SP at Level 1
         int jobASPDModifier = 0; //bonus based on the Class
         int weaponBaseASPD = 100; // Default base ASPD 
-        double hpGainMultiplier = 0;
-        int baseHpIncrement = 5; // The standard gain   
         private void aloneComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbSelectJob.SelectedItem == null) return;
@@ -573,7 +571,7 @@ namespace Modsim_Game
             }
             else
             {
-                // Optional: Provide feedback that points are depleted
+                // Provide feedback that points are depleted
                 lblPointsRemaining.ForeColor = System.Drawing.Color.Red;
             }
         }
@@ -587,12 +585,9 @@ namespace Modsim_Game
             int.TryParse(txtINT.Text, out int i);
             int.TryParse(txtDEX.Text, out int d);
             int.TryParse(txtLUK.Text, out int l);
-
             return CalculateStatCost(s) + CalculateStatCost(a) + CalculateStatCost(v) +
                    CalculateStatCost(i) + CalculateStatCost(d) + CalculateStatCost(l);
         }
-
-
         //For Increment buttons AGI
         private void bigLabel11_Click(object sender, EventArgs e)
         {
