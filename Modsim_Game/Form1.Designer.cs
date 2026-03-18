@@ -1,4 +1,4 @@
-﻿namespace Modsim_Game
+namespace Modsim_Game
 {
     partial class StatSimForm
     {
@@ -2161,7 +2161,8 @@
             txtSTR.TextAlign = HorizontalAlignment.Center;
             txtSTR.UseSystemPasswordChar = false;
             txtSTR.TextChanged += txtSTR_TextChanged;
-            txtSTR.KeyPress += txtSTR_KeyPress;
+
+
             // 
             // pnlAGI
             // 

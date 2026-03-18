@@ -13,6 +13,15 @@ namespace Modsim_Game
         {
             InitializeComponent();
             BaseStats();
+
+            // Wire all textboxes to accept only integers
+            txtSTR.TB.KeyPress += IntegerOnly_KeyPress;
+            txtAGI.TB.KeyPress += IntegerOnly_KeyPress;
+            txtVIT.TB.KeyPress += IntegerOnly_KeyPress;
+            txtINT.TB.KeyPress += IntegerOnly_KeyPress;
+            txtDEX.TB.KeyPress += IntegerOnly_KeyPress;
+            txtLUK.TB.KeyPress += IntegerOnly_KeyPress;
+            txtBaseLevel.TB.KeyPress += IntegerOnly_KeyPress;
         }
 
         //Label values for the base stats and calculations
@@ -154,7 +163,8 @@ namespace Modsim_Game
             // Battle Stats
             int totalStrDamage = tStr + (int)Math.Pow(tStr / 10, 2); // Use tStr
             int totalWeightLimit = jobBaseWeight + (tStr * 30);
-            double totalAspd = weaponBaseASPD + jobASPDModifier + (tAgi / 5.0); // Use tAgi
+            double baseDelay = 200 - weaponBaseASPD;
+            double totalAspd = weaponBaseASPD + jobASPDModifier + (tAgi / 5.0) + (baseDelay * tDex * 0.001); // DEX: -0.1% base delay per point
             double castReduction = Math.Min(100, (tDex / 150.0) * 100);
 
             // DEF AND MDEF (Matches image: Soft Def = Total VIT, Soft Mdef = Total INT)
@@ -812,7 +822,7 @@ namespace Modsim_Game
             UpdateAllStats();
         }
 
-        private void txtSTR_KeyPress(object sender, KeyPressEventArgs e)
+        private void IntegerOnly_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Check if the character is NOT a digit and NOT a control key (like Backspace)
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
