@@ -57,7 +57,6 @@ namespace Modsim_Game
             lblSpRegen.Text = "0";
             lblHpRegen.Text = "0";
 
-
             //UI changes for the TextBoxes
             txtAGI.TB.BackColor = Color.White;
             txtSTR.TB.BackColor = Color.White;
@@ -66,7 +65,6 @@ namespace Modsim_Game
             txtDEX.TB.BackColor = Color.White;
             txtINT.TB.BackColor = Color.White;
             txtBaseLevel.TB.BackColor = Color.White;
-
 
             //Job Bonus BASE
             lblJobBonus1.Text = "0";
@@ -163,8 +161,27 @@ namespace Modsim_Game
             // Battle Stats
             int totalStrDamage = tStr + (int)Math.Pow(tStr / 10, 2); // Use tStr
             int totalWeightLimit = jobBaseWeight + (tStr * 30);
-            double baseDelay = 200 - weaponBaseASPD;
-            double totalAspd = weaponBaseASPD + jobASPDModifier + (tAgi / 5.0) + (baseDelay * tDex * 0.001); // DEX: -0.1% base delay per point
+            
+            // ASPD Calculation
+            double btba = 1.0;
+            string weapon = cmbWeapon.SelectedItem?.ToString() ?? "Hand";
+            if (JobWeaponDelay.TryGetValue((selectedJob, weapon), out double delayVal))
+            {
+                btba = delayVal;
+            }
+
+            double wd = 50.0 * btba; // Weapon Delay
+            double sm = 0.0;         // Speed Modifier from Potion (Set to 0 by default)
+
+            // Calculate contributions with Math.Round as per formula
+            double agiContrib = Math.Round((wd * tAgi) / 25.0);
+            double dexContrib = Math.Round((wd * tDex) / 100.0);
+
+            // ASPD = 200 - (WD - ([WD*AGI/25] + [WD*DEX/100]) / 10) * (1 - SM)
+            double finalASPD = 200.0 - (wd - (agiContrib + dexContrib) / 10.0) * (1.0 - sm);
+            
+            double totalAspd = Math.Min(190.0, finalASPD); // Cap at 190 max
+            
             double castReduction = Math.Min(100, (tDex / 150.0) * 100);
 
             // DEF AND MDEF (Matches image: Soft Def = Total VIT, Soft Mdef = Total INT)
@@ -189,8 +206,19 @@ namespace Modsim_Game
             lblHit.Text = (baseLevel + tDex).ToString(); // RO Formula Level + DEX
             lblRangedAtk.Text = (tDex + (int)Math.Pow(tDex / 10, 2)).ToString();
             lblCastReduction.Text = $"{castReduction:F1}%";
-            lblHpRegen.Text = (1 + (tVit / 5)).ToString();
-            lblSpRegen.Text = (1 + (tInt / 6)).ToString();
+            
+            // HP Regen Calculation
+            double hpr = 1.0 + Math.Floor(totalHp / 200.0);
+            hpr += Math.Floor(tVit / 5.0);
+            double hprMod = 0.0; // Placeholder for HP recovery modifiers
+            hpr = Math.Floor(hpr * (1.0 + hprMod * 0.01));
+            hpr = Math.Max(1.0, hpr);
+
+            double spRegen = Math.Floor(MAX_SP / 100.0) + Math.Floor(tInt / 6.0) + 1.0;
+            string spRegenValue = $"{spRegen} per 8s standing (per 4s sitting)"; 
+
+            lblHpRegen.Text = hpr.ToString();
+            lblSpRegen.Text = spRegenValue;
             lblMinMatk1.Text = (tInt + (int)Math.Pow(tInt / 7, 2)).ToString();
             lblMinMatk2.Text = (tInt + (int)Math.Pow(tInt / 5, 2)).ToString();
             lblFLEE1.Text = (baseLevel + tAgi).ToString(); // RO Formula Level + AGI
@@ -508,24 +536,26 @@ namespace Modsim_Game
             if (cmbWeapon.Items.Count > 0) cmbWeapon.SelectedIndex = 0;
             UpdateAllStats();
         }
-        //Used for ASPD lookup based on Job and Weapon combo
-        private readonly Dictionary<(string Job, string Weapon), int> JobWeaponASPD = new Dictionary<(string, string), int>
+        // Used for ASPD delay lookup based on Job and Weapon combo
+        // Calculating Base ASPD requires applying the class weapon modifier value against the logic: 200 - (50 * modifier)
+        private readonly Dictionary<(string Job, string Weapon), double> JobWeaponDelay = new Dictionary<(string, string), double>
         {
-                 // NOVICE
-                { ("Novice", "Hand"), 150 }, { ("Novice", "Dagger"), 135 }, { ("Novice", "One-Handed-Sword"), 130 },{ ("Novice", "One-Handed-Axe"), 120 },{ ("Novice", "One-Handed-Mace"), 130 },{ ("Novice", "Two-Handed-Mace"), 130 },{ ("Novice", "Rod&Staff"), 135 },{ ("Novice", "Two-Handed-Staff"), 135 },
-                 // SWORDSMAN 
-                { ("Swordsman", "Hand"), 160 }, { ("Swordsman", "Dagger"), 150 }, { ("Swordsman", "One-Handed-Sword"), 145 }, { ("Swordsman", "Two-Handed-Sword"), 140 },{ ("Swordsman", "One-Handed-Spear"), 135 },{ ("Swordsman", "Two-Handed-Spear"), 130 },{ ("Swordsman", "One-Handed-Axe"), 130 },{ ("Swordsman", "Two-Handed-Axe"), 125 },{ ("Swordsman", "One-Handed-Maxe"), 135 },{ ("Swordsman", "Two-Handed-Mace"), 130 },
-                 // MAGICIAN
-                 { ("Magician", "Hand"), 150 }, { ("Magician", "Dagger"), 140 }, { ("Magician", "Rod&Staff"), 130 }, { ("Magician", "Two-Handed-Staff"), 130 },
-                 // ARCHER
-                 { ("Archer", "Hand"), 160 }, { ("Archer", "Dagger"), 140 }, { ("Archer", "Bow"), 130 },
-                 // ACOLYTE
-                 { ("Acolyte", "Hand"), 160 }, { ("Acolyte", "One-Handed-Mace"), 140 }, { ("Acolyte", "Two-Handed-Mace"), 140 }, { ("Acolyte", "Rod&Staff"), 140 },{ ("Merchant", "Two-Handed-Staff"), 140 },
-                 // MERCHANT
-                 { ("Merchant", "Hand"), 160 }, { ("Merchant", "Dagger"), 140 }, { ("Merchant", "One-Handed-Sword"), 130 },{ ("Merchant", "One-Handed-Axe"), 130 }, { ("Merchant", "Two-Handed-Axe"), 125 }, { ("Merchant", "One-Handed-Mace"), 130 }, { ("Merchant", "Two-Handed-Mace"), 130 },
-                 // THIEF
-                { ("Thief", "Hand"), 160 }, { ("Thief", "Dagger"), 150 }, { ("Thief", "One-Handed-Sword"), 135 }, { ("Thief", "One-Handed-Axe"), 120 }, { ("Thief", "Bow"), 120 },
+            // NOVICE
+            { ("Novice", "Hand"), 1.0 }, { ("Novice", "Dagger"), 1.3 }, { ("Novice", "One-Handed-Sword"), 1.4 }, { ("Novice", "One-Handed-Axe"), 1.6 }, { ("Novice", "One-Handed-Mace"), 1.4 }, { ("Novice", "Two-Handed-Mace"), 1.4 }, { ("Novice", "Rod&Staff"), 1.3 }, { ("Novice", "Two-Handed-Staff"), 1.3 },
+            // SWORDSMAN 
+            { ("Swordsman", "Hand"), 0.8 }, { ("Swordsman", "Dagger"), 1.0 }, { ("Swordsman", "One-Handed-Sword"), 1.1 }, { ("Swordsman", "Two-Handed-Sword"), 1.2 }, { ("Swordsman", "One-Handed-Spear"), 1.3 }, { ("Swordsman", "Two-Handed-Spear"), 1.4 }, { ("Swordsman", "One-Handed-Axe"), 1.4 }, { ("Swordsman", "Two-Handed-Axe"), 1.5 }, { ("Swordsman", "One-Handed-Mace"), 1.3 }, { ("Swordsman", "Two-Handed-Mace"), 1.4 },
+            // MAGICIAN
+            { ("Magician", "Hand"), 1.0 }, { ("Magician", "Dagger"), 1.2 }, { ("Magician", "Rod&Staff"), 1.4 }, { ("Magician", "Two-Handed-Staff"), 1.4 },
+            // ARCHER
+            { ("Archer", "Hand"), 0.8 }, { ("Archer", "Dagger"), 1.2 }, { ("Archer", "Bow"), 1.4 },
+            // ACOLYTE
+            { ("Acolyte", "Hand"), 0.8 }, { ("Acolyte", "One-Handed-Mace"), 1.2 }, { ("Acolyte", "Two-Handed-Mace"), 1.2 }, { ("Acolyte", "Rod&Staff"), 1.2 }, { ("Acolyte", "Two-Handed-Staff"), 1.2 },
+            // MERCHANT
+            { ("Merchant", "Hand"), 0.8 }, { ("Merchant", "Dagger"), 1.2 }, { ("Merchant", "One-Handed-Sword"), 1.4 }, { ("Merchant", "One-Handed-Axe"), 1.4 }, { ("Merchant", "Two-Handed-Axe"), 1.5 }, { ("Merchant", "One-Handed-Mace"), 1.4 }, { ("Merchant", "Two-Handed-Mace"), 1.4 },
+            // THIEF
+            { ("Thief", "Hand"), 0.8 }, { ("Thief", "Dagger"), 1.0 }, { ("Thief", "One-Handed-Sword"), 1.3 }, { ("Thief", "One-Handed-Axe"), 1.6 }, { ("Thief", "Bow"), 1.6 }
         };
+
         // When either Job or Weapon changes, we need to look up the new ASPD and update stats
         private void cmbWeapon_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -534,10 +564,11 @@ namespace Modsim_Game
             string job = cmbSelectJob.SelectedItem.ToString();
             string weapon = cmbWeapon.SelectedItem.ToString();
 
-            // 3. The "Magic" Lookup: Find the specific ASPD for this Job/Weapon combo
-            if (JobWeaponASPD.TryGetValue((job, weapon), out int baseAspd))
+            // 3. The "Magic" Lookup: Find the specific ASPD delay for this Job/Weapon combo
+            if (JobWeaponDelay.TryGetValue((job, weapon), out double baseDelay))
             {
-                weaponBaseASPD = baseAspd;
+                // Convert delay multiplier to base ASPD (e.g. 1.0 -> 150, 0.8 -> 160)
+                weaponBaseASPD = (int)(200 - (50 * baseDelay));
             }
             else
             {
