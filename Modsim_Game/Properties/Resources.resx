@@ -121,6 +121,9 @@
   <data name="noviceRagnarok" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\noviceRagnarok.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bgbgbg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bgbgbg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="swordmanRagnarok" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\swordmanRagnarok.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,8 +145,8 @@
   <data name="merchantRagnarok" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\merchantRagnarok.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bgbgbg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bgbgbg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="4834" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4834.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Rectangle 6 (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Rectangle 6 (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,8 +157,8 @@
   <data name="archer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\archer.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="4832" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4832.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bgForCharacter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bgForCharacter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="magicianRagnarok" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\magicianRagnarok.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,8 +175,8 @@
   <data name="Rectangle 6 (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Rectangle 6 (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bgForCharacter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bgForCharacter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="4832" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4832.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gifFinal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gifFinal.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,11 +187,14 @@
   <data name="thieft" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\thieft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bgFinal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bgFinal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="blue-35803_1280" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\blue-35803_1280.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="swordsman" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\swordsman.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bgFinal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bgFinal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GIF_0ne" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GIF_0ne.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,7 +214,7 @@
   <data name="archerRagnarok" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\archerRagnarok.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="4834" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4834.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="blue-35803_12801" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\blue-35803_12801.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
