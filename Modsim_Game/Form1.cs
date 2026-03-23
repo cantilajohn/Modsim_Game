@@ -17,6 +17,8 @@ namespace Modsim_Game
             InitializeComponent();
             BaseStats();
 
+            skillsPanel.Hide();
+
             // Wire all textboxes to accept only integers
             txtSTR.TB.KeyPress += IntegerOnly_KeyPress;
             txtAGI.TB.KeyPress += IntegerOnly_KeyPress;
@@ -92,7 +94,12 @@ namespace Modsim_Game
             {
                 BaseLevel = baseLevel,
                 JobLevel = jLvl,
-                Str = str, Agi = agi, Vit = vit, Int = intel, Dex = dex, Luk = luk,
+                Str = str,
+                Agi = agi,
+                Vit = vit,
+                Int = intel,
+                Dex = dex,
+                Luk = luk,
                 JobName = selectedJobName,
                 WeaponName = weaponName
             };
@@ -109,7 +116,7 @@ namespace Modsim_Game
             lblReqDEX.Text = stats.RequiredDexNext.ToString();
             lblReqVIT.Text = stats.RequiredVitNext.ToString();
             lblReqLUK.Text = stats.RequiredLukNext.ToString();
-            
+
             lblPointsRemaining.Text = stats.PointsRemaining.ToString();
             lblPointsRemaining.ForeColor = (stats.PointsRemaining < 0) ? Color.Red : Color.Black;
             bool isOverspent = stats.PointsRemaining < 0;
@@ -134,7 +141,7 @@ namespace Modsim_Game
             lblRangedAtk.Text = stats.RangedAtk.ToString();
             lblCastReduction.Text = $"{stats.CastReductionPercent:F1}%";
 
-            lblHpRegen.Text = stats.HpRegen.ToString();
+            lblHpRegen.Text = stats.HpRegen.ToString() + "per 6s standing (per 3s sitting)";
             lblSpRegen.Text = $"{stats.SpRegen} per 8s standing (per 4s sitting)";
 
             lblMinMatk1.Text = stats.MinMatk1.ToString();
@@ -157,7 +164,7 @@ namespace Modsim_Game
         {
             if (cmbSelectJob.SelectedItem == null) return;
             string selectedJob = cmbSelectJob.SelectedItem.ToString();
-            
+
             var job = JobFactory.GetJob(selectedJob);
 
             cmbWeapon.Items.Clear();
@@ -174,7 +181,7 @@ namespace Modsim_Game
             if (cmbWeapon.Items.Count > 0) cmbWeapon.SelectedIndex = 0;
 
             lblJobTitle.Text = job.Name;
-            
+
             pbJobs.Image = job.Name switch
             {
                 "Novice" => Properties.Resources.noviceRagnarok,
@@ -271,6 +278,15 @@ namespace Modsim_Game
             {
                 e.Handled = true;
             }
+        }
+
+        private void hopeButton1_Click_1(object sender, EventArgs e)
+        {
+            mainPanel.Hide();
+            secondPanel.Hide();
+            thirdPanel.Hide();
+            pnlStatusSimulatorControls.Hide();
+            skillsPanel.Show();
         }
     }
 }
