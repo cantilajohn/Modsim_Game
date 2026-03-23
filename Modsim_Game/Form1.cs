@@ -12,9 +12,13 @@ namespace Modsim_Game
 {
     public partial class StatSimForm : Form
     {
+
         public StatSimForm()
         {
             InitializeComponent();
+
+            cmbSkillSimulator.SelectedIndexChanged += CmbSkillSimulator_SelectedIndexChanged;
+
             BaseStats();
 
             skillsPanel.Hide();
@@ -270,6 +274,51 @@ namespace Modsim_Game
         private void cmbJobLevel_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateAllStats();
+        }
+
+        private void CmbSkillSimulator_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            pnlSkillUnlocked.Controls.Clear();
+            pnlSkillsTBUnlocked.Controls.Clear();
+            pnlSkillsTBUnlocked.Hide();
+
+            string selectedClass = cmbSkillSimulator.SelectedItem?.ToString();
+
+            switch (selectedClass)
+            {
+                case "Novice":
+                    //Skill Unlocked
+                    Novice noviceControl = new Novice();
+                    noviceControl.Dock = DockStyle.Fill;
+                    pnlSkillUnlocked.Controls.Add(noviceControl);
+                    //To be Unlocked
+                    pnlSkillsTBUnlocked.Show();
+                    NoviceTBUnlockedSkills noviceTobeUnlocked = new NoviceTBUnlockedSkills();
+                    noviceTobeUnlocked.Dock = DockStyle.Fill;
+                    pnlSkillsTBUnlocked.Controls.Add(noviceTobeUnlocked);
+                    break;
+                case "Swordsman":
+                    // Add Swordsman user control here when created
+                    break;
+                case "Magician":
+                    // Add Magician user control here when created
+                    break;
+                case "Archer":
+                    // Add Archer user control here when created
+                    break;
+                case "Acolyte":
+                    // Add Acolyte user control here when created
+                    break;
+                case "Merchant":
+                    // Add Merchant user control here when created
+                    break;
+                case "Thief":
+                    // Add Thief user control here when created
+                    break;
+                default:
+                    // If "-SELECT CLASS-" or anything else is selected, left empty as controls are already cleared
+                    break;
+            }
         }
 
         private void IntegerOnly_KeyPress(object sender, KeyPressEventArgs e)

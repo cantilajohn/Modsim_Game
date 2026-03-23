@@ -192,9 +192,11 @@ namespace Modsim_Game
             thirdPanel = new Panel();
             bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
             skillsPanel = new Panel();
-            hopeButton2 = new ReaLTaiizor.Controls.HopeButton();
-            aloneComboBox1 = new ReaLTaiizor.Controls.AloneComboBox();
+            pnlSkillUnlocked = new Panel();
             bigLabel2 = new ReaLTaiizor.Controls.BigLabel();
+            cmbSkillSimulator = new ReaLTaiizor.Controls.AloneComboBox();
+            hopeButton2 = new ReaLTaiizor.Controls.HopeButton();
+            pnlSkillsTBUnlocked = new Panel();
             mainPanel.SuspendLayout();
             pnlStatusSimulatorControls.SuspendLayout();
             panel1.SuspendLayout();
@@ -302,7 +304,7 @@ namespace Modsim_Game
             lblUnknown4.ForeColor = Color.Black;
             lblUnknown4.Location = new Point(1177, 7);
             lblUnknown4.Name = "lblUnknown4";
-            lblUnknown4.Size = new Size(97, 25);
+            lblUnknown4.Size = new Size(103, 25);
             lblUnknown4.TabIndex = 57;
             lblUnknown4.Text = "わさあっぷっ";
             // 
@@ -435,7 +437,7 @@ namespace Modsim_Game
             lblUnknown5.ForeColor = Color.FromArgb(80, 80, 80);
             lblUnknown5.Location = new Point(558, 20);
             lblUnknown5.Name = "lblUnknown5";
-            lblUnknown5.Size = new Size(33, 13);
+            lblUnknown5.Size = new Size(34, 13);
             lblUnknown5.TabIndex = 80;
             lblUnknown5.Text = "ゲイ?";
             // 
@@ -623,7 +625,7 @@ namespace Modsim_Game
             lblUnknown8.ForeColor = Color.White;
             lblUnknown8.Location = new Point(1382, 7);
             lblUnknown8.Name = "lblUnknown8";
-            lblUnknown8.Size = new Size(133, 25);
+            lblUnknown8.Size = new Size(140, 25);
             lblUnknown8.TabIndex = 58;
             lblUnknown8.Text = "大丈夫ラコ？？";
             // 
@@ -770,7 +772,7 @@ namespace Modsim_Game
             lblUnknown7.ForeColor = Color.FromArgb(80, 80, 80);
             lblUnknown7.Location = new Point(61, 10);
             lblUnknown7.Name = "lblUnknown7";
-            lblUnknown7.Size = new Size(70, 13);
+            lblUnknown7.Size = new Size(75, 13);
             lblUnknown7.TabIndex = 86;
             lblUnknown7.Text = "武器の種類";
             // 
@@ -1302,7 +1304,7 @@ namespace Modsim_Game
             lblUnknown6.ForeColor = Color.FromArgb(80, 80, 80);
             lblUnknown6.Location = new Point(1087, 300);
             lblUnknown6.Name = "lblUnknown6";
-            lblUnknown6.Size = new Size(70, 13);
+            lblUnknown6.Size = new Size(75, 13);
             lblUnknown6.TabIndex = 68;
             lblUnknown6.Text = "武器の種類";
             // 
@@ -2425,7 +2427,7 @@ namespace Modsim_Game
             bigLabel1.ForeColor = Color.FromArgb(80, 80, 80);
             bigLabel1.Location = new Point(757, 15);
             bigLabel1.Name = "bigLabel1";
-            bigLabel1.Size = new Size(77, 13);
+            bigLabel1.Size = new Size(83, 13);
             bigLabel1.TabIndex = 81;
             bigLabel1.Text = "大丈夫ココ？";
             // 
@@ -2434,14 +2436,51 @@ namespace Modsim_Game
             skillsPanel.BackColor = Color.Transparent;
             skillsPanel.BackgroundImage = Properties.Resources.welcome_section;
             skillsPanel.BackgroundImageLayout = ImageLayout.Stretch;
+            skillsPanel.Controls.Add(pnlSkillsTBUnlocked);
+            skillsPanel.Controls.Add(pnlSkillUnlocked);
             skillsPanel.Controls.Add(bigLabel2);
-            skillsPanel.Controls.Add(aloneComboBox1);
+            skillsPanel.Controls.Add(cmbSkillSimulator);
             skillsPanel.Controls.Add(hopeButton2);
             skillsPanel.Location = new Point(341, 54);
             skillsPanel.Margin = new Padding(3, 2, 3, 2);
             skillsPanel.Name = "skillsPanel";
             skillsPanel.Size = new Size(921, 661);
             skillsPanel.TabIndex = 83;
+            // 
+            // pnlSkillUnlocked
+            // 
+            pnlSkillUnlocked.Location = new Point(16, 159);
+            pnlSkillUnlocked.Name = "pnlSkillUnlocked";
+            pnlSkillUnlocked.Size = new Size(441, 290);
+            pnlSkillUnlocked.TabIndex = 89;
+            // 
+            // bigLabel2
+            // 
+            bigLabel2.AutoSize = true;
+            bigLabel2.BackColor = Color.Transparent;
+            bigLabel2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            bigLabel2.ForeColor = Color.Black;
+            bigLabel2.Location = new Point(287, 51);
+            bigLabel2.Name = "bigLabel2";
+            bigLabel2.Size = new Size(111, 19);
+            bigLabel2.TabIndex = 82;
+            bigLabel2.Text = "Skill Simulator:";
+            // 
+            // cmbSkillSimulator
+            // 
+            cmbSkillSimulator.BackColor = Color.DimGray;
+            cmbSkillSimulator.DrawMode = DrawMode.OwnerDrawFixed;
+            cmbSkillSimulator.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSkillSimulator.EnabledCalc = true;
+            cmbSkillSimulator.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            cmbSkillSimulator.FormattingEnabled = true;
+            cmbSkillSimulator.ItemHeight = 20;
+            cmbSkillSimulator.Items.AddRange(new object[] { "-SELECT CLASS", "Novice", "Swordsman", "Magician", "Archer", "Acolyte", "Merchant", "Thief" });
+            cmbSkillSimulator.Location = new Point(404, 49);
+            cmbSkillSimulator.Margin = new Padding(3, 2, 3, 2);
+            cmbSkillSimulator.Name = "cmbSkillSimulator";
+            cmbSkillSimulator.Size = new Size(118, 26);
+            cmbSkillSimulator.TabIndex = 82;
             // 
             // hopeButton2
             // 
@@ -2463,33 +2502,12 @@ namespace Modsim_Game
             hopeButton2.TextColor = Color.White;
             hopeButton2.WarningColor = Color.FromArgb(230, 162, 60);
             // 
-            // aloneComboBox1
+            // pnlSkillsTBUnlocked
             // 
-            aloneComboBox1.BackColor = Color.DimGray;
-            aloneComboBox1.DrawMode = DrawMode.OwnerDrawFixed;
-            aloneComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            aloneComboBox1.EnabledCalc = true;
-            aloneComboBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            aloneComboBox1.FormattingEnabled = true;
-            aloneComboBox1.ItemHeight = 20;
-            aloneComboBox1.Items.AddRange(new object[] { "-SELECT CLASS", "Novice", "Swordsman", "Magician", "Archer", "Acolyte", "Merchant", "Thief" });
-            aloneComboBox1.Location = new Point(404, 49);
-            aloneComboBox1.Margin = new Padding(3, 2, 3, 2);
-            aloneComboBox1.Name = "aloneComboBox1";
-            aloneComboBox1.Size = new Size(118, 26);
-            aloneComboBox1.TabIndex = 82;
-            // 
-            // bigLabel2
-            // 
-            bigLabel2.AutoSize = true;
-            bigLabel2.BackColor = Color.Transparent;
-            bigLabel2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            bigLabel2.ForeColor = Color.Black;
-            bigLabel2.Location = new Point(287, 51);
-            bigLabel2.Name = "bigLabel2";
-            bigLabel2.Size = new Size(111, 19);
-            bigLabel2.TabIndex = 82;
-            bigLabel2.Text = "Skill Simulator:";
+            pnlSkillsTBUnlocked.Location = new Point(467, 159);
+            pnlSkillsTBUnlocked.Name = "pnlSkillsTBUnlocked";
+            pnlSkillsTBUnlocked.Size = new Size(441, 290);
+            pnlSkillsTBUnlocked.TabIndex = 90;
             // 
             // StatSimForm
             // 
@@ -2498,7 +2516,7 @@ namespace Modsim_Game
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveBorder;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1481, 726);
+            ClientSize = new Size(1386, 726);
             Controls.Add(skillsPanel);
             Controls.Add(thirdPanel);
             Controls.Add(secondPanel);
@@ -2782,6 +2800,9 @@ namespace Modsim_Game
         private Panel skillsPanel;
         private ReaLTaiizor.Controls.HopeButton hopeButton2;
         private ReaLTaiizor.Controls.BigLabel bigLabel2;
-        private ReaLTaiizor.Controls.AloneComboBox aloneComboBox1;
+        private ReaLTaiizor.Controls.AloneComboBox cmbSkillSimulator;
+        private Panel pnlSkillUnlocked;
+        private Panel pnlSkillsTBUnlocked;
     }
 }
+
