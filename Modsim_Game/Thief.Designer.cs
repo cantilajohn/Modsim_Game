@@ -109,6 +109,10 @@
             aloneButton2 = new ReaLTaiizor.Controls.AloneButton();
             aloneButton1 = new ReaLTaiizor.Controls.AloneButton();
             pnlContentHolder = new Panel();
+            bigLabel68 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel69 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel70 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel71 = new ReaLTaiizor.Controls.BigLabel();
             bigLabel46 = new ReaLTaiizor.Controls.BigLabel();
             bigLabel16 = new ReaLTaiizor.Controls.BigLabel();
             bigLabel40 = new ReaLTaiizor.Controls.BigLabel();
@@ -131,10 +135,6 @@
             bigLabel65 = new ReaLTaiizor.Controls.BigLabel();
             bigLabel66 = new ReaLTaiizor.Controls.BigLabel();
             bigLabel67 = new ReaLTaiizor.Controls.BigLabel();
-            bigLabel68 = new ReaLTaiizor.Controls.BigLabel();
-            bigLabel69 = new ReaLTaiizor.Controls.BigLabel();
-            bigLabel70 = new ReaLTaiizor.Controls.BigLabel();
-            bigLabel71 = new ReaLTaiizor.Controls.BigLabel();
             pnlSkillUnlocked.SuspendLayout();
             pnlStatusInformation.SuspendLayout();
             panel8.SuspendLayout();
@@ -199,7 +199,7 @@
             pnlSkillUnlocked.Controls.Add(parrotPictureBox2);
             pnlSkillUnlocked.Controls.Add(bigLabel8);
             pnlSkillUnlocked.Controls.Add(parrotPictureBox3);
-            pnlSkillUnlocked.Location = new Point(1, 0);
+            pnlSkillUnlocked.Location = new Point(3, 1);
             pnlSkillUnlocked.Name = "pnlSkillUnlocked";
             pnlSkillUnlocked.Size = new Size(441, 290);
             pnlSkillUnlocked.TabIndex = 93;
@@ -925,10 +925,11 @@
             panel9.Controls.Add(panel14);
             panel9.Controls.Add(panel15);
             panel9.Controls.Add(panel16);
-            panel9.Location = new Point(446, 1);
+            panel9.Location = new Point(445, 1);
             panel9.Name = "panel9";
             panel9.Size = new Size(441, 290);
             panel9.TabIndex = 95;
+            panel9.Paint += panel9_Paint;
             // 
             // bigLabel45
             // 
@@ -1316,6 +1317,54 @@
             pnlContentHolder.Size = new Size(527, 142);
             pnlContentHolder.TabIndex = 97;
             // 
+            // bigLabel68
+            // 
+            bigLabel68.AutoSize = true;
+            bigLabel68.BackColor = Color.Transparent;
+            bigLabel68.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel68.ForeColor = Color.Gray;
+            bigLabel68.Location = new Point(367, 38);
+            bigLabel68.Name = "bigLabel68";
+            bigLabel68.Size = new Size(97, 13);
+            bigLabel68.TabIndex = 53;
+            bigLabel68.Text = "Leve1  Quest Skill";
+            // 
+            // bigLabel69
+            // 
+            bigLabel69.AutoSize = true;
+            bigLabel69.BackColor = Color.Transparent;
+            bigLabel69.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel69.ForeColor = Color.Gray;
+            bigLabel69.Location = new Point(366, 15);
+            bigLabel69.Name = "bigLabel69";
+            bigLabel69.Size = new Size(97, 13);
+            bigLabel69.TabIndex = 52;
+            bigLabel69.Text = "Leve1  Quest Skill";
+            // 
+            // bigLabel70
+            // 
+            bigLabel70.AutoSize = true;
+            bigLabel70.BackColor = Color.Transparent;
+            bigLabel70.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel70.ForeColor = Color.Gray;
+            bigLabel70.Location = new Point(288, 38);
+            bigLabel70.Name = "bigLabel70";
+            bigLabel70.Size = new Size(73, 13);
+            bigLabel70.TabIndex = 51;
+            bigLabel70.Text = "Throw Stone";
+            // 
+            // bigLabel71
+            // 
+            bigLabel71.AutoSize = true;
+            bigLabel71.BackColor = Color.Transparent;
+            bigLabel71.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel71.ForeColor = Color.Gray;
+            bigLabel71.Location = new Point(288, 15);
+            bigLabel71.Name = "bigLabel71";
+            bigLabel71.Size = new Size(61, 13);
+            bigLabel71.TabIndex = 50;
+            bigLabel71.Text = "Pick Stone";
+            // 
             // bigLabel46
             // 
             bigLabel46.AutoSize = true;
@@ -1579,54 +1628,6 @@
             bigLabel67.Size = new Size(78, 13);
             bigLabel67.TabIndex = 28;
             bigLabel67.Text = "Sprinkle Sand";
-            // 
-            // bigLabel68
-            // 
-            bigLabel68.AutoSize = true;
-            bigLabel68.BackColor = Color.Transparent;
-            bigLabel68.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bigLabel68.ForeColor = Color.Gray;
-            bigLabel68.Location = new Point(367, 38);
-            bigLabel68.Name = "bigLabel68";
-            bigLabel68.Size = new Size(97, 13);
-            bigLabel68.TabIndex = 53;
-            bigLabel68.Text = "Leve1  Quest Skill";
-            // 
-            // bigLabel69
-            // 
-            bigLabel69.AutoSize = true;
-            bigLabel69.BackColor = Color.Transparent;
-            bigLabel69.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bigLabel69.ForeColor = Color.Gray;
-            bigLabel69.Location = new Point(366, 15);
-            bigLabel69.Name = "bigLabel69";
-            bigLabel69.Size = new Size(97, 13);
-            bigLabel69.TabIndex = 52;
-            bigLabel69.Text = "Leve1  Quest Skill";
-            // 
-            // bigLabel70
-            // 
-            bigLabel70.AutoSize = true;
-            bigLabel70.BackColor = Color.Transparent;
-            bigLabel70.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bigLabel70.ForeColor = Color.Gray;
-            bigLabel70.Location = new Point(288, 38);
-            bigLabel70.Name = "bigLabel70";
-            bigLabel70.Size = new Size(73, 13);
-            bigLabel70.TabIndex = 51;
-            bigLabel70.Text = "Throw Stone";
-            // 
-            // bigLabel71
-            // 
-            bigLabel71.AutoSize = true;
-            bigLabel71.BackColor = Color.Transparent;
-            bigLabel71.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bigLabel71.ForeColor = Color.Gray;
-            bigLabel71.Location = new Point(288, 15);
-            bigLabel71.Name = "bigLabel71";
-            bigLabel71.Size = new Size(61, 13);
-            bigLabel71.TabIndex = 50;
-            bigLabel71.Text = "Pick Stone";
             // 
             // Thief
             // 

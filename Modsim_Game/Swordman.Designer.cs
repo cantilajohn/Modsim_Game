@@ -111,11 +111,14 @@
             aloneButton2 = new ReaLTaiizor.Controls.AloneButton();
             aloneButton1 = new ReaLTaiizor.Controls.AloneButton();
             pnlContentHolder = new Panel();
+            bigLabel69 = new ReaLTaiizor.Controls.BigLabel();
             bigLabel47 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel70 = new ReaLTaiizor.Controls.BigLabel();
             bigLabel48 = new ReaLTaiizor.Controls.BigLabel();
             bigLabel49 = new ReaLTaiizor.Controls.BigLabel();
             bigLabel50 = new ReaLTaiizor.Controls.BigLabel();
             bigLabel51 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel68 = new ReaLTaiizor.Controls.BigLabel();
             bigLabel52 = new ReaLTaiizor.Controls.BigLabel();
             bigLabel53 = new ReaLTaiizor.Controls.BigLabel();
             bigLabel54 = new ReaLTaiizor.Controls.BigLabel();
@@ -132,9 +135,6 @@
             bigLabel65 = new ReaLTaiizor.Controls.BigLabel();
             bigLabel66 = new ReaLTaiizor.Controls.BigLabel();
             bigLabel67 = new ReaLTaiizor.Controls.BigLabel();
-            bigLabel68 = new ReaLTaiizor.Controls.BigLabel();
-            bigLabel69 = new ReaLTaiizor.Controls.BigLabel();
-            bigLabel70 = new ReaLTaiizor.Controls.BigLabel();
             panel9.SuspendLayout();
             panel10.SuspendLayout();
             panel11.SuspendLayout();
@@ -181,7 +181,7 @@
             panel9.Controls.Add(panel14);
             panel9.Controls.Add(panel15);
             panel9.Controls.Add(panel16);
-            panel9.Location = new Point(446, -1);
+            panel9.Location = new Point(445, 1);
             panel9.Name = "panel9";
             panel9.Size = new Size(441, 290);
             panel9.TabIndex = 94;
@@ -629,7 +629,7 @@
             pnlSkillUnlocked.Controls.Add(parrotPictureBox2);
             pnlSkillUnlocked.Controls.Add(bigLabel8);
             pnlSkillUnlocked.Controls.Add(parrotPictureBox3);
-            pnlSkillUnlocked.Location = new Point(1, 0);
+            pnlSkillUnlocked.Location = new Point(3, 1);
             pnlSkillUnlocked.Name = "pnlSkillUnlocked";
             pnlSkillUnlocked.Size = new Size(441, 290);
             pnlSkillUnlocked.TabIndex = 93;
@@ -1351,6 +1351,18 @@
             pnlContentHolder.Size = new Size(394, 142);
             pnlContentHolder.TabIndex = 96;
             // 
+            // bigLabel69
+            // 
+            bigLabel69.AutoSize = true;
+            bigLabel69.BackColor = Color.Transparent;
+            bigLabel69.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel69.ForeColor = Color.Gray;
+            bigLabel69.Location = new Point(102, 32);
+            bigLabel69.Name = "bigLabel69";
+            bigLabel69.Size = new Size(97, 13);
+            bigLabel69.TabIndex = 51;
+            bigLabel69.Text = "Leve1  Quest Skill";
+            // 
             // bigLabel47
             // 
             bigLabel47.AutoSize = true;
@@ -1362,6 +1374,18 @@
             bigLabel47.Size = new Size(14, 13);
             bigLabel47.TabIndex = 49;
             bigLabel47.Text = "0";
+            // 
+            // bigLabel70
+            // 
+            bigLabel70.AutoSize = true;
+            bigLabel70.BackColor = Color.Transparent;
+            bigLabel70.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel70.ForeColor = Color.Gray;
+            bigLabel70.Location = new Point(21, 32);
+            bigLabel70.Name = "bigLabel70";
+            bigLabel70.Size = new Size(74, 13);
+            bigLabel70.TabIndex = 50;
+            bigLabel70.Text = "Auto Berserk";
             // 
             // bigLabel48
             // 
@@ -1410,6 +1434,18 @@
             bigLabel51.Size = new Size(14, 13);
             bigLabel51.TabIndex = 45;
             bigLabel51.Text = "0";
+            // 
+            // bigLabel68
+            // 
+            bigLabel68.AutoSize = true;
+            bigLabel68.BackColor = Color.Transparent;
+            bigLabel68.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel68.ForeColor = Color.Gray;
+            bigLabel68.Location = new Point(22, 50);
+            bigLabel68.Name = "bigLabel68";
+            bigLabel68.Size = new Size(116, 13);
+            bigLabel68.TabIndex = 28;
+            bigLabel68.Text = "Moving HP Recovery";
             // 
             // bigLabel52
             // 
@@ -1602,42 +1638,6 @@
             bigLabel67.Size = new Size(61, 13);
             bigLabel67.TabIndex = 29;
             bigLabel67.Text = "Fatal Blow";
-            // 
-            // bigLabel68
-            // 
-            bigLabel68.AutoSize = true;
-            bigLabel68.BackColor = Color.Transparent;
-            bigLabel68.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bigLabel68.ForeColor = Color.Gray;
-            bigLabel68.Location = new Point(22, 50);
-            bigLabel68.Name = "bigLabel68";
-            bigLabel68.Size = new Size(116, 13);
-            bigLabel68.TabIndex = 28;
-            bigLabel68.Text = "Moving HP Recovery";
-            // 
-            // bigLabel69
-            // 
-            bigLabel69.AutoSize = true;
-            bigLabel69.BackColor = Color.Transparent;
-            bigLabel69.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bigLabel69.ForeColor = Color.Gray;
-            bigLabel69.Location = new Point(102, 32);
-            bigLabel69.Name = "bigLabel69";
-            bigLabel69.Size = new Size(97, 13);
-            bigLabel69.TabIndex = 51;
-            bigLabel69.Text = "Leve1  Quest Skill";
-            // 
-            // bigLabel70
-            // 
-            bigLabel70.AutoSize = true;
-            bigLabel70.BackColor = Color.Transparent;
-            bigLabel70.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bigLabel70.ForeColor = Color.Gray;
-            bigLabel70.Location = new Point(21, 32);
-            bigLabel70.Name = "bigLabel70";
-            bigLabel70.Size = new Size(74, 13);
-            bigLabel70.TabIndex = 50;
-            bigLabel70.Text = "Auto Berserk";
             // 
             // Swordman
             // 

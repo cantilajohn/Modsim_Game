@@ -21,5 +21,11 @@ namespace Modsim_Game
         {
 
         }
+
+        private void panel9_Paint(object sender, PaintEventArgs e)
+        {
+
+
+        }
     }
 }

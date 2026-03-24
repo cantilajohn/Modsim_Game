@@ -210,7 +210,7 @@
             panel9.Controls.Add(panel14);
             panel9.Controls.Add(panel15);
             panel9.Controls.Add(panel16);
-            panel9.Location = new Point(446, 0);
+            panel9.Location = new Point(445, 1);
             panel9.Name = "panel9";
             panel9.Size = new Size(441, 290);
             panel9.TabIndex = 96;
@@ -895,7 +895,7 @@
             pnlSkillUnlocked.Controls.Add(parrotPictureBox2);
             pnlSkillUnlocked.Controls.Add(bigLabel8);
             pnlSkillUnlocked.Controls.Add(parrotPictureBox3);
-            pnlSkillUnlocked.Location = new Point(1, 1);
+            pnlSkillUnlocked.Location = new Point(3, 1);
             pnlSkillUnlocked.Name = "pnlSkillUnlocked";
             pnlSkillUnlocked.Size = new Size(441, 290);
             pnlSkillUnlocked.TabIndex = 95;

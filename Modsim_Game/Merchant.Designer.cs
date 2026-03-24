@@ -121,6 +121,12 @@
             aloneButton2 = new ReaLTaiizor.Controls.AloneButton();
             aloneButton1 = new ReaLTaiizor.Controls.AloneButton();
             pnlContentHolder = new Panel();
+            bigLabel77 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel78 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel75 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel76 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel65 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel73 = new ReaLTaiizor.Controls.BigLabel();
             bigLabel47 = new ReaLTaiizor.Controls.BigLabel();
             bigLabel48 = new ReaLTaiizor.Controls.BigLabel();
             bigLabel51 = new ReaLTaiizor.Controls.BigLabel();
@@ -141,12 +147,6 @@
             bigLabel71 = new ReaLTaiizor.Controls.BigLabel();
             bigLabel72 = new ReaLTaiizor.Controls.BigLabel();
             bigLabel74 = new ReaLTaiizor.Controls.BigLabel();
-            bigLabel65 = new ReaLTaiizor.Controls.BigLabel();
-            bigLabel73 = new ReaLTaiizor.Controls.BigLabel();
-            bigLabel75 = new ReaLTaiizor.Controls.BigLabel();
-            bigLabel76 = new ReaLTaiizor.Controls.BigLabel();
-            bigLabel77 = new ReaLTaiizor.Controls.BigLabel();
-            bigLabel78 = new ReaLTaiizor.Controls.BigLabel();
             pnlSkillUnlocked.SuspendLayout();
             pnlStatusInformation.SuspendLayout();
             panel8.SuspendLayout();
@@ -208,7 +208,7 @@
             pnlSkillUnlocked.Controls.Add(parrotPictureBox2);
             pnlSkillUnlocked.Controls.Add(bigLabel8);
             pnlSkillUnlocked.Controls.Add(parrotPictureBox3);
-            pnlSkillUnlocked.Location = new Point(2, -2);
+            pnlSkillUnlocked.Location = new Point(3, 1);
             pnlSkillUnlocked.Name = "pnlSkillUnlocked";
             pnlSkillUnlocked.Size = new Size(441, 290);
             pnlSkillUnlocked.TabIndex = 92;
@@ -525,9 +525,9 @@
             bigLabel17.ForeColor = Color.White;
             bigLabel17.Location = new Point(11, 7);
             bigLabel17.Name = "bigLabel17";
-            bigLabel17.Size = new Size(135, 13);
+            bigLabel17.Size = new Size(147, 13);
             bigLabel17.TabIndex = 3;
-            bigLabel17.Text = "Novice Skill Points Used:";
+            bigLabel17.Text = "Magician Skill Points Used:";
             // 
             // panel1
             // 
@@ -766,9 +766,9 @@
             bigLabel7.ForeColor = Color.Gray;
             bigLabel7.Location = new Point(158, 6);
             bigLabel7.Name = "bigLabel7";
-            bigLabel7.Size = new Size(121, 13);
+            bigLabel7.Size = new Size(130, 13);
             bigLabel7.TabIndex = 3;
-            bigLabel7.Text = "~ Novice Skill Below~";
+            bigLabel7.Text = "~Magician Skill Below~";
             // 
             // bigLabel10
             // 
@@ -904,7 +904,7 @@
             panel9.Controls.Add(panel14);
             panel9.Controls.Add(panel15);
             panel9.Controls.Add(panel16);
-            panel9.Location = new Point(447, -3);
+            panel9.Location = new Point(445, 1);
             panel9.Name = "panel9";
             panel9.Size = new Size(441, 290);
             panel9.TabIndex = 97;
@@ -1523,11 +1523,83 @@
             pnlContentHolder.Controls.Add(bigLabel71);
             pnlContentHolder.Controls.Add(bigLabel72);
             pnlContentHolder.Controls.Add(bigLabel74);
-            pnlContentHolder.Location = new Point(245, 320);
+            pnlContentHolder.Location = new Point(178, 321);
             pnlContentHolder.Margin = new Padding(3, 2, 3, 2);
             pnlContentHolder.Name = "pnlContentHolder";
             pnlContentHolder.Size = new Size(527, 142);
             pnlContentHolder.TabIndex = 99;
+            // 
+            // bigLabel77
+            // 
+            bigLabel77.AutoSize = true;
+            bigLabel77.BackColor = Color.Transparent;
+            bigLabel77.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel77.ForeColor = Color.Gray;
+            bigLabel77.Location = new Point(398, 37);
+            bigLabel77.Name = "bigLabel77";
+            bigLabel77.Size = new Size(97, 13);
+            bigLabel77.TabIndex = 55;
+            bigLabel77.Text = "Leve1  Quest Skill";
+            // 
+            // bigLabel78
+            // 
+            bigLabel78.AutoSize = true;
+            bigLabel78.BackColor = Color.Transparent;
+            bigLabel78.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel78.ForeColor = Color.Gray;
+            bigLabel78.Location = new Point(314, 37);
+            bigLabel78.Name = "bigLabel78";
+            bigLabel78.Size = new Size(88, 13);
+            bigLabel78.TabIndex = 54;
+            bigLabel78.Text = "Cart Decoration";
+            // 
+            // bigLabel75
+            // 
+            bigLabel75.AutoSize = true;
+            bigLabel75.BackColor = Color.Transparent;
+            bigLabel75.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel75.ForeColor = Color.Gray;
+            bigLabel75.Location = new Point(402, 15);
+            bigLabel75.Name = "bigLabel75";
+            bigLabel75.Size = new Size(97, 13);
+            bigLabel75.TabIndex = 53;
+            bigLabel75.Text = "Leve1  Quest Skill";
+            // 
+            // bigLabel76
+            // 
+            bigLabel76.AutoSize = true;
+            bigLabel76.BackColor = Color.Transparent;
+            bigLabel76.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel76.ForeColor = Color.Gray;
+            bigLabel76.Location = new Point(313, 15);
+            bigLabel76.Name = "bigLabel76";
+            bigLabel76.Size = new Size(95, 13);
+            bigLabel76.TabIndex = 52;
+            bigLabel76.Text = "Loud Exlamation";
+            // 
+            // bigLabel65
+            // 
+            bigLabel65.AutoSize = true;
+            bigLabel65.BackColor = Color.Transparent;
+            bigLabel65.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel65.ForeColor = Color.Gray;
+            bigLabel65.Location = new Point(120, 37);
+            bigLabel65.Name = "bigLabel65";
+            bigLabel65.Size = new Size(97, 13);
+            bigLabel65.TabIndex = 51;
+            bigLabel65.Text = "Leve1  Quest Skill";
+            // 
+            // bigLabel73
+            // 
+            bigLabel73.AutoSize = true;
+            bigLabel73.BackColor = Color.Transparent;
+            bigLabel73.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel73.ForeColor = Color.Gray;
+            bigLabel73.Location = new Point(20, 37);
+            bigLabel73.Name = "bigLabel73";
+            bigLabel73.Size = new Size(104, 13);
+            bigLabel73.TabIndex = 50;
+            bigLabel73.Text = "Charge Revolution";
             // 
             // bigLabel47
             // 
@@ -1768,78 +1840,6 @@
             bigLabel74.Size = new Size(88, 13);
             bigLabel74.TabIndex = 28;
             bigLabel74.Text = "Cart Revolution";
-            // 
-            // bigLabel65
-            // 
-            bigLabel65.AutoSize = true;
-            bigLabel65.BackColor = Color.Transparent;
-            bigLabel65.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bigLabel65.ForeColor = Color.Gray;
-            bigLabel65.Location = new Point(120, 37);
-            bigLabel65.Name = "bigLabel65";
-            bigLabel65.Size = new Size(97, 13);
-            bigLabel65.TabIndex = 51;
-            bigLabel65.Text = "Leve1  Quest Skill";
-            // 
-            // bigLabel73
-            // 
-            bigLabel73.AutoSize = true;
-            bigLabel73.BackColor = Color.Transparent;
-            bigLabel73.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bigLabel73.ForeColor = Color.Gray;
-            bigLabel73.Location = new Point(20, 37);
-            bigLabel73.Name = "bigLabel73";
-            bigLabel73.Size = new Size(104, 13);
-            bigLabel73.TabIndex = 50;
-            bigLabel73.Text = "Charge Revolution";
-            // 
-            // bigLabel75
-            // 
-            bigLabel75.AutoSize = true;
-            bigLabel75.BackColor = Color.Transparent;
-            bigLabel75.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bigLabel75.ForeColor = Color.Gray;
-            bigLabel75.Location = new Point(402, 15);
-            bigLabel75.Name = "bigLabel75";
-            bigLabel75.Size = new Size(97, 13);
-            bigLabel75.TabIndex = 53;
-            bigLabel75.Text = "Leve1  Quest Skill";
-            // 
-            // bigLabel76
-            // 
-            bigLabel76.AutoSize = true;
-            bigLabel76.BackColor = Color.Transparent;
-            bigLabel76.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bigLabel76.ForeColor = Color.Gray;
-            bigLabel76.Location = new Point(313, 15);
-            bigLabel76.Name = "bigLabel76";
-            bigLabel76.Size = new Size(95, 13);
-            bigLabel76.TabIndex = 52;
-            bigLabel76.Text = "Loud Exlamation";
-            // 
-            // bigLabel77
-            // 
-            bigLabel77.AutoSize = true;
-            bigLabel77.BackColor = Color.Transparent;
-            bigLabel77.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bigLabel77.ForeColor = Color.Gray;
-            bigLabel77.Location = new Point(398, 37);
-            bigLabel77.Name = "bigLabel77";
-            bigLabel77.Size = new Size(97, 13);
-            bigLabel77.TabIndex = 55;
-            bigLabel77.Text = "Leve1  Quest Skill";
-            // 
-            // bigLabel78
-            // 
-            bigLabel78.AutoSize = true;
-            bigLabel78.BackColor = Color.Transparent;
-            bigLabel78.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bigLabel78.ForeColor = Color.Gray;
-            bigLabel78.Location = new Point(314, 37);
-            bigLabel78.Name = "bigLabel78";
-            bigLabel78.Size = new Size(88, 13);
-            bigLabel78.TabIndex = 54;
-            bigLabel78.Text = "Cart Decoration";
             // 
             // Merchant
             // 
