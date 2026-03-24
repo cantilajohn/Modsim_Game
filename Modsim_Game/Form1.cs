@@ -278,9 +278,7 @@ namespace Modsim_Game
 
         private void CmbSkillSimulator_SelectedIndexChanged(object sender, EventArgs e)
         {
-            pnlSkillUnlocked.Controls.Clear();
-            pnlSkillsTBUnlocked.Controls.Clear();
-            pnlSkillsTBUnlocked.Hide();
+            pnlContentHolder.Controls.Clear();
 
             string selectedClass = cmbSkillSimulator.SelectedItem?.ToString();
 
@@ -290,30 +288,38 @@ namespace Modsim_Game
                     //Skill Unlocked
                     Novice noviceControl = new Novice();
                     noviceControl.Dock = DockStyle.Fill;
-                    pnlSkillUnlocked.Controls.Add(noviceControl);
-                    //To be Unlocked
-                    pnlSkillsTBUnlocked.Show();
-                    NoviceTBUnlockedSkills noviceTobeUnlocked = new NoviceTBUnlockedSkills();
-                    noviceTobeUnlocked.Dock = DockStyle.Fill;
-                    pnlSkillsTBUnlocked.Controls.Add(noviceTobeUnlocked);
+                    pnlContentHolder.Controls.Add(noviceControl);
+
                     break;
                 case "Swordsman":
-                    // Add Swordsman user control here when created
+                    Swordman swordmanControl = new Swordman();
+                    swordmanControl.Dock = DockStyle.Fill;
+                    pnlContentHolder.Controls.Add(swordmanControl);
                     break;
                 case "Magician":
-                    // Add Magician user control here when created
+                    Magician magicianControl = new Magician();
+                    magicianControl.Dock = DockStyle.Fill;
+                    pnlContentHolder.Controls.Add(magicianControl);
                     break;
                 case "Archer":
-                    // Add Archer user control here when created
+                    Archer archerControl = new Archer();
+                    archerControl.Dock = DockStyle.Fill;
+                    pnlContentHolder.Controls.Add(archerControl);
                     break;
                 case "Acolyte":
-                    // Add Acolyte user control here when created
+                    Acolyte acolyteControl = new Acolyte();
+                    acolyteControl.Dock = DockStyle.Fill;
+                    pnlContentHolder.Controls.Add(acolyteControl);
                     break;
                 case "Merchant":
-                    // Add Merchant user control here when created
+                    Merchant merchantControl = new Merchant();
+                    merchantControl.Dock = DockStyle.Fill;
+                    pnlContentHolder.Controls.Add(merchantControl);
                     break;
                 case "Thief":
-                    // Add Thief user control here when created
+                    Thief thiefControl = new Thief();
+                    thiefControl.Dock = DockStyle.Fill;
+                    pnlContentHolder.Controls.Add(thiefControl);
                     break;
                 default:
                     // If "-SELECT CLASS-" or anything else is selected, left empty as controls are already cleared

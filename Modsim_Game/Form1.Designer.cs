@@ -192,11 +192,10 @@ namespace Modsim_Game
             thirdPanel = new Panel();
             bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
             skillsPanel = new Panel();
-            pnlSkillUnlocked = new Panel();
+            pnlContentHolder = new Panel();
             bigLabel2 = new ReaLTaiizor.Controls.BigLabel();
             cmbSkillSimulator = new ReaLTaiizor.Controls.AloneComboBox();
             hopeButton2 = new ReaLTaiizor.Controls.HopeButton();
-            pnlSkillsTBUnlocked = new Panel();
             mainPanel.SuspendLayout();
             pnlStatusSimulatorControls.SuspendLayout();
             panel1.SuspendLayout();
@@ -2436,8 +2435,7 @@ namespace Modsim_Game
             skillsPanel.BackColor = Color.Transparent;
             skillsPanel.BackgroundImage = Properties.Resources.welcome_section;
             skillsPanel.BackgroundImageLayout = ImageLayout.Stretch;
-            skillsPanel.Controls.Add(pnlSkillsTBUnlocked);
-            skillsPanel.Controls.Add(pnlSkillUnlocked);
+            skillsPanel.Controls.Add(pnlContentHolder);
             skillsPanel.Controls.Add(bigLabel2);
             skillsPanel.Controls.Add(cmbSkillSimulator);
             skillsPanel.Controls.Add(hopeButton2);
@@ -2447,12 +2445,12 @@ namespace Modsim_Game
             skillsPanel.Size = new Size(921, 661);
             skillsPanel.TabIndex = 83;
             // 
-            // pnlSkillUnlocked
+            // pnlContentHolder
             // 
-            pnlSkillUnlocked.Location = new Point(16, 159);
-            pnlSkillUnlocked.Name = "pnlSkillUnlocked";
-            pnlSkillUnlocked.Size = new Size(441, 290);
-            pnlSkillUnlocked.TabIndex = 89;
+            pnlContentHolder.Location = new Point(15, 126);
+            pnlContentHolder.Name = "pnlContentHolder";
+            pnlContentHolder.Size = new Size(889, 290);
+            pnlContentHolder.TabIndex = 89;
             // 
             // bigLabel2
             // 
@@ -2501,13 +2499,6 @@ namespace Modsim_Game
             hopeButton2.Text = "--Back";
             hopeButton2.TextColor = Color.White;
             hopeButton2.WarningColor = Color.FromArgb(230, 162, 60);
-            // 
-            // pnlSkillsTBUnlocked
-            // 
-            pnlSkillsTBUnlocked.Location = new Point(467, 159);
-            pnlSkillsTBUnlocked.Name = "pnlSkillsTBUnlocked";
-            pnlSkillsTBUnlocked.Size = new Size(441, 290);
-            pnlSkillsTBUnlocked.TabIndex = 90;
             // 
             // StatSimForm
             // 
@@ -2801,8 +2792,7 @@ namespace Modsim_Game
         private ReaLTaiizor.Controls.HopeButton hopeButton2;
         private ReaLTaiizor.Controls.BigLabel bigLabel2;
         private ReaLTaiizor.Controls.AloneComboBox cmbSkillSimulator;
-        private Panel pnlSkillUnlocked;
-        private Panel pnlSkillsTBUnlocked;
+        private Panel pnlContentHolder;
     }
 }
 

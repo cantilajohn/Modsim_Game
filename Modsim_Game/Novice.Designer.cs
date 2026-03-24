@@ -58,9 +58,25 @@
             bigLabel16 = new ReaLTaiizor.Controls.BigLabel();
             bigLabel17 = new ReaLTaiizor.Controls.BigLabel();
             panel8 = new ReaLTaiizor.Controls.Panel();
-            lblSkillPointsUsed = new ReaLTaiizor.Controls.BigLabel();
-            bigLabel19 = new ReaLTaiizor.Controls.BigLabel();
             lblLeft = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel19 = new ReaLTaiizor.Controls.BigLabel();
+            lblSkillPointsUsed = new ReaLTaiizor.Controls.BigLabel();
+            pnlSkillUnlocked = new Panel();
+            panel9 = new Panel();
+            panel10 = new ReaLTaiizor.Controls.Panel();
+            bigLabel18 = new ReaLTaiizor.Controls.BigLabel();
+            panel11 = new Panel();
+            bigLabel20 = new ReaLTaiizor.Controls.BigLabel();
+            panel12 = new Panel();
+            bigLabel21 = new ReaLTaiizor.Controls.BigLabel();
+            panel13 = new Panel();
+            bigLabel22 = new ReaLTaiizor.Controls.BigLabel();
+            panel14 = new Panel();
+            bigLabel23 = new ReaLTaiizor.Controls.BigLabel();
+            panel15 = new Panel();
+            bigLabel24 = new ReaLTaiizor.Controls.BigLabel();
+            panel16 = new Panel();
+            bigLabel25 = new ReaLTaiizor.Controls.BigLabel();
             pnlStatusInformation.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -70,6 +86,15 @@
             panel6.SuspendLayout();
             panel7.SuspendLayout();
             panel8.SuspendLayout();
+            pnlSkillUnlocked.SuspendLayout();
+            panel9.SuspendLayout();
+            panel10.SuspendLayout();
+            panel11.SuspendLayout();
+            panel12.SuspendLayout();
+            panel13.SuspendLayout();
+            panel14.SuspendLayout();
+            panel15.SuspendLayout();
+            panel16.SuspendLayout();
             SuspendLayout();
             // 
             // pnlStatusInformation
@@ -78,7 +103,7 @@
             pnlStatusInformation.BackgroundImage = Properties.Resources._4834;
             pnlStatusInformation.BackgroundImageLayout = ImageLayout.Stretch;
             pnlStatusInformation.Controls.Add(lblStatusInformation);
-            pnlStatusInformation.Location = new Point(-3, 2);
+            pnlStatusInformation.Location = new Point(-6, 3);
             pnlStatusInformation.Margin = new Padding(3, 2, 3, 2);
             pnlStatusInformation.Name = "pnlStatusInformation";
             pnlStatusInformation.Size = new Size(444, 31);
@@ -102,7 +127,7 @@
             panel1.BackgroundImage = Properties.Resources._4834;
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.Controls.Add(bigLabel1);
-            panel1.Location = new Point(3, 37);
+            panel1.Location = new Point(0, 38);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
             panel1.Size = new Size(53, 31);
@@ -126,7 +151,7 @@
             panel2.BackgroundImage = Properties.Resources._4834;
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
             panel2.Controls.Add(bigLabel2);
-            panel2.Location = new Point(60, 37);
+            panel2.Location = new Point(57, 38);
             panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
             panel2.Size = new Size(161, 31);
@@ -150,7 +175,7 @@
             panel3.BackgroundImage = Properties.Resources._4834;
             panel3.BackgroundImageLayout = ImageLayout.Stretch;
             panel3.Controls.Add(bigLabel3);
-            panel3.Location = new Point(225, 39);
+            panel3.Location = new Point(222, 40);
             panel3.Margin = new Padding(3, 2, 3, 2);
             panel3.Name = "panel3";
             panel3.Size = new Size(67, 30);
@@ -174,7 +199,7 @@
             panel4.BackgroundImage = Properties.Resources._4834;
             panel4.BackgroundImageLayout = ImageLayout.Stretch;
             panel4.Controls.Add(bigLabel4);
-            panel4.Location = new Point(294, 39);
+            panel4.Location = new Point(291, 40);
             panel4.Margin = new Padding(3, 2, 3, 2);
             panel4.Name = "panel4";
             panel4.Size = new Size(43, 30);
@@ -198,7 +223,7 @@
             panel5.BackgroundImage = Properties.Resources._4834;
             panel5.BackgroundImageLayout = ImageLayout.Stretch;
             panel5.Controls.Add(bigLabel5);
-            panel5.Location = new Point(340, 39);
+            panel5.Location = new Point(337, 40);
             panel5.Margin = new Padding(3, 2, 3, 2);
             panel5.Name = "panel5";
             panel5.Size = new Size(43, 30);
@@ -222,7 +247,7 @@
             panel6.BackgroundImage = Properties.Resources._4834;
             panel6.BackgroundImageLayout = ImageLayout.Stretch;
             panel6.Controls.Add(bigLabel6);
-            panel6.Location = new Point(387, 39);
+            panel6.Location = new Point(384, 40);
             panel6.Margin = new Padding(3, 2, 3, 2);
             panel6.Name = "panel6";
             panel6.Size = new Size(43, 30);
@@ -245,7 +270,7 @@
             panel7.BackColor = Color.LightGray;
             panel7.Controls.Add(bigLabel7);
             panel7.EdgeColor = Color.FromArgb(224, 224, 224);
-            panel7.Location = new Point(3, 73);
+            panel7.Location = new Point(0, 74);
             panel7.Name = "panel7";
             panel7.Padding = new Padding(5);
             panel7.Size = new Size(427, 27);
@@ -277,10 +302,10 @@
             parrotPictureBox1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
             parrotPictureBox1.IsElipse = false;
             parrotPictureBox1.IsParallax = false;
-            parrotPictureBox1.Location = new Point(12, 115);
+            parrotPictureBox1.Location = new Point(9, 116);
             parrotPictureBox1.Name = "parrotPictureBox1";
             parrotPictureBox1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            parrotPictureBox1.Size = new Size(31, 30);
+            parrotPictureBox1.Size = new Size(17, 13);
             parrotPictureBox1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             parrotPictureBox1.TabIndex = 17;
             parrotPictureBox1.Text = "parrotPictureBox1";
@@ -298,10 +323,10 @@
             parrotPictureBox2.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
             parrotPictureBox2.IsElipse = false;
             parrotPictureBox2.IsParallax = false;
-            parrotPictureBox2.Location = new Point(12, 151);
+            parrotPictureBox2.Location = new Point(9, 137);
             parrotPictureBox2.Name = "parrotPictureBox2";
             parrotPictureBox2.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            parrotPictureBox2.Size = new Size(31, 30);
+            parrotPictureBox2.Size = new Size(17, 13);
             parrotPictureBox2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             parrotPictureBox2.TabIndex = 18;
             parrotPictureBox2.Text = "parrotPictureBox2";
@@ -319,10 +344,10 @@
             parrotPictureBox3.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
             parrotPictureBox3.IsElipse = false;
             parrotPictureBox3.IsParallax = false;
-            parrotPictureBox3.Location = new Point(12, 187);
+            parrotPictureBox3.Location = new Point(9, 160);
             parrotPictureBox3.Name = "parrotPictureBox3";
             parrotPictureBox3.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            parrotPictureBox3.Size = new Size(31, 30);
+            parrotPictureBox3.Size = new Size(17, 13);
             parrotPictureBox3.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             parrotPictureBox3.TabIndex = 19;
             parrotPictureBox3.Text = "parrotPictureBox3";
@@ -334,7 +359,7 @@
             bigLabel8.BackColor = Color.Transparent;
             bigLabel8.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bigLabel8.ForeColor = Color.Gray;
-            bigLabel8.Location = new Point(60, 132);
+            bigLabel8.Location = new Point(57, 115);
             bigLabel8.Name = "bigLabel8";
             bigLabel8.Size = new Size(57, 13);
             bigLabel8.TabIndex = 4;
@@ -346,7 +371,7 @@
             bigLabel9.BackColor = Color.Transparent;
             bigLabel9.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bigLabel9.ForeColor = Color.Gray;
-            bigLabel9.Location = new Point(60, 163);
+            bigLabel9.Location = new Point(59, 138);
             bigLabel9.Name = "bigLabel9";
             bigLabel9.Size = new Size(50, 13);
             bigLabel9.TabIndex = 20;
@@ -358,7 +383,7 @@
             bigLabel10.BackColor = Color.Transparent;
             bigLabel10.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bigLabel10.ForeColor = Color.Gray;
-            bigLabel10.Location = new Point(57, 197);
+            bigLabel10.Location = new Point(55, 163);
             bigLabel10.Name = "bigLabel10";
             bigLabel10.Size = new Size(60, 13);
             bigLabel10.TabIndex = 21;
@@ -370,7 +395,7 @@
             bigLabel11.BackColor = Color.Transparent;
             bigLabel11.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bigLabel11.ForeColor = Color.Gray;
-            bigLabel11.Location = new Point(242, 132);
+            bigLabel11.Location = new Point(239, 115);
             bigLabel11.Name = "bigLabel11";
             bigLabel11.Size = new Size(38, 13);
             bigLabel11.TabIndex = 22;
@@ -382,7 +407,7 @@
             bigLabel12.BackColor = Color.Transparent;
             bigLabel12.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bigLabel12.ForeColor = Color.Gray;
-            bigLabel12.Location = new Point(252, 163);
+            bigLabel12.Location = new Point(249, 138);
             bigLabel12.Name = "bigLabel12";
             bigLabel12.Size = new Size(13, 13);
             bigLabel12.TabIndex = 23;
@@ -394,7 +419,7 @@
             bigLabel13.BackColor = Color.Transparent;
             bigLabel13.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bigLabel13.ForeColor = Color.Gray;
-            bigLabel13.Location = new Point(252, 196);
+            bigLabel13.Location = new Point(249, 161);
             bigLabel13.Name = "bigLabel13";
             bigLabel13.Size = new Size(13, 13);
             bigLabel13.TabIndex = 24;
@@ -404,11 +429,11 @@
             // 
             bigLabel14.AutoSize = true;
             bigLabel14.BackColor = Color.Transparent;
-            bigLabel14.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel14.Font = new Font("Segoe UI", 6.75F, FontStyle.Bold);
             bigLabel14.ForeColor = Color.Gray;
-            bigLabel14.Location = new Point(293, 130);
+            bigLabel14.Location = new Point(294, 103);
             bigLabel14.Name = "bigLabel14";
-            bigLabel14.Size = new Size(37, 26);
+            bigLabel14.Size = new Size(30, 24);
             bigLabel14.TabIndex = 25;
             bigLabel14.Text = "Level \r\n  Up";
             // 
@@ -416,11 +441,11 @@
             // 
             bigLabel15.AutoSize = true;
             bigLabel15.BackColor = Color.Transparent;
-            bigLabel15.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel15.Font = new Font("Segoe UI", 6.75F, FontStyle.Bold);
             bigLabel15.ForeColor = Color.Gray;
-            bigLabel15.Location = new Point(291, 159);
+            bigLabel15.Location = new Point(292, 132);
             bigLabel15.Name = "bigLabel15";
-            bigLabel15.Size = new Size(40, 26);
+            bigLabel15.Size = new Size(32, 24);
             bigLabel15.TabIndex = 26;
             bigLabel15.Text = "Quest \r\n  Skill";
             // 
@@ -428,11 +453,11 @@
             // 
             bigLabel16.AutoSize = true;
             bigLabel16.BackColor = Color.Transparent;
-            bigLabel16.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel16.Font = new Font("Segoe UI", 6.75F, FontStyle.Bold);
             bigLabel16.ForeColor = Color.Gray;
-            bigLabel16.Location = new Point(291, 190);
+            bigLabel16.Location = new Point(292, 163);
             bigLabel16.Name = "bigLabel16";
-            bigLabel16.Size = new Size(40, 26);
+            bigLabel16.Size = new Size(32, 24);
             bigLabel16.TabIndex = 27;
             bigLabel16.Text = "Quest \r\n  Skill";
             // 
@@ -456,37 +481,13 @@
             panel8.Controls.Add(lblSkillPointsUsed);
             panel8.Controls.Add(bigLabel17);
             panel8.EdgeColor = Color.FromArgb(224, 224, 224);
-            panel8.Location = new Point(5, 258);
+            panel8.Location = new Point(2, 259);
             panel8.Name = "panel8";
             panel8.Padding = new Padding(5);
             panel8.Size = new Size(427, 27);
             panel8.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel8.TabIndex = 17;
             panel8.Text = "panel8";
-            // 
-            // lblSkillPointsUsed
-            // 
-            lblSkillPointsUsed.AutoSize = true;
-            lblSkillPointsUsed.BackColor = Color.Transparent;
-            lblSkillPointsUsed.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSkillPointsUsed.ForeColor = Color.White;
-            lblSkillPointsUsed.Location = new Point(154, 7);
-            lblSkillPointsUsed.Name = "lblSkillPointsUsed";
-            lblSkillPointsUsed.Size = new Size(13, 13);
-            lblSkillPointsUsed.TabIndex = 4;
-            lblSkillPointsUsed.Text = "0";
-            // 
-            // bigLabel19
-            // 
-            bigLabel19.AutoSize = true;
-            bigLabel19.BackColor = Color.Transparent;
-            bigLabel19.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bigLabel19.ForeColor = Color.White;
-            bigLabel19.Location = new Point(240, 6);
-            bigLabel19.Name = "bigLabel19";
-            bigLabel19.Size = new Size(27, 13);
-            bigLabel19.TabIndex = 5;
-            bigLabel19.Text = "left:";
             // 
             // lblLeft
             // 
@@ -500,33 +501,252 @@
             lblLeft.TabIndex = 6;
             lblLeft.Text = "0";
             // 
+            // bigLabel19
+            // 
+            bigLabel19.AutoSize = true;
+            bigLabel19.BackColor = Color.Transparent;
+            bigLabel19.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel19.ForeColor = Color.White;
+            bigLabel19.Location = new Point(240, 6);
+            bigLabel19.Name = "bigLabel19";
+            bigLabel19.Size = new Size(27, 13);
+            bigLabel19.TabIndex = 5;
+            bigLabel19.Text = "left:";
+            // 
+            // lblSkillPointsUsed
+            // 
+            lblSkillPointsUsed.AutoSize = true;
+            lblSkillPointsUsed.BackColor = Color.Transparent;
+            lblSkillPointsUsed.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSkillPointsUsed.ForeColor = Color.White;
+            lblSkillPointsUsed.Location = new Point(154, 7);
+            lblSkillPointsUsed.Name = "lblSkillPointsUsed";
+            lblSkillPointsUsed.Size = new Size(13, 13);
+            lblSkillPointsUsed.TabIndex = 4;
+            lblSkillPointsUsed.Text = "0";
+            // 
+            // pnlSkillUnlocked
+            // 
+            pnlSkillUnlocked.BorderStyle = BorderStyle.FixedSingle;
+            pnlSkillUnlocked.Controls.Add(pnlStatusInformation);
+            pnlSkillUnlocked.Controls.Add(panel8);
+            pnlSkillUnlocked.Controls.Add(panel1);
+            pnlSkillUnlocked.Controls.Add(bigLabel16);
+            pnlSkillUnlocked.Controls.Add(panel2);
+            pnlSkillUnlocked.Controls.Add(bigLabel15);
+            pnlSkillUnlocked.Controls.Add(panel3);
+            pnlSkillUnlocked.Controls.Add(bigLabel14);
+            pnlSkillUnlocked.Controls.Add(panel4);
+            pnlSkillUnlocked.Controls.Add(bigLabel13);
+            pnlSkillUnlocked.Controls.Add(panel5);
+            pnlSkillUnlocked.Controls.Add(bigLabel12);
+            pnlSkillUnlocked.Controls.Add(panel6);
+            pnlSkillUnlocked.Controls.Add(bigLabel11);
+            pnlSkillUnlocked.Controls.Add(panel7);
+            pnlSkillUnlocked.Controls.Add(bigLabel10);
+            pnlSkillUnlocked.Controls.Add(parrotPictureBox1);
+            pnlSkillUnlocked.Controls.Add(bigLabel9);
+            pnlSkillUnlocked.Controls.Add(parrotPictureBox2);
+            pnlSkillUnlocked.Controls.Add(bigLabel8);
+            pnlSkillUnlocked.Controls.Add(parrotPictureBox3);
+            pnlSkillUnlocked.Location = new Point(2, 0);
+            pnlSkillUnlocked.Name = "pnlSkillUnlocked";
+            pnlSkillUnlocked.Size = new Size(441, 290);
+            pnlSkillUnlocked.TabIndex = 91;
+            pnlSkillUnlocked.Paint += pnlSkillUnlocked_Paint;
+            // 
+            // panel9
+            // 
+            panel9.BorderStyle = BorderStyle.FixedSingle;
+            panel9.Controls.Add(panel10);
+            panel9.Controls.Add(panel11);
+            panel9.Controls.Add(panel12);
+            panel9.Controls.Add(panel13);
+            panel9.Controls.Add(panel14);
+            panel9.Controls.Add(panel15);
+            panel9.Controls.Add(panel16);
+            panel9.Location = new Point(447, 0);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(441, 290);
+            panel9.TabIndex = 92;
+            // 
+            // panel10
+            // 
+            panel10.BackColor = Color.LightGray;
+            panel10.Controls.Add(bigLabel18);
+            panel10.EdgeColor = Color.FromArgb(224, 224, 224);
+            panel10.Location = new Point(3, 74);
+            panel10.Name = "panel10";
+            panel10.Padding = new Padding(5);
+            panel10.Size = new Size(427, 27);
+            panel10.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            panel10.TabIndex = 24;
+            panel10.Text = "panel10";
+            // 
+            // bigLabel18
+            // 
+            bigLabel18.AutoSize = true;
+            bigLabel18.BackColor = Color.Transparent;
+            bigLabel18.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel18.ForeColor = Color.Gray;
+            bigLabel18.Location = new Point(158, 6);
+            bigLabel18.Name = "bigLabel18";
+            bigLabel18.Size = new Size(121, 13);
+            bigLabel18.TabIndex = 3;
+            bigLabel18.Text = "~ Novice Skill Below~";
+            // 
+            // panel11
+            // 
+            panel11.BackColor = Color.Transparent;
+            panel11.BackgroundImage = Properties.Resources._4834;
+            panel11.BackgroundImageLayout = ImageLayout.Stretch;
+            panel11.Controls.Add(bigLabel20);
+            panel11.Location = new Point(340, 38);
+            panel11.Margin = new Padding(3, 2, 3, 2);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(98, 31);
+            panel11.TabIndex = 23;
+            // 
+            // bigLabel20
+            // 
+            bigLabel20.AutoSize = true;
+            bigLabel20.BackColor = Color.Transparent;
+            bigLabel20.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel20.ForeColor = Color.White;
+            bigLabel20.Location = new Point(13, 8);
+            bigLabel20.Name = "bigLabel20";
+            bigLabel20.Size = new Size(79, 13);
+            bigLabel20.TabIndex = 2;
+            bigLabel20.Text = "Requirements";
+            // 
+            // panel12
+            // 
+            panel12.BackColor = Color.Transparent;
+            panel12.BackgroundImage = Properties.Resources._4834;
+            panel12.BackgroundImageLayout = ImageLayout.Stretch;
+            panel12.Controls.Add(bigLabel21);
+            panel12.Location = new Point(281, 38);
+            panel12.Margin = new Padding(3, 2, 3, 2);
+            panel12.Name = "panel12";
+            panel12.Size = new Size(53, 31);
+            panel12.TabIndex = 21;
+            // 
+            // bigLabel21
+            // 
+            bigLabel21.AutoSize = true;
+            bigLabel21.BackColor = Color.Transparent;
+            bigLabel21.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel21.ForeColor = Color.White;
+            bigLabel21.Location = new Point(13, 1);
+            bigLabel21.Name = "bigLabel21";
+            bigLabel21.Size = new Size(34, 26);
+            bigLabel21.TabIndex = 2;
+            bigLabel21.Text = "Max \r\nLevel\r\n";
+            // 
+            // panel13
+            // 
+            panel13.BackColor = Color.Transparent;
+            panel13.BackgroundImage = Properties.Resources._4834;
+            panel13.BackgroundImageLayout = ImageLayout.Stretch;
+            panel13.Controls.Add(bigLabel22);
+            panel13.Location = new Point(118, 38);
+            panel13.Margin = new Padding(3, 2, 3, 2);
+            panel13.Name = "panel13";
+            panel13.Size = new Size(161, 31);
+            panel13.TabIndex = 22;
+            // 
+            // bigLabel22
+            // 
+            bigLabel22.AutoSize = true;
+            bigLabel22.BackColor = Color.Transparent;
+            bigLabel22.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel22.ForeColor = Color.White;
+            bigLabel22.Location = new Point(50, 8);
+            bigLabel22.Name = "bigLabel22";
+            bigLabel22.Size = new Size(62, 13);
+            bigLabel22.TabIndex = 2;
+            bigLabel22.Text = "Skill Name\r\n";
+            // 
+            // panel14
+            // 
+            panel14.BackColor = Color.Transparent;
+            panel14.BackgroundImage = Properties.Resources._4834;
+            panel14.BackgroundImageLayout = ImageLayout.Stretch;
+            panel14.Controls.Add(bigLabel23);
+            panel14.Location = new Point(60, 38);
+            panel14.Margin = new Padding(3, 2, 3, 2);
+            panel14.Name = "panel14";
+            panel14.Size = new Size(53, 31);
+            panel14.TabIndex = 19;
+            // 
+            // bigLabel23
+            // 
+            bigLabel23.AutoSize = true;
+            bigLabel23.BackColor = Color.Transparent;
+            bigLabel23.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel23.ForeColor = Color.White;
+            bigLabel23.Location = new Point(13, 1);
+            bigLabel23.Name = "bigLabel23";
+            bigLabel23.Size = new Size(29, 26);
+            bigLabel23.TabIndex = 2;
+            bigLabel23.Text = "Skill\r\nIcon";
+            // 
+            // panel15
+            // 
+            panel15.BackColor = Color.Transparent;
+            panel15.BackgroundImage = Properties.Resources._4834;
+            panel15.BackgroundImageLayout = ImageLayout.Stretch;
+            panel15.Controls.Add(bigLabel24);
+            panel15.Location = new Point(3, 38);
+            panel15.Margin = new Padding(3, 2, 3, 2);
+            panel15.Name = "panel15";
+            panel15.Size = new Size(53, 31);
+            panel15.TabIndex = 20;
+            // 
+            // bigLabel24
+            // 
+            bigLabel24.AutoSize = true;
+            bigLabel24.BackColor = Color.Transparent;
+            bigLabel24.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel24.ForeColor = Color.White;
+            bigLabel24.Location = new Point(13, 2);
+            bigLabel24.Name = "bigLabel24";
+            bigLabel24.Size = new Size(28, 26);
+            bigLabel24.TabIndex = 2;
+            bigLabel24.Text = "Get\r\nSkill\r\n";
+            // 
+            // panel16
+            // 
+            panel16.BackColor = Color.Transparent;
+            panel16.BackgroundImage = Properties.Resources._4834;
+            panel16.BackgroundImageLayout = ImageLayout.Stretch;
+            panel16.Controls.Add(bigLabel25);
+            panel16.Location = new Point(-2, 3);
+            panel16.Margin = new Padding(3, 2, 3, 2);
+            panel16.Name = "panel16";
+            panel16.Size = new Size(444, 31);
+            panel16.TabIndex = 18;
+            // 
+            // bigLabel25
+            // 
+            bigLabel25.AutoSize = true;
+            bigLabel25.BackColor = Color.Transparent;
+            bigLabel25.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            bigLabel25.ForeColor = Color.White;
+            bigLabel25.Location = new Point(127, 0);
+            bigLabel25.Name = "bigLabel25";
+            bigLabel25.Size = new Size(192, 25);
+            bigLabel25.TabIndex = 2;
+            bigLabel25.Text = "Skills To Be Unlocked";
+            // 
             // Novice
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(panel8);
-            Controls.Add(bigLabel16);
-            Controls.Add(bigLabel15);
-            Controls.Add(bigLabel14);
-            Controls.Add(bigLabel13);
-            Controls.Add(bigLabel12);
-            Controls.Add(bigLabel11);
-            Controls.Add(bigLabel10);
-            Controls.Add(bigLabel9);
-            Controls.Add(bigLabel8);
-            Controls.Add(parrotPictureBox3);
-            Controls.Add(parrotPictureBox2);
-            Controls.Add(parrotPictureBox1);
-            Controls.Add(panel7);
-            Controls.Add(panel6);
-            Controls.Add(panel5);
-            Controls.Add(panel4);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
-            Controls.Add(pnlStatusInformation);
+            Controls.Add(panel9);
+            Controls.Add(pnlSkillUnlocked);
             Name = "Novice";
-            Size = new Size(441, 290);
+            Size = new Size(889, 290);
             Load += Novice_Load;
             pnlStatusInformation.ResumeLayout(false);
             pnlStatusInformation.PerformLayout();
@@ -546,8 +766,24 @@
             panel7.PerformLayout();
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
+            pnlSkillUnlocked.ResumeLayout(false);
+            pnlSkillUnlocked.PerformLayout();
+            panel9.ResumeLayout(false);
+            panel10.ResumeLayout(false);
+            panel10.PerformLayout();
+            panel11.ResumeLayout(false);
+            panel11.PerformLayout();
+            panel12.ResumeLayout(false);
+            panel12.PerformLayout();
+            panel13.ResumeLayout(false);
+            panel13.PerformLayout();
+            panel14.ResumeLayout(false);
+            panel14.PerformLayout();
+            panel15.ResumeLayout(false);
+            panel15.PerformLayout();
+            panel16.ResumeLayout(false);
+            panel16.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -585,5 +821,21 @@
         private ReaLTaiizor.Controls.BigLabel lblLeft;
         private ReaLTaiizor.Controls.BigLabel bigLabel19;
         private ReaLTaiizor.Controls.BigLabel lblSkillPointsUsed;
+        private Panel pnlSkillUnlocked;
+        private Panel panel9;
+        private ReaLTaiizor.Controls.Panel panel10;
+        private ReaLTaiizor.Controls.BigLabel bigLabel18;
+        private Panel panel11;
+        private ReaLTaiizor.Controls.BigLabel bigLabel20;
+        private Panel panel12;
+        private ReaLTaiizor.Controls.BigLabel bigLabel21;
+        private Panel panel13;
+        private ReaLTaiizor.Controls.BigLabel bigLabel22;
+        private Panel panel14;
+        private ReaLTaiizor.Controls.BigLabel bigLabel23;
+        private Panel panel15;
+        private ReaLTaiizor.Controls.BigLabel bigLabel24;
+        private Panel panel16;
+        private ReaLTaiizor.Controls.BigLabel bigLabel25;
     }
 }

@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Modsim_Game
 {
-    public partial class Novice : UserControl
+    public partial class Archer : UserControl
     {
-        public Novice()
+        public Archer()
         {
             InitializeComponent();
-        }
-
-        private void Novice_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlSkillUnlocked_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

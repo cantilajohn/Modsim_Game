@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Modsim_Game
 {
-    public partial class Novice : UserControl
+    public partial class Swordman : UserControl
     {
-        public Novice()
+        public Swordman()
         {
             InitializeComponent();
         }
 
-        private void Novice_Load(object sender, EventArgs e)
+        private void bigLabel12_Click(object sender, EventArgs e)
         {
 
         }

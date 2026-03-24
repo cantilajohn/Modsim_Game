@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace Modsim_Game
 {
-    public partial class Novice : UserControl
+    public partial class Acolyte : UserControl
     {
-        public Novice()
+        public Acolyte()
         {
             InitializeComponent();
         }
 
-        private void Novice_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlSkillUnlocked_Paint(object sender, PaintEventArgs e)
+        private void bigLabel42_Click(object sender, EventArgs e)
         {
 
         }
