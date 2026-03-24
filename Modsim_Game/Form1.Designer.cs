@@ -303,7 +303,7 @@ namespace Modsim_Game
             lblUnknown4.ForeColor = Color.Black;
             lblUnknown4.Location = new Point(1177, 7);
             lblUnknown4.Name = "lblUnknown4";
-            lblUnknown4.Size = new Size(103, 25);
+            lblUnknown4.Size = new Size(97, 25);
             lblUnknown4.TabIndex = 57;
             lblUnknown4.Text = "わさあっぷっ";
             // 
@@ -436,7 +436,7 @@ namespace Modsim_Game
             lblUnknown5.ForeColor = Color.FromArgb(80, 80, 80);
             lblUnknown5.Location = new Point(558, 20);
             lblUnknown5.Name = "lblUnknown5";
-            lblUnknown5.Size = new Size(34, 13);
+            lblUnknown5.Size = new Size(33, 13);
             lblUnknown5.TabIndex = 80;
             lblUnknown5.Text = "ゲイ?";
             // 
@@ -624,7 +624,7 @@ namespace Modsim_Game
             lblUnknown8.ForeColor = Color.White;
             lblUnknown8.Location = new Point(1382, 7);
             lblUnknown8.Name = "lblUnknown8";
-            lblUnknown8.Size = new Size(140, 25);
+            lblUnknown8.Size = new Size(133, 25);
             lblUnknown8.TabIndex = 58;
             lblUnknown8.Text = "大丈夫ラコ？？";
             // 
@@ -771,7 +771,7 @@ namespace Modsim_Game
             lblUnknown7.ForeColor = Color.FromArgb(80, 80, 80);
             lblUnknown7.Location = new Point(61, 10);
             lblUnknown7.Name = "lblUnknown7";
-            lblUnknown7.Size = new Size(75, 13);
+            lblUnknown7.Size = new Size(70, 13);
             lblUnknown7.TabIndex = 86;
             lblUnknown7.Text = "武器の種類";
             // 
@@ -1303,7 +1303,7 @@ namespace Modsim_Game
             lblUnknown6.ForeColor = Color.FromArgb(80, 80, 80);
             lblUnknown6.Location = new Point(1087, 300);
             lblUnknown6.Name = "lblUnknown6";
-            lblUnknown6.Size = new Size(75, 13);
+            lblUnknown6.Size = new Size(70, 13);
             lblUnknown6.TabIndex = 68;
             lblUnknown6.Text = "武器の種類";
             // 
@@ -2426,7 +2426,7 @@ namespace Modsim_Game
             bigLabel1.ForeColor = Color.FromArgb(80, 80, 80);
             bigLabel1.Location = new Point(757, 15);
             bigLabel1.Name = "bigLabel1";
-            bigLabel1.Size = new Size(83, 13);
+            bigLabel1.Size = new Size(77, 13);
             bigLabel1.TabIndex = 81;
             bigLabel1.Text = "大丈夫ココ？";
             // 
@@ -2449,7 +2449,7 @@ namespace Modsim_Game
             // 
             pnlContentHolder.Location = new Point(15, 126);
             pnlContentHolder.Name = "pnlContentHolder";
-            pnlContentHolder.Size = new Size(889, 290);
+            pnlContentHolder.Size = new Size(889, 465);
             pnlContentHolder.TabIndex = 89;
             // 
             // bigLabel2

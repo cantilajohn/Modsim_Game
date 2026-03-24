@@ -26,5 +26,10 @@ namespace Modsim_Game
         {
 
         }
+
+        private void bigLabel36_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

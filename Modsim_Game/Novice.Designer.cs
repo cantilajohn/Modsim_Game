@@ -77,6 +77,31 @@
             bigLabel24 = new ReaLTaiizor.Controls.BigLabel();
             panel16 = new Panel();
             bigLabel25 = new ReaLTaiizor.Controls.BigLabel();
+            pnlContentHolder = new Panel();
+            aloneButton1 = new ReaLTaiizor.Controls.AloneButton();
+            aloneButton2 = new ReaLTaiizor.Controls.AloneButton();
+            bigLabel26 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel27 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel28 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel29 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel30 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel31 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel32 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel33 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel34 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel35 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel36 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel37 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel38 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel39 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel40 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel41 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel42 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel43 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel44 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel45 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel46 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel47 = new ReaLTaiizor.Controls.BigLabel();
             pnlStatusInformation.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -95,6 +120,7 @@
             panel14.SuspendLayout();
             panel15.SuspendLayout();
             panel16.SuspendLayout();
+            pnlContentHolder.SuspendLayout();
             SuspendLayout();
             // 
             // pnlStatusInformation
@@ -739,14 +765,339 @@
             bigLabel25.TabIndex = 2;
             bigLabel25.Text = "Skills To Be Unlocked";
             // 
+            // pnlContentHolder
+            // 
+            pnlContentHolder.BackColor = Color.Transparent;
+            pnlContentHolder.BackgroundImage = Properties.Resources.welcome_section;
+            pnlContentHolder.BackgroundImageLayout = ImageLayout.Stretch;
+            pnlContentHolder.Controls.Add(bigLabel46);
+            pnlContentHolder.Controls.Add(bigLabel47);
+            pnlContentHolder.Controls.Add(bigLabel44);
+            pnlContentHolder.Controls.Add(bigLabel45);
+            pnlContentHolder.Controls.Add(bigLabel42);
+            pnlContentHolder.Controls.Add(bigLabel43);
+            pnlContentHolder.Controls.Add(bigLabel40);
+            pnlContentHolder.Controls.Add(bigLabel41);
+            pnlContentHolder.Controls.Add(bigLabel38);
+            pnlContentHolder.Controls.Add(bigLabel39);
+            pnlContentHolder.Controls.Add(bigLabel37);
+            pnlContentHolder.Controls.Add(bigLabel36);
+            pnlContentHolder.Controls.Add(bigLabel35);
+            pnlContentHolder.Controls.Add(bigLabel34);
+            pnlContentHolder.Controls.Add(bigLabel33);
+            pnlContentHolder.Controls.Add(bigLabel32);
+            pnlContentHolder.Controls.Add(bigLabel31);
+            pnlContentHolder.Controls.Add(bigLabel30);
+            pnlContentHolder.Controls.Add(bigLabel29);
+            pnlContentHolder.Controls.Add(bigLabel28);
+            pnlContentHolder.Controls.Add(bigLabel27);
+            pnlContentHolder.Controls.Add(bigLabel26);
+            pnlContentHolder.Location = new Point(245, 321);
+            pnlContentHolder.Margin = new Padding(3, 2, 3, 2);
+            pnlContentHolder.Name = "pnlContentHolder";
+            pnlContentHolder.Size = new Size(394, 142);
+            pnlContentHolder.TabIndex = 83;
+            // 
+            // aloneButton1
+            // 
+            aloneButton1.BackColor = Color.Transparent;
+            aloneButton1.EnabledCalc = true;
+            aloneButton1.Font = new Font("Segoe UI", 9F);
+            aloneButton1.ForeColor = Color.FromArgb(124, 133, 142);
+            aloneButton1.Location = new Point(302, 295);
+            aloneButton1.Name = "aloneButton1";
+            aloneButton1.Size = new Size(120, 22);
+            aloneButton1.TabIndex = 0;
+            aloneButton1.Text = "Generate Report";
+            // 
+            // aloneButton2
+            // 
+            aloneButton2.BackColor = Color.Transparent;
+            aloneButton2.EnabledCalc = true;
+            aloneButton2.Font = new Font("Segoe UI", 9F);
+            aloneButton2.ForeColor = Color.FromArgb(124, 133, 142);
+            aloneButton2.Location = new Point(474, 295);
+            aloneButton2.Name = "aloneButton2";
+            aloneButton2.Size = new Size(120, 22);
+            aloneButton2.TabIndex = 93;
+            aloneButton2.Text = "Reset Skill Simulator";
+            // 
+            // bigLabel26
+            // 
+            bigLabel26.AutoSize = true;
+            bigLabel26.BackColor = Color.Transparent;
+            bigLabel26.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel26.ForeColor = Color.Gray;
+            bigLabel26.Location = new Point(20, 15);
+            bigLabel26.Name = "bigLabel26";
+            bigLabel26.Size = new Size(50, 13);
+            bigLabel26.TabIndex = 28;
+            bigLabel26.Text = "First Aid";
+            // 
+            // bigLabel27
+            // 
+            bigLabel27.AutoSize = true;
+            bigLabel27.BackColor = Color.Transparent;
+            bigLabel27.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel27.ForeColor = Color.Gray;
+            bigLabel27.Location = new Point(20, 38);
+            bigLabel27.Name = "bigLabel27";
+            bigLabel27.Size = new Size(60, 13);
+            bigLabel27.TabIndex = 29;
+            bigLabel27.Text = "Trick Dead";
+            // 
+            // bigLabel28
+            // 
+            bigLabel28.AutoSize = true;
+            bigLabel28.BackColor = Color.Transparent;
+            bigLabel28.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel28.ForeColor = Color.Gray;
+            bigLabel28.Location = new Point(98, 15);
+            bigLabel28.Name = "bigLabel28";
+            bigLabel28.Size = new Size(97, 13);
+            bigLabel28.TabIndex = 30;
+            bigLabel28.Text = "Leve1  Quest Skill";
+            // 
+            // bigLabel29
+            // 
+            bigLabel29.AutoSize = true;
+            bigLabel29.BackColor = Color.Transparent;
+            bigLabel29.Font = new Font("Segoe UI Black", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel29.ForeColor = Color.Gray;
+            bigLabel29.Location = new Point(183, 64);
+            bigLabel29.Name = "bigLabel29";
+            bigLabel29.Size = new Size(33, 13);
+            bigLabel29.TabIndex = 31;
+            bigLabel29.Text = "0/49";
+            // 
+            // bigLabel30
+            // 
+            bigLabel30.AutoSize = true;
+            bigLabel30.BackColor = Color.Transparent;
+            bigLabel30.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel30.ForeColor = Color.Gray;
+            bigLabel30.Location = new Point(20, 64);
+            bigLabel30.Name = "bigLabel30";
+            bigLabel30.Size = new Size(160, 13);
+            bigLabel30.TabIndex = 32;
+            bigLabel30.Text = "Total first job skill point used:\t";
+            // 
+            // bigLabel31
+            // 
+            bigLabel31.AutoSize = true;
+            bigLabel31.BackColor = Color.Transparent;
+            bigLabel31.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel31.ForeColor = Color.Gray;
+            bigLabel31.Location = new Point(20, 89);
+            bigLabel31.Name = "bigLabel31";
+            bigLabel31.Size = new Size(177, 13);
+            bigLabel31.TabIndex = 33;
+            bigLabel31.Text = "Total second job skill point used:\t";
+            // 
+            // bigLabel32
+            // 
+            bigLabel32.AutoSize = true;
+            bigLabel32.BackColor = Color.Transparent;
+            bigLabel32.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel32.ForeColor = Color.Gray;
+            bigLabel32.Location = new Point(20, 112);
+            bigLabel32.Name = "bigLabel32";
+            bigLabel32.Size = new Size(165, 13);
+            bigLabel32.TabIndex = 34;
+            bigLabel32.Text = "Total third job skill point used:";
+            // 
+            // bigLabel33
+            // 
+            bigLabel33.AutoSize = true;
+            bigLabel33.BackColor = Color.Transparent;
+            bigLabel33.Font = new Font("Segoe UI Black", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel33.ForeColor = Color.Gray;
+            bigLabel33.Location = new Point(199, 89);
+            bigLabel33.Name = "bigLabel33";
+            bigLabel33.Size = new Size(26, 13);
+            bigLabel33.TabIndex = 35;
+            bigLabel33.Text = "0/0";
+            // 
+            // bigLabel34
+            // 
+            bigLabel34.AutoSize = true;
+            bigLabel34.BackColor = Color.Transparent;
+            bigLabel34.Font = new Font("Segoe UI Black", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel34.ForeColor = Color.Gray;
+            bigLabel34.Location = new Point(188, 112);
+            bigLabel34.Name = "bigLabel34";
+            bigLabel34.Size = new Size(26, 13);
+            bigLabel34.TabIndex = 36;
+            bigLabel34.Text = "0/0";
+            // 
+            // bigLabel35
+            // 
+            bigLabel35.AutoSize = true;
+            bigLabel35.BackColor = Color.Transparent;
+            bigLabel35.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel35.ForeColor = Color.Gray;
+            bigLabel35.Location = new Point(99, 38);
+            bigLabel35.Name = "bigLabel35";
+            bigLabel35.Size = new Size(97, 13);
+            bigLabel35.TabIndex = 37;
+            bigLabel35.Text = "Leve1  Quest Skill";
+            // 
+            // bigLabel36
+            // 
+            bigLabel36.AutoSize = true;
+            bigLabel36.BackColor = Color.Transparent;
+            bigLabel36.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel36.ForeColor = Color.Gray;
+            bigLabel36.Location = new Point(234, 63);
+            bigLabel36.Name = "bigLabel36";
+            bigLabel36.Size = new Size(30, 13);
+            bigLabel36.TabIndex = 38;
+            bigLabel36.Text = "Left:";
+            bigLabel36.Click += bigLabel36_Click;
+            // 
+            // bigLabel37
+            // 
+            bigLabel37.AutoSize = true;
+            bigLabel37.BackColor = Color.Transparent;
+            bigLabel37.Font = new Font("Segoe UI Black", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel37.ForeColor = Color.Gray;
+            bigLabel37.Location = new Point(266, 63);
+            bigLabel37.Name = "bigLabel37";
+            bigLabel37.Size = new Size(21, 13);
+            bigLabel37.TabIndex = 39;
+            bigLabel37.Text = "49";
+            // 
+            // bigLabel38
+            // 
+            bigLabel38.AutoSize = true;
+            bigLabel38.BackColor = Color.Transparent;
+            bigLabel38.Font = new Font("Segoe UI Black", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel38.ForeColor = Color.Gray;
+            bigLabel38.Location = new Point(266, 89);
+            bigLabel38.Name = "bigLabel38";
+            bigLabel38.Size = new Size(14, 13);
+            bigLabel38.TabIndex = 41;
+            bigLabel38.Text = "0";
+            // 
+            // bigLabel39
+            // 
+            bigLabel39.AutoSize = true;
+            bigLabel39.BackColor = Color.Transparent;
+            bigLabel39.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel39.ForeColor = Color.Gray;
+            bigLabel39.Location = new Point(234, 89);
+            bigLabel39.Name = "bigLabel39";
+            bigLabel39.Size = new Size(30, 13);
+            bigLabel39.TabIndex = 40;
+            bigLabel39.Text = "Left:";
+            // 
+            // bigLabel40
+            // 
+            bigLabel40.AutoSize = true;
+            bigLabel40.BackColor = Color.Transparent;
+            bigLabel40.Font = new Font("Segoe UI Black", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel40.ForeColor = Color.Gray;
+            bigLabel40.Location = new Point(265, 112);
+            bigLabel40.Name = "bigLabel40";
+            bigLabel40.Size = new Size(14, 13);
+            bigLabel40.TabIndex = 43;
+            bigLabel40.Text = "0";
+            // 
+            // bigLabel41
+            // 
+            bigLabel41.AutoSize = true;
+            bigLabel41.BackColor = Color.Transparent;
+            bigLabel41.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel41.ForeColor = Color.Gray;
+            bigLabel41.Location = new Point(233, 112);
+            bigLabel41.Name = "bigLabel41";
+            bigLabel41.Size = new Size(30, 13);
+            bigLabel41.TabIndex = 42;
+            bigLabel41.Text = "Left:";
+            // 
+            // bigLabel42
+            // 
+            bigLabel42.AutoSize = true;
+            bigLabel42.BackColor = Color.Transparent;
+            bigLabel42.Font = new Font("Segoe UI Black", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel42.ForeColor = Color.Gray;
+            bigLabel42.Location = new Point(327, 64);
+            bigLabel42.Name = "bigLabel42";
+            bigLabel42.Size = new Size(14, 13);
+            bigLabel42.TabIndex = 45;
+            bigLabel42.Text = "0";
+            // 
+            // bigLabel43
+            // 
+            bigLabel43.AutoSize = true;
+            bigLabel43.BackColor = Color.Transparent;
+            bigLabel43.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel43.ForeColor = Color.Gray;
+            bigLabel43.Location = new Point(295, 64);
+            bigLabel43.Name = "bigLabel43";
+            bigLabel43.Size = new Size(37, 13);
+            bigLabel43.TabIndex = 44;
+            bigLabel43.Text = "Over: ";
+            // 
+            // bigLabel44
+            // 
+            bigLabel44.AutoSize = true;
+            bigLabel44.BackColor = Color.Transparent;
+            bigLabel44.Font = new Font("Segoe UI Black", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel44.ForeColor = Color.Gray;
+            bigLabel44.Location = new Point(327, 89);
+            bigLabel44.Name = "bigLabel44";
+            bigLabel44.Size = new Size(14, 13);
+            bigLabel44.TabIndex = 47;
+            bigLabel44.Text = "0";
+            // 
+            // bigLabel45
+            // 
+            bigLabel45.AutoSize = true;
+            bigLabel45.BackColor = Color.Transparent;
+            bigLabel45.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel45.ForeColor = Color.Gray;
+            bigLabel45.Location = new Point(295, 89);
+            bigLabel45.Name = "bigLabel45";
+            bigLabel45.Size = new Size(37, 13);
+            bigLabel45.TabIndex = 46;
+            bigLabel45.Text = "Over: ";
+            // 
+            // bigLabel46
+            // 
+            bigLabel46.AutoSize = true;
+            bigLabel46.BackColor = Color.Transparent;
+            bigLabel46.Font = new Font("Segoe UI Black", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel46.ForeColor = Color.Gray;
+            bigLabel46.Location = new Point(327, 112);
+            bigLabel46.Name = "bigLabel46";
+            bigLabel46.Size = new Size(14, 13);
+            bigLabel46.TabIndex = 49;
+            bigLabel46.Text = "0";
+            // 
+            // bigLabel47
+            // 
+            bigLabel47.AutoSize = true;
+            bigLabel47.BackColor = Color.Transparent;
+            bigLabel47.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel47.ForeColor = Color.Gray;
+            bigLabel47.Location = new Point(295, 112);
+            bigLabel47.Name = "bigLabel47";
+            bigLabel47.Size = new Size(37, 13);
+            bigLabel47.TabIndex = 48;
+            bigLabel47.Text = "Over: ";
+            // 
             // Novice
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(aloneButton2);
+            Controls.Add(aloneButton1);
+            Controls.Add(pnlContentHolder);
             Controls.Add(panel9);
             Controls.Add(pnlSkillUnlocked);
             Name = "Novice";
-            Size = new Size(889, 290);
+            Size = new Size(889, 465);
             Load += Novice_Load;
             pnlStatusInformation.ResumeLayout(false);
             pnlStatusInformation.PerformLayout();
@@ -783,6 +1134,8 @@
             panel15.PerformLayout();
             panel16.ResumeLayout(false);
             panel16.PerformLayout();
+            pnlContentHolder.ResumeLayout(false);
+            pnlContentHolder.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -837,5 +1190,30 @@
         private ReaLTaiizor.Controls.BigLabel bigLabel24;
         private Panel panel16;
         private ReaLTaiizor.Controls.BigLabel bigLabel25;
+        private Panel pnlContentHolder;
+        private ReaLTaiizor.Controls.AloneButton aloneButton1;
+        private ReaLTaiizor.Controls.BigLabel bigLabel29;
+        private ReaLTaiizor.Controls.BigLabel bigLabel28;
+        private ReaLTaiizor.Controls.BigLabel bigLabel27;
+        private ReaLTaiizor.Controls.BigLabel bigLabel26;
+        private ReaLTaiizor.Controls.AloneButton aloneButton2;
+        private ReaLTaiizor.Controls.BigLabel bigLabel35;
+        private ReaLTaiizor.Controls.BigLabel bigLabel34;
+        private ReaLTaiizor.Controls.BigLabel bigLabel33;
+        private ReaLTaiizor.Controls.BigLabel bigLabel32;
+        private ReaLTaiizor.Controls.BigLabel bigLabel31;
+        private ReaLTaiizor.Controls.BigLabel bigLabel30;
+        private ReaLTaiizor.Controls.BigLabel bigLabel37;
+        private ReaLTaiizor.Controls.BigLabel bigLabel36;
+        private ReaLTaiizor.Controls.BigLabel bigLabel46;
+        private ReaLTaiizor.Controls.BigLabel bigLabel47;
+        private ReaLTaiizor.Controls.BigLabel bigLabel44;
+        private ReaLTaiizor.Controls.BigLabel bigLabel45;
+        private ReaLTaiizor.Controls.BigLabel bigLabel42;
+        private ReaLTaiizor.Controls.BigLabel bigLabel43;
+        private ReaLTaiizor.Controls.BigLabel bigLabel40;
+        private ReaLTaiizor.Controls.BigLabel bigLabel41;
+        private ReaLTaiizor.Controls.BigLabel bigLabel38;
+        private ReaLTaiizor.Controls.BigLabel bigLabel39;
     }
 }
