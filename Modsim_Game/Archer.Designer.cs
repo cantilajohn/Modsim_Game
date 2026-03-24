@@ -29,6 +29,21 @@
         private void InitializeComponent()
         {
             panel9 = new Panel();
+            bigLabel32 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel33 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel34 = new ReaLTaiizor.Controls.BigLabel();
+            parrotPictureBox7 = new ReaLTaiizor.Controls.ParrotPictureBox();
+            parrotPictureBox10 = new ReaLTaiizor.Controls.ParrotPictureBox();
+            bigLabel29 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel30 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel31 = new ReaLTaiizor.Controls.BigLabel();
+            parrotPictureBox5 = new ReaLTaiizor.Controls.ParrotPictureBox();
+            parrotPictureBox6 = new ReaLTaiizor.Controls.ParrotPictureBox();
+            bigLabel44 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel41 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel38 = new ReaLTaiizor.Controls.BigLabel();
+            parrotPictureBox9 = new ReaLTaiizor.Controls.ParrotPictureBox();
+            parrotPictureBox8 = new ReaLTaiizor.Controls.ParrotPictureBox();
             panel10 = new ReaLTaiizor.Controls.Panel();
             bigLabel18 = new ReaLTaiizor.Controls.BigLabel();
             panel11 = new Panel();
@@ -44,6 +59,10 @@
             panel16 = new Panel();
             bigLabel25 = new ReaLTaiizor.Controls.BigLabel();
             pnlSkillUnlocked = new Panel();
+            bigLabel28 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel27 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel26 = new ReaLTaiizor.Controls.BigLabel();
+            parrotPictureBox4 = new ReaLTaiizor.Controls.ParrotPictureBox();
             pnlStatusInformation = new Panel();
             lblStatusInformation = new ReaLTaiizor.Controls.BigLabel();
             panel8 = new ReaLTaiizor.Controls.Panel();
@@ -77,25 +96,31 @@
             parrotPictureBox2 = new ReaLTaiizor.Controls.ParrotPictureBox();
             bigLabel8 = new ReaLTaiizor.Controls.BigLabel();
             parrotPictureBox3 = new ReaLTaiizor.Controls.ParrotPictureBox();
-            bigLabel26 = new ReaLTaiizor.Controls.BigLabel();
-            parrotPictureBox4 = new ReaLTaiizor.Controls.ParrotPictureBox();
-            bigLabel27 = new ReaLTaiizor.Controls.BigLabel();
-            bigLabel28 = new ReaLTaiizor.Controls.BigLabel();
-            bigLabel44 = new ReaLTaiizor.Controls.BigLabel();
-            bigLabel41 = new ReaLTaiizor.Controls.BigLabel();
-            bigLabel38 = new ReaLTaiizor.Controls.BigLabel();
-            parrotPictureBox9 = new ReaLTaiizor.Controls.ParrotPictureBox();
-            parrotPictureBox8 = new ReaLTaiizor.Controls.ParrotPictureBox();
-            bigLabel29 = new ReaLTaiizor.Controls.BigLabel();
-            bigLabel30 = new ReaLTaiizor.Controls.BigLabel();
-            bigLabel31 = new ReaLTaiizor.Controls.BigLabel();
-            parrotPictureBox5 = new ReaLTaiizor.Controls.ParrotPictureBox();
-            parrotPictureBox6 = new ReaLTaiizor.Controls.ParrotPictureBox();
-            bigLabel32 = new ReaLTaiizor.Controls.BigLabel();
-            bigLabel33 = new ReaLTaiizor.Controls.BigLabel();
-            bigLabel34 = new ReaLTaiizor.Controls.BigLabel();
-            parrotPictureBox7 = new ReaLTaiizor.Controls.ParrotPictureBox();
-            parrotPictureBox10 = new ReaLTaiizor.Controls.ParrotPictureBox();
+            aloneButton2 = new ReaLTaiizor.Controls.AloneButton();
+            aloneButton1 = new ReaLTaiizor.Controls.AloneButton();
+            pnlContentHolder = new Panel();
+            bigLabel47 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel48 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel51 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel56 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel57 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel58 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel59 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel60 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel61 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel62 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel63 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel64 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel65 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel66 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel67 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel68 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel69 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel70 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel71 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel72 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel73 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel74 = new ReaLTaiizor.Controls.BigLabel();
             panel9.SuspendLayout();
             panel10.SuspendLayout();
             panel11.SuspendLayout();
@@ -114,6 +139,7 @@
             panel5.SuspendLayout();
             panel6.SuspendLayout();
             panel7.SuspendLayout();
+            pnlContentHolder.SuspendLayout();
             SuspendLayout();
             // 
             // panel9
@@ -145,6 +171,240 @@
             panel9.Name = "panel9";
             panel9.Size = new Size(441, 290);
             panel9.TabIndex = 94;
+            // 
+            // bigLabel32
+            // 
+            bigLabel32.AutoSize = true;
+            bigLabel32.BackColor = Color.Transparent;
+            bigLabel32.Font = new Font("Segoe UI", 6.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel32.ForeColor = Color.Gray;
+            bigLabel32.Location = new Point(341, 160);
+            bigLabel32.Name = "bigLabel32";
+            bigLabel32.Size = new Size(93, 12);
+            bigLabel32.TabIndex = 70;
+            bigLabel32.Text = "Double Strafing Lv 5";
+            // 
+            // bigLabel33
+            // 
+            bigLabel33.AutoSize = true;
+            bigLabel33.BackColor = Color.Transparent;
+            bigLabel33.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel33.ForeColor = Color.Gray;
+            bigLabel33.Location = new Point(296, 160);
+            bigLabel33.Name = "bigLabel33";
+            bigLabel33.Size = new Size(19, 13);
+            bigLabel33.TabIndex = 69;
+            bigLabel33.Text = "10";
+            // 
+            // bigLabel34
+            // 
+            bigLabel34.AutoSize = true;
+            bigLabel34.BackColor = Color.Transparent;
+            bigLabel34.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel34.ForeColor = Color.Gray;
+            bigLabel34.Location = new Point(119, 161);
+            bigLabel34.Name = "bigLabel34";
+            bigLabel34.Size = new Size(81, 13);
+            bigLabel34.TabIndex = 66;
+            bigLabel34.Text = "Arrow Shower";
+            // 
+            // parrotPictureBox7
+            // 
+            parrotPictureBox7.BackgroundImage = Properties.Resources.archer;
+            parrotPictureBox7.ColorLeft = Color.DodgerBlue;
+            parrotPictureBox7.ColorRight = Color.DodgerBlue;
+            parrotPictureBox7.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            parrotPictureBox7.FilterAlpha = 200;
+            parrotPictureBox7.FilterEnabled = true;
+            parrotPictureBox7.Image = null;
+            parrotPictureBox7.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            parrotPictureBox7.IsElipse = false;
+            parrotPictureBox7.IsParallax = false;
+            parrotPictureBox7.Location = new Point(72, 158);
+            parrotPictureBox7.Name = "parrotPictureBox7";
+            parrotPictureBox7.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            parrotPictureBox7.Size = new Size(17, 13);
+            parrotPictureBox7.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            parrotPictureBox7.TabIndex = 68;
+            parrotPictureBox7.Text = "parrotPictureBox7";
+            parrotPictureBox7.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            // 
+            // parrotPictureBox10
+            // 
+            parrotPictureBox10.BackgroundImage = Properties.Resources.archer;
+            parrotPictureBox10.ColorLeft = Color.DodgerBlue;
+            parrotPictureBox10.ColorRight = Color.DodgerBlue;
+            parrotPictureBox10.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            parrotPictureBox10.FilterAlpha = 200;
+            parrotPictureBox10.FilterEnabled = true;
+            parrotPictureBox10.Image = null;
+            parrotPictureBox10.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            parrotPictureBox10.IsElipse = false;
+            parrotPictureBox10.IsParallax = false;
+            parrotPictureBox10.Location = new Point(27, 158);
+            parrotPictureBox10.Name = "parrotPictureBox10";
+            parrotPictureBox10.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            parrotPictureBox10.Size = new Size(17, 13);
+            parrotPictureBox10.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            parrotPictureBox10.TabIndex = 67;
+            parrotPictureBox10.Text = "parrotPictureBox10";
+            parrotPictureBox10.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            // 
+            // bigLabel29
+            // 
+            bigLabel29.AutoSize = true;
+            bigLabel29.BackColor = Color.Transparent;
+            bigLabel29.Font = new Font("Segoe UI", 6.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel29.ForeColor = Color.Gray;
+            bigLabel29.Location = new Point(340, 137);
+            bigLabel29.Name = "bigLabel29";
+            bigLabel29.Size = new Size(79, 12);
+            bigLabel29.TabIndex = 65;
+            bigLabel29.Text = "Vulture's Eye Lv 1";
+            // 
+            // bigLabel30
+            // 
+            bigLabel30.AutoSize = true;
+            bigLabel30.BackColor = Color.Transparent;
+            bigLabel30.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel30.ForeColor = Color.Gray;
+            bigLabel30.Location = new Point(295, 137);
+            bigLabel30.Name = "bigLabel30";
+            bigLabel30.Size = new Size(19, 13);
+            bigLabel30.TabIndex = 64;
+            bigLabel30.Text = "10";
+            // 
+            // bigLabel31
+            // 
+            bigLabel31.AutoSize = true;
+            bigLabel31.BackColor = Color.Transparent;
+            bigLabel31.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel31.ForeColor = Color.Gray;
+            bigLabel31.Location = new Point(118, 138);
+            bigLabel31.Name = "bigLabel31";
+            bigLabel31.Size = new Size(123, 13);
+            bigLabel31.TabIndex = 61;
+            bigLabel31.Text = "Attention Concentrate";
+            // 
+            // parrotPictureBox5
+            // 
+            parrotPictureBox5.BackgroundImage = Properties.Resources.archer;
+            parrotPictureBox5.ColorLeft = Color.DodgerBlue;
+            parrotPictureBox5.ColorRight = Color.DodgerBlue;
+            parrotPictureBox5.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            parrotPictureBox5.FilterAlpha = 200;
+            parrotPictureBox5.FilterEnabled = true;
+            parrotPictureBox5.Image = null;
+            parrotPictureBox5.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            parrotPictureBox5.IsElipse = false;
+            parrotPictureBox5.IsParallax = false;
+            parrotPictureBox5.Location = new Point(71, 135);
+            parrotPictureBox5.Name = "parrotPictureBox5";
+            parrotPictureBox5.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            parrotPictureBox5.Size = new Size(17, 13);
+            parrotPictureBox5.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            parrotPictureBox5.TabIndex = 63;
+            parrotPictureBox5.Text = "parrotPictureBox5";
+            parrotPictureBox5.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            // 
+            // parrotPictureBox6
+            // 
+            parrotPictureBox6.BackgroundImage = Properties.Resources.archer;
+            parrotPictureBox6.ColorLeft = Color.DodgerBlue;
+            parrotPictureBox6.ColorRight = Color.DodgerBlue;
+            parrotPictureBox6.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            parrotPictureBox6.FilterAlpha = 200;
+            parrotPictureBox6.FilterEnabled = true;
+            parrotPictureBox6.Image = null;
+            parrotPictureBox6.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            parrotPictureBox6.IsElipse = false;
+            parrotPictureBox6.IsParallax = false;
+            parrotPictureBox6.Location = new Point(26, 135);
+            parrotPictureBox6.Name = "parrotPictureBox6";
+            parrotPictureBox6.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            parrotPictureBox6.Size = new Size(17, 13);
+            parrotPictureBox6.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            parrotPictureBox6.TabIndex = 62;
+            parrotPictureBox6.Text = "parrotPictureBox6";
+            parrotPictureBox6.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            // 
+            // bigLabel44
+            // 
+            bigLabel44.AutoSize = true;
+            bigLabel44.BackColor = Color.Transparent;
+            bigLabel44.Font = new Font("Segoe UI", 6.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel44.ForeColor = Color.Gray;
+            bigLabel44.Location = new Point(340, 115);
+            bigLabel44.Name = "bigLabel44";
+            bigLabel44.Size = new Size(65, 12);
+            bigLabel44.TabIndex = 60;
+            bigLabel44.Text = "Owl's Eye Lv 3";
+            // 
+            // bigLabel41
+            // 
+            bigLabel41.AutoSize = true;
+            bigLabel41.BackColor = Color.Transparent;
+            bigLabel41.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel41.ForeColor = Color.Gray;
+            bigLabel41.Location = new Point(295, 115);
+            bigLabel41.Name = "bigLabel41";
+            bigLabel41.Size = new Size(19, 13);
+            bigLabel41.TabIndex = 59;
+            bigLabel41.Text = "10";
+            // 
+            // bigLabel38
+            // 
+            bigLabel38.AutoSize = true;
+            bigLabel38.BackColor = Color.Transparent;
+            bigLabel38.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel38.ForeColor = Color.Gray;
+            bigLabel38.Location = new Point(118, 116);
+            bigLabel38.Name = "bigLabel38";
+            bigLabel38.Size = new Size(72, 13);
+            bigLabel38.TabIndex = 56;
+            bigLabel38.Text = "Vulture's Eye";
+            // 
+            // parrotPictureBox9
+            // 
+            parrotPictureBox9.BackgroundImage = Properties.Resources.archer;
+            parrotPictureBox9.ColorLeft = Color.DodgerBlue;
+            parrotPictureBox9.ColorRight = Color.DodgerBlue;
+            parrotPictureBox9.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            parrotPictureBox9.FilterAlpha = 200;
+            parrotPictureBox9.FilterEnabled = true;
+            parrotPictureBox9.Image = null;
+            parrotPictureBox9.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            parrotPictureBox9.IsElipse = false;
+            parrotPictureBox9.IsParallax = false;
+            parrotPictureBox9.Location = new Point(71, 113);
+            parrotPictureBox9.Name = "parrotPictureBox9";
+            parrotPictureBox9.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            parrotPictureBox9.Size = new Size(17, 13);
+            parrotPictureBox9.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            parrotPictureBox9.TabIndex = 58;
+            parrotPictureBox9.Text = "parrotPictureBox9";
+            parrotPictureBox9.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            // 
+            // parrotPictureBox8
+            // 
+            parrotPictureBox8.BackgroundImage = Properties.Resources.archer;
+            parrotPictureBox8.ColorLeft = Color.DodgerBlue;
+            parrotPictureBox8.ColorRight = Color.DodgerBlue;
+            parrotPictureBox8.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            parrotPictureBox8.FilterAlpha = 200;
+            parrotPictureBox8.FilterEnabled = true;
+            parrotPictureBox8.Image = null;
+            parrotPictureBox8.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            parrotPictureBox8.IsElipse = false;
+            parrotPictureBox8.IsParallax = false;
+            parrotPictureBox8.Location = new Point(26, 113);
+            parrotPictureBox8.Name = "parrotPictureBox8";
+            parrotPictureBox8.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            parrotPictureBox8.Size = new Size(17, 13);
+            parrotPictureBox8.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            parrotPictureBox8.TabIndex = 57;
+            parrotPictureBox8.Text = "parrotPictureBox8";
+            parrotPictureBox8.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             // 
             // panel10
             // 
@@ -347,6 +607,63 @@
             pnlSkillUnlocked.Name = "pnlSkillUnlocked";
             pnlSkillUnlocked.Size = new Size(441, 290);
             pnlSkillUnlocked.TabIndex = 93;
+            // 
+            // bigLabel28
+            // 
+            bigLabel28.AutoSize = true;
+            bigLabel28.BackColor = Color.Transparent;
+            bigLabel28.Font = new Font("Segoe UI", 6.75F, FontStyle.Bold);
+            bigLabel28.ForeColor = Color.Gray;
+            bigLabel28.Location = new Point(294, 127);
+            bigLabel28.Name = "bigLabel28";
+            bigLabel28.Size = new Size(30, 24);
+            bigLabel28.TabIndex = 31;
+            bigLabel28.Text = "Level \r\n  Up";
+            // 
+            // bigLabel27
+            // 
+            bigLabel27.AutoSize = true;
+            bigLabel27.BackColor = Color.Transparent;
+            bigLabel27.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel27.ForeColor = Color.Gray;
+            bigLabel27.Location = new Point(239, 137);
+            bigLabel27.Name = "bigLabel27";
+            bigLabel27.Size = new Size(44, 13);
+            bigLabel27.TabIndex = 30;
+            bigLabel27.Text = "NA/ 10";
+            // 
+            // bigLabel26
+            // 
+            bigLabel26.AutoSize = true;
+            bigLabel26.BackColor = Color.Transparent;
+            bigLabel26.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel26.ForeColor = Color.Gray;
+            bigLabel26.Location = new Point(55, 182);
+            bigLabel26.Name = "bigLabel26";
+            bigLabel26.Size = new Size(79, 13);
+            bigLabel26.TabIndex = 29;
+            bigLabel26.Text = "Charge Arrow";
+            // 
+            // parrotPictureBox4
+            // 
+            parrotPictureBox4.BackgroundImage = Properties.Resources.archer;
+            parrotPictureBox4.ColorLeft = Color.DodgerBlue;
+            parrotPictureBox4.ColorRight = Color.DodgerBlue;
+            parrotPictureBox4.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            parrotPictureBox4.FilterAlpha = 200;
+            parrotPictureBox4.FilterEnabled = true;
+            parrotPictureBox4.Image = null;
+            parrotPictureBox4.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            parrotPictureBox4.IsElipse = false;
+            parrotPictureBox4.IsParallax = false;
+            parrotPictureBox4.Location = new Point(9, 179);
+            parrotPictureBox4.Name = "parrotPictureBox4";
+            parrotPictureBox4.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            parrotPictureBox4.Size = new Size(17, 13);
+            parrotPictureBox4.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            parrotPictureBox4.TabIndex = 28;
+            parrotPictureBox4.Text = "parrotPictureBox4";
+            parrotPictureBox4.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             // 
             // pnlStatusInformation
             // 
@@ -776,305 +1093,338 @@
             parrotPictureBox3.Text = "parrotPictureBox3";
             parrotPictureBox3.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             // 
-            // bigLabel26
+            // aloneButton2
             // 
-            bigLabel26.AutoSize = true;
-            bigLabel26.BackColor = Color.Transparent;
-            bigLabel26.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bigLabel26.ForeColor = Color.Gray;
-            bigLabel26.Location = new Point(55, 182);
-            bigLabel26.Name = "bigLabel26";
-            bigLabel26.Size = new Size(79, 13);
-            bigLabel26.TabIndex = 29;
-            bigLabel26.Text = "Charge Arrow";
+            aloneButton2.BackColor = Color.Transparent;
+            aloneButton2.EnabledCalc = true;
+            aloneButton2.Font = new Font("Segoe UI", 9F);
+            aloneButton2.ForeColor = Color.FromArgb(124, 133, 142);
+            aloneButton2.Location = new Point(468, 293);
+            aloneButton2.Name = "aloneButton2";
+            aloneButton2.Size = new Size(120, 22);
+            aloneButton2.TabIndex = 103;
+            aloneButton2.Text = "Reset Skill Simulator";
             // 
-            // parrotPictureBox4
+            // aloneButton1
             // 
-            parrotPictureBox4.BackgroundImage = Properties.Resources.archer;
-            parrotPictureBox4.ColorLeft = Color.DodgerBlue;
-            parrotPictureBox4.ColorRight = Color.DodgerBlue;
-            parrotPictureBox4.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            parrotPictureBox4.FilterAlpha = 200;
-            parrotPictureBox4.FilterEnabled = true;
-            parrotPictureBox4.Image = null;
-            parrotPictureBox4.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            parrotPictureBox4.IsElipse = false;
-            parrotPictureBox4.IsParallax = false;
-            parrotPictureBox4.Location = new Point(9, 179);
-            parrotPictureBox4.Name = "parrotPictureBox4";
-            parrotPictureBox4.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            parrotPictureBox4.Size = new Size(17, 13);
-            parrotPictureBox4.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            parrotPictureBox4.TabIndex = 28;
-            parrotPictureBox4.Text = "parrotPictureBox4";
-            parrotPictureBox4.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            aloneButton1.BackColor = Color.Transparent;
+            aloneButton1.EnabledCalc = true;
+            aloneButton1.Font = new Font("Segoe UI", 9F);
+            aloneButton1.ForeColor = Color.FromArgb(124, 133, 142);
+            aloneButton1.Location = new Point(296, 293);
+            aloneButton1.Name = "aloneButton1";
+            aloneButton1.Size = new Size(120, 22);
+            aloneButton1.TabIndex = 101;
+            aloneButton1.Text = "Generate Report";
             // 
-            // bigLabel27
+            // pnlContentHolder
             // 
-            bigLabel27.AutoSize = true;
-            bigLabel27.BackColor = Color.Transparent;
-            bigLabel27.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bigLabel27.ForeColor = Color.Gray;
-            bigLabel27.Location = new Point(239, 137);
-            bigLabel27.Name = "bigLabel27";
-            bigLabel27.Size = new Size(44, 13);
-            bigLabel27.TabIndex = 30;
-            bigLabel27.Text = "NA/ 10";
+            pnlContentHolder.BackColor = Color.Transparent;
+            pnlContentHolder.BackgroundImage = Properties.Resources.welcome_section;
+            pnlContentHolder.BackgroundImageLayout = ImageLayout.Stretch;
+            pnlContentHolder.Controls.Add(bigLabel47);
+            pnlContentHolder.Controls.Add(bigLabel48);
+            pnlContentHolder.Controls.Add(bigLabel51);
+            pnlContentHolder.Controls.Add(bigLabel56);
+            pnlContentHolder.Controls.Add(bigLabel57);
+            pnlContentHolder.Controls.Add(bigLabel58);
+            pnlContentHolder.Controls.Add(bigLabel59);
+            pnlContentHolder.Controls.Add(bigLabel60);
+            pnlContentHolder.Controls.Add(bigLabel61);
+            pnlContentHolder.Controls.Add(bigLabel62);
+            pnlContentHolder.Controls.Add(bigLabel63);
+            pnlContentHolder.Controls.Add(bigLabel64);
+            pnlContentHolder.Controls.Add(bigLabel65);
+            pnlContentHolder.Controls.Add(bigLabel66);
+            pnlContentHolder.Controls.Add(bigLabel67);
+            pnlContentHolder.Controls.Add(bigLabel68);
+            pnlContentHolder.Controls.Add(bigLabel69);
+            pnlContentHolder.Controls.Add(bigLabel70);
+            pnlContentHolder.Controls.Add(bigLabel71);
+            pnlContentHolder.Controls.Add(bigLabel72);
+            pnlContentHolder.Controls.Add(bigLabel73);
+            pnlContentHolder.Controls.Add(bigLabel74);
+            pnlContentHolder.Location = new Point(239, 319);
+            pnlContentHolder.Margin = new Padding(3, 2, 3, 2);
+            pnlContentHolder.Name = "pnlContentHolder";
+            pnlContentHolder.Size = new Size(394, 142);
+            pnlContentHolder.TabIndex = 102;
             // 
-            // bigLabel28
+            // bigLabel47
             // 
-            bigLabel28.AutoSize = true;
-            bigLabel28.BackColor = Color.Transparent;
-            bigLabel28.Font = new Font("Segoe UI", 6.75F, FontStyle.Bold);
-            bigLabel28.ForeColor = Color.Gray;
-            bigLabel28.Location = new Point(294, 127);
-            bigLabel28.Name = "bigLabel28";
-            bigLabel28.Size = new Size(30, 24);
-            bigLabel28.TabIndex = 31;
-            bigLabel28.Text = "Level \r\n  Up";
+            bigLabel47.AutoSize = true;
+            bigLabel47.BackColor = Color.Transparent;
+            bigLabel47.Font = new Font("Segoe UI Black", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel47.ForeColor = Color.Gray;
+            bigLabel47.Location = new Point(327, 112);
+            bigLabel47.Name = "bigLabel47";
+            bigLabel47.Size = new Size(14, 13);
+            bigLabel47.TabIndex = 49;
+            bigLabel47.Text = "0";
             // 
-            // bigLabel44
+            // bigLabel48
             // 
-            bigLabel44.AutoSize = true;
-            bigLabel44.BackColor = Color.Transparent;
-            bigLabel44.Font = new Font("Segoe UI", 6.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bigLabel44.ForeColor = Color.Gray;
-            bigLabel44.Location = new Point(340, 115);
-            bigLabel44.Name = "bigLabel44";
-            bigLabel44.Size = new Size(65, 12);
-            bigLabel44.TabIndex = 60;
-            bigLabel44.Text = "Owl's Eye Lv 3";
+            bigLabel48.AutoSize = true;
+            bigLabel48.BackColor = Color.Transparent;
+            bigLabel48.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel48.ForeColor = Color.Gray;
+            bigLabel48.Location = new Point(295, 112);
+            bigLabel48.Name = "bigLabel48";
+            bigLabel48.Size = new Size(37, 13);
+            bigLabel48.TabIndex = 48;
+            bigLabel48.Text = "Over: ";
             // 
-            // bigLabel41
+            // bigLabel51
             // 
-            bigLabel41.AutoSize = true;
-            bigLabel41.BackColor = Color.Transparent;
-            bigLabel41.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bigLabel41.ForeColor = Color.Gray;
-            bigLabel41.Location = new Point(295, 115);
-            bigLabel41.Name = "bigLabel41";
-            bigLabel41.Size = new Size(19, 13);
-            bigLabel41.TabIndex = 59;
-            bigLabel41.Text = "10";
+            bigLabel51.AutoSize = true;
+            bigLabel51.BackColor = Color.Transparent;
+            bigLabel51.Font = new Font("Segoe UI Black", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel51.ForeColor = Color.Gray;
+            bigLabel51.Location = new Point(327, 89);
+            bigLabel51.Name = "bigLabel51";
+            bigLabel51.Size = new Size(14, 13);
+            bigLabel51.TabIndex = 47;
+            bigLabel51.Text = "0";
             // 
-            // bigLabel38
+            // bigLabel56
             // 
-            bigLabel38.AutoSize = true;
-            bigLabel38.BackColor = Color.Transparent;
-            bigLabel38.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bigLabel38.ForeColor = Color.Gray;
-            bigLabel38.Location = new Point(118, 116);
-            bigLabel38.Name = "bigLabel38";
-            bigLabel38.Size = new Size(72, 13);
-            bigLabel38.TabIndex = 56;
-            bigLabel38.Text = "Vulture's Eye";
+            bigLabel56.AutoSize = true;
+            bigLabel56.BackColor = Color.Transparent;
+            bigLabel56.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel56.ForeColor = Color.Gray;
+            bigLabel56.Location = new Point(295, 89);
+            bigLabel56.Name = "bigLabel56";
+            bigLabel56.Size = new Size(37, 13);
+            bigLabel56.TabIndex = 46;
+            bigLabel56.Text = "Over: ";
             // 
-            // parrotPictureBox9
+            // bigLabel57
             // 
-            parrotPictureBox9.BackgroundImage = Properties.Resources.archer;
-            parrotPictureBox9.ColorLeft = Color.DodgerBlue;
-            parrotPictureBox9.ColorRight = Color.DodgerBlue;
-            parrotPictureBox9.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            parrotPictureBox9.FilterAlpha = 200;
-            parrotPictureBox9.FilterEnabled = true;
-            parrotPictureBox9.Image = null;
-            parrotPictureBox9.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            parrotPictureBox9.IsElipse = false;
-            parrotPictureBox9.IsParallax = false;
-            parrotPictureBox9.Location = new Point(71, 113);
-            parrotPictureBox9.Name = "parrotPictureBox9";
-            parrotPictureBox9.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            parrotPictureBox9.Size = new Size(17, 13);
-            parrotPictureBox9.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            parrotPictureBox9.TabIndex = 58;
-            parrotPictureBox9.Text = "parrotPictureBox9";
-            parrotPictureBox9.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            bigLabel57.AutoSize = true;
+            bigLabel57.BackColor = Color.Transparent;
+            bigLabel57.Font = new Font("Segoe UI Black", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel57.ForeColor = Color.Gray;
+            bigLabel57.Location = new Point(327, 64);
+            bigLabel57.Name = "bigLabel57";
+            bigLabel57.Size = new Size(14, 13);
+            bigLabel57.TabIndex = 45;
+            bigLabel57.Text = "0";
             // 
-            // parrotPictureBox8
+            // bigLabel58
             // 
-            parrotPictureBox8.BackgroundImage = Properties.Resources.archer;
-            parrotPictureBox8.ColorLeft = Color.DodgerBlue;
-            parrotPictureBox8.ColorRight = Color.DodgerBlue;
-            parrotPictureBox8.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            parrotPictureBox8.FilterAlpha = 200;
-            parrotPictureBox8.FilterEnabled = true;
-            parrotPictureBox8.Image = null;
-            parrotPictureBox8.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            parrotPictureBox8.IsElipse = false;
-            parrotPictureBox8.IsParallax = false;
-            parrotPictureBox8.Location = new Point(26, 113);
-            parrotPictureBox8.Name = "parrotPictureBox8";
-            parrotPictureBox8.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            parrotPictureBox8.Size = new Size(17, 13);
-            parrotPictureBox8.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            parrotPictureBox8.TabIndex = 57;
-            parrotPictureBox8.Text = "parrotPictureBox8";
-            parrotPictureBox8.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            bigLabel58.AutoSize = true;
+            bigLabel58.BackColor = Color.Transparent;
+            bigLabel58.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel58.ForeColor = Color.Gray;
+            bigLabel58.Location = new Point(295, 64);
+            bigLabel58.Name = "bigLabel58";
+            bigLabel58.Size = new Size(37, 13);
+            bigLabel58.TabIndex = 44;
+            bigLabel58.Text = "Over: ";
             // 
-            // bigLabel29
+            // bigLabel59
             // 
-            bigLabel29.AutoSize = true;
-            bigLabel29.BackColor = Color.Transparent;
-            bigLabel29.Font = new Font("Segoe UI", 6.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bigLabel29.ForeColor = Color.Gray;
-            bigLabel29.Location = new Point(340, 137);
-            bigLabel29.Name = "bigLabel29";
-            bigLabel29.Size = new Size(79, 12);
-            bigLabel29.TabIndex = 65;
-            bigLabel29.Text = "Vulture's Eye Lv 1";
+            bigLabel59.AutoSize = true;
+            bigLabel59.BackColor = Color.Transparent;
+            bigLabel59.Font = new Font("Segoe UI Black", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel59.ForeColor = Color.Gray;
+            bigLabel59.Location = new Point(265, 112);
+            bigLabel59.Name = "bigLabel59";
+            bigLabel59.Size = new Size(14, 13);
+            bigLabel59.TabIndex = 43;
+            bigLabel59.Text = "0";
             // 
-            // bigLabel30
+            // bigLabel60
             // 
-            bigLabel30.AutoSize = true;
-            bigLabel30.BackColor = Color.Transparent;
-            bigLabel30.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bigLabel30.ForeColor = Color.Gray;
-            bigLabel30.Location = new Point(295, 137);
-            bigLabel30.Name = "bigLabel30";
-            bigLabel30.Size = new Size(19, 13);
-            bigLabel30.TabIndex = 64;
-            bigLabel30.Text = "10";
+            bigLabel60.AutoSize = true;
+            bigLabel60.BackColor = Color.Transparent;
+            bigLabel60.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel60.ForeColor = Color.Gray;
+            bigLabel60.Location = new Point(233, 112);
+            bigLabel60.Name = "bigLabel60";
+            bigLabel60.Size = new Size(30, 13);
+            bigLabel60.TabIndex = 42;
+            bigLabel60.Text = "Left:";
             // 
-            // bigLabel31
+            // bigLabel61
             // 
-            bigLabel31.AutoSize = true;
-            bigLabel31.BackColor = Color.Transparent;
-            bigLabel31.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bigLabel31.ForeColor = Color.Gray;
-            bigLabel31.Location = new Point(118, 138);
-            bigLabel31.Name = "bigLabel31";
-            bigLabel31.Size = new Size(123, 13);
-            bigLabel31.TabIndex = 61;
-            bigLabel31.Text = "Attention Concentrate";
+            bigLabel61.AutoSize = true;
+            bigLabel61.BackColor = Color.Transparent;
+            bigLabel61.Font = new Font("Segoe UI Black", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel61.ForeColor = Color.Gray;
+            bigLabel61.Location = new Point(266, 89);
+            bigLabel61.Name = "bigLabel61";
+            bigLabel61.Size = new Size(14, 13);
+            bigLabel61.TabIndex = 41;
+            bigLabel61.Text = "0";
             // 
-            // parrotPictureBox5
+            // bigLabel62
             // 
-            parrotPictureBox5.BackgroundImage = Properties.Resources.archer;
-            parrotPictureBox5.ColorLeft = Color.DodgerBlue;
-            parrotPictureBox5.ColorRight = Color.DodgerBlue;
-            parrotPictureBox5.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            parrotPictureBox5.FilterAlpha = 200;
-            parrotPictureBox5.FilterEnabled = true;
-            parrotPictureBox5.Image = null;
-            parrotPictureBox5.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            parrotPictureBox5.IsElipse = false;
-            parrotPictureBox5.IsParallax = false;
-            parrotPictureBox5.Location = new Point(71, 135);
-            parrotPictureBox5.Name = "parrotPictureBox5";
-            parrotPictureBox5.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            parrotPictureBox5.Size = new Size(17, 13);
-            parrotPictureBox5.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            parrotPictureBox5.TabIndex = 63;
-            parrotPictureBox5.Text = "parrotPictureBox5";
-            parrotPictureBox5.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            bigLabel62.AutoSize = true;
+            bigLabel62.BackColor = Color.Transparent;
+            bigLabel62.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel62.ForeColor = Color.Gray;
+            bigLabel62.Location = new Point(234, 89);
+            bigLabel62.Name = "bigLabel62";
+            bigLabel62.Size = new Size(30, 13);
+            bigLabel62.TabIndex = 40;
+            bigLabel62.Text = "Left:";
             // 
-            // parrotPictureBox6
+            // bigLabel63
             // 
-            parrotPictureBox6.BackgroundImage = Properties.Resources.archer;
-            parrotPictureBox6.ColorLeft = Color.DodgerBlue;
-            parrotPictureBox6.ColorRight = Color.DodgerBlue;
-            parrotPictureBox6.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            parrotPictureBox6.FilterAlpha = 200;
-            parrotPictureBox6.FilterEnabled = true;
-            parrotPictureBox6.Image = null;
-            parrotPictureBox6.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            parrotPictureBox6.IsElipse = false;
-            parrotPictureBox6.IsParallax = false;
-            parrotPictureBox6.Location = new Point(26, 135);
-            parrotPictureBox6.Name = "parrotPictureBox6";
-            parrotPictureBox6.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            parrotPictureBox6.Size = new Size(17, 13);
-            parrotPictureBox6.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            parrotPictureBox6.TabIndex = 62;
-            parrotPictureBox6.Text = "parrotPictureBox6";
-            parrotPictureBox6.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            bigLabel63.AutoSize = true;
+            bigLabel63.BackColor = Color.Transparent;
+            bigLabel63.Font = new Font("Segoe UI Black", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel63.ForeColor = Color.Gray;
+            bigLabel63.Location = new Point(266, 63);
+            bigLabel63.Name = "bigLabel63";
+            bigLabel63.Size = new Size(21, 13);
+            bigLabel63.TabIndex = 39;
+            bigLabel63.Text = "49";
             // 
-            // bigLabel32
+            // bigLabel64
             // 
-            bigLabel32.AutoSize = true;
-            bigLabel32.BackColor = Color.Transparent;
-            bigLabel32.Font = new Font("Segoe UI", 6.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bigLabel32.ForeColor = Color.Gray;
-            bigLabel32.Location = new Point(341, 160);
-            bigLabel32.Name = "bigLabel32";
-            bigLabel32.Size = new Size(93, 12);
-            bigLabel32.TabIndex = 70;
-            bigLabel32.Text = "Double Strafing Lv 5";
+            bigLabel64.AutoSize = true;
+            bigLabel64.BackColor = Color.Transparent;
+            bigLabel64.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel64.ForeColor = Color.Gray;
+            bigLabel64.Location = new Point(234, 63);
+            bigLabel64.Name = "bigLabel64";
+            bigLabel64.Size = new Size(30, 13);
+            bigLabel64.TabIndex = 38;
+            bigLabel64.Text = "Left:";
             // 
-            // bigLabel33
+            // bigLabel65
             // 
-            bigLabel33.AutoSize = true;
-            bigLabel33.BackColor = Color.Transparent;
-            bigLabel33.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bigLabel33.ForeColor = Color.Gray;
-            bigLabel33.Location = new Point(296, 160);
-            bigLabel33.Name = "bigLabel33";
-            bigLabel33.Size = new Size(19, 13);
-            bigLabel33.TabIndex = 69;
-            bigLabel33.Text = "10";
+            bigLabel65.AutoSize = true;
+            bigLabel65.BackColor = Color.Transparent;
+            bigLabel65.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel65.ForeColor = Color.Gray;
+            bigLabel65.Location = new Point(102, 38);
+            bigLabel65.Name = "bigLabel65";
+            bigLabel65.Size = new Size(97, 13);
+            bigLabel65.TabIndex = 37;
+            bigLabel65.Text = "Leve1  Quest Skill";
             // 
-            // bigLabel34
+            // bigLabel66
             // 
-            bigLabel34.AutoSize = true;
-            bigLabel34.BackColor = Color.Transparent;
-            bigLabel34.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bigLabel34.ForeColor = Color.Gray;
-            bigLabel34.Location = new Point(119, 161);
-            bigLabel34.Name = "bigLabel34";
-            bigLabel34.Size = new Size(81, 13);
-            bigLabel34.TabIndex = 66;
-            bigLabel34.Text = "Arrow Shower";
+            bigLabel66.AutoSize = true;
+            bigLabel66.BackColor = Color.Transparent;
+            bigLabel66.Font = new Font("Segoe UI Black", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel66.ForeColor = Color.Gray;
+            bigLabel66.Location = new Point(188, 112);
+            bigLabel66.Name = "bigLabel66";
+            bigLabel66.Size = new Size(26, 13);
+            bigLabel66.TabIndex = 36;
+            bigLabel66.Text = "0/0";
             // 
-            // parrotPictureBox7
+            // bigLabel67
             // 
-            parrotPictureBox7.BackgroundImage = Properties.Resources.archer;
-            parrotPictureBox7.ColorLeft = Color.DodgerBlue;
-            parrotPictureBox7.ColorRight = Color.DodgerBlue;
-            parrotPictureBox7.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            parrotPictureBox7.FilterAlpha = 200;
-            parrotPictureBox7.FilterEnabled = true;
-            parrotPictureBox7.Image = null;
-            parrotPictureBox7.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            parrotPictureBox7.IsElipse = false;
-            parrotPictureBox7.IsParallax = false;
-            parrotPictureBox7.Location = new Point(72, 158);
-            parrotPictureBox7.Name = "parrotPictureBox7";
-            parrotPictureBox7.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            parrotPictureBox7.Size = new Size(17, 13);
-            parrotPictureBox7.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            parrotPictureBox7.TabIndex = 68;
-            parrotPictureBox7.Text = "parrotPictureBox7";
-            parrotPictureBox7.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            bigLabel67.AutoSize = true;
+            bigLabel67.BackColor = Color.Transparent;
+            bigLabel67.Font = new Font("Segoe UI Black", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel67.ForeColor = Color.Gray;
+            bigLabel67.Location = new Point(199, 89);
+            bigLabel67.Name = "bigLabel67";
+            bigLabel67.Size = new Size(26, 13);
+            bigLabel67.TabIndex = 35;
+            bigLabel67.Text = "0/0";
             // 
-            // parrotPictureBox10
+            // bigLabel68
             // 
-            parrotPictureBox10.BackgroundImage = Properties.Resources.archer;
-            parrotPictureBox10.ColorLeft = Color.DodgerBlue;
-            parrotPictureBox10.ColorRight = Color.DodgerBlue;
-            parrotPictureBox10.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            parrotPictureBox10.FilterAlpha = 200;
-            parrotPictureBox10.FilterEnabled = true;
-            parrotPictureBox10.Image = null;
-            parrotPictureBox10.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            parrotPictureBox10.IsElipse = false;
-            parrotPictureBox10.IsParallax = false;
-            parrotPictureBox10.Location = new Point(27, 158);
-            parrotPictureBox10.Name = "parrotPictureBox10";
-            parrotPictureBox10.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            parrotPictureBox10.Size = new Size(17, 13);
-            parrotPictureBox10.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            parrotPictureBox10.TabIndex = 67;
-            parrotPictureBox10.Text = "parrotPictureBox10";
-            parrotPictureBox10.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            bigLabel68.AutoSize = true;
+            bigLabel68.BackColor = Color.Transparent;
+            bigLabel68.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel68.ForeColor = Color.Gray;
+            bigLabel68.Location = new Point(20, 112);
+            bigLabel68.Name = "bigLabel68";
+            bigLabel68.Size = new Size(165, 13);
+            bigLabel68.TabIndex = 34;
+            bigLabel68.Text = "Total third job skill point used:";
+            // 
+            // bigLabel69
+            // 
+            bigLabel69.AutoSize = true;
+            bigLabel69.BackColor = Color.Transparent;
+            bigLabel69.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel69.ForeColor = Color.Gray;
+            bigLabel69.Location = new Point(20, 89);
+            bigLabel69.Name = "bigLabel69";
+            bigLabel69.Size = new Size(177, 13);
+            bigLabel69.TabIndex = 33;
+            bigLabel69.Text = "Total second job skill point used:\t";
+            // 
+            // bigLabel70
+            // 
+            bigLabel70.AutoSize = true;
+            bigLabel70.BackColor = Color.Transparent;
+            bigLabel70.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel70.ForeColor = Color.Gray;
+            bigLabel70.Location = new Point(20, 64);
+            bigLabel70.Name = "bigLabel70";
+            bigLabel70.Size = new Size(160, 13);
+            bigLabel70.TabIndex = 32;
+            bigLabel70.Text = "Total first job skill point used:\t";
+            // 
+            // bigLabel71
+            // 
+            bigLabel71.AutoSize = true;
+            bigLabel71.BackColor = Color.Transparent;
+            bigLabel71.Font = new Font("Segoe UI Black", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel71.ForeColor = Color.Gray;
+            bigLabel71.Location = new Point(183, 64);
+            bigLabel71.Name = "bigLabel71";
+            bigLabel71.Size = new Size(33, 13);
+            bigLabel71.TabIndex = 31;
+            bigLabel71.Text = "0/49";
+            // 
+            // bigLabel72
+            // 
+            bigLabel72.AutoSize = true;
+            bigLabel72.BackColor = Color.Transparent;
+            bigLabel72.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel72.ForeColor = Color.Gray;
+            bigLabel72.Location = new Point(103, 15);
+            bigLabel72.Name = "bigLabel72";
+            bigLabel72.Size = new Size(97, 13);
+            bigLabel72.TabIndex = 30;
+            bigLabel72.Text = "Leve1  Quest Skill";
+            // 
+            // bigLabel73
+            // 
+            bigLabel73.AutoSize = true;
+            bigLabel73.BackColor = Color.Transparent;
+            bigLabel73.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel73.ForeColor = Color.Gray;
+            bigLabel73.Location = new Point(20, 38);
+            bigLabel73.Name = "bigLabel73";
+            bigLabel73.Size = new Size(79, 13);
+            bigLabel73.TabIndex = 29;
+            bigLabel73.Text = "Charge Arrow";
+            // 
+            // bigLabel74
+            // 
+            bigLabel74.AutoSize = true;
+            bigLabel74.BackColor = Color.Transparent;
+            bigLabel74.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel74.ForeColor = Color.Gray;
+            bigLabel74.Location = new Point(20, 15);
+            bigLabel74.Name = "bigLabel74";
+            bigLabel74.Size = new Size(82, 13);
+            bigLabel74.TabIndex = 28;
+            bigLabel74.Text = "Making Arrow";
             // 
             // Archer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(aloneButton2);
+            Controls.Add(aloneButton1);
+            Controls.Add(pnlContentHolder);
             Controls.Add(panel9);
             Controls.Add(pnlSkillUnlocked);
             Name = "Archer";
-            Size = new Size(889, 290);
+            Size = new Size(889, 465);
             panel9.ResumeLayout(false);
             panel9.PerformLayout();
             panel10.ResumeLayout(false);
@@ -1111,6 +1461,8 @@
             panel6.PerformLayout();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
+            pnlContentHolder.ResumeLayout(false);
+            pnlContentHolder.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1184,5 +1536,30 @@
         private ReaLTaiizor.Controls.BigLabel bigLabel38;
         private ReaLTaiizor.Controls.ParrotPictureBox parrotPictureBox9;
         private ReaLTaiizor.Controls.ParrotPictureBox parrotPictureBox8;
+        private ReaLTaiizor.Controls.AloneButton aloneButton2;
+        private ReaLTaiizor.Controls.AloneButton aloneButton1;
+        private Panel pnlContentHolder;
+        private ReaLTaiizor.Controls.BigLabel bigLabel47;
+        private ReaLTaiizor.Controls.BigLabel bigLabel48;
+        private ReaLTaiizor.Controls.BigLabel bigLabel51;
+        private ReaLTaiizor.Controls.BigLabel bigLabel56;
+        private ReaLTaiizor.Controls.BigLabel bigLabel57;
+        private ReaLTaiizor.Controls.BigLabel bigLabel58;
+        private ReaLTaiizor.Controls.BigLabel bigLabel59;
+        private ReaLTaiizor.Controls.BigLabel bigLabel60;
+        private ReaLTaiizor.Controls.BigLabel bigLabel61;
+        private ReaLTaiizor.Controls.BigLabel bigLabel62;
+        private ReaLTaiizor.Controls.BigLabel bigLabel63;
+        private ReaLTaiizor.Controls.BigLabel bigLabel64;
+        private ReaLTaiizor.Controls.BigLabel bigLabel65;
+        private ReaLTaiizor.Controls.BigLabel bigLabel66;
+        private ReaLTaiizor.Controls.BigLabel bigLabel67;
+        private ReaLTaiizor.Controls.BigLabel bigLabel68;
+        private ReaLTaiizor.Controls.BigLabel bigLabel69;
+        private ReaLTaiizor.Controls.BigLabel bigLabel70;
+        private ReaLTaiizor.Controls.BigLabel bigLabel71;
+        private ReaLTaiizor.Controls.BigLabel bigLabel72;
+        private ReaLTaiizor.Controls.BigLabel bigLabel73;
+        private ReaLTaiizor.Controls.BigLabel bigLabel74;
     }
 }
