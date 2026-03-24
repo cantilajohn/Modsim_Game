@@ -2507,7 +2507,7 @@ namespace Modsim_Game
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveBorder;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1386, 726);
+            ClientSize = new Size(1496, 726);
             Controls.Add(skillsPanel);
             Controls.Add(thirdPanel);
             Controls.Add(secondPanel);
