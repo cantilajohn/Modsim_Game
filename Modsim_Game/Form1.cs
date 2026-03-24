@@ -12,9 +12,13 @@ namespace Modsim_Game
 {
     public partial class StatSimForm : Form
     {
+
         public StatSimForm()
         {
             InitializeComponent();
+
+            cmbSkillSimulator.SelectedIndexChanged += CmbSkillSimulator_SelectedIndexChanged;
+
             BaseStats();
 
             skillsPanel.Hide();
@@ -270,6 +274,57 @@ namespace Modsim_Game
         private void cmbJobLevel_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateAllStats();
+        }
+
+        private void CmbSkillSimulator_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            pnlContentHolder.Controls.Clear();
+
+            string selectedClass = cmbSkillSimulator.SelectedItem?.ToString();
+
+            switch (selectedClass)
+            {
+                case "Novice":
+                    //Skill Unlocked
+                    Novice noviceControl = new Novice();
+                    noviceControl.Dock = DockStyle.Fill;
+                    pnlContentHolder.Controls.Add(noviceControl);
+
+                    break;
+                case "Swordsman":
+                    Swordman swordmanControl = new Swordman();
+                    swordmanControl.Dock = DockStyle.Fill;
+                    pnlContentHolder.Controls.Add(swordmanControl);
+                    break;
+                case "Magician":
+                    Magician magicianControl = new Magician();
+                    magicianControl.Dock = DockStyle.Fill;
+                    pnlContentHolder.Controls.Add(magicianControl);
+                    break;
+                case "Archer":
+                    Archer archerControl = new Archer();
+                    archerControl.Dock = DockStyle.Fill;
+                    pnlContentHolder.Controls.Add(archerControl);
+                    break;
+                case "Acolyte":
+                    Acolyte acolyteControl = new Acolyte();
+                    acolyteControl.Dock = DockStyle.Fill;
+                    pnlContentHolder.Controls.Add(acolyteControl);
+                    break;
+                case "Merchant":
+                    Merchant merchantControl = new Merchant();
+                    merchantControl.Dock = DockStyle.Fill;
+                    pnlContentHolder.Controls.Add(merchantControl);
+                    break;
+                case "Thief":
+                    Thief thiefControl = new Thief();
+                    thiefControl.Dock = DockStyle.Fill;
+                    pnlContentHolder.Controls.Add(thiefControl);
+                    break;
+                default:
+                    // If "-SELECT CLASS-" or anything else is selected, left empty as controls are already cleared
+                    break;
+            }
         }
 
         private void IntegerOnly_KeyPress(object sender, KeyPressEventArgs e)
