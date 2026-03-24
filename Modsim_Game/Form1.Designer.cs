@@ -77,8 +77,6 @@ namespace Modsim_Game
             panel6 = new Panel();
             lblJobBonus1 = new ReaLTaiizor.Controls.BigLabel();
             lblDecAGI = new ReaLTaiizor.Controls.BigLabel();
-            panel7 = new Panel();
-            lblJobBonusTitle = new ReaLTaiizor.Controls.BigLabel();
             lblDecSTR = new ReaLTaiizor.Controls.BigLabel();
             pnlCharacterInfo = new Panel();
             lblCurrentBuffsInfo = new ReaLTaiizor.Controls.BigLabel();
@@ -191,10 +189,11 @@ namespace Modsim_Game
             secondPanel = new Panel();
             thirdPanel = new Panel();
             bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
-            skillsPanel = new Panel();
-            hopeButton2 = new ReaLTaiizor.Controls.HopeButton();
-            aloneComboBox1 = new ReaLTaiizor.Controls.AloneComboBox();
+            SkillsBackPanel = new Panel();
+            ff12 = new FlowLayoutPanel();
             bigLabel2 = new ReaLTaiizor.Controls.BigLabel();
+            aloneComboBox1 = new ReaLTaiizor.Controls.AloneComboBox();
+            hopeButton2 = new ReaLTaiizor.Controls.HopeButton();
             mainPanel.SuspendLayout();
             pnlStatusSimulatorControls.SuspendLayout();
             panel1.SuspendLayout();
@@ -203,7 +202,6 @@ namespace Modsim_Game
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
-            panel7.SuspendLayout();
             pnlCharacterInfo.SuspendLayout();
             pnlFLEEValue2.SuspendLayout();
             pnlFLEEValue1.SuspendLayout();
@@ -244,7 +242,7 @@ namespace Modsim_Game
             ((System.ComponentModel.ISupportInitialize)pbJobs).BeginInit();
             secondPanel.SuspendLayout();
             thirdPanel.SuspendLayout();
-            skillsPanel.SuspendLayout();
+            SkillsBackPanel.SuspendLayout();
             SuspendLayout();
             // 
             // mainPanel
@@ -264,10 +262,9 @@ namespace Modsim_Game
             mainPanel.Controls.Add(lblMaxASPED);
             mainPanel.Controls.Add(cmbSelectJob);
             mainPanel.Controls.Add(lblSelectJob);
-            mainPanel.Location = new Point(87, 76);
-            mainPanel.Margin = new Padding(3, 2, 3, 2);
+            mainPanel.Location = new Point(99, 101);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(1319, 78);
+            mainPanel.Size = new Size(1507, 104);
             mainPanel.TabIndex = 3;
             // 
             // lblWeight
@@ -276,9 +273,9 @@ namespace Modsim_Game
             lblWeight.BackColor = Color.Transparent;
             lblWeight.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblWeight.ForeColor = Color.Black;
-            lblWeight.Location = new Point(1264, 37);
+            lblWeight.Location = new Point(1445, 49);
             lblWeight.Name = "lblWeight";
-            lblWeight.Size = new Size(17, 19);
+            lblWeight.Size = new Size(20, 23);
             lblWeight.TabIndex = 81;
             lblWeight.Text = "0";
             // 
@@ -288,9 +285,9 @@ namespace Modsim_Game
             lblWeightTitle.BackColor = Color.Transparent;
             lblWeightTitle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblWeightTitle.ForeColor = Color.Black;
-            lblWeightTitle.Location = new Point(1167, 38);
+            lblWeightTitle.Location = new Point(1334, 51);
             lblWeightTitle.Name = "lblWeightTitle";
-            lblWeightTitle.Size = new Size(67, 19);
+            lblWeightTitle.Size = new Size(81, 23);
             lblWeightTitle.TabIndex = 80;
             lblWeightTitle.Text = "WEIGHT:";
             // 
@@ -300,9 +297,9 @@ namespace Modsim_Game
             lblUnknown4.BackColor = Color.Transparent;
             lblUnknown4.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblUnknown4.ForeColor = Color.Black;
-            lblUnknown4.Location = new Point(1177, 7);
+            lblUnknown4.Location = new Point(1345, 9);
             lblUnknown4.Name = "lblUnknown4";
-            lblUnknown4.Size = new Size(97, 25);
+            lblUnknown4.Size = new Size(117, 30);
             lblUnknown4.TabIndex = 57;
             lblUnknown4.Text = "わさあっぷっ";
             // 
@@ -312,9 +309,9 @@ namespace Modsim_Game
             lblUnknown1.BackColor = Color.Transparent;
             lblUnknown1.Font = new Font("Segoe UI", 6F, FontStyle.Bold);
             lblUnknown1.ForeColor = Color.Black;
-            lblUnknown1.Location = new Point(262, 7);
+            lblUnknown1.Location = new Point(299, 9);
             lblUnknown1.Name = "lblUnknown1";
-            lblUnknown1.Size = new Size(50, 11);
+            lblUnknown1.Size = new Size(60, 12);
             lblUnknown1.TabIndex = 67;
             lblUnknown1.Text = "ジョブを選択";
             // 
@@ -324,9 +321,9 @@ namespace Modsim_Game
             lblUnknown3.BackColor = Color.Transparent;
             lblUnknown3.Font = new Font("Segoe UI", 6F, FontStyle.Bold);
             lblUnknown3.ForeColor = Color.Black;
-            lblUnknown3.Location = new Point(1008, 9);
+            lblUnknown3.Location = new Point(1152, 12);
             lblUnknown3.Name = "lblUnknown3";
-            lblUnknown3.Size = new Size(34, 11);
+            lblUnknown3.Size = new Size(41, 12);
             lblUnknown3.TabIndex = 65;
             lblUnknown3.Text = "最大HP";
             // 
@@ -336,9 +333,9 @@ namespace Modsim_Game
             lblUnknown2.BackColor = Color.Transparent;
             lblUnknown2.Font = new Font("Segoe UI", 6F, FontStyle.Bold);
             lblUnknown2.ForeColor = Color.Black;
-            lblUnknown2.Location = new Point(664, 7);
+            lblUnknown2.Location = new Point(759, 9);
             lblUnknown2.Name = "lblUnknown2";
-            lblUnknown2.Size = new Size(41, 11);
+            lblUnknown2.Size = new Size(49, 12);
             lblUnknown2.TabIndex = 66;
             lblUnknown2.Text = "最大速度";
             // 
@@ -352,10 +349,9 @@ namespace Modsim_Game
             cmbMaxHP.FormattingEnabled = true;
             cmbMaxHP.ItemHeight = 20;
             cmbMaxHP.Items.AddRange(new object[] { "none", "1000000", "2000000", "3000000", "4000000", "5000000", "6000000", "7000000", "8000000", "9000000", "10000000" });
-            cmbMaxHP.Location = new Point(944, 27);
-            cmbMaxHP.Margin = new Padding(3, 2, 3, 2);
+            cmbMaxHP.Location = new Point(1079, 36);
             cmbMaxHP.Name = "cmbMaxHP";
-            cmbMaxHP.Size = new Size(101, 26);
+            cmbMaxHP.Size = new Size(115, 26);
             cmbMaxHP.TabIndex = 56;
             // 
             // lblMaxHP
@@ -364,9 +360,9 @@ namespace Modsim_Game
             lblMaxHP.BackColor = Color.Transparent;
             lblMaxHP.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblMaxHP.ForeColor = Color.Black;
-            lblMaxHP.Location = new Point(850, 27);
+            lblMaxHP.Location = new Point(971, 36);
             lblMaxHP.Name = "lblMaxHP";
-            lblMaxHP.Size = new Size(89, 25);
+            lblMaxHP.Size = new Size(106, 30);
             lblMaxHP.TabIndex = 55;
             lblMaxHP.Text = "MAX HP:";
             // 
@@ -380,10 +376,9 @@ namespace Modsim_Game
             cmbMaxASPED.FormattingEnabled = true;
             cmbMaxASPED.ItemHeight = 20;
             cmbMaxASPED.Items.AddRange(new object[] { "190", "191", "192", "193", "194", "195", "196", "197", "198", "199" });
-            cmbMaxASPED.Location = new Point(558, 28);
-            cmbMaxASPED.Margin = new Padding(3, 2, 3, 2);
+            cmbMaxASPED.Location = new Point(638, 37);
             cmbMaxASPED.Name = "cmbMaxASPED";
-            cmbMaxASPED.Size = new Size(155, 26);
+            cmbMaxASPED.Size = new Size(177, 26);
             cmbMaxASPED.TabIndex = 54;
             // 
             // lblMaxASPED
@@ -392,9 +387,9 @@ namespace Modsim_Game
             lblMaxASPED.BackColor = Color.Transparent;
             lblMaxASPED.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblMaxASPED.ForeColor = Color.Black;
-            lblMaxASPED.Location = new Point(432, 26);
+            lblMaxASPED.Location = new Point(494, 35);
             lblMaxASPED.Name = "lblMaxASPED";
-            lblMaxASPED.Size = new Size(121, 25);
+            lblMaxASPED.Size = new Size(144, 30);
             lblMaxASPED.TabIndex = 53;
             lblMaxASPED.Text = "MAX ASPED:";
             // 
@@ -408,10 +403,9 @@ namespace Modsim_Game
             cmbSelectJob.FormattingEnabled = true;
             cmbSelectJob.ItemHeight = 20;
             cmbSelectJob.Items.AddRange(new object[] { "-SELECT CLASS-", "Novice", "Swordsman", "Magician", "Archer", "Acolyte", "Merchant", "Thief" });
-            cmbSelectJob.Location = new Point(159, 27);
-            cmbSelectJob.Margin = new Padding(3, 2, 3, 2);
+            cmbSelectJob.Location = new Point(182, 36);
             cmbSelectJob.Name = "cmbSelectJob";
-            cmbSelectJob.Size = new Size(155, 26);
+            cmbSelectJob.Size = new Size(177, 26);
             cmbSelectJob.TabIndex = 52;
             cmbSelectJob.SelectedIndexChanged += aloneComboBox2_SelectedIndexChanged;
             // 
@@ -421,9 +415,9 @@ namespace Modsim_Game
             lblSelectJob.BackColor = Color.Transparent;
             lblSelectJob.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblSelectJob.ForeColor = Color.Black;
-            lblSelectJob.Location = new Point(28, 27);
+            lblSelectJob.Location = new Point(32, 36);
             lblSelectJob.Name = "lblSelectJob";
-            lblSelectJob.Size = new Size(117, 25);
+            lblSelectJob.Size = new Size(140, 30);
             lblSelectJob.TabIndex = 51;
             lblSelectJob.Text = "SELECT JOB:";
             // 
@@ -433,9 +427,9 @@ namespace Modsim_Game
             lblUnknown5.BackColor = Color.Transparent;
             lblUnknown5.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblUnknown5.ForeColor = Color.FromArgb(80, 80, 80);
-            lblUnknown5.Location = new Point(558, 20);
+            lblUnknown5.Location = new Point(638, 27);
             lblUnknown5.Name = "lblUnknown5";
-            lblUnknown5.Size = new Size(33, 13);
+            lblUnknown5.Size = new Size(38, 19);
             lblUnknown5.TabIndex = 80;
             lblUnknown5.Text = "ゲイ?";
             // 
@@ -445,9 +439,9 @@ namespace Modsim_Game
             lblSpRegen.BackColor = Color.Transparent;
             lblSpRegen.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblSpRegen.ForeColor = Color.FromArgb(80, 80, 80);
-            lblSpRegen.Location = new Point(152, 65);
+            lblSpRegen.Location = new Point(174, 87);
             lblSpRegen.Name = "lblSpRegen";
-            lblSpRegen.Size = new Size(13, 19);
+            lblSpRegen.Size = new Size(15, 23);
             lblSpRegen.TabIndex = 64;
             lblSpRegen.Text = ".";
             // 
@@ -457,9 +451,9 @@ namespace Modsim_Game
             lblHpRegen.BackColor = Color.Transparent;
             lblHpRegen.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblHpRegen.ForeColor = Color.FromArgb(80, 80, 80);
-            lblHpRegen.Location = new Point(557, 65);
+            lblHpRegen.Location = new Point(637, 87);
             lblHpRegen.Name = "lblHpRegen";
-            lblHpRegen.Size = new Size(13, 19);
+            lblHpRegen.Size = new Size(15, 23);
             lblHpRegen.TabIndex = 63;
             lblHpRegen.Text = ".";
             // 
@@ -469,9 +463,9 @@ namespace Modsim_Game
             lnlNatSpRegen.BackColor = Color.Transparent;
             lnlNatSpRegen.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lnlNatSpRegen.ForeColor = Color.FromArgb(80, 80, 80);
-            lnlNatSpRegen.Location = new Point(14, 65);
+            lnlNatSpRegen.Location = new Point(16, 87);
             lnlNatSpRegen.Name = "lnlNatSpRegen";
-            lnlNatSpRegen.Size = new Size(130, 19);
+            lnlNatSpRegen.Size = new Size(155, 23);
             lnlNatSpRegen.TabIndex = 62;
             lnlNatSpRegen.Text = "Natural SP Regen:";
             // 
@@ -481,9 +475,9 @@ namespace Modsim_Game
             lblNatHpRegen.BackColor = Color.Transparent;
             lblNatHpRegen.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblNatHpRegen.ForeColor = Color.FromArgb(80, 80, 80);
-            lblNatHpRegen.Location = new Point(420, 65);
+            lblNatHpRegen.Location = new Point(480, 87);
             lblNatHpRegen.Name = "lblNatHpRegen";
-            lblNatHpRegen.Size = new Size(133, 19);
+            lblNatHpRegen.Size = new Size(158, 23);
             lblNatHpRegen.TabIndex = 61;
             lblNatHpRegen.Text = "Natural HP Regen:";
             // 
@@ -493,9 +487,9 @@ namespace Modsim_Game
             lblTotalSp.BackColor = Color.Transparent;
             lblTotalSp.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblTotalSp.ForeColor = Color.FromArgb(80, 80, 80);
-            lblTotalSp.Location = new Point(273, 65);
+            lblTotalSp.Location = new Point(312, 87);
             lblTotalSp.Name = "lblTotalSp";
-            lblTotalSp.Size = new Size(13, 19);
+            lblTotalSp.Size = new Size(15, 23);
             lblTotalSp.TabIndex = 60;
             lblTotalSp.Text = ".";
             // 
@@ -505,9 +499,9 @@ namespace Modsim_Game
             lblTotalHP.BackColor = Color.Transparent;
             lblTotalHP.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblTotalHP.ForeColor = Color.FromArgb(80, 80, 80);
-            lblTotalHP.Location = new Point(63, 65);
+            lblTotalHP.Location = new Point(72, 87);
             lblTotalHP.Name = "lblTotalHP";
-            lblTotalHP.Size = new Size(13, 19);
+            lblTotalHP.Size = new Size(15, 23);
             lblTotalHP.TabIndex = 59;
             lblTotalHP.Text = ".";
             // 
@@ -517,9 +511,9 @@ namespace Modsim_Game
             lblSP.BackColor = Color.Transparent;
             lblSP.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblSP.ForeColor = Color.FromArgb(80, 80, 80);
-            lblSP.Location = new Point(232, 64);
+            lblSP.Location = new Point(265, 85);
             lblSP.Name = "lblSP";
-            lblSP.Size = new Size(30, 19);
+            lblSP.Size = new Size(35, 23);
             lblSP.TabIndex = 58;
             lblSP.Text = "SP:";
             // 
@@ -529,9 +523,9 @@ namespace Modsim_Game
             lblHP.BackColor = Color.Transparent;
             lblHP.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblHP.ForeColor = Color.FromArgb(80, 80, 80);
-            lblHP.Location = new Point(21, 65);
+            lblHP.Location = new Point(24, 87);
             lblHP.Name = "lblHP";
-            lblHP.Size = new Size(33, 19);
+            lblHP.Size = new Size(38, 23);
             lblHP.TabIndex = 57;
             lblHP.Text = "HP:";
             // 
@@ -542,10 +536,9 @@ namespace Modsim_Game
             cmbJobLevel.EnabledCalc = true;
             cmbJobLevel.FormattingEnabled = true;
             cmbJobLevel.ItemHeight = 20;
-            cmbJobLevel.Location = new Point(503, 14);
-            cmbJobLevel.Margin = new Padding(3, 2, 3, 2);
+            cmbJobLevel.Location = new Point(575, 19);
             cmbJobLevel.Name = "cmbJobLevel";
-            cmbJobLevel.Size = new Size(50, 26);
+            cmbJobLevel.Size = new Size(57, 26);
             cmbJobLevel.TabIndex = 51;
             cmbJobLevel.SelectedIndexChanged += cmbJobLevel_SelectedIndexChanged;
             // 
@@ -555,9 +548,9 @@ namespace Modsim_Game
             lblJobLevel.BackColor = Color.Transparent;
             lblJobLevel.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblJobLevel.ForeColor = Color.FromArgb(80, 80, 80);
-            lblJobLevel.Location = new Point(423, 16);
+            lblJobLevel.Location = new Point(483, 21);
             lblJobLevel.Name = "lblJobLevel";
-            lblJobLevel.Size = new Size(76, 19);
+            lblJobLevel.Size = new Size(90, 23);
             lblJobLevel.TabIndex = 56;
             lblJobLevel.Text = "Job Level:";
             // 
@@ -567,13 +560,12 @@ namespace Modsim_Game
             txtBaseLevel.EnabledCalc = true;
             txtBaseLevel.Font = new Font("Segoe UI", 9F);
             txtBaseLevel.ForeColor = Color.FromArgb(124, 133, 142);
-            txtBaseLevel.Location = new Point(105, 8);
-            txtBaseLevel.Margin = new Padding(3, 2, 3, 2);
+            txtBaseLevel.Location = new Point(120, 11);
             txtBaseLevel.MaxLength = 2;
             txtBaseLevel.MultiLine = false;
             txtBaseLevel.Name = "txtBaseLevel";
             txtBaseLevel.ReadOnly = false;
-            txtBaseLevel.Size = new Size(55, 27);
+            txtBaseLevel.Size = new Size(63, 36);
             txtBaseLevel.TabIndex = 51;
             txtBaseLevel.TextAlign = HorizontalAlignment.Center;
             txtBaseLevel.UseSystemPasswordChar = false;
@@ -585,9 +577,9 @@ namespace Modsim_Game
             lblBaseLevel.BackColor = Color.Transparent;
             lblBaseLevel.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblBaseLevel.ForeColor = Color.FromArgb(80, 80, 80);
-            lblBaseLevel.Location = new Point(17, 15);
+            lblBaseLevel.Location = new Point(19, 20);
             lblBaseLevel.Name = "lblBaseLevel";
-            lblBaseLevel.Size = new Size(83, 19);
+            lblBaseLevel.Size = new Size(97, 23);
             lblBaseLevel.TabIndex = 55;
             lblBaseLevel.Text = "Base Level:";
             // 
@@ -597,9 +589,9 @@ namespace Modsim_Game
             lblJobTitle.BackColor = Color.Transparent;
             lblJobTitle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblJobTitle.ForeColor = Color.FromArgb(80, 80, 80);
-            lblJobTitle.Location = new Point(66, 16);
+            lblJobTitle.Location = new Point(75, 21);
             lblJobTitle.Name = "lblJobTitle";
-            lblJobTitle.Size = new Size(13, 19);
+            lblJobTitle.Size = new Size(15, 23);
             lblJobTitle.TabIndex = 54;
             lblJobTitle.Text = ".";
             // 
@@ -609,9 +601,9 @@ namespace Modsim_Game
             lblJob.BackColor = Color.Transparent;
             lblJob.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblJob.ForeColor = Color.FromArgb(80, 80, 80);
-            lblJob.Location = new Point(20, 16);
+            lblJob.Location = new Point(23, 21);
             lblJob.Name = "lblJob";
-            lblJob.Size = new Size(39, 19);
+            lblJob.Size = new Size(47, 23);
             lblJob.TabIndex = 53;
             lblJob.Text = "JOB:";
             // 
@@ -621,9 +613,9 @@ namespace Modsim_Game
             lblUnknown8.BackColor = Color.Transparent;
             lblUnknown8.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblUnknown8.ForeColor = Color.White;
-            lblUnknown8.Location = new Point(1382, 7);
+            lblUnknown8.Location = new Point(1579, 9);
             lblUnknown8.Name = "lblUnknown8";
-            lblUnknown8.Size = new Size(133, 25);
+            lblUnknown8.Size = new Size(160, 30);
             lblUnknown8.TabIndex = 58;
             lblUnknown8.Text = "大丈夫ラコ？？";
             // 
@@ -645,7 +637,6 @@ namespace Modsim_Game
             pnlStatusSimulatorControls.Controls.Add(lblDecVIT);
             pnlStatusSimulatorControls.Controls.Add(panel6);
             pnlStatusSimulatorControls.Controls.Add(lblDecAGI);
-            pnlStatusSimulatorControls.Controls.Add(panel7);
             pnlStatusSimulatorControls.Controls.Add(lblDecSTR);
             pnlStatusSimulatorControls.Controls.Add(pnlCharacterInfo);
             pnlStatusSimulatorControls.Controls.Add(btnReset);
@@ -711,10 +702,9 @@ namespace Modsim_Game
             pnlStatusSimulatorControls.Controls.Add(pnlPtsReq);
             pnlStatusSimulatorControls.Controls.Add(pnlStats);
             pnlStatusSimulatorControls.Controls.Add(pbJobs);
-            pnlStatusSimulatorControls.Location = new Point(87, 262);
-            pnlStatusSimulatorControls.Margin = new Padding(3, 2, 3, 2);
+            pnlStatusSimulatorControls.Location = new Point(99, 349);
             pnlStatusSimulatorControls.Name = "pnlStatusSimulatorControls";
-            pnlStatusSimulatorControls.Size = new Size(1319, 404);
+            pnlStatusSimulatorControls.Size = new Size(1507, 539);
             pnlStatusSimulatorControls.TabIndex = 4;
             // 
             // hopeButton1
@@ -726,11 +716,10 @@ namespace Modsim_Game
             hopeButton1.Font = new Font("Segoe UI", 12F);
             hopeButton1.HoverTextColor = Color.FromArgb(48, 49, 51);
             hopeButton1.InfoColor = Color.FromArgb(144, 147, 153);
-            hopeButton1.Location = new Point(1167, 334);
-            hopeButton1.Margin = new Padding(3, 2, 3, 2);
+            hopeButton1.Location = new Point(1334, 479);
             hopeButton1.Name = "hopeButton1";
             hopeButton1.PrimaryColor = SystemColors.ActiveBorder;
-            hopeButton1.Size = new Size(123, 22);
+            hopeButton1.Size = new Size(156, 29);
             hopeButton1.SuccessColor = Color.FromArgb(103, 194, 58);
             hopeButton1.TabIndex = 87;
             hopeButton1.Text = "Skill Simulation";
@@ -744,10 +733,9 @@ namespace Modsim_Game
             panel1.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.Controls.Add(lblJobBonus6);
-            panel1.Location = new Point(659, 291);
-            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Location = new Point(753, 388);
             panel1.Name = "panel1";
-            panel1.Size = new Size(124, 40);
+            panel1.Size = new Size(142, 53);
             panel1.TabIndex = 31;
             // 
             // lblJobBonus6
@@ -756,9 +744,9 @@ namespace Modsim_Game
             lblJobBonus6.BackColor = Color.Transparent;
             lblJobBonus6.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblJobBonus6.ForeColor = Color.FromArgb(80, 80, 80);
-            lblJobBonus6.Location = new Point(57, 6);
+            lblJobBonus6.Location = new Point(65, 8);
             lblJobBonus6.Name = "lblJobBonus6";
-            lblJobBonus6.Size = new Size(17, 25);
+            lblJobBonus6.Size = new Size(19, 30);
             lblJobBonus6.TabIndex = 0;
             lblJobBonus6.Text = ".";
             // 
@@ -768,9 +756,9 @@ namespace Modsim_Game
             lblUnknown7.BackColor = Color.Transparent;
             lblUnknown7.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblUnknown7.ForeColor = Color.FromArgb(80, 80, 80);
-            lblUnknown7.Location = new Point(61, 10);
+            lblUnknown7.Location = new Point(70, 13);
             lblUnknown7.Name = "lblUnknown7";
-            lblUnknown7.Size = new Size(70, 13);
+            lblUnknown7.Size = new Size(81, 19);
             lblUnknown7.TabIndex = 86;
             lblUnknown7.Text = "武器の種類";
             // 
@@ -780,10 +768,9 @@ namespace Modsim_Game
             panel2.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
             panel2.Controls.Add(lblJobBonus3);
-            panel2.Location = new Point(659, 156);
-            panel2.Margin = new Padding(3, 2, 3, 2);
+            panel2.Location = new Point(753, 208);
             panel2.Name = "panel2";
-            panel2.Size = new Size(124, 40);
+            panel2.Size = new Size(142, 53);
             panel2.TabIndex = 27;
             // 
             // lblJobBonus3
@@ -792,9 +779,9 @@ namespace Modsim_Game
             lblJobBonus3.BackColor = Color.Transparent;
             lblJobBonus3.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblJobBonus3.ForeColor = Color.FromArgb(80, 80, 80);
-            lblJobBonus3.Location = new Point(57, 6);
+            lblJobBonus3.Location = new Point(65, 8);
             lblJobBonus3.Name = "lblJobBonus3";
-            lblJobBonus3.Size = new Size(17, 25);
+            lblJobBonus3.Size = new Size(19, 30);
             lblJobBonus3.TabIndex = 0;
             lblJobBonus3.Text = ".";
             // 
@@ -805,9 +792,9 @@ namespace Modsim_Game
             lblDecLUK.Cursor = Cursors.Hand;
             lblDecLUK.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold);
             lblDecLUK.ForeColor = Color.FromArgb(80, 80, 80);
-            lblDecLUK.Location = new Point(522, 298);
+            lblDecLUK.Location = new Point(597, 397);
             lblDecLUK.Name = "lblDecLUK";
-            lblDecLUK.Size = new Size(22, 30);
+            lblDecLUK.Size = new Size(28, 37);
             lblDecLUK.TabIndex = 85;
             lblDecLUK.Text = "-";
             lblDecLUK.TextAlign = ContentAlignment.MiddleCenter;
@@ -819,10 +806,9 @@ namespace Modsim_Game
             panel3.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel3.BackgroundImageLayout = ImageLayout.Stretch;
             panel3.Controls.Add(lblJobBonus5);
-            panel3.Location = new Point(659, 246);
-            panel3.Margin = new Padding(3, 2, 3, 2);
+            panel3.Location = new Point(753, 328);
             panel3.Name = "panel3";
-            panel3.Size = new Size(124, 40);
+            panel3.Size = new Size(142, 53);
             panel3.TabIndex = 30;
             // 
             // lblJobBonus5
@@ -831,9 +817,9 @@ namespace Modsim_Game
             lblJobBonus5.BackColor = Color.Transparent;
             lblJobBonus5.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblJobBonus5.ForeColor = Color.FromArgb(80, 80, 80);
-            lblJobBonus5.Location = new Point(57, 6);
+            lblJobBonus5.Location = new Point(65, 8);
             lblJobBonus5.Name = "lblJobBonus5";
-            lblJobBonus5.Size = new Size(17, 25);
+            lblJobBonus5.Size = new Size(19, 30);
             lblJobBonus5.TabIndex = 0;
             lblJobBonus5.Text = ".";
             // 
@@ -844,9 +830,9 @@ namespace Modsim_Game
             lblDecDEX.Cursor = Cursors.Hand;
             lblDecDEX.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold);
             lblDecDEX.ForeColor = Color.FromArgb(80, 80, 80);
-            lblDecDEX.Location = new Point(522, 251);
+            lblDecDEX.Location = new Point(597, 335);
             lblDecDEX.Name = "lblDecDEX";
-            lblDecDEX.Size = new Size(22, 30);
+            lblDecDEX.Size = new Size(28, 37);
             lblDecDEX.TabIndex = 84;
             lblDecDEX.Text = "-";
             lblDecDEX.TextAlign = ContentAlignment.MiddleCenter;
@@ -858,10 +844,9 @@ namespace Modsim_Game
             panel4.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel4.BackgroundImageLayout = ImageLayout.Stretch;
             panel4.Controls.Add(lblJobBonus2);
-            panel4.Location = new Point(659, 111);
-            panel4.Margin = new Padding(3, 2, 3, 2);
+            panel4.Location = new Point(753, 148);
             panel4.Name = "panel4";
-            panel4.Size = new Size(124, 40);
+            panel4.Size = new Size(142, 53);
             panel4.TabIndex = 28;
             // 
             // lblJobBonus2
@@ -870,9 +855,9 @@ namespace Modsim_Game
             lblJobBonus2.BackColor = Color.Transparent;
             lblJobBonus2.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblJobBonus2.ForeColor = Color.FromArgb(80, 80, 80);
-            lblJobBonus2.Location = new Point(57, 6);
+            lblJobBonus2.Location = new Point(65, 8);
             lblJobBonus2.Name = "lblJobBonus2";
-            lblJobBonus2.Size = new Size(17, 25);
+            lblJobBonus2.Size = new Size(19, 30);
             lblJobBonus2.TabIndex = 0;
             lblJobBonus2.Text = ".";
             // 
@@ -883,9 +868,9 @@ namespace Modsim_Game
             lblDecINT.Cursor = Cursors.Hand;
             lblDecINT.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold);
             lblDecINT.ForeColor = Color.FromArgb(80, 80, 80);
-            lblDecINT.Location = new Point(522, 208);
+            lblDecINT.Location = new Point(597, 277);
             lblDecINT.Name = "lblDecINT";
-            lblDecINT.Size = new Size(22, 30);
+            lblDecINT.Size = new Size(28, 37);
             lblDecINT.TabIndex = 83;
             lblDecINT.Text = "-";
             lblDecINT.TextAlign = ContentAlignment.MiddleCenter;
@@ -897,10 +882,9 @@ namespace Modsim_Game
             panel5.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel5.BackgroundImageLayout = ImageLayout.Stretch;
             panel5.Controls.Add(lblJobBonus4);
-            panel5.Location = new Point(659, 201);
-            panel5.Margin = new Padding(3, 2, 3, 2);
+            panel5.Location = new Point(753, 268);
             panel5.Name = "panel5";
-            panel5.Size = new Size(124, 40);
+            panel5.Size = new Size(142, 53);
             panel5.TabIndex = 29;
             // 
             // lblJobBonus4
@@ -909,9 +893,9 @@ namespace Modsim_Game
             lblJobBonus4.BackColor = Color.Transparent;
             lblJobBonus4.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblJobBonus4.ForeColor = Color.FromArgb(80, 80, 80);
-            lblJobBonus4.Location = new Point(57, 6);
+            lblJobBonus4.Location = new Point(65, 8);
             lblJobBonus4.Name = "lblJobBonus4";
-            lblJobBonus4.Size = new Size(17, 25);
+            lblJobBonus4.Size = new Size(19, 30);
             lblJobBonus4.TabIndex = 0;
             lblJobBonus4.Text = ".";
             // 
@@ -922,9 +906,9 @@ namespace Modsim_Game
             lblDecVIT.Cursor = Cursors.Hand;
             lblDecVIT.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold);
             lblDecVIT.ForeColor = Color.FromArgb(80, 80, 80);
-            lblDecVIT.Location = new Point(522, 161);
+            lblDecVIT.Location = new Point(597, 215);
             lblDecVIT.Name = "lblDecVIT";
-            lblDecVIT.Size = new Size(22, 30);
+            lblDecVIT.Size = new Size(28, 37);
             lblDecVIT.TabIndex = 82;
             lblDecVIT.Text = "-";
             lblDecVIT.TextAlign = ContentAlignment.MiddleCenter;
@@ -936,10 +920,9 @@ namespace Modsim_Game
             panel6.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             panel6.BackgroundImageLayout = ImageLayout.Stretch;
             panel6.Controls.Add(lblJobBonus1);
-            panel6.Location = new Point(659, 66);
-            panel6.Margin = new Padding(3, 2, 3, 2);
+            panel6.Location = new Point(753, 88);
             panel6.Name = "panel6";
-            panel6.Size = new Size(124, 40);
+            panel6.Size = new Size(142, 53);
             panel6.TabIndex = 26;
             // 
             // lblJobBonus1
@@ -948,9 +931,9 @@ namespace Modsim_Game
             lblJobBonus1.BackColor = Color.Transparent;
             lblJobBonus1.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblJobBonus1.ForeColor = Color.FromArgb(80, 80, 80);
-            lblJobBonus1.Location = new Point(58, 7);
+            lblJobBonus1.Location = new Point(66, 9);
             lblJobBonus1.Name = "lblJobBonus1";
-            lblJobBonus1.Size = new Size(17, 25);
+            lblJobBonus1.Size = new Size(19, 30);
             lblJobBonus1.TabIndex = 0;
             lblJobBonus1.Text = ".";
             // 
@@ -961,37 +944,13 @@ namespace Modsim_Game
             lblDecAGI.Cursor = Cursors.Hand;
             lblDecAGI.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold);
             lblDecAGI.ForeColor = Color.FromArgb(80, 80, 80);
-            lblDecAGI.Location = new Point(522, 115);
+            lblDecAGI.Location = new Point(597, 153);
             lblDecAGI.Name = "lblDecAGI";
-            lblDecAGI.Size = new Size(22, 30);
+            lblDecAGI.Size = new Size(28, 37);
             lblDecAGI.TabIndex = 81;
             lblDecAGI.Text = "-";
             lblDecAGI.TextAlign = ContentAlignment.MiddleCenter;
             lblDecAGI.Click += bigLabel37_Click;
-            // 
-            // panel7
-            // 
-            panel7.BackColor = Color.Transparent;
-            panel7.BackgroundImage = Properties.Resources._4834;
-            panel7.BackgroundImageLayout = ImageLayout.Stretch;
-            panel7.Controls.Add(lblJobBonusTitle);
-            panel7.Location = new Point(659, 21);
-            panel7.Margin = new Padding(3, 2, 3, 2);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(122, 40);
-            panel7.TabIndex = 25;
-            // 
-            // lblJobBonusTitle
-            // 
-            lblJobBonusTitle.AutoSize = true;
-            lblJobBonusTitle.BackColor = Color.Transparent;
-            lblJobBonusTitle.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            lblJobBonusTitle.ForeColor = Color.White;
-            lblJobBonusTitle.Location = new Point(4, 7);
-            lblJobBonusTitle.Name = "lblJobBonusTitle";
-            lblJobBonusTitle.Size = new Size(114, 25);
-            lblJobBonusTitle.TabIndex = 1;
-            lblJobBonusTitle.Text = "JOB BONUS";
             // 
             // lblDecSTR
             // 
@@ -1000,9 +959,9 @@ namespace Modsim_Game
             lblDecSTR.Cursor = Cursors.Hand;
             lblDecSTR.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold);
             lblDecSTR.ForeColor = Color.FromArgb(80, 80, 80);
-            lblDecSTR.Location = new Point(522, 71);
+            lblDecSTR.Location = new Point(597, 95);
             lblDecSTR.Name = "lblDecSTR";
-            lblDecSTR.Size = new Size(22, 30);
+            lblDecSTR.Size = new Size(28, 37);
             lblDecSTR.TabIndex = 80;
             lblDecSTR.Text = "-";
             lblDecSTR.TextAlign = ContentAlignment.MiddleCenter;
@@ -1021,10 +980,9 @@ namespace Modsim_Game
             pnlCharacterInfo.Controls.Add(lblJobInfo);
             pnlCharacterInfo.Controls.Add(lblLevelInfo);
             pnlCharacterInfo.Controls.Add(lblCharacterInfo);
-            pnlCharacterInfo.Location = new Point(18, 21);
-            pnlCharacterInfo.Margin = new Padding(3, 2, 3, 2);
+            pnlCharacterInfo.Location = new Point(21, 28);
             pnlCharacterInfo.Name = "pnlCharacterInfo";
-            pnlCharacterInfo.Size = new Size(147, 373);
+            pnlCharacterInfo.Size = new Size(168, 497);
             pnlCharacterInfo.TabIndex = 38;
             // 
             // lblCurrentBuffsInfo
@@ -1033,9 +991,9 @@ namespace Modsim_Game
             lblCurrentBuffsInfo.BackColor = Color.Transparent;
             lblCurrentBuffsInfo.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblCurrentBuffsInfo.ForeColor = Color.FromArgb(80, 80, 80);
-            lblCurrentBuffsInfo.Location = new Point(15, 296);
+            lblCurrentBuffsInfo.Location = new Point(17, 395);
             lblCurrentBuffsInfo.Name = "lblCurrentBuffsInfo";
-            lblCurrentBuffsInfo.Size = new Size(102, 13);
+            lblCurrentBuffsInfo.Size = new Size(128, 19);
             lblCurrentBuffsInfo.TabIndex = 7;
             lblCurrentBuffsInfo.Text = "Current Buffs: ????";
             // 
@@ -1045,9 +1003,9 @@ namespace Modsim_Game
             lblStatPointsInfo.BackColor = Color.Transparent;
             lblStatPointsInfo.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblStatPointsInfo.ForeColor = Color.FromArgb(80, 80, 80);
-            lblStatPointsInfo.Location = new Point(15, 243);
+            lblStatPointsInfo.Location = new Point(17, 324);
             lblStatPointsInfo.Name = "lblStatPointsInfo";
-            lblStatPointsInfo.Size = new Size(78, 13);
+            lblStatPointsInfo.Size = new Size(98, 19);
             lblStatPointsInfo.TabIndex = 6;
             lblStatPointsInfo.Text = "Status Points:";
             // 
@@ -1057,9 +1015,9 @@ namespace Modsim_Game
             lblPointsRemaining.BackColor = Color.Transparent;
             lblPointsRemaining.Font = new Font("Segoe UI", 7F, FontStyle.Bold);
             lblPointsRemaining.ForeColor = Color.FromArgb(80, 80, 80);
-            lblPointsRemaining.Location = new Point(98, 246);
+            lblPointsRemaining.Location = new Point(112, 328);
             lblPointsRemaining.Name = "lblPointsRemaining";
-            lblPointsRemaining.Size = new Size(8, 12);
+            lblPointsRemaining.Size = new Size(10, 15);
             lblPointsRemaining.TabIndex = 1;
             lblPointsRemaining.Text = ".";
             // 
@@ -1069,9 +1027,9 @@ namespace Modsim_Game
             lblGuild.BackColor = Color.Transparent;
             lblGuild.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblGuild.ForeColor = Color.FromArgb(80, 80, 80);
-            lblGuild.Location = new Point(15, 195);
+            lblGuild.Location = new Point(17, 260);
             lblGuild.Name = "lblGuild";
-            lblGuild.Size = new Size(109, 13);
+            lblGuild.Size = new Size(139, 19);
             lblGuild.TabIndex = 5;
             lblGuild.Text = "Guild: AsianCollege";
             // 
@@ -1081,9 +1039,9 @@ namespace Modsim_Game
             lblStatusInfo.BackColor = Color.Transparent;
             lblStatusInfo.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblStatusInfo.ForeColor = Color.FromArgb(80, 80, 80);
-            lblStatusInfo.Location = new Point(15, 149);
+            lblStatusInfo.Location = new Point(17, 199);
             lblStatusInfo.Name = "lblStatusInfo";
-            lblStatusInfo.Size = new Size(50, 13);
+            lblStatusInfo.Size = new Size(63, 19);
             lblStatusInfo.TabIndex = 4;
             lblStatusInfo.Text = "Status: ?";
             // 
@@ -1093,9 +1051,9 @@ namespace Modsim_Game
             lblJobInfo.BackColor = Color.Transparent;
             lblJobInfo.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblJobInfo.ForeColor = Color.FromArgb(80, 80, 80);
-            lblJobInfo.Location = new Point(15, 106);
+            lblJobInfo.Location = new Point(17, 141);
             lblJobInfo.Name = "lblJobInfo";
-            lblJobInfo.Size = new Size(37, 13);
+            lblJobInfo.Size = new Size(47, 19);
             lblJobInfo.TabIndex = 3;
             lblJobInfo.Text = "Job: ?";
             // 
@@ -1105,9 +1063,9 @@ namespace Modsim_Game
             lblLevelInfo.BackColor = Color.Transparent;
             lblLevelInfo.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblLevelInfo.ForeColor = Color.FromArgb(80, 80, 80);
-            lblLevelInfo.Location = new Point(15, 61);
+            lblLevelInfo.Location = new Point(17, 81);
             lblLevelInfo.Name = "lblLevelInfo";
-            lblLevelInfo.Size = new Size(45, 13);
+            lblLevelInfo.Size = new Size(58, 19);
             lblLevelInfo.TabIndex = 2;
             lblLevelInfo.Text = "Level: ?";
             // 
@@ -1117,9 +1075,9 @@ namespace Modsim_Game
             lblCharacterInfo.BackColor = Color.Transparent;
             lblCharacterInfo.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblCharacterInfo.ForeColor = Color.FromArgb(80, 80, 80);
-            lblCharacterInfo.Location = new Point(15, 17);
+            lblCharacterInfo.Location = new Point(17, 23);
             lblCharacterInfo.Name = "lblCharacterInfo";
-            lblCharacterInfo.Size = new Size(103, 13);
+            lblCharacterInfo.Size = new Size(132, 19);
             lblCharacterInfo.TabIndex = 1;
             lblCharacterInfo.Text = "CHARACTER INFO:";
             // 
@@ -1132,11 +1090,10 @@ namespace Modsim_Game
             btnReset.Font = new Font("Segoe UI", 12F);
             btnReset.HoverTextColor = Color.FromArgb(48, 49, 51);
             btnReset.InfoColor = Color.FromArgb(144, 147, 153);
-            btnReset.Location = new Point(556, 343);
-            btnReset.Margin = new Padding(3, 2, 3, 2);
+            btnReset.Location = new Point(635, 457);
             btnReset.Name = "btnReset";
             btnReset.PrimaryColor = SystemColors.ActiveBorder;
-            btnReset.Size = new Size(66, 22);
+            btnReset.Size = new Size(75, 29);
             btnReset.SuccessColor = Color.FromArgb(103, 194, 58);
             btnReset.TabIndex = 79;
             btnReset.Text = "Reset";
@@ -1151,9 +1108,9 @@ namespace Modsim_Game
             lblIncLIK.Cursor = Cursors.Hand;
             lblIncLIK.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold);
             lblIncLIK.ForeColor = Color.FromArgb(80, 80, 80);
-            lblIncLIK.Location = new Point(621, 298);
+            lblIncLIK.Location = new Point(710, 397);
             lblIncLIK.Name = "lblIncLIK";
-            lblIncLIK.Size = new Size(29, 30);
+            lblIncLIK.Size = new Size(36, 37);
             lblIncLIK.TabIndex = 78;
             lblIncLIK.Text = "+";
             lblIncLIK.TextAlign = ContentAlignment.MiddleCenter;
@@ -1166,9 +1123,9 @@ namespace Modsim_Game
             lblIncDEX.Cursor = Cursors.Hand;
             lblIncDEX.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold);
             lblIncDEX.ForeColor = Color.FromArgb(80, 80, 80);
-            lblIncDEX.Location = new Point(621, 251);
+            lblIncDEX.Location = new Point(710, 335);
             lblIncDEX.Name = "lblIncDEX";
-            lblIncDEX.Size = new Size(29, 30);
+            lblIncDEX.Size = new Size(36, 37);
             lblIncDEX.TabIndex = 77;
             lblIncDEX.Text = "+";
             lblIncDEX.TextAlign = ContentAlignment.MiddleCenter;
@@ -1181,9 +1138,9 @@ namespace Modsim_Game
             lblIncINT.Cursor = Cursors.Hand;
             lblIncINT.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold);
             lblIncINT.ForeColor = Color.FromArgb(80, 80, 80);
-            lblIncINT.Location = new Point(621, 208);
+            lblIncINT.Location = new Point(710, 277);
             lblIncINT.Name = "lblIncINT";
-            lblIncINT.Size = new Size(29, 30);
+            lblIncINT.Size = new Size(36, 37);
             lblIncINT.TabIndex = 76;
             lblIncINT.Text = "+";
             lblIncINT.TextAlign = ContentAlignment.MiddleCenter;
@@ -1196,9 +1153,9 @@ namespace Modsim_Game
             lblIncVIT.Cursor = Cursors.Hand;
             lblIncVIT.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold);
             lblIncVIT.ForeColor = Color.FromArgb(80, 80, 80);
-            lblIncVIT.Location = new Point(621, 161);
+            lblIncVIT.Location = new Point(710, 215);
             lblIncVIT.Name = "lblIncVIT";
-            lblIncVIT.Size = new Size(29, 30);
+            lblIncVIT.Size = new Size(36, 37);
             lblIncVIT.TabIndex = 75;
             lblIncVIT.Text = "+";
             lblIncVIT.TextAlign = ContentAlignment.MiddleCenter;
@@ -1211,9 +1168,9 @@ namespace Modsim_Game
             lblIncAGI.Cursor = Cursors.Hand;
             lblIncAGI.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold);
             lblIncAGI.ForeColor = Color.FromArgb(80, 80, 80);
-            lblIncAGI.Location = new Point(621, 115);
+            lblIncAGI.Location = new Point(710, 153);
             lblIncAGI.Name = "lblIncAGI";
-            lblIncAGI.Size = new Size(29, 30);
+            lblIncAGI.Size = new Size(36, 37);
             lblIncAGI.TabIndex = 74;
             lblIncAGI.Text = "+";
             lblIncAGI.TextAlign = ContentAlignment.MiddleCenter;
@@ -1226,9 +1183,9 @@ namespace Modsim_Game
             lblIncSTR.Cursor = Cursors.Hand;
             lblIncSTR.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold);
             lblIncSTR.ForeColor = Color.FromArgb(80, 80, 80);
-            lblIncSTR.Location = new Point(621, 71);
+            lblIncSTR.Location = new Point(710, 95);
             lblIncSTR.Name = "lblIncSTR";
-            lblIncSTR.Size = new Size(29, 30);
+            lblIncSTR.Size = new Size(36, 37);
             lblIncSTR.TabIndex = 1;
             lblIncSTR.Text = "+";
             lblIncSTR.TextAlign = ContentAlignment.MiddleCenter;
@@ -1240,9 +1197,9 @@ namespace Modsim_Game
             lblPerfectDodge.BackColor = Color.Transparent;
             lblPerfectDodge.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblPerfectDodge.ForeColor = Color.FromArgb(80, 80, 80);
-            lblPerfectDodge.Location = new Point(1193, 343);
+            lblPerfectDodge.Location = new Point(1363, 457);
             lblPerfectDodge.Name = "lblPerfectDodge";
-            lblPerfectDodge.Size = new Size(10, 13);
+            lblPerfectDodge.Size = new Size(13, 19);
             lblPerfectDodge.TabIndex = 73;
             lblPerfectDodge.Text = ".";
             // 
@@ -1252,9 +1209,9 @@ namespace Modsim_Game
             lblCastReduction.BackColor = Color.Transparent;
             lblCastReduction.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblCastReduction.ForeColor = Color.FromArgb(80, 80, 80);
-            lblCastReduction.Location = new Point(1137, 343);
+            lblCastReduction.Location = new Point(1299, 457);
             lblCastReduction.Name = "lblCastReduction";
-            lblCastReduction.Size = new Size(10, 13);
+            lblCastReduction.Size = new Size(13, 19);
             lblCastReduction.TabIndex = 72;
             lblCastReduction.Text = ".";
             // 
@@ -1264,9 +1221,9 @@ namespace Modsim_Game
             lblRangedAtk.BackColor = Color.Transparent;
             lblRangedAtk.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblRangedAtk.ForeColor = Color.FromArgb(80, 80, 80);
-            lblRangedAtk.Location = new Point(1081, 343);
+            lblRangedAtk.Location = new Point(1235, 457);
             lblRangedAtk.Name = "lblRangedAtk";
-            lblRangedAtk.Size = new Size(10, 13);
+            lblRangedAtk.Size = new Size(13, 19);
             lblRangedAtk.TabIndex = 71;
             lblRangedAtk.Text = ".";
             // 
@@ -1276,9 +1233,9 @@ namespace Modsim_Game
             lblTotalDamage.BackColor = Color.Transparent;
             lblTotalDamage.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblTotalDamage.ForeColor = Color.FromArgb(80, 80, 80);
-            lblTotalDamage.Location = new Point(1023, 343);
+            lblTotalDamage.Location = new Point(1169, 457);
             lblTotalDamage.Name = "lblTotalDamage";
-            lblTotalDamage.Size = new Size(10, 13);
+            lblTotalDamage.Size = new Size(13, 19);
             lblTotalDamage.TabIndex = 70;
             lblTotalDamage.Text = ".";
             // 
@@ -1288,9 +1245,9 @@ namespace Modsim_Game
             lblTotalDmg.BackColor = Color.Transparent;
             lblTotalDmg.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblTotalDmg.ForeColor = Color.FromArgb(80, 80, 80);
-            lblTotalDmg.Location = new Point(1218, 361);
+            lblTotalDmg.Location = new Point(511, 489);
             lblTotalDmg.Name = "lblTotalDmg";
-            lblTotalDmg.Size = new Size(78, 13);
+            lblTotalDmg.Size = new Size(102, 19);
             lblTotalDmg.TabIndex = 69;
             lblTotalDmg.Text = "TotalDamage:";
             // 
@@ -1300,9 +1257,9 @@ namespace Modsim_Game
             lblUnknown6.BackColor = Color.Transparent;
             lblUnknown6.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblUnknown6.ForeColor = Color.FromArgb(80, 80, 80);
-            lblUnknown6.Location = new Point(1087, 300);
+            lblUnknown6.Location = new Point(1242, 400);
             lblUnknown6.Name = "lblUnknown6";
-            lblUnknown6.Size = new Size(70, 13);
+            lblUnknown6.Size = new Size(81, 19);
             lblUnknown6.TabIndex = 68;
             lblUnknown6.Text = "武器の種類";
             // 
@@ -1313,10 +1270,9 @@ namespace Modsim_Game
             cmbWeapon.EnabledCalc = true;
             cmbWeapon.FormattingEnabled = true;
             cmbWeapon.ItemHeight = 20;
-            cmbWeapon.Location = new Point(1043, 271);
-            cmbWeapon.Margin = new Padding(3, 2, 3, 2);
+            cmbWeapon.Location = new Point(1192, 361);
             cmbWeapon.Name = "cmbWeapon";
-            cmbWeapon.Size = new Size(149, 26);
+            cmbWeapon.Size = new Size(170, 26);
             cmbWeapon.TabIndex = 50;
             cmbWeapon.SelectedIndexChanged += cmbWeapon_SelectedIndexChanged;
             // 
@@ -1326,9 +1282,9 @@ namespace Modsim_Game
             lblWeaponType.BackColor = Color.Transparent;
             lblWeaponType.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblWeaponType.ForeColor = Color.FromArgb(80, 80, 80);
-            lblWeaponType.Location = new Point(885, 267);
+            lblWeaponType.Location = new Point(1011, 356);
             lblWeaponType.Name = "lblWeaponType";
-            lblWeaponType.Size = new Size(145, 25);
+            lblWeaponType.Size = new Size(174, 30);
             lblWeaponType.TabIndex = 2;
             lblWeaponType.Text = "WEAPON TYPE:";
             // 
@@ -1338,9 +1294,9 @@ namespace Modsim_Game
             lblFLEEsymbol.BackColor = Color.Transparent;
             lblFLEEsymbol.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblFLEEsymbol.ForeColor = Color.FromArgb(80, 80, 80);
-            lblFLEEsymbol.Location = new Point(1222, 166);
+            lblFLEEsymbol.Location = new Point(1397, 221);
             lblFLEEsymbol.Name = "lblFLEEsymbol";
-            lblFLEEsymbol.Size = new Size(25, 25);
+            lblFLEEsymbol.Size = new Size(29, 30);
             lblFLEEsymbol.TabIndex = 48;
             lblFLEEsymbol.Text = "+";
             // 
@@ -1350,10 +1306,9 @@ namespace Modsim_Game
             pnlFLEEValue2.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlFLEEValue2.BackgroundImageLayout = ImageLayout.Stretch;
             pnlFLEEValue2.Controls.Add(lblFLEE2);
-            pnlFLEEValue2.Location = new Point(1249, 156);
-            pnlFLEEValue2.Margin = new Padding(3, 2, 3, 2);
+            pnlFLEEValue2.Location = new Point(1427, 208);
             pnlFLEEValue2.Name = "pnlFLEEValue2";
-            pnlFLEEValue2.Size = new Size(55, 40);
+            pnlFLEEValue2.Size = new Size(63, 53);
             pnlFLEEValue2.TabIndex = 47;
             // 
             // lblFLEE2
@@ -1362,9 +1317,9 @@ namespace Modsim_Game
             lblFLEE2.BackColor = Color.Transparent;
             lblFLEE2.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblFLEE2.ForeColor = Color.FromArgb(80, 80, 80);
-            lblFLEE2.Location = new Point(21, 10);
+            lblFLEE2.Location = new Point(24, 13);
             lblFLEE2.Name = "lblFLEE2";
-            lblFLEE2.Size = new Size(22, 25);
+            lblFLEE2.Size = new Size(26, 30);
             lblFLEE2.TabIndex = 0;
             lblFLEE2.Text = "0";
             // 
@@ -1374,10 +1329,9 @@ namespace Modsim_Game
             pnlFLEEValue1.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlFLEEValue1.BackgroundImageLayout = ImageLayout.Stretch;
             pnlFLEEValue1.Controls.Add(lblFLEE1);
-            pnlFLEEValue1.Location = new Point(1171, 156);
-            pnlFLEEValue1.Margin = new Padding(3, 2, 3, 2);
+            pnlFLEEValue1.Location = new Point(1338, 208);
             pnlFLEEValue1.Name = "pnlFLEEValue1";
-            pnlFLEEValue1.Size = new Size(49, 40);
+            pnlFLEEValue1.Size = new Size(56, 53);
             pnlFLEEValue1.TabIndex = 46;
             // 
             // lblFLEE1
@@ -1386,9 +1340,9 @@ namespace Modsim_Game
             lblFLEE1.BackColor = Color.Transparent;
             lblFLEE1.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblFLEE1.ForeColor = Color.FromArgb(80, 80, 80);
-            lblFLEE1.Location = new Point(5, 10);
+            lblFLEE1.Location = new Point(6, 13);
             lblFLEE1.Name = "lblFLEE1";
-            lblFLEE1.Size = new Size(17, 25);
+            lblFLEE1.Size = new Size(19, 30);
             lblFLEE1.TabIndex = 0;
             lblFLEE1.Text = ".";
             // 
@@ -1398,9 +1352,9 @@ namespace Modsim_Game
             lblMDEFsymbol.BackColor = Color.Transparent;
             lblMDEFsymbol.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblMDEFsymbol.ForeColor = Color.FromArgb(80, 80, 80);
-            lblMDEFsymbol.Location = new Point(1222, 121);
+            lblMDEFsymbol.Location = new Point(1397, 161);
             lblMDEFsymbol.Name = "lblMDEFsymbol";
-            lblMDEFsymbol.Size = new Size(25, 25);
+            lblMDEFsymbol.Size = new Size(29, 30);
             lblMDEFsymbol.TabIndex = 45;
             lblMDEFsymbol.Text = "+";
             // 
@@ -1410,9 +1364,9 @@ namespace Modsim_Game
             lblDEFsymbol.BackColor = Color.Transparent;
             lblDEFsymbol.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblDEFsymbol.ForeColor = Color.FromArgb(80, 80, 80);
-            lblDEFsymbol.Location = new Point(1221, 76);
+            lblDEFsymbol.Location = new Point(1395, 101);
             lblDEFsymbol.Name = "lblDEFsymbol";
-            lblDEFsymbol.Size = new Size(25, 25);
+            lblDEFsymbol.Size = new Size(29, 30);
             lblDEFsymbol.TabIndex = 32;
             lblDEFsymbol.Text = "+";
             // 
@@ -1422,10 +1376,9 @@ namespace Modsim_Game
             pnlMDEFValue2.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlMDEFValue2.BackgroundImageLayout = ImageLayout.Stretch;
             pnlMDEFValue2.Controls.Add(lblMDEFValue2);
-            pnlMDEFValue2.Location = new Point(1249, 111);
-            pnlMDEFValue2.Margin = new Padding(3, 2, 3, 2);
+            pnlMDEFValue2.Location = new Point(1427, 148);
             pnlMDEFValue2.Name = "pnlMDEFValue2";
-            pnlMDEFValue2.Size = new Size(55, 40);
+            pnlMDEFValue2.Size = new Size(63, 53);
             pnlMDEFValue2.TabIndex = 43;
             // 
             // lblMDEFValue2
@@ -1434,9 +1387,9 @@ namespace Modsim_Game
             lblMDEFValue2.BackColor = Color.Transparent;
             lblMDEFValue2.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblMDEFValue2.ForeColor = Color.FromArgb(80, 80, 80);
-            lblMDEFValue2.Location = new Point(18, 12);
+            lblMDEFValue2.Location = new Point(21, 16);
             lblMDEFValue2.Name = "lblMDEFValue2";
-            lblMDEFValue2.Size = new Size(22, 25);
+            lblMDEFValue2.Size = new Size(26, 30);
             lblMDEFValue2.TabIndex = 0;
             lblMDEFValue2.Text = "0";
             // 
@@ -1446,10 +1399,9 @@ namespace Modsim_Game
             pnlDEFValue2.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlDEFValue2.BackgroundImageLayout = ImageLayout.Stretch;
             pnlDEFValue2.Controls.Add(lblValueDEF2);
-            pnlDEFValue2.Location = new Point(1249, 66);
-            pnlDEFValue2.Margin = new Padding(3, 2, 3, 2);
+            pnlDEFValue2.Location = new Point(1427, 88);
             pnlDEFValue2.Name = "pnlDEFValue2";
-            pnlDEFValue2.Size = new Size(55, 40);
+            pnlDEFValue2.Size = new Size(63, 53);
             pnlDEFValue2.TabIndex = 41;
             // 
             // lblValueDEF2
@@ -1458,9 +1410,9 @@ namespace Modsim_Game
             lblValueDEF2.BackColor = Color.Transparent;
             lblValueDEF2.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblValueDEF2.ForeColor = Color.FromArgb(80, 80, 80);
-            lblValueDEF2.Location = new Point(18, 12);
+            lblValueDEF2.Location = new Point(21, 16);
             lblValueDEF2.Name = "lblValueDEF2";
-            lblValueDEF2.Size = new Size(22, 25);
+            lblValueDEF2.Size = new Size(26, 30);
             lblValueDEF2.TabIndex = 0;
             lblValueDEF2.Text = "1";
             // 
@@ -1470,10 +1422,9 @@ namespace Modsim_Game
             pnlASPDValue.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlASPDValue.BackgroundImageLayout = ImageLayout.Stretch;
             pnlASPDValue.Controls.Add(lblASPD);
-            pnlASPDValue.Location = new Point(1171, 201);
-            pnlASPDValue.Margin = new Padding(3, 2, 3, 2);
+            pnlASPDValue.Location = new Point(1338, 268);
             pnlASPDValue.Name = "pnlASPDValue";
-            pnlASPDValue.Size = new Size(133, 40);
+            pnlASPDValue.Size = new Size(152, 53);
             pnlASPDValue.TabIndex = 44;
             // 
             // lblASPD
@@ -1482,9 +1433,9 @@ namespace Modsim_Game
             lblASPD.BackColor = Color.Transparent;
             lblASPD.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblASPD.ForeColor = Color.FromArgb(80, 80, 80);
-            lblASPD.Location = new Point(68, 9);
+            lblASPD.Location = new Point(78, 12);
             lblASPD.Name = "lblASPD";
-            lblASPD.Size = new Size(17, 25);
+            lblASPD.Size = new Size(19, 30);
             lblASPD.TabIndex = 0;
             lblASPD.Text = ".";
             // 
@@ -1494,10 +1445,9 @@ namespace Modsim_Game
             pnlMDEFValue1.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlMDEFValue1.BackgroundImageLayout = ImageLayout.Stretch;
             pnlMDEFValue1.Controls.Add(lblMDEFValue1);
-            pnlMDEFValue1.Location = new Point(1171, 111);
-            pnlMDEFValue1.Margin = new Padding(3, 2, 3, 2);
+            pnlMDEFValue1.Location = new Point(1338, 148);
             pnlMDEFValue1.Name = "pnlMDEFValue1";
-            pnlMDEFValue1.Size = new Size(49, 40);
+            pnlMDEFValue1.Size = new Size(56, 53);
             pnlMDEFValue1.TabIndex = 40;
             // 
             // lblMDEFValue1
@@ -1506,9 +1456,9 @@ namespace Modsim_Game
             lblMDEFValue1.BackColor = Color.Transparent;
             lblMDEFValue1.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblMDEFValue1.ForeColor = Color.FromArgb(80, 80, 80);
-            lblMDEFValue1.Location = new Point(9, 9);
+            lblMDEFValue1.Location = new Point(10, 12);
             lblMDEFValue1.Name = "lblMDEFValue1";
-            lblMDEFValue1.Size = new Size(17, 25);
+            lblMDEFValue1.Size = new Size(19, 30);
             lblMDEFValue1.TabIndex = 0;
             lblMDEFValue1.Text = ".";
             // 
@@ -1518,10 +1468,9 @@ namespace Modsim_Game
             pnlValueASPD.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlValueASPD.BackgroundImageLayout = ImageLayout.Stretch;
             pnlValueASPD.Controls.Add(lblNameASPD);
-            pnlValueASPD.Location = new Point(1096, 201);
-            pnlValueASPD.Margin = new Padding(3, 2, 3, 2);
+            pnlValueASPD.Location = new Point(1253, 268);
             pnlValueASPD.Name = "pnlValueASPD";
-            pnlValueASPD.Size = new Size(69, 40);
+            pnlValueASPD.Size = new Size(79, 53);
             pnlValueASPD.TabIndex = 36;
             // 
             // lblNameASPD
@@ -1530,9 +1479,9 @@ namespace Modsim_Game
             lblNameASPD.BackColor = Color.Transparent;
             lblNameASPD.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblNameASPD.ForeColor = Color.FromArgb(80, 80, 80);
-            lblNameASPD.Location = new Point(16, 11);
+            lblNameASPD.Location = new Point(18, 15);
             lblNameASPD.Name = "lblNameASPD";
-            lblNameASPD.Size = new Size(46, 19);
+            lblNameASPD.Size = new Size(55, 23);
             lblNameASPD.TabIndex = 0;
             lblNameASPD.Text = "ASPD";
             // 
@@ -1542,10 +1491,9 @@ namespace Modsim_Game
             pnlDEFValue1.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlDEFValue1.BackgroundImageLayout = ImageLayout.Stretch;
             pnlDEFValue1.Controls.Add(lblValueDEF1);
-            pnlDEFValue1.Location = new Point(1171, 66);
-            pnlDEFValue1.Margin = new Padding(3, 2, 3, 2);
+            pnlDEFValue1.Location = new Point(1338, 88);
             pnlDEFValue1.Name = "pnlDEFValue1";
-            pnlDEFValue1.Size = new Size(49, 40);
+            pnlDEFValue1.Size = new Size(56, 53);
             pnlDEFValue1.TabIndex = 39;
             // 
             // lblValueDEF1
@@ -1554,9 +1502,9 @@ namespace Modsim_Game
             lblValueDEF1.BackColor = Color.Transparent;
             lblValueDEF1.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblValueDEF1.ForeColor = Color.FromArgb(80, 80, 80);
-            lblValueDEF1.Location = new Point(10, 10);
+            lblValueDEF1.Location = new Point(11, 13);
             lblValueDEF1.Name = "lblValueDEF1";
-            lblValueDEF1.Size = new Size(17, 25);
+            lblValueDEF1.Size = new Size(19, 30);
             lblValueDEF1.TabIndex = 0;
             lblValueDEF1.Text = ".";
             // 
@@ -1566,10 +1514,9 @@ namespace Modsim_Game
             pnlValueFLEE.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlValueFLEE.BackgroundImageLayout = ImageLayout.Stretch;
             pnlValueFLEE.Controls.Add(lblNameFLEE);
-            pnlValueFLEE.Location = new Point(1096, 156);
-            pnlValueFLEE.Margin = new Padding(3, 2, 3, 2);
+            pnlValueFLEE.Location = new Point(1253, 208);
             pnlValueFLEE.Name = "pnlValueFLEE";
-            pnlValueFLEE.Size = new Size(69, 40);
+            pnlValueFLEE.Size = new Size(79, 53);
             pnlValueFLEE.TabIndex = 35;
             // 
             // lblNameFLEE
@@ -1578,9 +1525,9 @@ namespace Modsim_Game
             lblNameFLEE.BackColor = Color.Transparent;
             lblNameFLEE.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblNameFLEE.ForeColor = Color.FromArgb(80, 80, 80);
-            lblNameFLEE.Location = new Point(16, 11);
+            lblNameFLEE.Location = new Point(18, 15);
             lblNameFLEE.Name = "lblNameFLEE";
-            lblNameFLEE.Size = new Size(37, 19);
+            lblNameFLEE.Size = new Size(46, 23);
             lblNameFLEE.TabIndex = 0;
             lblNameFLEE.Text = "FLEE";
             // 
@@ -1590,10 +1537,9 @@ namespace Modsim_Game
             pnlValueMDEF.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlValueMDEF.BackgroundImageLayout = ImageLayout.Stretch;
             pnlValueMDEF.Controls.Add(lblNameMDEF);
-            pnlValueMDEF.Location = new Point(1096, 111);
-            pnlValueMDEF.Margin = new Padding(3, 2, 3, 2);
+            pnlValueMDEF.Location = new Point(1253, 148);
             pnlValueMDEF.Name = "pnlValueMDEF";
-            pnlValueMDEF.Size = new Size(69, 40);
+            pnlValueMDEF.Size = new Size(79, 53);
             pnlValueMDEF.TabIndex = 34;
             // 
             // lblNameMDEF
@@ -1602,9 +1548,9 @@ namespace Modsim_Game
             lblNameMDEF.BackColor = Color.Transparent;
             lblNameMDEF.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblNameMDEF.ForeColor = Color.FromArgb(80, 80, 80);
-            lblNameMDEF.Location = new Point(12, 11);
+            lblNameMDEF.Location = new Point(14, 15);
             lblNameMDEF.Name = "lblNameMDEF";
-            lblNameMDEF.Size = new Size(46, 19);
+            lblNameMDEF.Size = new Size(57, 23);
             lblNameMDEF.TabIndex = 0;
             lblNameMDEF.Text = "MDEF";
             // 
@@ -1614,10 +1560,9 @@ namespace Modsim_Game
             pnlValueDEF.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlValueDEF.BackgroundImageLayout = ImageLayout.Stretch;
             pnlValueDEF.Controls.Add(lblNameDEF);
-            pnlValueDEF.Location = new Point(1096, 66);
-            pnlValueDEF.Margin = new Padding(3, 2, 3, 2);
+            pnlValueDEF.Location = new Point(1253, 88);
             pnlValueDEF.Name = "pnlValueDEF";
-            pnlValueDEF.Size = new Size(69, 40);
+            pnlValueDEF.Size = new Size(79, 53);
             pnlValueDEF.TabIndex = 33;
             // 
             // lblNameDEF
@@ -1626,9 +1571,9 @@ namespace Modsim_Game
             lblNameDEF.BackColor = Color.Transparent;
             lblNameDEF.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblNameDEF.ForeColor = Color.FromArgb(80, 80, 80);
-            lblNameDEF.Location = new Point(16, 11);
+            lblNameDEF.Location = new Point(18, 15);
             lblNameDEF.Name = "lblNameDEF";
-            lblNameDEF.Size = new Size(33, 19);
+            lblNameDEF.Size = new Size(41, 23);
             lblNameDEF.TabIndex = 0;
             lblNameDEF.Text = "DEF";
             // 
@@ -1638,9 +1583,9 @@ namespace Modsim_Game
             lblMATKsymbol.BackColor = Color.Transparent;
             lblMATKsymbol.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblMATKsymbol.ForeColor = Color.FromArgb(80, 80, 80);
-            lblMATKsymbol.Location = new Point(1011, 121);
+            lblMATKsymbol.Location = new Point(1155, 161);
             lblMATKsymbol.Name = "lblMATKsymbol";
-            lblMATKsymbol.Size = new Size(25, 25);
+            lblMATKsymbol.Size = new Size(29, 30);
             lblMATKsymbol.TabIndex = 31;
             lblMATKsymbol.Text = "~";
             // 
@@ -1650,9 +1595,9 @@ namespace Modsim_Game
             lblATKSymbol.BackColor = Color.Transparent;
             lblATKSymbol.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblATKSymbol.ForeColor = Color.FromArgb(80, 80, 80);
-            lblATKSymbol.Location = new Point(1009, 76);
+            lblATKSymbol.Location = new Point(1153, 101);
             lblATKSymbol.Name = "lblATKSymbol";
-            lblATKSymbol.Size = new Size(25, 25);
+            lblATKSymbol.Size = new Size(29, 30);
             lblATKSymbol.TabIndex = 1;
             lblATKSymbol.Text = "+";
             // 
@@ -1662,10 +1607,9 @@ namespace Modsim_Game
             pnlValueMATK2.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlValueMATK2.BackgroundImageLayout = ImageLayout.Stretch;
             pnlValueMATK2.Controls.Add(lblMinMatk2);
-            pnlValueMATK2.Location = new Point(1037, 111);
-            pnlValueMATK2.Margin = new Padding(3, 2, 3, 2);
+            pnlValueMATK2.Location = new Point(1185, 148);
             pnlValueMATK2.Name = "pnlValueMATK2";
-            pnlValueMATK2.Size = new Size(55, 40);
+            pnlValueMATK2.Size = new Size(63, 53);
             pnlValueMATK2.TabIndex = 28;
             // 
             // lblMinMatk2
@@ -1674,9 +1618,9 @@ namespace Modsim_Game
             lblMinMatk2.BackColor = Color.Transparent;
             lblMinMatk2.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblMinMatk2.ForeColor = Color.FromArgb(80, 80, 80);
-            lblMinMatk2.Location = new Point(27, 9);
+            lblMinMatk2.Location = new Point(31, 12);
             lblMinMatk2.Name = "lblMinMatk2";
-            lblMinMatk2.Size = new Size(17, 25);
+            lblMinMatk2.Size = new Size(19, 30);
             lblMinMatk2.TabIndex = 0;
             lblMinMatk2.Text = ".";
             // 
@@ -1686,10 +1630,9 @@ namespace Modsim_Game
             pnlValueATK2.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlValueATK2.BackgroundImageLayout = ImageLayout.Stretch;
             pnlValueATK2.Controls.Add(lblAtk2);
-            pnlValueATK2.Location = new Point(1037, 66);
-            pnlValueATK2.Margin = new Padding(3, 2, 3, 2);
+            pnlValueATK2.Location = new Point(1185, 88);
             pnlValueATK2.Name = "pnlValueATK2";
-            pnlValueATK2.Size = new Size(55, 40);
+            pnlValueATK2.Size = new Size(63, 53);
             pnlValueATK2.TabIndex = 27;
             // 
             // lblAtk2
@@ -1698,9 +1641,9 @@ namespace Modsim_Game
             lblAtk2.BackColor = Color.Transparent;
             lblAtk2.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblAtk2.ForeColor = Color.FromArgb(80, 80, 80);
-            lblAtk2.Location = new Point(27, 9);
+            lblAtk2.Location = new Point(31, 12);
             lblAtk2.Name = "lblAtk2";
-            lblAtk2.Size = new Size(17, 25);
+            lblAtk2.Size = new Size(19, 30);
             lblAtk2.TabIndex = 0;
             lblAtk2.Text = ".";
             // 
@@ -1710,10 +1653,9 @@ namespace Modsim_Game
             pnlReqLUK.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlReqLUK.BackgroundImageLayout = ImageLayout.Stretch;
             pnlReqLUK.Controls.Add(lblReqLUK);
-            pnlReqLUK.Location = new Point(787, 291);
-            pnlReqLUK.Margin = new Padding(3, 2, 3, 2);
+            pnlReqLUK.Location = new Point(899, 388);
             pnlReqLUK.Name = "pnlReqLUK";
-            pnlReqLUK.Size = new Size(93, 40);
+            pnlReqLUK.Size = new Size(106, 53);
             pnlReqLUK.TabIndex = 24;
             // 
             // lblReqLUK
@@ -1722,9 +1664,9 @@ namespace Modsim_Game
             lblReqLUK.BackColor = Color.Transparent;
             lblReqLUK.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblReqLUK.ForeColor = Color.FromArgb(80, 80, 80);
-            lblReqLUK.Location = new Point(42, 7);
+            lblReqLUK.Location = new Point(48, 9);
             lblReqLUK.Name = "lblReqLUK";
-            lblReqLUK.Size = new Size(17, 25);
+            lblReqLUK.Size = new Size(19, 30);
             lblReqLUK.TabIndex = 0;
             lblReqLUK.Text = ".";
             // 
@@ -1734,10 +1676,9 @@ namespace Modsim_Game
             pnlValueCRIT.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlValueCRIT.BackgroundImageLayout = ImageLayout.Stretch;
             pnlValueCRIT.Controls.Add(lblCrit);
-            pnlValueCRIT.Location = new Point(959, 201);
-            pnlValueCRIT.Margin = new Padding(3, 2, 3, 2);
+            pnlValueCRIT.Location = new Point(1096, 268);
             pnlValueCRIT.Name = "pnlValueCRIT";
-            pnlValueCRIT.Size = new Size(133, 40);
+            pnlValueCRIT.Size = new Size(152, 53);
             pnlValueCRIT.TabIndex = 28;
             // 
             // lblCrit
@@ -1746,9 +1687,9 @@ namespace Modsim_Game
             lblCrit.BackColor = Color.Transparent;
             lblCrit.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblCrit.ForeColor = Color.FromArgb(80, 80, 80);
-            lblCrit.Location = new Point(78, 7);
+            lblCrit.Location = new Point(89, 9);
             lblCrit.Name = "lblCrit";
-            lblCrit.Size = new Size(22, 25);
+            lblCrit.Size = new Size(26, 30);
             lblCrit.TabIndex = 0;
             lblCrit.Text = "0";
             // 
@@ -1758,10 +1699,9 @@ namespace Modsim_Game
             pnlValueHIT.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlValueHIT.BackgroundImageLayout = ImageLayout.Stretch;
             pnlValueHIT.Controls.Add(lblHit);
-            pnlValueHIT.Location = new Point(959, 156);
-            pnlValueHIT.Margin = new Padding(3, 2, 3, 2);
+            pnlValueHIT.Location = new Point(1096, 208);
             pnlValueHIT.Name = "pnlValueHIT";
-            pnlValueHIT.Size = new Size(133, 40);
+            pnlValueHIT.Size = new Size(152, 53);
             pnlValueHIT.TabIndex = 27;
             // 
             // lblHit
@@ -1770,9 +1710,9 @@ namespace Modsim_Game
             lblHit.BackColor = Color.Transparent;
             lblHit.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblHit.ForeColor = Color.FromArgb(80, 80, 80);
-            lblHit.Location = new Point(76, 10);
+            lblHit.Location = new Point(87, 13);
             lblHit.Name = "lblHit";
-            lblHit.Size = new Size(22, 25);
+            lblHit.Size = new Size(26, 30);
             lblHit.TabIndex = 0;
             lblHit.Text = "0";
             // 
@@ -1782,10 +1722,9 @@ namespace Modsim_Game
             pnlReqVIT.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlReqVIT.BackgroundImageLayout = ImageLayout.Stretch;
             pnlReqVIT.Controls.Add(lblReqVIT);
-            pnlReqVIT.Location = new Point(787, 156);
-            pnlReqVIT.Margin = new Padding(3, 2, 3, 2);
+            pnlReqVIT.Location = new Point(899, 208);
             pnlReqVIT.Name = "pnlReqVIT";
-            pnlReqVIT.Size = new Size(93, 40);
+            pnlReqVIT.Size = new Size(106, 53);
             pnlReqVIT.TabIndex = 21;
             // 
             // lblReqVIT
@@ -1794,9 +1733,9 @@ namespace Modsim_Game
             lblReqVIT.BackColor = Color.Transparent;
             lblReqVIT.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblReqVIT.ForeColor = Color.FromArgb(80, 80, 80);
-            lblReqVIT.Location = new Point(42, 7);
+            lblReqVIT.Location = new Point(48, 9);
             lblReqVIT.Name = "lblReqVIT";
-            lblReqVIT.Size = new Size(17, 25);
+            lblReqVIT.Size = new Size(19, 30);
             lblReqVIT.TabIndex = 0;
             lblReqVIT.Text = ".";
             // 
@@ -1806,10 +1745,9 @@ namespace Modsim_Game
             pnlValueMATK1.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlValueMATK1.BackgroundImageLayout = ImageLayout.Stretch;
             pnlValueMATK1.Controls.Add(lblMinMatk1);
-            pnlValueMATK1.Location = new Point(959, 111);
-            pnlValueMATK1.Margin = new Padding(3, 2, 3, 2);
+            pnlValueMATK1.Location = new Point(1096, 148);
             pnlValueMATK1.Name = "pnlValueMATK1";
-            pnlValueMATK1.Size = new Size(49, 40);
+            pnlValueMATK1.Size = new Size(56, 53);
             pnlValueMATK1.TabIndex = 26;
             // 
             // lblMinMatk1
@@ -1818,9 +1756,9 @@ namespace Modsim_Game
             lblMinMatk1.BackColor = Color.Transparent;
             lblMinMatk1.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblMinMatk1.ForeColor = Color.FromArgb(80, 80, 80);
-            lblMinMatk1.Location = new Point(14, 8);
+            lblMinMatk1.Location = new Point(16, 11);
             lblMinMatk1.Name = "lblMinMatk1";
-            lblMinMatk1.Size = new Size(17, 25);
+            lblMinMatk1.Size = new Size(19, 30);
             lblMinMatk1.TabIndex = 0;
             lblMinMatk1.Text = ".";
             // 
@@ -1830,10 +1768,9 @@ namespace Modsim_Game
             pnlCRIT.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlCRIT.BackgroundImageLayout = ImageLayout.Stretch;
             pnlCRIT.Controls.Add(lblNameCRIT);
-            pnlCRIT.Location = new Point(885, 201);
-            pnlCRIT.Margin = new Padding(3, 2, 3, 2);
+            pnlCRIT.Location = new Point(1011, 268);
             pnlCRIT.Name = "pnlCRIT";
-            pnlCRIT.Size = new Size(69, 40);
+            pnlCRIT.Size = new Size(79, 53);
             pnlCRIT.TabIndex = 22;
             // 
             // lblNameCRIT
@@ -1842,9 +1779,9 @@ namespace Modsim_Game
             lblNameCRIT.BackColor = Color.Transparent;
             lblNameCRIT.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblNameCRIT.ForeColor = Color.FromArgb(80, 80, 80);
-            lblNameCRIT.Location = new Point(24, 11);
+            lblNameCRIT.Location = new Point(27, 15);
             lblNameCRIT.Name = "lblNameCRIT";
-            lblNameCRIT.Size = new Size(39, 19);
+            lblNameCRIT.Size = new Size(47, 23);
             lblNameCRIT.TabIndex = 0;
             lblNameCRIT.Text = "CRIT";
             // 
@@ -1854,10 +1791,9 @@ namespace Modsim_Game
             pnlValueATK1.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlValueATK1.BackgroundImageLayout = ImageLayout.Stretch;
             pnlValueATK1.Controls.Add(lblAtk1);
-            pnlValueATK1.Location = new Point(959, 66);
-            pnlValueATK1.Margin = new Padding(3, 2, 3, 2);
+            pnlValueATK1.Location = new Point(1096, 88);
             pnlValueATK1.Name = "pnlValueATK1";
-            pnlValueATK1.Size = new Size(49, 40);
+            pnlValueATK1.Size = new Size(56, 53);
             pnlValueATK1.TabIndex = 25;
             // 
             // lblAtk1
@@ -1866,9 +1802,9 @@ namespace Modsim_Game
             lblAtk1.BackColor = Color.Transparent;
             lblAtk1.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblAtk1.ForeColor = Color.FromArgb(80, 80, 80);
-            lblAtk1.Location = new Point(14, 9);
+            lblAtk1.Location = new Point(16, 12);
             lblAtk1.Name = "lblAtk1";
-            lblAtk1.Size = new Size(17, 25);
+            lblAtk1.Size = new Size(19, 30);
             lblAtk1.TabIndex = 0;
             lblAtk1.Text = ".";
             // 
@@ -1878,10 +1814,9 @@ namespace Modsim_Game
             pnlReqDEX.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlReqDEX.BackgroundImageLayout = ImageLayout.Stretch;
             pnlReqDEX.Controls.Add(lblReqDEX);
-            pnlReqDEX.Location = new Point(787, 246);
-            pnlReqDEX.Margin = new Padding(3, 2, 3, 2);
+            pnlReqDEX.Location = new Point(899, 328);
             pnlReqDEX.Name = "pnlReqDEX";
-            pnlReqDEX.Size = new Size(93, 40);
+            pnlReqDEX.Size = new Size(106, 53);
             pnlReqDEX.TabIndex = 23;
             // 
             // lblReqDEX
@@ -1890,9 +1825,9 @@ namespace Modsim_Game
             lblReqDEX.BackColor = Color.Transparent;
             lblReqDEX.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblReqDEX.ForeColor = Color.FromArgb(80, 80, 80);
-            lblReqDEX.Location = new Point(42, 7);
+            lblReqDEX.Location = new Point(48, 9);
             lblReqDEX.Name = "lblReqDEX";
-            lblReqDEX.Size = new Size(17, 25);
+            lblReqDEX.Size = new Size(19, 30);
             lblReqDEX.TabIndex = 0;
             lblReqDEX.Text = ".";
             // 
@@ -1902,10 +1837,9 @@ namespace Modsim_Game
             pnlHIT.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlHIT.BackgroundImageLayout = ImageLayout.Stretch;
             pnlHIT.Controls.Add(lblNameHIT);
-            pnlHIT.Location = new Point(885, 156);
-            pnlHIT.Margin = new Padding(3, 2, 3, 2);
+            pnlHIT.Location = new Point(1011, 208);
             pnlHIT.Name = "pnlHIT";
-            pnlHIT.Size = new Size(69, 40);
+            pnlHIT.Size = new Size(79, 53);
             pnlHIT.TabIndex = 21;
             // 
             // lblNameHIT
@@ -1914,9 +1848,9 @@ namespace Modsim_Game
             lblNameHIT.BackColor = Color.Transparent;
             lblNameHIT.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblNameHIT.ForeColor = Color.FromArgb(80, 80, 80);
-            lblNameHIT.Location = new Point(24, 11);
+            lblNameHIT.Location = new Point(27, 15);
             lblNameHIT.Name = "lblNameHIT";
-            lblNameHIT.Size = new Size(32, 19);
+            lblNameHIT.Size = new Size(38, 23);
             lblNameHIT.TabIndex = 0;
             lblNameHIT.Text = "HIT";
             // 
@@ -1926,10 +1860,9 @@ namespace Modsim_Game
             pnlReqAGI.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlReqAGI.BackgroundImageLayout = ImageLayout.Stretch;
             pnlReqAGI.Controls.Add(lblReqAGI);
-            pnlReqAGI.Location = new Point(787, 111);
-            pnlReqAGI.Margin = new Padding(3, 2, 3, 2);
+            pnlReqAGI.Location = new Point(899, 148);
             pnlReqAGI.Name = "pnlReqAGI";
-            pnlReqAGI.Size = new Size(93, 40);
+            pnlReqAGI.Size = new Size(106, 53);
             pnlReqAGI.TabIndex = 21;
             // 
             // lblReqAGI
@@ -1938,9 +1871,9 @@ namespace Modsim_Game
             lblReqAGI.BackColor = Color.Transparent;
             lblReqAGI.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblReqAGI.ForeColor = Color.FromArgb(80, 80, 80);
-            lblReqAGI.Location = new Point(42, 7);
+            lblReqAGI.Location = new Point(48, 9);
             lblReqAGI.Name = "lblReqAGI";
-            lblReqAGI.Size = new Size(17, 25);
+            lblReqAGI.Size = new Size(19, 30);
             lblReqAGI.TabIndex = 0;
             lblReqAGI.Text = ".";
             // 
@@ -1950,10 +1883,9 @@ namespace Modsim_Game
             pnlMATK.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlMATK.BackgroundImageLayout = ImageLayout.Stretch;
             pnlMATK.Controls.Add(lblNameMATK);
-            pnlMATK.Location = new Point(885, 111);
-            pnlMATK.Margin = new Padding(3, 2, 3, 2);
+            pnlMATK.Location = new Point(1011, 148);
             pnlMATK.Name = "pnlMATK";
-            pnlMATK.Size = new Size(69, 40);
+            pnlMATK.Size = new Size(79, 53);
             pnlMATK.TabIndex = 20;
             // 
             // lblNameMATK
@@ -1962,9 +1894,9 @@ namespace Modsim_Game
             lblNameMATK.BackColor = Color.Transparent;
             lblNameMATK.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblNameMATK.ForeColor = Color.FromArgb(80, 80, 80);
-            lblNameMATK.Location = new Point(21, 11);
+            lblNameMATK.Location = new Point(24, 15);
             lblNameMATK.Name = "lblNameMATK";
-            lblNameMATK.Size = new Size(48, 19);
+            lblNameMATK.Size = new Size(58, 23);
             lblNameMATK.TabIndex = 0;
             lblNameMATK.Text = "MATK";
             // 
@@ -1974,10 +1906,9 @@ namespace Modsim_Game
             pnlPrINT.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlPrINT.BackgroundImageLayout = ImageLayout.Stretch;
             pnlPrINT.Controls.Add(lblReqINT);
-            pnlPrINT.Location = new Point(787, 201);
-            pnlPrINT.Margin = new Padding(3, 2, 3, 2);
+            pnlPrINT.Location = new Point(899, 268);
             pnlPrINT.Name = "pnlPrINT";
-            pnlPrINT.Size = new Size(93, 40);
+            pnlPrINT.Size = new Size(106, 53);
             pnlPrINT.TabIndex = 22;
             // 
             // lblReqINT
@@ -1986,9 +1917,9 @@ namespace Modsim_Game
             lblReqINT.BackColor = Color.Transparent;
             lblReqINT.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblReqINT.ForeColor = Color.FromArgb(80, 80, 80);
-            lblReqINT.Location = new Point(42, 7);
+            lblReqINT.Location = new Point(48, 9);
             lblReqINT.Name = "lblReqINT";
-            lblReqINT.Size = new Size(17, 25);
+            lblReqINT.Size = new Size(19, 30);
             lblReqINT.TabIndex = 0;
             lblReqINT.Text = ".";
             // 
@@ -1998,10 +1929,9 @@ namespace Modsim_Game
             pnlATK.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlATK.BackgroundImageLayout = ImageLayout.Stretch;
             pnlATK.Controls.Add(lblNameATK);
-            pnlATK.Location = new Point(885, 66);
-            pnlATK.Margin = new Padding(3, 2, 3, 2);
+            pnlATK.Location = new Point(1011, 88);
             pnlATK.Name = "pnlATK";
-            pnlATK.Size = new Size(69, 40);
+            pnlATK.Size = new Size(79, 53);
             pnlATK.TabIndex = 19;
             // 
             // lblNameATK
@@ -2010,9 +1940,9 @@ namespace Modsim_Game
             lblNameATK.BackColor = Color.Transparent;
             lblNameATK.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblNameATK.ForeColor = Color.FromArgb(80, 80, 80);
-            lblNameATK.Location = new Point(24, 11);
+            lblNameATK.Location = new Point(27, 15);
             lblNameATK.Name = "lblNameATK";
-            lblNameATK.Size = new Size(35, 19);
+            lblNameATK.Size = new Size(42, 23);
             lblNameATK.TabIndex = 0;
             lblNameATK.Text = "ATK";
             // 
@@ -2022,10 +1952,9 @@ namespace Modsim_Game
             pnlReqSTR.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlReqSTR.BackgroundImageLayout = ImageLayout.Stretch;
             pnlReqSTR.Controls.Add(lblReqSTR);
-            pnlReqSTR.Location = new Point(787, 66);
-            pnlReqSTR.Margin = new Padding(3, 2, 3, 2);
+            pnlReqSTR.Location = new Point(899, 88);
             pnlReqSTR.Name = "pnlReqSTR";
-            pnlReqSTR.Size = new Size(93, 40);
+            pnlReqSTR.Size = new Size(106, 53);
             pnlReqSTR.TabIndex = 20;
             // 
             // lblReqSTR
@@ -2034,9 +1963,9 @@ namespace Modsim_Game
             lblReqSTR.BackColor = Color.Transparent;
             lblReqSTR.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblReqSTR.ForeColor = Color.FromArgb(80, 80, 80);
-            lblReqSTR.Location = new Point(42, 7);
+            lblReqSTR.Location = new Point(48, 9);
             lblReqSTR.Name = "lblReqSTR";
-            lblReqSTR.Size = new Size(17, 25);
+            lblReqSTR.Size = new Size(19, 30);
             lblReqSTR.TabIndex = 0;
             lblReqSTR.Text = ".";
             // 
@@ -2046,13 +1975,12 @@ namespace Modsim_Game
             txtLUK.EnabledCalc = true;
             txtLUK.Font = new Font("Segoe UI", 9F);
             txtLUK.ForeColor = Color.FromArgb(124, 133, 142);
-            txtLUK.Location = new Point(556, 291);
-            txtLUK.Margin = new Padding(3, 2, 3, 2);
+            txtLUK.Location = new Point(635, 388);
             txtLUK.MaxLength = 2;
             txtLUK.MultiLine = false;
             txtLUK.Name = "txtLUK";
             txtLUK.ReadOnly = false;
-            txtLUK.Size = new Size(64, 40);
+            txtLUK.Size = new Size(73, 53);
             txtLUK.TabIndex = 19;
             txtLUK.TextAlign = HorizontalAlignment.Center;
             txtLUK.UseSystemPasswordChar = false;
@@ -2064,13 +1992,12 @@ namespace Modsim_Game
             txtDEX.EnabledCalc = true;
             txtDEX.Font = new Font("Segoe UI", 9F);
             txtDEX.ForeColor = Color.FromArgb(124, 133, 142);
-            txtDEX.Location = new Point(556, 246);
-            txtDEX.Margin = new Padding(3, 2, 3, 2);
+            txtDEX.Location = new Point(635, 328);
             txtDEX.MaxLength = 2;
             txtDEX.MultiLine = false;
             txtDEX.Name = "txtDEX";
             txtDEX.ReadOnly = false;
-            txtDEX.Size = new Size(64, 40);
+            txtDEX.Size = new Size(73, 53);
             txtDEX.TabIndex = 17;
             txtDEX.TextAlign = HorizontalAlignment.Center;
             txtDEX.UseSystemPasswordChar = false;
@@ -2082,10 +2009,9 @@ namespace Modsim_Game
             pnlLUK.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlLUK.BackgroundImageLayout = ImageLayout.Stretch;
             pnlLUK.Controls.Add(lblLUK);
-            pnlLUK.Location = new Point(455, 291);
-            pnlLUK.Margin = new Padding(3, 2, 3, 2);
+            pnlLUK.Location = new Point(520, 388);
             pnlLUK.Name = "pnlLUK";
-            pnlLUK.Size = new Size(60, 40);
+            pnlLUK.Size = new Size(69, 53);
             pnlLUK.TabIndex = 18;
             // 
             // lblLUK
@@ -2094,9 +2020,9 @@ namespace Modsim_Game
             lblLUK.BackColor = Color.Transparent;
             lblLUK.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblLUK.ForeColor = Color.FromArgb(80, 80, 80);
-            lblLUK.Location = new Point(14, 10);
+            lblLUK.Location = new Point(16, 13);
             lblLUK.Name = "lblLUK";
-            lblLUK.Size = new Size(35, 19);
+            lblLUK.Size = new Size(42, 23);
             lblLUK.TabIndex = 0;
             lblLUK.Text = "LUK";
             // 
@@ -2106,10 +2032,9 @@ namespace Modsim_Game
             pnlDEX.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlDEX.BackgroundImageLayout = ImageLayout.Stretch;
             pnlDEX.Controls.Add(lblDEX);
-            pnlDEX.Location = new Point(455, 246);
-            pnlDEX.Margin = new Padding(3, 2, 3, 2);
+            pnlDEX.Location = new Point(520, 328);
             pnlDEX.Name = "pnlDEX";
-            pnlDEX.Size = new Size(60, 40);
+            pnlDEX.Size = new Size(69, 53);
             pnlDEX.TabIndex = 16;
             // 
             // lblDEX
@@ -2118,9 +2043,9 @@ namespace Modsim_Game
             lblDEX.BackColor = Color.Transparent;
             lblDEX.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblDEX.ForeColor = Color.FromArgb(80, 80, 80);
-            lblDEX.Location = new Point(11, 10);
+            lblDEX.Location = new Point(13, 13);
             lblDEX.Name = "lblDEX";
-            lblDEX.Size = new Size(35, 19);
+            lblDEX.Size = new Size(43, 23);
             lblDEX.TabIndex = 0;
             lblDEX.Text = "DEX";
             // 
@@ -2130,13 +2055,12 @@ namespace Modsim_Game
             txtINT.EnabledCalc = true;
             txtINT.Font = new Font("Segoe UI", 9F);
             txtINT.ForeColor = Color.FromArgb(124, 133, 142);
-            txtINT.Location = new Point(556, 201);
-            txtINT.Margin = new Padding(3, 2, 3, 2);
+            txtINT.Location = new Point(635, 268);
             txtINT.MaxLength = 2;
             txtINT.MultiLine = false;
             txtINT.Name = "txtINT";
             txtINT.ReadOnly = false;
-            txtINT.Size = new Size(64, 40);
+            txtINT.Size = new Size(73, 53);
             txtINT.TabIndex = 15;
             txtINT.TextAlign = HorizontalAlignment.Center;
             txtINT.UseSystemPasswordChar = false;
@@ -2148,13 +2072,12 @@ namespace Modsim_Game
             txtVIT.EnabledCalc = true;
             txtVIT.Font = new Font("Segoe UI", 9F);
             txtVIT.ForeColor = Color.FromArgb(124, 133, 142);
-            txtVIT.Location = new Point(556, 156);
-            txtVIT.Margin = new Padding(3, 2, 3, 2);
+            txtVIT.Location = new Point(635, 208);
             txtVIT.MaxLength = 2;
             txtVIT.MultiLine = false;
             txtVIT.Name = "txtVIT";
             txtVIT.ReadOnly = false;
-            txtVIT.Size = new Size(64, 40);
+            txtVIT.Size = new Size(73, 53);
             txtVIT.TabIndex = 13;
             txtVIT.TextAlign = HorizontalAlignment.Center;
             txtVIT.UseSystemPasswordChar = false;
@@ -2166,10 +2089,9 @@ namespace Modsim_Game
             pnlINT.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlINT.BackgroundImageLayout = ImageLayout.Stretch;
             pnlINT.Controls.Add(lblINT);
-            pnlINT.Location = new Point(455, 201);
-            pnlINT.Margin = new Padding(3, 2, 3, 2);
+            pnlINT.Location = new Point(520, 268);
             pnlINT.Name = "pnlINT";
-            pnlINT.Size = new Size(60, 40);
+            pnlINT.Size = new Size(69, 53);
             pnlINT.TabIndex = 14;
             // 
             // lblINT
@@ -2178,9 +2100,9 @@ namespace Modsim_Game
             lblINT.BackColor = Color.Transparent;
             lblINT.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblINT.ForeColor = Color.FromArgb(80, 80, 80);
-            lblINT.Location = new Point(14, 10);
+            lblINT.Location = new Point(16, 13);
             lblINT.Name = "lblINT";
-            lblINT.Size = new Size(32, 19);
+            lblINT.Size = new Size(38, 23);
             lblINT.TabIndex = 0;
             lblINT.Text = "INT";
             // 
@@ -2190,10 +2112,9 @@ namespace Modsim_Game
             pnlVIT.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlVIT.BackgroundImageLayout = ImageLayout.Stretch;
             pnlVIT.Controls.Add(lblVIT);
-            pnlVIT.Location = new Point(455, 156);
-            pnlVIT.Margin = new Padding(3, 2, 3, 2);
+            pnlVIT.Location = new Point(520, 208);
             pnlVIT.Name = "pnlVIT";
-            pnlVIT.Size = new Size(60, 40);
+            pnlVIT.Size = new Size(69, 53);
             pnlVIT.TabIndex = 12;
             // 
             // lblVIT
@@ -2202,9 +2123,9 @@ namespace Modsim_Game
             lblVIT.BackColor = Color.Transparent;
             lblVIT.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblVIT.ForeColor = Color.FromArgb(80, 80, 80);
-            lblVIT.Location = new Point(14, 10);
+            lblVIT.Location = new Point(16, 13);
             lblVIT.Name = "lblVIT";
-            lblVIT.Size = new Size(30, 19);
+            lblVIT.Size = new Size(36, 23);
             lblVIT.TabIndex = 0;
             lblVIT.Text = "VIT";
             // 
@@ -2214,13 +2135,12 @@ namespace Modsim_Game
             txtAGI.EnabledCalc = true;
             txtAGI.Font = new Font("Segoe UI", 9F);
             txtAGI.ForeColor = Color.FromArgb(124, 133, 142);
-            txtAGI.Location = new Point(556, 111);
-            txtAGI.Margin = new Padding(3, 2, 3, 2);
+            txtAGI.Location = new Point(635, 148);
             txtAGI.MaxLength = 2;
             txtAGI.MultiLine = false;
             txtAGI.Name = "txtAGI";
             txtAGI.ReadOnly = false;
-            txtAGI.Size = new Size(64, 40);
+            txtAGI.Size = new Size(73, 53);
             txtAGI.TabIndex = 11;
             txtAGI.TextAlign = HorizontalAlignment.Center;
             txtAGI.UseSystemPasswordChar = false;
@@ -2232,13 +2152,12 @@ namespace Modsim_Game
             txtSTR.EnabledCalc = true;
             txtSTR.Font = new Font("Segoe UI", 9F);
             txtSTR.ForeColor = Color.FromArgb(124, 133, 142);
-            txtSTR.Location = new Point(556, 66);
-            txtSTR.Margin = new Padding(3, 2, 3, 2);
+            txtSTR.Location = new Point(635, 88);
             txtSTR.MaxLength = 2;
             txtSTR.MultiLine = false;
             txtSTR.Name = "txtSTR";
             txtSTR.ReadOnly = false;
-            txtSTR.Size = new Size(64, 40);
+            txtSTR.Size = new Size(73, 53);
             txtSTR.TabIndex = 9;
             txtSTR.TextAlign = HorizontalAlignment.Center;
             txtSTR.UseSystemPasswordChar = false;
@@ -2250,10 +2169,9 @@ namespace Modsim_Game
             pnlAGI.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlAGI.BackgroundImageLayout = ImageLayout.Stretch;
             pnlAGI.Controls.Add(lblAGI);
-            pnlAGI.Location = new Point(455, 111);
-            pnlAGI.Margin = new Padding(3, 2, 3, 2);
+            pnlAGI.Location = new Point(520, 148);
             pnlAGI.Name = "pnlAGI";
-            pnlAGI.Size = new Size(60, 40);
+            pnlAGI.Size = new Size(69, 53);
             pnlAGI.TabIndex = 10;
             // 
             // lblAGI
@@ -2262,9 +2180,9 @@ namespace Modsim_Game
             lblAGI.BackColor = Color.Transparent;
             lblAGI.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblAGI.ForeColor = Color.FromArgb(80, 80, 80);
-            lblAGI.Location = new Point(14, 10);
+            lblAGI.Location = new Point(16, 13);
             lblAGI.Name = "lblAGI";
-            lblAGI.Size = new Size(33, 19);
+            lblAGI.Size = new Size(39, 23);
             lblAGI.TabIndex = 0;
             lblAGI.Text = "AGI";
             // 
@@ -2274,10 +2192,9 @@ namespace Modsim_Game
             pnlSTR.BackgroundImage = Properties.Resources.Rectangle_6__4_;
             pnlSTR.BackgroundImageLayout = ImageLayout.Stretch;
             pnlSTR.Controls.Add(lblSTR);
-            pnlSTR.Location = new Point(455, 66);
-            pnlSTR.Margin = new Padding(3, 2, 3, 2);
+            pnlSTR.Location = new Point(520, 88);
             pnlSTR.Name = "pnlSTR";
-            pnlSTR.Size = new Size(60, 40);
+            pnlSTR.Size = new Size(69, 53);
             pnlSTR.TabIndex = 6;
             // 
             // lblSTR
@@ -2286,9 +2203,9 @@ namespace Modsim_Game
             lblSTR.BackColor = Color.Transparent;
             lblSTR.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblSTR.ForeColor = Color.FromArgb(80, 80, 80);
-            lblSTR.Location = new Point(14, 10);
+            lblSTR.Location = new Point(16, 13);
             lblSTR.Name = "lblSTR";
-            lblSTR.Size = new Size(34, 19);
+            lblSTR.Size = new Size(41, 23);
             lblSTR.TabIndex = 0;
             lblSTR.Text = "STR";
             // 
@@ -2298,10 +2215,9 @@ namespace Modsim_Game
             pnlStatusInformation.BackgroundImage = Properties.Resources._4834;
             pnlStatusInformation.BackgroundImageLayout = ImageLayout.Stretch;
             pnlStatusInformation.Controls.Add(lblStatusInformation);
-            pnlStatusInformation.Location = new Point(885, 21);
-            pnlStatusInformation.Margin = new Padding(3, 2, 3, 2);
+            pnlStatusInformation.Location = new Point(1011, 28);
             pnlStatusInformation.Name = "pnlStatusInformation";
-            pnlStatusInformation.Size = new Size(420, 40);
+            pnlStatusInformation.Size = new Size(480, 53);
             pnlStatusInformation.TabIndex = 8;
             // 
             // lblStatusInformation
@@ -2310,9 +2226,9 @@ namespace Modsim_Game
             lblStatusInformation.BackColor = Color.Transparent;
             lblStatusInformation.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblStatusInformation.ForeColor = Color.White;
-            lblStatusInformation.Location = new Point(109, 6);
+            lblStatusInformation.Location = new Point(125, 8);
             lblStatusInformation.Name = "lblStatusInformation";
-            lblStatusInformation.Size = new Size(212, 25);
+            lblStatusInformation.Size = new Size(250, 30);
             lblStatusInformation.TabIndex = 2;
             lblStatusInformation.Text = "STATUS INFORMATION";
             // 
@@ -2322,10 +2238,9 @@ namespace Modsim_Game
             pnlPtsReq.BackgroundImage = Properties.Resources._4834;
             pnlPtsReq.BackgroundImageLayout = ImageLayout.Stretch;
             pnlPtsReq.Controls.Add(lblPtsReq);
-            pnlPtsReq.Location = new Point(787, 21);
-            pnlPtsReq.Margin = new Padding(3, 2, 3, 2);
+            pnlPtsReq.Location = new Point(899, 28);
             pnlPtsReq.Name = "pnlPtsReq";
-            pnlPtsReq.Size = new Size(93, 40);
+            pnlPtsReq.Size = new Size(106, 53);
             pnlPtsReq.TabIndex = 7;
             // 
             // lblPtsReq
@@ -2334,9 +2249,9 @@ namespace Modsim_Game
             lblPtsReq.BackColor = Color.Transparent;
             lblPtsReq.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblPtsReq.ForeColor = Color.White;
-            lblPtsReq.Location = new Point(4, 7);
+            lblPtsReq.Location = new Point(5, 9);
             lblPtsReq.Name = "lblPtsReq";
-            lblPtsReq.Size = new Size(85, 25);
+            lblPtsReq.Size = new Size(101, 30);
             lblPtsReq.TabIndex = 1;
             lblPtsReq.Text = "PTS REQ";
             // 
@@ -2346,10 +2261,9 @@ namespace Modsim_Game
             pnlStats.BackgroundImage = Properties.Resources._4834;
             pnlStats.BackgroundImageLayout = ImageLayout.Stretch;
             pnlStats.Controls.Add(lblSTATS);
-            pnlStats.Location = new Point(455, 21);
-            pnlStats.Margin = new Padding(3, 2, 3, 2);
+            pnlStats.Location = new Point(520, 28);
             pnlStats.Name = "pnlStats";
-            pnlStats.Size = new Size(198, 40);
+            pnlStats.Size = new Size(226, 53);
             pnlStats.TabIndex = 5;
             // 
             // lblSTATS
@@ -2358,9 +2272,9 @@ namespace Modsim_Game
             lblSTATS.BackColor = Color.Transparent;
             lblSTATS.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblSTATS.ForeColor = Color.White;
-            lblSTATS.Location = new Point(71, 6);
+            lblSTATS.Location = new Point(81, 8);
             lblSTATS.Name = "lblSTATS";
-            lblSTATS.Size = new Size(65, 25);
+            lblSTATS.Size = new Size(74, 30);
             lblSTATS.TabIndex = 0;
             lblSTATS.Text = "STATS";
             // 
@@ -2368,11 +2282,10 @@ namespace Modsim_Game
             // 
             pbJobs.BackColor = Color.Gray;
             pbJobs.Image = Properties.Resources.bgForCharacter;
-            pbJobs.Location = new Point(176, 21);
-            pbJobs.Margin = new Padding(3, 2, 3, 2);
+            pbJobs.Location = new Point(201, 28);
             pbJobs.Name = "pbJobs";
             pbJobs.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            pbJobs.Size = new Size(266, 362);
+            pbJobs.Size = new Size(304, 483);
             pbJobs.SizeMode = PictureBoxSizeMode.StretchImage;
             pbJobs.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             pbJobs.TabIndex = 0;
@@ -2390,10 +2303,9 @@ namespace Modsim_Game
             secondPanel.Controls.Add(lblHP);
             secondPanel.Controls.Add(lblTotalHP);
             secondPanel.Controls.Add(lblTotalSp);
-            secondPanel.Location = new Point(92, 161);
-            secondPanel.Margin = new Padding(3, 2, 3, 2);
+            secondPanel.Location = new Point(105, 215);
             secondPanel.Name = "secondPanel";
-            secondPanel.Size = new Size(437, 102);
+            secondPanel.Size = new Size(499, 136);
             secondPanel.TabIndex = 82;
             // 
             // thirdPanel
@@ -2411,10 +2323,9 @@ namespace Modsim_Game
             thirdPanel.Controls.Add(lblJobTitle);
             thirdPanel.Controls.Add(lblHpRegen);
             thirdPanel.Controls.Add(lblSpRegen);
-            thirdPanel.Location = new Point(542, 160);
-            thirdPanel.Margin = new Padding(3, 2, 3, 2);
+            thirdPanel.Location = new Point(619, 213);
             thirdPanel.Name = "thirdPanel";
-            thirdPanel.Size = new Size(862, 102);
+            thirdPanel.Size = new Size(985, 136);
             thirdPanel.TabIndex = 83;
             // 
             // bigLabel1
@@ -2423,45 +2334,44 @@ namespace Modsim_Game
             bigLabel1.BackColor = Color.Transparent;
             bigLabel1.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             bigLabel1.ForeColor = Color.FromArgb(80, 80, 80);
-            bigLabel1.Location = new Point(757, 15);
+            bigLabel1.Location = new Point(865, 20);
             bigLabel1.Name = "bigLabel1";
-            bigLabel1.Size = new Size(77, 13);
+            bigLabel1.Size = new Size(91, 19);
             bigLabel1.TabIndex = 81;
             bigLabel1.Text = "大丈夫ココ？";
             // 
-            // skillsPanel
+            // SkillsBackPanel
             // 
-            skillsPanel.BackColor = Color.Transparent;
-            skillsPanel.BackgroundImage = Properties.Resources.welcome_section;
-            skillsPanel.BackgroundImageLayout = ImageLayout.Stretch;
-            skillsPanel.Controls.Add(bigLabel2);
-            skillsPanel.Controls.Add(aloneComboBox1);
-            skillsPanel.Controls.Add(hopeButton2);
-            skillsPanel.Location = new Point(341, 54);
-            skillsPanel.Margin = new Padding(3, 2, 3, 2);
-            skillsPanel.Name = "skillsPanel";
-            skillsPanel.Size = new Size(921, 661);
-            skillsPanel.TabIndex = 83;
+            SkillsBackPanel.BackColor = Color.Transparent;
+            SkillsBackPanel.BackgroundImage = Properties.Resources.welcome_section;
+            SkillsBackPanel.BackgroundImageLayout = ImageLayout.Stretch;
+            SkillsBackPanel.Controls.Add(ff12);
+            SkillsBackPanel.Controls.Add(bigLabel2);
+            SkillsBackPanel.Controls.Add(aloneComboBox1);
+            SkillsBackPanel.Controls.Add(hopeButton2);
+            SkillsBackPanel.Location = new Point(173, 9);
+            SkillsBackPanel.Name = "SkillsBackPanel";
+            SkillsBackPanel.Size = new Size(1429, 947);
+            SkillsBackPanel.TabIndex = 83;
             // 
-            // hopeButton2
+            // ff12
             // 
-            hopeButton2.BorderColor = Color.FromArgb(220, 223, 230);
-            hopeButton2.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
-            hopeButton2.DangerColor = Color.FromArgb(245, 108, 108);
-            hopeButton2.DefaultColor = Color.FromArgb(255, 255, 255);
-            hopeButton2.Font = new Font("Segoe UI", 12F);
-            hopeButton2.HoverTextColor = Color.FromArgb(48, 49, 51);
-            hopeButton2.InfoColor = Color.FromArgb(144, 147, 153);
-            hopeButton2.Location = new Point(827, 607);
-            hopeButton2.Margin = new Padding(3, 2, 3, 2);
-            hopeButton2.Name = "hopeButton2";
-            hopeButton2.PrimaryColor = SystemColors.ActiveBorder;
-            hopeButton2.Size = new Size(68, 22);
-            hopeButton2.SuccessColor = Color.FromArgb(103, 194, 58);
-            hopeButton2.TabIndex = 88;
-            hopeButton2.Text = "--Back";
-            hopeButton2.TextColor = Color.White;
-            hopeButton2.WarningColor = Color.FromArgb(230, 162, 60);
+            ff12.Location = new Point(20, 143);
+            ff12.Name = "ff12";
+            ff12.Size = new Size(1383, 705);
+            ff12.TabIndex = 89;
+            // 
+            // bigLabel2
+            // 
+            bigLabel2.AutoSize = true;
+            bigLabel2.BackColor = Color.Transparent;
+            bigLabel2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            bigLabel2.ForeColor = Color.Black;
+            bigLabel2.Location = new Point(595, 68);
+            bigLabel2.Name = "bigLabel2";
+            bigLabel2.Size = new Size(135, 23);
+            bigLabel2.TabIndex = 82;
+            bigLabel2.Text = "Skill Simulator:";
             // 
             // aloneComboBox1
             // 
@@ -2473,40 +2383,46 @@ namespace Modsim_Game
             aloneComboBox1.FormattingEnabled = true;
             aloneComboBox1.ItemHeight = 20;
             aloneComboBox1.Items.AddRange(new object[] { "-SELECT CLASS", "Novice", "Swordsman", "Magician", "Archer", "Acolyte", "Merchant", "Thief" });
-            aloneComboBox1.Location = new Point(404, 49);
-            aloneComboBox1.Margin = new Padding(3, 2, 3, 2);
+            aloneComboBox1.Location = new Point(737, 65);
             aloneComboBox1.Name = "aloneComboBox1";
-            aloneComboBox1.Size = new Size(118, 26);
+            aloneComboBox1.Size = new Size(134, 26);
             aloneComboBox1.TabIndex = 82;
             // 
-            // bigLabel2
+            // hopeButton2
             // 
-            bigLabel2.AutoSize = true;
-            bigLabel2.BackColor = Color.Transparent;
-            bigLabel2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            bigLabel2.ForeColor = Color.Black;
-            bigLabel2.Location = new Point(287, 51);
-            bigLabel2.Name = "bigLabel2";
-            bigLabel2.Size = new Size(111, 19);
-            bigLabel2.TabIndex = 82;
-            bigLabel2.Text = "Skill Simulator:";
+            hopeButton2.BorderColor = Color.FromArgb(220, 223, 230);
+            hopeButton2.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            hopeButton2.DangerColor = Color.FromArgb(245, 108, 108);
+            hopeButton2.DefaultColor = Color.FromArgb(255, 255, 255);
+            hopeButton2.Font = new Font("Segoe UI", 12F);
+            hopeButton2.HoverTextColor = Color.FromArgb(48, 49, 51);
+            hopeButton2.InfoColor = Color.FromArgb(144, 147, 153);
+            hopeButton2.Location = new Point(1291, 872);
+            hopeButton2.Name = "hopeButton2";
+            hopeButton2.PrimaryColor = SystemColors.ActiveBorder;
+            hopeButton2.Size = new Size(112, 29);
+            hopeButton2.SuccessColor = Color.FromArgb(103, 194, 58);
+            hopeButton2.TabIndex = 88;
+            hopeButton2.Text = "--Back";
+            hopeButton2.TextColor = Color.White;
+            hopeButton2.WarningColor = Color.FromArgb(230, 162, 60);
+            hopeButton2.Click += hopeButton2_Click;
             // 
             // StatSimForm
             // 
             AllowDrop = true;
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveBorder;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1481, 726);
-            Controls.Add(skillsPanel);
+            ClientSize = new Size(1693, 968);
+            Controls.Add(SkillsBackPanel);
             Controls.Add(thirdPanel);
             Controls.Add(secondPanel);
             Controls.Add(pnlStatusSimulatorControls);
             Controls.Add(mainPanel);
             Controls.Add(lblUnknown8);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "StatSimForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "StatSimForm";
@@ -2526,8 +2442,6 @@ namespace Modsim_Game
             panel5.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
             pnlCharacterInfo.ResumeLayout(false);
             pnlCharacterInfo.PerformLayout();
             pnlFLEEValue2.ResumeLayout(false);
@@ -2607,8 +2521,8 @@ namespace Modsim_Game
             secondPanel.PerformLayout();
             thirdPanel.ResumeLayout(false);
             thirdPanel.PerformLayout();
-            skillsPanel.ResumeLayout(false);
-            skillsPanel.PerformLayout();
+            SkillsBackPanel.ResumeLayout(false);
+            SkillsBackPanel.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -2773,15 +2687,14 @@ namespace Modsim_Game
         private ReaLTaiizor.Controls.BigLabel lblJobBonus4;
         private Panel panel6;
         private ReaLTaiizor.Controls.BigLabel lblJobBonus1;
-        private Panel panel7;
-        private ReaLTaiizor.Controls.BigLabel lblJobBonusTitle;
         private Panel secondPanel;
         private Panel thirdPanel;
         private ReaLTaiizor.Controls.BigLabel bigLabel1;
         private ReaLTaiizor.Controls.HopeButton hopeButton1;
-        private Panel skillsPanel;
+        private Panel SkillsBackPanel;
         private ReaLTaiizor.Controls.HopeButton hopeButton2;
         private ReaLTaiizor.Controls.BigLabel bigLabel2;
         private ReaLTaiizor.Controls.AloneComboBox aloneComboBox1;
+        private FlowLayoutPanel ff12;
     }
 }
