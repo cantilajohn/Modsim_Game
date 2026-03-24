@@ -16,5 +16,10 @@ namespace Modsim_Game
         {
             InitializeComponent();
         }
+
+        private void bigLabel16_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
