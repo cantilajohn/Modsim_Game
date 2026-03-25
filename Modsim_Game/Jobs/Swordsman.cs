@@ -38,8 +38,8 @@ namespace Modsim_Game.Jobs
                 JobLabel = "Swordsman",
                 Unlocked = new List<Skill>
                 {
-                    new Skill("Sword Mastery",               0, 10, "passive"),
-                    new Skill("Increase Recuperative Power", 0, 10, "passive"),
+                    new Skill("Sword Mastery",               0, 10, "passive","Physical"),
+                    new Skill("Increase Recuperative Power", 0, 10, "passive","Physical"),
                     new Skill("Bash",                        0, 10, "active"),
                     new Skill("Provoke",                     0, 10, "active"),
                     new Skill("Moving HP Recovery", 1, 1, "quest", "passive"),

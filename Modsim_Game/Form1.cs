@@ -483,6 +483,7 @@ namespace Modsim_Game
                     _currentSkillTree = JobFactory.GetJob(sel).GetSkillTree();
                     _skillTreePanel.LoadSkillTree(_currentSkillTree);
                     UpdateSkillPointsLabel();
+                    UpdateSkillSidebar(null); // Clear description panel
                 }
             };
             SkillsBackPanel.Controls.Add(btnReset);
@@ -565,11 +566,27 @@ namespace Modsim_Game
                 Font = new Font("Segoe UI", 12, FontStyle.Bold),
                 ForeColor = Color.Black,
                 AutoSize = true,
-                Margin = new Padding(0, 0, 0, 10),
+                Margin = new Padding(0, 0, 0, 2),
                 Width = 300,
                 TextAlign = ContentAlignment.TopCenter
             };
             flow.Controls.Add(lblName);
+
+            // Get Description Data
+            var desc = SkillDescriptionRepository.Get(node.Name);
+
+            // Skill Type Label
+            var lblType = new Label
+            {
+                Text = $"Type: {desc.Type}",
+                Font = new Font("Segoe UI", 9, FontStyle.Italic),
+                ForeColor = Color.FromArgb(120, 120, 120),
+                AutoSize = true,
+                Margin = new Padding(0, 0, 0, 10),
+                Width = 300,
+                TextAlign = ContentAlignment.TopCenter
+            };
+            flow.Controls.Add(lblType);
 
             // Level Controls (+ / -) — only for unlocked, non-quest skills
             if (!node.IsLocked && node.Type != "quest")
@@ -690,8 +707,7 @@ namespace Modsim_Game
                 flow.Controls.Add(btnAutoFulfill);
             }
 
-            // Get Description Data
-            var desc = SkillDescriptionRepository.Get(node.Name);
+            // (Data already fetched above for the Type label)
 
             // 2. Skill Description Box
             var descBox = new FlowLayoutPanel { Width = 290, AutoSize = true, BorderStyle = BorderStyle.FixedSingle, FlowDirection = FlowDirection.TopDown, WrapContents = false, Margin = new Padding(0, 0, 0, 10), Padding = new Padding(8), BackColor = Color.White };
