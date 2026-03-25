@@ -18,6 +18,7 @@ namespace Modsim_Game.Models
         public string Description { get; set; } = string.Empty;
         public string Type { get; set; } = string.Empty;
         public string IconPath { get; set; } = string.Empty;
+        public List<string> RequiredFor { get; set; } = new List<string>();
 
         /// <summary>
         /// A function that calculates a list of effects based on current level and stats.

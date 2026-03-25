@@ -377,12 +377,12 @@ namespace Modsim_Game
                 FlatStyle = FlatStyle.Flat
             };
 
-            // Populate based on job — Use 40-255 for all per user request
-            int endLvl = 255;
-            for (int i = 40; i <= endLvl; i++) cmbSkillJobLvl.Items.Add(i);
+            // Populate based on job — Novice is 1-9, others are 1-50
+            int endLvl = (_currentSkillTree.JobLabel == "Novice") ? 9 : 50;
+            for (int i = 1; i <= endLvl; i++) cmbSkillJobLvl.Items.Add(i);
 
-            cmbSkillJobLvl.SelectedItem = 40;
-            _currentSkillTree.JobLevel = 40;
+            cmbSkillJobLvl.SelectedItem = endLvl;
+            _currentSkillTree.JobLevel = endLvl;
 
             cmbSkillJobLvl.SelectedIndexChanged += (s, ev) =>
             {
@@ -525,7 +525,7 @@ namespace Modsim_Game
                 Dock = DockStyle.Fill,
                 FlowDirection = FlowDirection.TopDown,
                 WrapContents = false,
-                Padding = new Padding(10),
+                Padding = new Padding(5, 10, 10, 10),
                 BackColor = SystemColors.ActiveBorder
             };
             _skillSidebar.Controls.Add(flow);
@@ -591,7 +591,7 @@ namespace Modsim_Game
             // Level Controls (+ / -) — only for unlocked, non-quest skills
             if (!node.IsLocked && node.Type != "quest")
             {
-                var levelFlow = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight, Margin = new Padding(60, 0, 0, 15) };
+                var levelFlow = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight, Margin = new Padding(50, 0, 0, 15) };
                 var btnPlus = new Button { Text = "+", Size = new Size(25, 25), BackColor = Color.FromArgb(40, 180, 100), ForeColor = Color.White, FlatStyle = FlatStyle.Flat };
                 var lblLv = new Label { Text = $"Lv {node.CurrentLevel}/{node.MaxLevel}", Font = new Font("Segoe UI", 10), AutoSize = true, Margin = new Padding(5, 4, 5, 0) };
                 var btnMinus = new Button { Text = "-", Size = new Size(25, 25), BackColor = Color.FromArgb(200, 60, 60), ForeColor = Color.White, FlatStyle = FlatStyle.Flat };
@@ -710,13 +710,25 @@ namespace Modsim_Game
             // (Data already fetched above for the Type label)
 
             // 2. Skill Description Box
-            var descBox = new FlowLayoutPanel { Width = 290, AutoSize = true, BorderStyle = BorderStyle.FixedSingle, FlowDirection = FlowDirection.TopDown, WrapContents = false, Margin = new Padding(0, 0, 0, 10), Padding = new Padding(8), BackColor = Color.White };
+            var descBox = new FlowLayoutPanel { Width = 295, MinimumSize = new Size(295, 0), AutoSize = true, BorderStyle = BorderStyle.FixedSingle, FlowDirection = FlowDirection.TopDown, WrapContents = false, Margin = new Padding(0, 0, 0, 10), Padding = new Padding(8), BackColor = Color.White };
             descBox.Controls.Add(new Label { Text = "Skill Description:", Font = new Font("Segoe UI", 9, FontStyle.Bold), ForeColor = Color.FromArgb(100, 160, 255), AutoSize = true });
             descBox.Controls.Add(new Label { Text = desc.Description, Font = new Font("Segoe UI", 9), ForeColor = Color.FromArgb(80, 80, 80), AutoSize = true, MaximumSize = new Size(270, 0) });
             flow.Controls.Add(descBox);
 
+            // 2.5 Required For Box
+            if (desc.RequiredFor != null && desc.RequiredFor.Count > 0)
+            {
+                var reqBox = new FlowLayoutPanel { Width = 295, MinimumSize = new Size(295, 0), AutoSize = true, BorderStyle = BorderStyle.FixedSingle, FlowDirection = FlowDirection.TopDown, WrapContents = false, Margin = new Padding(0, 0, 0, 10), Padding = new Padding(8), BackColor = Color.White };
+                reqBox.Controls.Add(new Label { Text = "Required for:", Font = new Font("Segoe UI", 9, FontStyle.Bold), ForeColor = Color.FromArgb(200, 60, 60), AutoSize = true });
+                foreach (var req in desc.RequiredFor)
+                {
+                    reqBox.Controls.Add(new Label { Text = "• " + req, Font = new Font("Segoe UI", 8.5f), ForeColor = Color.FromArgb(80, 80, 80), AutoSize = true });
+                }
+                flow.Controls.Add(reqBox);
+            }
+
             // 3. Skill Effects Box
-            var effectBox = new FlowLayoutPanel { Width = 290, AutoSize = true, BorderStyle = BorderStyle.FixedSingle, FlowDirection = FlowDirection.TopDown, WrapContents = false, Margin = new Padding(0, 0, 0, 10), Padding = new Padding(8), BackColor = Color.White };
+            var effectBox = new FlowLayoutPanel { Width = 295, MinimumSize = new Size(295, 0), AutoSize = true, BorderStyle = BorderStyle.FixedSingle, FlowDirection = FlowDirection.TopDown, WrapContents = false, Margin = new Padding(0, 0, 0, 10), Padding = new Padding(8), BackColor = Color.White };
             effectBox.Controls.Add(new Label { Text = "Skill Effects:", Font = new Font("Segoe UI", 9, FontStyle.Bold), ForeColor = Color.FromArgb(100, 160, 255), AutoSize = true });
 
             // Calculate current effects
