@@ -533,15 +533,8 @@ namespace Modsim_Game.Controls
 
             if (e.Button == MouseButtons.Left)
             {
-                // Left click = increment or unlock
-                if (clicked.IsLocked)
-                {
-                    TryUnlockNode(clicked);
-                }
-                else if (clicked.CanIncrement && _skillTree.SkillPointsRemaining > 0)
-                {
-                    IncrementLevel(clicked);
-                }
+                // Left click = select only (show description panel)
+                // Increment/unlock is handled via sidebar buttons
             }
             else if (e.Button == MouseButtons.Right)
             {
@@ -614,6 +607,83 @@ namespace Modsim_Game.Controls
                 
                 SkillChanged?.Invoke(this, EventArgs.Empty);
             }
+        }
+
+        /// <summary>
+        /// Auto-fulfill all prerequisites for a locked skill, leveling parent skills as needed,
+        /// then unlock the target skill.
+        /// </summary>
+        public bool AutoFulfillRequirements(SkillNode node)
+        {
+            if (_skillTree == null || !node.IsLocked) return false;
+
+            // Find the locked skill entry
+            var lockedSkill = _skillTree.Locked
+                .FirstOrDefault(ls => ls.Name.Equals(node.Name, StringComparison.OrdinalIgnoreCase));
+            if (lockedSkill == null) return false;
+
+            // Recursively fulfill all prerequisites
+            if (!FulfillRequirementsRecursive(lockedSkill.Requirement))
+                return false;
+
+            // Now unlock the target skill
+            _skillTree.AutoUpdateUnlocks();
+            _skillTree.AutoUpdateLocks();
+
+            // Rebuild the graph to reflect new state
+            BuildNodeGraph();
+            ComputeLayout();
+            Invalidate();
+            SkillChanged?.Invoke(this, EventArgs.Empty);
+            return true;
+        }
+
+        /// <summary>
+        /// Recursively parses a requirement string and ensures each prerequisite skill
+        /// is unlocked and leveled to meet the requirement.
+        /// </summary>
+        private bool FulfillRequirementsRecursive(string requirement)
+        {
+            if (_skillTree == null || string.IsNullOrWhiteSpace(requirement)) return true;
+
+            var parts = requirement.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+            foreach (var part in parts)
+            {
+                var match = Regex.Match(part, @"^(.+?)\s+Lv\s*(\d+)$", RegexOptions.IgnoreCase);
+                if (!match.Success) continue;
+
+                string reqName = match.Groups[1].Value.Trim();
+                int reqLevel = int.Parse(match.Groups[2].Value);
+
+                // Check if the prerequisite is still locked
+                var lockedPrereq = _skillTree.Locked
+                    .FirstOrDefault(ls => ls.Name.Equals(reqName, StringComparison.OrdinalIgnoreCase));
+                if (lockedPrereq != null)
+                {
+                    // Recursively fulfill ITS prerequisites first
+                    if (!FulfillRequirementsRecursive(lockedPrereq.Requirement))
+                        return false;
+
+                    // After fulfilling sub-prerequisites, auto-update unlocks
+                    _skillTree.AutoUpdateUnlocks();
+                }
+
+                // Now the skill should be in Unlocked — set its level
+                var unlockedSkill = _skillTree.Unlocked
+                    .FirstOrDefault(s => s.Name.Equals(reqName, StringComparison.OrdinalIgnoreCase));
+                if (unlockedSkill == null) return false; // Should not happen
+
+                if (unlockedSkill.CurrentLevel < reqLevel)
+                {
+                    // Calculate cost: how many extra points needed
+                    int levelsNeeded = reqLevel - unlockedSkill.CurrentLevel;
+                    if (_skillTree.SkillPointsRemaining < levelsNeeded)
+                        return false; // Not enough skill points
+
+                    unlockedSkill.CurrentLevel = reqLevel;
+                }
+            }
+            return true;
         }
 
         /// <summary>

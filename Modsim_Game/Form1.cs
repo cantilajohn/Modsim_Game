@@ -571,36 +571,124 @@ namespace Modsim_Game
             };
             flow.Controls.Add(lblName);
 
-            // Level Controls (+ / -)
-            var levelFlow = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight, Margin = new Padding(60, 0, 0, 15) };
-            var btnPlus = new Button { Text = "+", Size = new Size(25, 25), BackColor = Color.FromArgb(40, 180, 100), ForeColor = Color.White, FlatStyle = FlatStyle.Flat };
-            var lblLv = new Label { Text = $"Lv {node.CurrentLevel}/{node.MaxLevel}", Font = new Font("Segoe UI", 10), AutoSize = true, Margin = new Padding(5, 4, 5, 0) };
-            var btnMinus = new Button { Text = "-", Size = new Size(25, 25), BackColor = Color.FromArgb(200, 60, 60), ForeColor = Color.White, FlatStyle = FlatStyle.Flat };
-
-            btnPlus.Click += (s, e) =>
+            // Level Controls (+ / -) — only for unlocked, non-quest skills
+            if (!node.IsLocked && node.Type != "quest")
             {
-                if (_skillTreePanel != null)
-                {
-                    _skillTreePanel.IncrementLevel(node);
-                    // Find the NEW node in the rebuilt graph to avoid stale references
-                    var fresh = _skillTreePanel.AllNodes.FirstOrDefault(n => n.Name == node.Name);
-                    UpdateSkillSidebar(fresh ?? node);
-                }
-            };
-            btnMinus.Click += (s, e) =>
-            {
-                if (_skillTreePanel != null)
-                {
-                    _skillTreePanel.DecrementLevel(node);
-                    var fresh = _skillTreePanel.AllNodes.FirstOrDefault(n => n.Name == node.Name);
-                    UpdateSkillSidebar(fresh ?? node);
-                }
-            };
+                var levelFlow = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight, Margin = new Padding(60, 0, 0, 15) };
+                var btnPlus = new Button { Text = "+", Size = new Size(25, 25), BackColor = Color.FromArgb(40, 180, 100), ForeColor = Color.White, FlatStyle = FlatStyle.Flat };
+                var lblLv = new Label { Text = $"Lv {node.CurrentLevel}/{node.MaxLevel}", Font = new Font("Segoe UI", 10), AutoSize = true, Margin = new Padding(5, 4, 5, 0) };
+                var btnMinus = new Button { Text = "-", Size = new Size(25, 25), BackColor = Color.FromArgb(200, 60, 60), ForeColor = Color.White, FlatStyle = FlatStyle.Flat };
 
-            levelFlow.Controls.Add(btnPlus);
-            levelFlow.Controls.Add(lblLv);
-            levelFlow.Controls.Add(btnMinus);
-            flow.Controls.Add(levelFlow);
+                btnPlus.Click += (s, e) =>
+                {
+                    if (_skillTreePanel != null)
+                    {
+                        _skillTreePanel.IncrementLevel(node);
+                        var fresh = _skillTreePanel.AllNodes.FirstOrDefault(n => n.Name == node.Name);
+                        UpdateSkillSidebar(fresh ?? node);
+                    }
+                };
+                btnMinus.Click += (s, e) =>
+                {
+                    if (_skillTreePanel != null)
+                    {
+                        _skillTreePanel.DecrementLevel(node);
+                        var fresh = _skillTreePanel.AllNodes.FirstOrDefault(n => n.Name == node.Name);
+                        UpdateSkillSidebar(fresh ?? node);
+                    }
+                };
+
+                levelFlow.Controls.Add(btnPlus);
+                levelFlow.Controls.Add(lblLv);
+                levelFlow.Controls.Add(btnMinus);
+                flow.Controls.Add(levelFlow);
+            }
+            else if (node.IsLocked)
+            {
+                // Show locked status with level info
+                var lblLocked = new Label
+                {
+                    Text = $"🔒  LOCKED  (Max Lv {node.MaxLevel})",
+                    Font = new Font("Segoe UI", 10, FontStyle.Bold),
+                    ForeColor = Color.FromArgb(200, 70, 70),
+                    AutoSize = true,
+                    Margin = new Padding(0, 0, 0, 5),
+                    Width = 300,
+                    TextAlign = ContentAlignment.TopCenter
+                };
+                flow.Controls.Add(lblLocked);
+
+                // Show requirement details
+                if (!string.IsNullOrEmpty(node.Requirement))
+                {
+                    var lblReqHeader = new Label
+                    {
+                        Text = "Requirements:",
+                        Font = new Font("Segoe UI", 9, FontStyle.Bold),
+                        ForeColor = Color.FromArgb(180, 130, 50),
+                        AutoSize = true,
+                        Margin = new Padding(0, 0, 0, 2)
+                    };
+                    flow.Controls.Add(lblReqHeader);
+
+                    var lblReqText = new Label
+                    {
+                        Text = node.Requirement,
+                        Font = new Font("Segoe UI", 9),
+                        ForeColor = Color.FromArgb(100, 100, 100),
+                        AutoSize = true,
+                        MaximumSize = new Size(280, 0),
+                        Margin = new Padding(10, 0, 0, 10)
+                    };
+                    flow.Controls.Add(lblReqText);
+                }
+
+                // Auto-Fulfill Requirements Button
+                var btnAutoFulfill = new Button
+                {
+                    Text = "⚡ Auto-Fulfill Requirements",
+                    Font = new Font("Segoe UI", 10, FontStyle.Bold),
+                    Size = new Size(280, 38),
+                    BackColor = Color.FromArgb(50, 130, 200),
+                    ForeColor = Color.White,
+                    FlatStyle = FlatStyle.Flat,
+                    Cursor = Cursors.Hand,
+                    Margin = new Padding(0, 5, 0, 10)
+                };
+                btnAutoFulfill.FlatAppearance.BorderColor = Color.FromArgb(40, 100, 170);
+                btnAutoFulfill.FlatAppearance.BorderSize = 1;
+
+                btnAutoFulfill.Click += (s, e) =>
+                {
+                    if (_skillTreePanel != null)
+                    {
+                        bool success = _skillTreePanel.AutoFulfillRequirements(node);
+                        if (success)
+                        {
+                            UpdateSkillPointsLabel();
+                            // Refresh sidebar with the now-unlocked node
+                            var fresh = _skillTreePanel.AllNodes.FirstOrDefault(n => n.Name == node.Name);
+                            UpdateSkillSidebar(fresh);
+                        }
+                        else
+                        {
+                            // Show failure feedback
+                            btnAutoFulfill.Text = "❌ Not Enough Skill Points!";
+                            btnAutoFulfill.BackColor = Color.FromArgb(180, 50, 50);
+                            var timer = new System.Windows.Forms.Timer { Interval = 2000 };
+                            timer.Tick += (ts, te) =>
+                            {
+                                btnAutoFulfill.Text = "⚡ Auto-Fulfill Requirements";
+                                btnAutoFulfill.BackColor = Color.FromArgb(50, 130, 200);
+                                timer.Stop();
+                                timer.Dispose();
+                            };
+                            timer.Start();
+                        }
+                    }
+                };
+                flow.Controls.Add(btnAutoFulfill);
+            }
 
             // Get Description Data
             var desc = SkillDescriptionRepository.Get(node.Name);
