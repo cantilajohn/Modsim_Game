@@ -299,18 +299,8 @@ namespace Modsim_Game
         }
 
         // ── Navigate to Skills Panel ──
-        private void hopeButton1_Click_1(object sender, EventArgs e)
-        {
-            // Sync Skills dropdown with Main job selection before showing
-            string selectedJob = cmbSelectJob.SelectedItem?.ToString() ?? "Novice";
-            aloneComboBox1.SelectedItem = selectedJob;
+        // ── Navigate to Skills Panel ──
 
-            mainPanel.Hide();
-            secondPanel.Hide();
-            thirdPanel.Hide();
-            pnlStatusSimulatorControls.Hide();
-            SkillsBackPanel.Show();
-        }
 
         //  SKILLS SIMULATOR — Dynamic Panel UI 
         private void SkillJobSelector_SelectedIndexChanged(object sender, EventArgs e)
@@ -333,7 +323,7 @@ namespace Modsim_Game
             var toRemove = new List<Control>();
             foreach (Control c in SkillsBackPanel.Controls)
             {
-                if (c != bigLabel2 && c != aloneComboBox1 && c != hopeButton2)
+                if (c != bigLabel2 && c != aloneComboBox1 && c != button3)
                     toRemove.Add(c);
             }
             foreach (var c in toRemove) { SkillsBackPanel.Controls.Remove(c); c.Dispose(); }
@@ -414,7 +404,7 @@ namespace Modsim_Game
             int sidebarX = Math.Max(960, SkillsBackPanel.Width - sidebarWidth - 20);
 
             // Calculate vertical bounds precisely above the Back button
-            int bottomY = hopeButton2.Location.Y > 0 ? hopeButton2.Location.Y : 872;
+            int bottomY = button3.Location.Y > 0 ? button3.Location.Y : 872;
             int maxPanelBottom = bottomY - 15;
 
             // ── Skill Sidebar (Description) ──
@@ -474,7 +464,7 @@ namespace Modsim_Game
                 Text = "⟲  Reset Skills",
                 Font = new Font("Segoe UI", 9, FontStyle.Bold),
                 Size = new Size(140, 32),
-                Location = new Point(hopeButton2.Left - 140 - 15, bottomY),
+                Location = new Point(button3.Left - 140 - 15, bottomY),
                 BackColor = Color.FromArgb(200, 70, 70),
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Flat,
