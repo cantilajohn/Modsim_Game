@@ -12,7 +12,7 @@ namespace Modsim_Game.Data
         static SkillDescriptionRepository()
         {
             // --- NOVICE ---
-            Add("Basic Skill", "Passive", "n_basicSkills.png", 
+            Add("Basic Skill", "Passive", "n_basicSkills.png",
                 "Enable to apply Basic Interface Skills.", null,
                 (lv, hp, sp) => new List<SkillEffect> {
                     new SkillEffect { Label = "Lv 1", Value = "Enable Trade — exchange items with other characters.", Locked = lv < 1 },
@@ -29,34 +29,34 @@ namespace Modsim_Game.Data
             Add("Trick Dead", "Active", "n_playDead.png", "You lay on the ground like you were dead and aggressive monsters wont target you.\nYou cant recover HP or SP while pretending to be dead.", null, (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "Status", Value = "Pretend Dead" } });
 
             // --- SWORDSMAN ---
-            Add("Sword Mastery", "Passive, Physical", "sw_swordMastery.png", "Increases damage with Daggers and Swords (1-handed only) by 4*SkillLV. This damage ignores modification from Armor and VIT defense.", 
-                new List<string> { "Two-Handed Sword Mastery (Lv 1)" }, 
-                (lv, hp, sp) => new List<SkillEffect> { 
+            Add("Sword Mastery", "Passive, Physical", "sw_swordMastery.png", "Increases damage with Daggers and Swords (1-handed only) by 4*SkillLV. This damage ignores modification from Armor and VIT defense.",
+                new List<string> { "Two-Handed Sword Mastery (Lv 1)" },
+                (lv, hp, sp) => new List<SkillEffect> {
                     new SkillEffect { Label = "Mastery ATK", Value = $"+{4 * lv}", Locked = false }
                 });
-            Add("Two-Handed Sword Mastery", "Passive, Physical", "sw_twoHandedSwordMastery.png", "Increases damage with Two-Handed Swords by 4*SkillLV. This damage ignores modification from Armor and VIT defense.", null, (lv, hp, sp) => new List<SkillEffect> { 
+            Add("Two-Handed Sword Mastery", "Passive, Physical", "sw_twoHandedSwordMastery.png", "Increases damage with Two-Handed Swords by 4*SkillLV. This damage ignores modification from Armor and VIT defense.", null, (lv, hp, sp) => new List<SkillEffect> {
                 new SkillEffect { Label = "Mastery ATK Bonus", Value = $"+{4 * lv}", Locked = false }
             });
-            Add("Increase Recuperative Power", "Passive", "sw_increaseRecuperativePower.png", "Heals ((5*SkillLV) + (Maximum HP*0.002*SkillLV)) HP per 10 full seconds spent standing on one cell. Increases the effect of healing items by (10*SkillLV)%.", null, (lv, hp, sp) => new List<SkillEffect> {
+            Add("Increase HP Recovery", "Passive", "sw_increaseRecuperativePower.png", "Enhance natural HP Recovery.Max HP affects how much HP restoration is increased.HP recovery happens every 10 seconds while standing.But it doesn't work while walking or HP/SP regen disabled.", null, (lv, hp, sp) => new List<SkillEffect> {
                 new SkillEffect { Label = "Standing Recovery", Value = $"{5 * lv} + {(hp * 0.002 * lv):F1} HP / 10s" },
                 new SkillEffect { Label = "Healing Item Effectiveness", Value = $"+{10 * lv}%" }
             });
-            Add("Bash", "Offensive, Physical", "sw_bash.png", "A melee attack with ATK equal to (100+30*SkillLV)%. There is a HIT bonus of 5*SkillLV.", 
-                new List<string> { "Magnum Break (Lv 5)", "Fatal Blow (Lv 6)" }, 
-                (lv, hp, sp) => new List<SkillEffect> { 
+            Add("Bash", "Offensive, Physical", "sw_bash.png", "A melee attack with ATK equal to (100+30*SkillLV)%. There is a HIT bonus of 5*SkillLV.",
+                new List<string> { "Magnum Break (Lv 5)", "Fatal Blow (Lv 6)" },
+                (lv, hp, sp) => new List<SkillEffect> {
                     new SkillEffect { Label = "Damage", Value = $"{100 + 30 * lv}% ATK" },
                     new SkillEffect { Label = "HIT Bonus", Value = $"+{5 * lv}" }
                 });
-            Add("Provoke", "Active", "sw_provoke.png", "Lowers the enemy DEF and VIT DEF by (5+5*SkillLV)% and increases their ATK by (2+3*SkillLV)%. Undead property and Boss monsters are not affected.", 
-                new List<string> { "Endure (Lv 5)" }, 
+            Add("Provoke", "Active", "sw_provoke.png", "Lowers the enemy DEF and VIT DEF by (5+5*SkillLV)% and increases their ATK by (2+3*SkillLV)%. Undead property and Boss monsters are not affected.",
+                new List<string> { "Endure (Lv 5)" },
                 (lv, hp, sp) => new List<SkillEffect> {
                     new SkillEffect { Label = "Success Chance", Value = $"{50 + 3 * lv}%" },
                     new SkillEffect { Label = "Defense Reduction", Value = $"-{5 + 5 * lv}%" },
                     new SkillEffect { Label = "Enemy ATK Increase", Value = $"+{2 + 3 * lv}%" }
                 });
             Add("Moving HP Recovery", "Passive", "sw_movingHpRecovery.png", "Character regenerates HP while walking. Rate is 50% of standing recovery.", null, (lv, hp, sp) => new List<SkillEffect>());
-            Add("Fatal Blow", "Passive, Physical", "sw_fatalBlow.png", "Adds chance of causing stun on target when using Bash level 6 or above. Base Stun Chance is 5%*(Bash SkillLV - 5).", null, (lv, hp, sp) => new List<SkillEffect> { 
-                new SkillEffect { Label = "Base Stun Chance", Value = lv < 6 ? "0% (Needs Bash 6+)" : $"{5 * (lv - 5)}%" } 
+            Add("Fatal Blow", "Passive, Physical", "sw_fatalBlow.png", "Adds chance of causing stun on target when using Bash level 6 or above. Base Stun Chance is 5%*(Bash SkillLV - 5).", null, (lv, hp, sp) => new List<SkillEffect> {
+                new SkillEffect { Label = "Base Stun Chance", Value = lv < 6 ? "0% (Needs Bash 6+)" : $"{5 * (lv - 5)}%" }
             });
             Add("Auto Berserk", "Active, Physical", "sw_autoBerserk.png", "When your HP goes below 25%, you gain the effect of Provoke L10 on yourself.", null, (lv, hp, sp) => new List<SkillEffect>());
             Add("Magnum Break", "Active, Physical", "sw_magnumBreak.png", "5x5 cells, Fire property splash attack with ATK of (100+20*SkillLV)% and a +10*SkillLV bonus to HIT.", null, (lv, hp, sp) => new List<SkillEffect> {
@@ -64,44 +64,44 @@ namespace Modsim_Game.Data
                 new SkillEffect { Label = "HIT Bonus", Value = $"+{10 * lv}" },
                 new SkillEffect { Label = "Elemental Buff", Value = "+20% Fire ATK (10s)" }
             });
-            Add("Endure", "Active, Physical", "sw_endure.png", "Makes character skip 'flinch' animation when hit. Provides a +1*SkillLV bonus to MDEF.", null, (lv, hp, sp) => new List<SkillEffect> { 
+            Add("Endure", "Active, Physical", "sw_endure.png", "Makes character skip 'flinch' animation when hit. Provides a +1*SkillLV bonus to MDEF.", null, (lv, hp, sp) => new List<SkillEffect> {
                 new SkillEffect { Label = "Stay Duration", Value = $"{7 + 3 * lv} sec" },
-                new SkillEffect { Label = "MDEF Bonus", Value = $"+{lv}" } 
+                new SkillEffect { Label = "MDEF Bonus", Value = $"+{lv}" }
             });
 
             // --- MAGICIAN ---
-            Add("Increase Spiritual Power", "Passive", "mg_increaseSpiritualPower.png", "Recovers (Maximum SP/500 + 3)*SkillLV SP per 10 full seconds when standing still and increases the efficiency of SP recovering items by +2% per SkillLV.", null, (lv, hp, sp) => new List<SkillEffect> {
+            Add("Increase SP Recovery", "Passive", "mg_increaseSpiritualPower.png", "Recovers (Maximum SP/500 + 3)*SkillLV SP per 10 full seconds when standing still and increases the efficiency of SP recovering items by +2% per SkillLV.", null, (lv, hp, sp) => new List<SkillEffect> {
                 new SkillEffect { Label = "SP / 10s still", Value = $"+{(int)((sp / 500.0 + 3) * lv)}" },
                 new SkillEffect { Label = "SP Item Bonus", Value = $"+{2 * lv}%" }
             });
-            Add("Sight", "Active", "mg_sight.png", "Nullifies the Hide, Tunnel Drive and Cloaking effects within range.", 
-                new List<string> { "Fire Ball (Lv 1)" }, 
+            Add("Sight", "Active", "mg_sight.png", "Nullifies the Hide, Tunnel Drive and Cloaking effects within range.",
+                new List<string> { "Fire Ball (Lv 1)" },
                 (lv, hp, sp) => new List<SkillEffect>());
-            Add("Napalm Beat", "Offensive, Magic", "mg_napalmBeat.png", "Hits every Enemy in a 3x3 area around the target for an MATK of (70+10*SkillLV)% using Ghost Element. This damage is spread equally between all targets.", 
-                new List<string> { "Soul Strike (Lv 4)", "Safety Wall (Lv 7)" }, 
+            Add("Napalm Beat", "Offensive, Magic", "mg_napalmBeat.png", "Hits every Enemy in a 3x3 area around the target for an MATK of (70+10*SkillLV)% using Ghost Element. This damage is spread equally between all targets.",
+                new List<string> { "Soul Strike (Lv 4)", "Safety Wall (Lv 7)" },
                 (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "MATK Damage", Value = $"{70 + 10 * lv}%" } });
-            Add("Cold Bolt", "Active", "mg_coldBolt.png", "Hits the targeted enemy with 1 Water property Bolt per SkillLV for 1*MATK damage each.", 
-                new List<string> { "Frost Diver (Lv 5)" }, 
+            Add("Cold Bolt", "Active", "mg_coldBolt.png", "Hits the targeted enemy with 1 Water property Bolt per SkillLV for 1*MATK damage each.",
+                new List<string> { "Frost Diver (Lv 5)" },
                 (lv, hp, sp) => new List<SkillEffect> {
                     new SkillEffect { Label = "Hits", Value = lv.ToString() },
                     new SkillEffect { Label = "Total MATK", Value = $"{100 * lv}%" }
                 });
-            Add("Stone Curse", "Active", "mg_ stoneCurse.png", "Attempts to inflict Stone Curse status on the target.", null, (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "Success Rate", Value = $"{14 + 2 * lv}%" } });
-            Add("Fire Bolt", "Offensive, Magic", "mg_fireBolt.png", "Hits the targeted enemy with 1 Fire Element Bolt per SkillLV for 1*MATK each.", 
-                new List<string> { "Fire Ball (Lv 4)", "Fire Wall (Lv 5)", "Sight (Lv 4)" }, 
+            Add("Stone Curse", "Active", "mg_stoneCurse.png", "Attempts to inflict Stone Curse status on the target.", null, (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "Success Rate", Value = $"{14 + 2 * lv}%" } });
+            Add("Fire Bolt", "Offensive, Magic", "mg_fireBolt.png", "Hits the targeted enemy with 1 Fire Element Bolt per SkillLV for 1*MATK each.",
+                new List<string> { "Fire Ball (Lv 4)", "Fire Wall (Lv 5)", "Sight (Lv 4)" },
                 (lv, hp, sp) => new List<SkillEffect> {
                     new SkillEffect { Label = "Hits", Value = lv.ToString() },
                     new SkillEffect { Label = "Total MATK", Value = $"{100 * lv}%" }
                 });
-            Add("Lightning Bolt", "Offensive, Magic", "mg_lightningBolt.png", "Hits the targeted enemy with 1 Wind Element Bolt per SkillLV for 1*MATK each.", 
-                new List<string> { "Thunder Storm (Lv 4)" }, 
+            Add("Lightning Bolt", "Offensive, Magic", "mg_lightningBolt.png", "Hits the targeted enemy with 1 Wind Element Bolt per SkillLV for 1*MATK each.",
+                new List<string> { "Thunder Storm (Lv 4)" },
                 (lv, hp, sp) => new List<SkillEffect> {
                     new SkillEffect { Label = "Hits", Value = lv.ToString() },
                     new SkillEffect { Label = "Total MATK", Value = $"{100 * lv}%" }
                 });
             Add("Energy Coat", "Active, Magic", "mg_energyCoat.png", "Reduces damage from Physical attacks by draining SP. Damage reduction is better and SP lost is higher with higher SP.", null, (lv, hp, sp) => new List<SkillEffect>());
-            Add("Soul Strike", "Offensive, Magic", "mg_soulStrike.png", "Hits the target with (1+SkillLV/2) bolts for 1*MATK using Ghost Element. Does extra 5% damage per SkillLV to Undead property Monsters.", 
-                new List<string> { "Safety Wall (Lv 5)" }, 
+            Add("Soul Strike", "Offensive, Magic", "mg_soulStrike.png", "Hits the target with (1+SkillLV/2) bolts for 1*MATK using Ghost Element. Does extra 5% damage per SkillLV to Undead property Monsters.",
+                new List<string> { "Safety Wall (Lv 5)" },
                 (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "Spirit Bolts", Value = ((int)(1 + lv / 2.0)).ToString() } });
             Add("Frost Diver", "Offensive, Magic", "mg_frostDiver.png", "Hits the target for an MATK of (100+10*SkillLV)% Water Element. In addition, has a (35+3*SkillLV)% chance of causing the Frozen status.", null, (lv, hp, sp) => new List<SkillEffect> {
                 new SkillEffect { Label = "MATK Damage", Value = $"{100 + 10 * lv}%" },
@@ -112,22 +112,22 @@ namespace Modsim_Game.Data
                 new SkillEffect { Label = "Max Hits per cell", Value = (4 + lv).ToString() },
                 new SkillEffect { Label = "Duration", Value = $"{4 + lv}s" }
             });
-            Add("Thunder Storm", "Offensive, Magic", "mg_thunderStorm.png", "Hits every Enemy in a 5x5 area around the targeted cell with 1 Wind Element Bolt per level.", null, (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "Total Bolts", Value = lv.ToString() }, new SkillEffect { Label = "MATK per bolt", Value = "80%" } } );
+            Add("Thunder Storm", "Offensive, Magic", "mg_thunderStorm.png", "Hits every Enemy in a 5x5 area around the targeted cell with 1 Wind Element Bolt per level.", null, (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "Total Bolts", Value = lv.ToString() }, new SkillEffect { Label = "MATK per bolt", Value = "80%" } });
             Add("Safety Wall", "Active, Magic", "mg_safetyWall.png", "Creates a protective barrier on a cell that absorbs melee attacks.", null, (lv, hp, sp) => new List<SkillEffect> {
                 new SkillEffect { Label = "Protected Hits", Value = (1 + lv).ToString() }
             });
 
             // --- ARCHER ---
-            Add("Owl's Eye", "Passive", "ac_owlsEye.png", "Increases DEX, improving HIT rate, ranged ATK, and cast times.", 
-                new List<string> { "Vulture's Eye (Lv 3)" }, 
+            Add("Owl's Eye", "Passive", "ac_owlsEye.png", "Increases DEX, improving HIT rate, ranged ATK, and cast times.",
+                new List<string> { "Vulture's Eye (Lv 3)" },
                 (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "DEX Bonus", Value = $"+{lv}" } });
-            Add("Double Strafing", "Offensive, Physical", "ac_doubleStrafing.png", "Ranged attack, that fires two arrows and hits with an ATK of (180+20*SkillLV)%. Requires a bow.", 
-                new List<string> { "Arrow Shower (Lv 5)" }, 
+            Add("Double Strafing", "Offensive, Physical", "ac_doubleStrafing.png", "Ranged attack, that fires two arrows and hits with an ATK of (180+20*SkillLV)%. Requires a bow.",
+                new List<string> { "Arrow Shower (Lv 5)" },
                 (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "Damage ATK", Value = $"{180 + 20 * lv}%" } });
             Add("Making Arrow", "Active, Physical", "ac_makingArrow.png", "Creates arrows from an item. Different items give different amounts and types of arrows.", null, (lv, hp, sp) => new List<SkillEffect>());
             Add("Charge Arrow", "Active", "ac_chargeArrow.png", "Ranged attack at 150% ATK. The target is pushed back 6 cells.", null, (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "Damage ATK", Value = "150%" }, new SkillEffect { Label = "Knockback", Value = "6 cells" } });
-            Add("Vulture's Eye", "Passive", "ac_vulturesEye.png", "Increases range with bows by 1*SkillLV cells and increases HIT by 1 per SkillLV.", 
-                new List<string> { "Double Strafing (Lv 1)", "Arrow Shower (Lv 1)" }, 
+            Add("Vulture's Eye", "Passive", "ac_vulturesEye.png", "Increases range with bows by 1*SkillLV cells and increases HIT by 1 per SkillLV.",
+                new List<string> { "Double Strafing (Lv 1)", "Arrow Shower (Lv 1)" },
                 (lv, hp, sp) => new List<SkillEffect> {
                     new SkillEffect { Label = "Range Bonus", Value = $"+{lv} cells" },
                     new SkillEffect { Label = "HIT Bonus", Value = $"+{lv}" }
@@ -138,27 +138,27 @@ namespace Modsim_Game.Data
             Add("Arrow Shower", "Offensive, Physical", "ac_arrowShower.png", "3x3 cells, ranged splash attack with an ATK of (75+5*SkillLV)%. Enemies are pushed back 2 cells.", null, (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "Damage ATK", Value = $"{75 + 5 * lv}%" } });
 
             // --- ACOLYTE ---
-            Add("Divine Protection", "Passive, Physical", "al_divineProtection.png", "Reduces damage from Undead property and Demon family monsters by (3*SkillLV)+[0.04*(BaseLV + 1)].", 
-                new List<string> { "Angelus (Lv 3)", "Demon Bane (Lv 3)" }, 
+            Add("Divine Protection", "Passive, Physical", "al_divineProtection.png", "Reduces damage from Undead property and Demon family monsters by (3*SkillLV)+[0.04*(BaseLV + 1)].",
+                new List<string> { "Angelus (Lv 3)", "Demon Bane (Lv 3)" },
                 (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "DEF Bonus", Value = $"+{3 * lv}" } });
-            Add("Ruwach", "Active, Magic", "al_ruwach.png", "Reveals Hiding and Cloaking players and monsters within range. Revealed targets take MATK*1.45 Holy damage.", 
-                new List<string> { "Teleportation (Lv 1)", "Holy Light" }, 
+            Add("Ruwach", "Active, Magic", "al_ruwach.png", "Reveals Hiding and Cloaking players and monsters within range. Revealed targets take MATK*1.45 Holy damage.",
+                new List<string> { "Teleportation (Lv 1)", "Holy Light" },
                 (lv, hp, sp) => new List<SkillEffect>());
-            Add("Heal", "Support / Buff, Magic", "al_heal.png", "Heals a targets HP for [(BaseLV+INT)/8]*(4+8*SkillLV). Deals Holy damage to Undead.", 
-                new List<string> { "Increase Agility (Lv 3)", "Cure (Lv 1)", "Decrease Agility (Lv 1)" }, 
+            Add("Heal", "Support / Buff, Magic", "al_heal.png", "Heals a targets HP for [(BaseLV+INT)/8]*(4+8*SkillLV). Deals Holy damage to Undead.",
+                new List<string> { "Increase Agility (Lv 3)", "Cure (Lv 1)", "Decrease Agility (Lv 1)" },
                 (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "Multiplier", Value = (4 + 8 * lv).ToString() } });
-            Add("Aqua Benedicta", "Active, Magic", "al_holyWater.png", "Creates 1 Holy Water. Caster must stand in water for the skill to succeed.", null, (lv, hp, sp) => new List<SkillEffect>());
+            Add("Aqua Benedicta", "Active, Magic", "al_aquaBenedicta.png", "Creates 1 Holy Water. Caster must stand in water for the skill to succeed.", null, (lv, hp, sp) => new List<SkillEffect>());
             Add("Holy Light", "Offensive, Magic", "al_holyLight.png", "Does a single Holy element hit for 125% of your MATK.", null, (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "Damage MATK", Value = "125%" } });
             Add("Demon Bane", "Passive, Physical", "al_demonBane.png", "Increases damage against Undead property and Demon family monsters by (3*SkillLV)+[0.05*(BaseLV + 1)].", null, (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "ATK Bonus", Value = $"+{3 * lv}" } });
-            Add("Teleportation", "Active, Magic", "al_teleportation.png", "Lv 1: Teleport to a random spot on the same map. Lv 2: Teleport to your save point.", 
-                new List<string> { "Warp Portal (Lv 2)" }, 
+            Add("Teleportation", "Active, Magic", "al_teleportation.png", "Lv 1: Teleport to a random spot on the same map. Lv 2: Teleport to your save point.",
+                new List<string> { "Warp Portal (Lv 2)" },
                 (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "Lv 1", Value = "Random", Locked = lv < 1 }, new SkillEffect { Label = "Lv 2", Value = "Save Point", Locked = lv < 2 } });
-            Add("Warp Portal", "Active, Magic", "al_warpPortal.png", "Opens a portal to a saved location. Max capacity: 8 people.", 
-                new List<string> { "Pneuma (Lv 4)" }, 
+            Add("Warp Portal", "Active, Magic", "al_warpPortal.png", "Opens a portal to a saved location. Max capacity: 8 people.",
+                new List<string> { "Pneuma (Lv 4)" },
                 (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "Memo points", Value = lv.ToString() } });
             Add("Pneuma", "Active, Magic", "al_pneuma.png", "Creates a 3x3 cell cloud that blocks all ranged Physical attacks for 10 seconds.", null, (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "Duration", Value = "10s" } });
-            Add("Increase Agility", "Support / Buff, Magic", "al_increaseAgility.png", "Increases AGI of target by 2+SkillLV and increases movement speed by 25%. Dispels Decrease Agility.", 
-                new List<string> { "Decrease Agility (Lv 1)" }, 
+            Add("Increase Agility", "Support / Buff, Magic", "al_increaseAgility.png", "Increases AGI of target by 2+SkillLV and increases movement speed by 25%. Dispels Decrease Agility.",
+                new List<string> { "Decrease Agility (Lv 1)" },
                 (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "AGI Bonus", Value = $"+{2 + lv}" } });
             Add("Decrease Agility", "Active, Magic", "al_decreaseAgility.png", "Decreases AGI of target by 2+SkillLV and reduces movement speed by 25%.", null, (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "AGI Reduction", Value = $"-{2 + lv}" } });
             Add("Signum Crucis", "Active, Magic", "al_signumCrucis.png", "Reduces the DEF of Undead and Demon family monsters on screen by (10+4*SkillLV)%.", null, (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "DEF Reduction", Value = $"-{10 + 4 * lv}%" } });
@@ -167,11 +167,11 @@ namespace Modsim_Game.Data
             Add("Cure", "Support / Buff, Magic", "al_cure.png", "Cures Blind, Confusion and Silence.", null, (lv, hp, sp) => new List<SkillEffect>());
 
             // --- MERCHANT ---
-            Add("Enlarge Weight Limit", "Passive", "mc_enlargeWeightLimit.png", "Increases maximum carrying capacity by 200*SkillLV.", 
-                new List<string> { "Discount (Lv 3)" }, 
+            Add("Increase Weight Limit", "Passive", "mc_enlargeWeightLimit.png", "Increases maximum carrying capacity by 200*SkillLV.",
+                new List<string> { "Discount (Lv 3)" },
                 (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "Weight Limit", Value = $"+{200 * lv}" } });
             Add("Identify", "Active", "mc_identify.png", "Identifies an unidentified item. Must be in inventory (not cart).", null, (lv, hp, sp) => new List<SkillEffect>());
-            Add("Mammonite", "Offensive, Physical", "mc_mammonite.png", "Uses 100z*SkillLV to increase ATK to (100+50*SkillLV)% for the next attack.", null, (lv, hp, sp) => new List<SkillEffect> { 
+            Add("Mammonite", "Offensive, Physical", "mc_mammonite.png", "Uses 100z*SkillLV to increase ATK to (100+50*SkillLV)% for the next attack.", null, (lv, hp, sp) => new List<SkillEffect> {
                 new SkillEffect { Label = "Damage ATK", Value = $"{100 + 50 * lv}%" },
                 new SkillEffect { Label = "Zeny Cost", Value = $"{100 * lv}z" }
             });
@@ -179,27 +179,27 @@ namespace Modsim_Game.Data
             Add("Change Cart", "Active", "mc_changeCart.png", "Lets you change the appearance of your cart based on base level.", null, (lv, hp, sp) => new List<SkillEffect>());
             Add("Loud Exclamation", "Active, Physical", "mc_loudExclamation.png", "Increases the caster's STR for a duration.", null, (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "STR Bonus", Value = "+4" } });
             Add("Cart Decoration", "Active", "mc_cartDecoration.png", "Change Pushcart appearance decoration.", null, (lv, hp, sp) => new List<SkillEffect>());
-            Add("Discount", "Passive", "mc_discount.png", "Allows buying items at reduced prices from NPC shops by (3+2*SkillLV)%.", 
-                new List<string> { "Overcharge (Lv 3)" }, 
+            Add("Discount", "Passive", "mc_discount.png", "Allows buying items at reduced prices from NPC shops by (3+2*SkillLV)%.",
+                new List<string> { "Overcharge (Lv 3)" },
                 (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "Price Reduc.", Value = $"-{3 + 2 * lv}%" } });
             Add("Overcharge", "Passive", "mc_overcharge.png", "Increases the sell price of items at NPC shops by (5+2*SkillLV)%.", null, (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "Sell Bonus", Value = $"+{5 + 2 * lv}%" } });
-            Add("Pushcart", "Passive", "mc_pushcart.png", "Allows using a Pushcart for storage. Restores movement speed by level.", 
-                new List<string> { "Vending (Lv 3)" }, 
+            Add("Pushcart", "Passive", "mc_pushcart.png", "Allows using a Pushcart for storage. Restores movement speed by level.",
+                new List<string> { "Vending (Lv 3)" },
                 (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "Move Speed", Value = $"{50 + 5 * lv}%" } });
             Add("Vending", "Active", "mc_vending.png", "Allows the character to set up a shop. Items must be in the pushcart.", null, (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "Item Slots", Value = (2 + lv).ToString() } });
             Add("Buying Store", "Active", "mc_buyingStore.png", "Enables the ability to open a purchase stall to buy various kinds of items.", null, (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "Item Slots", Value = "5" } });
 
             // --- THIEF ---
-            Add("Double Attack", "Passive, Physical", "tf_doubleAttack.png", "Gives chance to double swing a Dagger. Adds +1 HIT per SkillLV.", 
-                new List<string> { "Steal (Lv 1)", "Sprinkle Sand (Lv 1)" }, 
+            Add("Double Attack", "Passive, Physical", "tf_doubleAttack.png", "Gives chance to double swing a Dagger. Adds +1 HIT per SkillLV.",
+                new List<string> { "Steal (Lv 1)", "Sprinkle Sand (Lv 1)" },
                 (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "Double Chance", Value = $"{5 * lv}%" }, new SkillEffect { Label = "HIT Bonus", Value = $"+{lv}" } });
-            Add("Increase Dodge", "Passive, Physical", "tf_increaseDodge.png", "Increases Flee Rate by +3*SkillLV. Higher bonus for Assassins/Rogues.", 
-                new List<string> { "Hiding (Lv 1)" }, 
+            Add("Improve Dodge", "Passive, Physical", "tf_increaseDodge.png", "Increases Flee Rate by +3*SkillLV. Higher bonus for Assassins/Rogues.",
+                new List<string> { "Hiding (Lv 1)" },
                 (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "Flee Rate", Value = $"+{3 * lv}" } });
-            Add("Steal", "Active, Physical", "tf_steal.png", "Attempts to steal an item from a monster.", 
-                new List<string> { "Hiding (Lv 5)" }, 
+            Add("Steal", "Active, Physical", "tf_steal.png", "Attempts to steal an item from a monster.",
+                new List<string> { "Hiding (Lv 5)" },
                 (lv, hp, sp) => new List<SkillEffect> { new SkillEffect { Label = "Success Chance", Value = $"{10 + 6 * lv}%" } });
-            Add("Envenom", "Active", "tf_envenom.png", "Adds 15*SkillLV to ATK and has a chance to inflict Poison status.", null, (lv, hp, sp) => new List<SkillEffect> { 
+            Add("Envenom", "Active", "tf_envenom.png", "Adds 15*SkillLV to ATK and has a chance to inflict Poison status.", null, (lv, hp, sp) => new List<SkillEffect> {
                 new SkillEffect { Label = "ATK Bonus", Value = $"+{15 * lv}" },
                 new SkillEffect { Label = "Poison Chance", Value = $"{5 + 4 * lv}%" }
             });
@@ -213,13 +213,14 @@ namespace Modsim_Game.Data
 
         private static void Add(string name, string type, string iconFileName, string desc, List<string> requiredFor, SkillEffectCalculator calc)
         {
-            _descriptions[name] = new SkillDescription { 
-                Name = name, 
+            _descriptions[name] = new SkillDescription
+            {
+                Name = name,
                 Type = type,
-                IconPath = iconFileName, 
-                Description = desc, 
+                IconPath = iconFileName,
+                Description = desc,
                 RequiredFor = requiredFor ?? new List<string>(),
-                EffectCalculator = calc 
+                EffectCalculator = calc
             };
         }
 

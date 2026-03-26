@@ -8,7 +8,7 @@ namespace Modsim_Game.Jobs
         public string Name => "Swordsman";
         public int BaseWeightLimit => 2800;
         public double SpJobModifier => 2.0;
-        public string[] Skills => new[] { "Sword Mastery", "Two-Handed Sword Mastery", "Increase Recuperative Power", "Bash", "Provoke", "Magnum Break", "Endure", "Moving HP Recovery", "Fatal Blow", "Auto Berserk" };
+        public string[] Skills => new[] { "Sword Mastery", "Two-Handed Sword Mastery", "Increase HP Recovery", "Bash", "Provoke", "Magnum Break", "Endure", "Moving HP Recovery", "Fatal Blow", "Auto Berserk" };
         public string[] AllowedWeapons => new[] { "Hand", "Dagger", "One-Handed-Sword", "Two-Handed-Sword", "One-Handed-Spear", "Two-Handed-Spear", "One-Handed-Axe", "Two-Handed-Axe", "One-Handed-Mace", "Two-Handed-Mace" };
         public int GetMaxHp(int baseLevel) => JobStatTable.GetMaxHP(Name, baseLevel);
         public int GetStatBonus(string stat, int jobLevel) => JobStatTable.GetBonus(Name, stat, jobLevel);
@@ -39,7 +39,7 @@ namespace Modsim_Game.Jobs
                 Unlocked = new List<Skill>
                 {
                     new Skill("Sword Mastery",               0, 10, "passive","Physical"),
-                    new Skill("Increase Recuperative Power", 0, 10, "passive","Physical"),
+                    new Skill("Increase HP Recovery", 0, 10, "passive","Physical"),
                     new Skill("Bash",                        0, 10, "active"),
                     new Skill("Provoke",                     0, 10, "active"),
                     new Skill("Moving HP Recovery", 1, 1, "quest", "passive"),

@@ -8,7 +8,7 @@ namespace Modsim_Game.Jobs
         public string Name => "Thief";
         public int BaseWeightLimit => 2000;
         public double SpJobModifier => 3.0;
-        public string[] Skills => new[] { "Double Attack", "Increase Dodge", "Steal", "Hiding", "Envenom", "Detoxify", "Sprinkle Sand", "Back Sliding", "Pick Stone", "Throw Stone" };
+        public string[] Skills => new[] { "Double Attack", "Improve Dodge", "Steal", "Hiding", "Envenom", "Detoxify", "Sprinkle Sand", "Back Sliding", "Pick Stone", "Throw Stone" };
         public string[] AllowedWeapons => new[] { "Hand", "Dagger", "One-Handed-Sword", "Bow" };
         public int GetMaxHp(int baseLevel) => JobStatTable.GetMaxHP(Name, baseLevel);
         public int GetStatBonus(string stat, int jobLevel) => JobStatTable.GetBonus(Name, stat, jobLevel);
@@ -33,7 +33,7 @@ namespace Modsim_Game.Jobs
                 Unlocked = new List<Skill>
                 {
                     new Skill("Double Attack",  0, 10, "passive"),
-                    new Skill("Increase Dodge", 0, 10, "passive"),
+                    new Skill("Improve Dodge", 0, 10, "passive"),
                     new Skill("Steal",          0, 10, "active"),
                     new Skill("Envenom",        0, 10, "active"),
                     new Skill("Sprinkle Sand",  1, 1, "quest", "active"),

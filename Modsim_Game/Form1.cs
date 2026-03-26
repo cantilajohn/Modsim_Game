@@ -22,6 +22,7 @@ namespace Modsim_Game
         private Modsim_Game.Controls.SkillTreePanel? _skillTreePanel;
         private Panel? _skillSidebar;
         private Label? _lblSkillPointsInfo;
+        private Dictionary<string, JobSkillTree> _skillTreeCache = new Dictionary<string, JobSkillTree>();
 
         public StatSimForm()
         {
@@ -115,7 +116,8 @@ namespace Modsim_Game
                 Dex = dex,
                 Luk = luk,
                 JobName = selectedJobName,
-                WeaponName = weaponName
+                WeaponName = weaponName,
+                SkillTree = _currentSkillTree
             };
 
             //  get Job & Calculate
@@ -155,8 +157,8 @@ namespace Modsim_Game
             lblRangedAtk.Text = stats.RangedAtk.ToString();
             lblCastReduction.Text = $"{stats.CastReductionPercent:F1}%";
 
-            lblHpRegen.Text = stats.HpRegen.ToString() + "per 6s standing (per 3s sitting)";
-            lblSpRegen.Text = $"{stats.SpRegen} per 8s standing (per 4s sitting)";
+            lblHpRegen.Text = stats.HpRegen.ToString("F1") + " HP / 10s (Standing)";
+            lblSpRegen.Text = $"{stats.SpRegen:F1} SP / 10s (Standing)";
 
             lblMinMatk1.Text = stats.MinMatk1.ToString();
             lblMinMatk2.Text = stats.MinMatk2.ToString();
@@ -180,16 +182,17 @@ namespace Modsim_Game
             string selectedJob = cmbSelectJob.SelectedItem.ToString();
 
             var job = JobFactory.GetJob(selectedJob);
+            _currentSkillTree = GetSkillTreeForJob(selectedJob); // Persist skill progress via cache
 
             cmbWeapon.Items.Clear();
             cmbJobLevel.Items.Clear();
 
-            int maxJobLevel = (job.Name == "Novice") ? 10 : 50;
-            for (int i = 1; i <= maxJobLevel; i++)
+            int maxMainJobLevel = (selectedJob == "Novice") ? 9 : 50;
+            for (int i = 1; i <= maxMainJobLevel; i++)
             {
                 cmbJobLevel.Items.Add(i.ToString());
             }
-            cmbJobLevel.SelectedIndex = 0;
+            cmbJobLevel.SelectedItem = "1";
 
             cmbWeapon.Items.AddRange(job.AllowedWeapons);
             if (cmbWeapon.Items.Count > 0) cmbWeapon.SelectedIndex = 0;
@@ -217,15 +220,7 @@ namespace Modsim_Game
             UpdateAllStats();
         }
 
-        private void hopeButton1_Click(object sender, EventArgs e)
-        {
-            txtSTR.Text = "1";
-            txtAGI.Text = "1";
-            txtVIT.Text = "1";
-            txtINT.Text = "1";
-            txtDEX.Text = "1";
-            txtLUK.Text = "1";
-        }
+
 
         private int CalculateTotalSpent()
         {
@@ -237,6 +232,15 @@ namespace Modsim_Game
             int.TryParse(txtLUK.Text, out int l);
             return ProgressionService.CalculateStatCost(s) + ProgressionService.CalculateStatCost(a) + ProgressionService.CalculateStatCost(v) +
                    ProgressionService.CalculateStatCost(i) + ProgressionService.CalculateStatCost(d) + ProgressionService.CalculateStatCost(l);
+        }
+
+        private JobSkillTree GetSkillTreeForJob(string jobName)
+        {
+            if (!_skillTreeCache.ContainsKey(jobName))
+            {
+                _skillTreeCache[jobName] = JobFactory.GetJob(jobName).GetSkillTree();
+            }
+            return _skillTreeCache[jobName];
         }
 
         private void IncrementStat(Control txtStat)
@@ -297,23 +301,16 @@ namespace Modsim_Game
         // ── Navigate to Skills Panel ──
         private void hopeButton1_Click_1(object sender, EventArgs e)
         {
+            // Sync Skills dropdown with Main job selection before showing
+            string selectedJob = cmbSelectJob.SelectedItem?.ToString() ?? "Novice";
+            aloneComboBox1.SelectedItem = selectedJob;
+
             mainPanel.Hide();
             secondPanel.Hide();
             thirdPanel.Hide();
             pnlStatusSimulatorControls.Hide();
             SkillsBackPanel.Show();
         }
-
-        // ── Navigate back from Skills Panel ──
-        private void hopeButton2_Click(object sender, EventArgs e)
-        {
-            mainPanel.Show();
-            secondPanel.Show();
-            thirdPanel.Show();
-            pnlStatusSimulatorControls.Show();
-            SkillsBackPanel.Hide();
-        }
-
 
         //  SKILLS SIMULATOR — Dynamic Panel UI 
         private void SkillJobSelector_SelectedIndexChanged(object sender, EventArgs e)
@@ -323,7 +320,7 @@ namespace Modsim_Game
             if (selected == "-SELECT CLASS") return;
 
             var job = JobFactory.GetJob(selected);
-            _currentSkillTree = job.GetSkillTree();
+            _currentSkillTree = GetSkillTreeForJob(selected); // Persist skill progress via cache
             RebuildSkillsUI();
         }
 
@@ -377,20 +374,26 @@ namespace Modsim_Game
                 FlatStyle = FlatStyle.Flat
             };
 
-            // Populate based on job — Novice is 1-9, others are 1-50
-            int endLvl = (_currentSkillTree.JobLabel == "Novice") ? 9 : 50;
-            for (int i = 1; i <= endLvl; i++) cmbSkillJobLvl.Items.Add(i);
+            // Skills simulator range: 40-255 (Novice 1-10)
+            int startLvl = (_currentSkillTree.JobLabel == "Novice") ? 1 : 40;
+            int endLvl = (_currentSkillTree.JobLabel == "Novice") ? 10 : 255;
+            for (int i = startLvl; i <= endLvl; i++) cmbSkillJobLvl.Items.Add(i);
 
-            cmbSkillJobLvl.SelectedItem = endLvl;
-            _currentSkillTree.JobLevel = endLvl;
+            // Initially set from the Skill Tree's current state (default 40-255)
+            if (_currentSkillTree.JobLevel < startLvl) _currentSkillTree.JobLevel = startLvl;
+            if (_currentSkillTree.JobLevel > endLvl) _currentSkillTree.JobLevel = endLvl;
+
+            cmbSkillJobLvl.SelectedItem = _currentSkillTree.JobLevel;
 
             cmbSkillJobLvl.SelectedIndexChanged += (s, ev) =>
             {
-                if (cmbSkillJobLvl.SelectedItem is int lvl)
+                if (cmbSkillJobLvl.SelectedItem != null && int.TryParse(cmbSkillJobLvl.SelectedItem.ToString(), out int lvl))
                 {
                     _currentSkillTree.JobLevel = lvl;
+                    // No sync back to main tab per user request (separate use cases)
                     UpdateSkillPointsLabel();
-                    _skillTreePanel?.Invalidate(); // Refresh visuals if needed
+                    UpdateAllStats(); // Live stats!
+                    _skillTreePanel?.Invalidate();
                 }
             };
             SkillsBackPanel.Controls.Add(cmbSkillJobLvl);
@@ -443,7 +446,11 @@ namespace Modsim_Game
                 TargetWidth = skillTreeContainer.Width - 20 // Account for scrollbar space
             };
             _skillTreePanel.LoadSkillTree(_currentSkillTree);
-            _skillTreePanel.SkillChanged += (s, ev) => UpdateSkillPointsLabel();
+            _skillTreePanel.SkillChanged += (s, ev) =>
+            {
+                UpdateSkillPointsLabel();
+                UpdateAllStats(); // Live stats update when skills change
+            };
             _skillTreePanel.NodeSelected += (s, node) => UpdateSkillSidebar(node);
             skillTreeContainer.Controls.Add(_skillTreePanel);
 
@@ -596,16 +603,7 @@ namespace Modsim_Game
                 var lblLv = new Label { Text = $"Lv {node.CurrentLevel}/{node.MaxLevel}", Font = new Font("Segoe UI", 10), AutoSize = true, Margin = new Padding(5, 4, 5, 0) };
                 var btnMinus = new Button { Text = "-", Size = new Size(25, 25), BackColor = Color.FromArgb(200, 60, 60), ForeColor = Color.White, FlatStyle = FlatStyle.Flat };
 
-                btnPlus.Click += (s, e) =>
-                {
-                    if (_skillTreePanel != null)
-                    {
-                        _skillTreePanel.IncrementLevel(node);
-                        var fresh = _skillTreePanel.AllNodes.FirstOrDefault(n => n.Name == node.Name);
-                        UpdateSkillSidebar(fresh ?? node);
-                    }
-                };
-                btnMinus.Click += (s, e) =>
+                btnMinus.Click += (s, ev) =>
                 {
                     if (_skillTreePanel != null)
                     {
@@ -614,10 +612,19 @@ namespace Modsim_Game
                         UpdateSkillSidebar(fresh ?? node);
                     }
                 };
+                btnPlus.Click += (s, ev) =>
+                {
+                    if (_skillTreePanel != null)
+                    {
+                        _skillTreePanel.IncrementLevel(node);
+                        var fresh = _skillTreePanel.AllNodes.FirstOrDefault(n => n.Name == node.Name);
+                        UpdateSkillSidebar(fresh ?? node);
+                    }
+                };
 
-                levelFlow.Controls.Add(btnPlus);
-                levelFlow.Controls.Add(lblLv);
                 levelFlow.Controls.Add(btnMinus);
+                levelFlow.Controls.Add(lblLv);
+                levelFlow.Controls.Add(btnPlus);
                 flow.Controls.Add(levelFlow);
             }
             else if (node.IsLocked)
@@ -644,23 +651,21 @@ namespace Modsim_Game
                         Font = new Font("Segoe UI", 9, FontStyle.Bold),
                         ForeColor = Color.FromArgb(180, 130, 50),
                         AutoSize = true,
-                        Margin = new Padding(0, 0, 0, 2)
+                        Margin = new Padding(0, 5, 0, 2)
                     };
                     flow.Controls.Add(lblReqHeader);
 
-                    var lblReqText = new Label
+                    var lblReqList = new Label
                     {
                         Text = node.Requirement,
                         Font = new Font("Segoe UI", 9),
-                        ForeColor = Color.FromArgb(100, 100, 100),
+                        ForeColor = Color.FromArgb(60, 60, 60),
                         AutoSize = true,
-                        MaximumSize = new Size(280, 0),
                         Margin = new Padding(10, 0, 0, 10)
                     };
-                    flow.Controls.Add(lblReqText);
+                    flow.Controls.Add(lblReqList);
                 }
 
-                // Auto-Fulfill Requirements Button
                 var btnAutoFulfill = new Button
                 {
                     Text = "⚡ Auto-Fulfill Requirements",
@@ -756,6 +761,44 @@ namespace Modsim_Game
                 effectBox.Controls.Add(new Label { Text = "(No data for current level)", Font = new Font("Segoe UI", 8, FontStyle.Italic), ForeColor = Color.Gray, AutoSize = true });
             }
             flow.Controls.Add(effectBox);
+        }
+
+        private void panel8_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtSTR.Text = "1";
+            txtAGI.Text = "1";
+            txtVIT.Text = "1";
+            txtINT.Text = "1";
+            txtDEX.Text = "1";
+            txtLUK.Text = "1";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // Sync Skills dropdown with Main job selection before showing
+            string selectedJob = cmbSelectJob.SelectedItem?.ToString() ?? "Novice";
+            aloneComboBox1.SelectedItem = selectedJob;
+
+            mainPanel.Hide();
+            secondPanel.Hide();
+            thirdPanel.Hide();
+            pnlStatusSimulatorControls.Hide();
+            SkillsBackPanel.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // ── Navigate back from Skills Panel ──
+            mainPanel.Show();
+            secondPanel.Show();
+            thirdPanel.Show();
+            pnlStatusSimulatorControls.Show();
+            SkillsBackPanel.Hide();
         }
     }
 }

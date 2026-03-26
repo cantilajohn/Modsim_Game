@@ -14,5 +14,7 @@ namespace Modsim_Game.Models
 
         public string JobName { get; set; } = "Novice";
         public string WeaponName { get; set; } = "Hand";
+
+        public JobSkillTree? SkillTree { get; set; }
     }
 }

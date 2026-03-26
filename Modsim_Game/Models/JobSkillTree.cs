@@ -115,6 +115,47 @@ namespace Modsim_Game.Models
         }
 
         /// <summary>
+        /// Recursively attempts to fulfill the requirements of a locked skill by automatically spending available skill points.
+        /// </summary>
+        public void AutoFulfillRequirements(string skillName)
+        {
+            var ls = AllLockedSkillsMaster.FirstOrDefault(m => string.Equals(m.Name, skillName, StringComparison.OrdinalIgnoreCase));
+            if (ls == null || string.IsNullOrWhiteSpace(ls.Requirement)) return;
+
+            var parts = ls.Requirement.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+            foreach (var part in parts)
+            {
+                var match = Regex.Match(part, @"^(.+?)\s+Lv\s*(\d+)$", RegexOptions.IgnoreCase);
+                if (!match.Success) continue;
+
+                string reqName = match.Groups[1].Value.Trim();
+                int reqLevel = int.Parse(match.Groups[2].Value);
+
+                // If the prerequisite is currently locked, recursively fulfill IT first!
+                var lockedReq = Locked.FirstOrDefault(l => string.Equals(l.Name, reqName, StringComparison.OrdinalIgnoreCase));
+                if (lockedReq != null)
+                {
+                    AutoFulfillRequirements(reqName);
+                }
+
+                // Check if it's now unlocked and needs points
+                var unlockedReq = Unlocked.FirstOrDefault(u => string.Equals(u.Name, reqName, StringComparison.OrdinalIgnoreCase));
+                if (unlockedReq != null && unlockedReq.CurrentLevel < reqLevel)
+                {
+                    int levelsNeeded = reqLevel - unlockedReq.CurrentLevel;
+                    int pointsToSpend = Math.Min(levelsNeeded, SkillPointsRemaining);
+                    if (pointsToSpend > 0)
+                    {
+                        unlockedReq.CurrentLevel += pointsToSpend;
+                    }
+                }
+            }
+
+            // After attempting to fulfill all prerequisites, apply any newly unlocked skills
+            AutoUpdateUnlocks();
+        }
+
+        /// <summary>
         /// Reset all active skill levels back to 0 and demote all
         /// previously-unlocked locked skills back to the locked list.
         /// </summary>

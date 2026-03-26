@@ -24,7 +24,7 @@ namespace Modsim_Game.Controls
         private static readonly Color NodeQuestBg = Color.FromArgb(170, 140, 50);
         private static readonly Color NodeBorder = Color.FromArgb(120, 120, 130);
         private static readonly Color NodeLockedBorder = Color.FromArgb(70, 70, 78);
-        private static readonly Color TextWhite = Color.White;
+        private static readonly Color TextWhite = Color.FromArgb(255, 235, 140); // Soft Gold for better contrast
         private static readonly Color TextMuted = Color.FromArgb(140, 140, 140);
         private static readonly Color HoverGlow = Color.FromArgb(60, 255, 255, 255);
 
@@ -145,6 +145,9 @@ namespace Modsim_Game.Controls
                     }
                 }
             }
+
+            // ── Sort Deterministically to prevent "jumping" nodes during layout recalculation ──
+            _allNodes = _allNodes.OrderBy(n => n.Name).ToList();
 
             // Roots = nodes with no parents
             _roots = _allNodes.Where(n => n.Parents.Count == 0).ToList();
@@ -586,6 +589,26 @@ namespace Modsim_Game.Controls
             SkillChanged?.Invoke(this, EventArgs.Empty);
         }
 
+        public bool AutoFulfillRequirements(SkillNode node)
+        {
+            if (_skillTree == null) return false;
+            
+            _skillTree.AutoFulfillRequirements(node.Name);
+            
+            // Check if it's now unlocked in the actual tree
+            bool isUnlocked = _skillTree.Unlocked.Any(u => string.Equals(u.Name, node.Name, StringComparison.OrdinalIgnoreCase));
+            
+            if (isUnlocked)
+            {
+                BuildNodeGraph();
+                ComputeLayout();
+                Invalidate();
+                SkillChanged?.Invoke(this, EventArgs.Empty);
+                return true;
+            }
+            return false;
+        }
+
         private void TryUnlockNode(SkillNode node)
         {
             if (_skillTree == null) return;
@@ -609,82 +632,7 @@ namespace Modsim_Game.Controls
             }
         }
 
-        /// <summary>
-        /// Auto-fulfill all prerequisites for a locked skill, leveling parent skills as needed,
-        /// then unlock the target skill.
-        /// </summary>
-        public bool AutoFulfillRequirements(SkillNode node)
-        {
-            if (_skillTree == null || !node.IsLocked) return false;
 
-            // Find the locked skill entry
-            var lockedSkill = _skillTree.Locked
-                .FirstOrDefault(ls => ls.Name.Equals(node.Name, StringComparison.OrdinalIgnoreCase));
-            if (lockedSkill == null) return false;
-
-            // Recursively fulfill all prerequisites
-            if (!FulfillRequirementsRecursive(lockedSkill.Requirement))
-                return false;
-
-            // Now unlock the target skill
-            _skillTree.AutoUpdateUnlocks();
-            _skillTree.AutoUpdateLocks();
-
-            // Rebuild the graph to reflect new state
-            BuildNodeGraph();
-            ComputeLayout();
-            Invalidate();
-            SkillChanged?.Invoke(this, EventArgs.Empty);
-            return true;
-        }
-
-        /// <summary>
-        /// Recursively parses a requirement string and ensures each prerequisite skill
-        /// is unlocked and leveled to meet the requirement.
-        /// </summary>
-        private bool FulfillRequirementsRecursive(string requirement)
-        {
-            if (_skillTree == null || string.IsNullOrWhiteSpace(requirement)) return true;
-
-            var parts = requirement.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
-            foreach (var part in parts)
-            {
-                var match = Regex.Match(part, @"^(.+?)\s+Lv\s*(\d+)$", RegexOptions.IgnoreCase);
-                if (!match.Success) continue;
-
-                string reqName = match.Groups[1].Value.Trim();
-                int reqLevel = int.Parse(match.Groups[2].Value);
-
-                // Check if the prerequisite is still locked
-                var lockedPrereq = _skillTree.Locked
-                    .FirstOrDefault(ls => ls.Name.Equals(reqName, StringComparison.OrdinalIgnoreCase));
-                if (lockedPrereq != null)
-                {
-                    // Recursively fulfill ITS prerequisites first
-                    if (!FulfillRequirementsRecursive(lockedPrereq.Requirement))
-                        return false;
-
-                    // After fulfilling sub-prerequisites, auto-update unlocks
-                    _skillTree.AutoUpdateUnlocks();
-                }
-
-                // Now the skill should be in Unlocked — set its level
-                var unlockedSkill = _skillTree.Unlocked
-                    .FirstOrDefault(s => s.Name.Equals(reqName, StringComparison.OrdinalIgnoreCase));
-                if (unlockedSkill == null) return false; // Should not happen
-
-                if (unlockedSkill.CurrentLevel < reqLevel)
-                {
-                    // Calculate cost: how many extra points needed
-                    int levelsNeeded = reqLevel - unlockedSkill.CurrentLevel;
-                    if (_skillTree.SkillPointsRemaining < levelsNeeded)
-                        return false; // Not enough skill points
-
-                    unlockedSkill.CurrentLevel = reqLevel;
-                }
-            }
-            return true;
-        }
 
         /// <summary>
         /// Sync a node's CurrentLevel back to the underlying JobSkillTree Unlocked list.

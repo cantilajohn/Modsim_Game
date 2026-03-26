@@ -8,7 +8,7 @@ namespace Modsim_Game.Jobs
         public string Name => "Magician";
         public int BaseWeightLimit => 2200;
         public double SpJobModifier => 4.0;
-        public string[] Skills => new[] { "Increase Spiritual Power", "Sight", "Napalm Beat", "Safety Wall", "Soul Strike", "Cold Bolt", "Frost Diver", "Stone Curse", "Fire Ball", "Fire Wall", "Fire Bolt", "Lightning Bolt", "Thunder Storm", "Energy Coat" };
+        public string[] Skills => new[] { "Increase SP Recovery", "Sight", "Napalm Beat", "Safety Wall", "Soul Strike", "Cold Bolt", "Frost Diver", "Stone Curse", "Fire Ball", "Fire Wall", "Fire Bolt", "Lightning Bolt", "Thunder Storm", "Energy Coat" };
         public string[] AllowedWeapons => new[] { "Hand", "Dagger", "Rod&Staff", "Two-Handed-Staff" };
         public int GetMaxHp(int baseLevel) => JobStatTable.GetMaxHP(Name, baseLevel);
         public int GetStatBonus(string stat, int jobLevel) => JobStatTable.GetBonus(Name, stat, jobLevel);
@@ -32,7 +32,7 @@ namespace Modsim_Game.Jobs
                 JobLabel = "Magician",
                 Unlocked = new List<Skill>
                 {
-                    new Skill("Increase Spiritual Power", 0, 10, "passive"),
+                    new Skill("Increase SP Recovery", 0, 10, "passive"),
                     new Skill("Sight",                    0, 1,  "active"),
                     new Skill("Napalm Beat",              0, 10, "active"),
                     new Skill("Cold Bolt",                0, 10, "active"),

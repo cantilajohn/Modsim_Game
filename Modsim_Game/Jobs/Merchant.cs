@@ -8,7 +8,7 @@ namespace Modsim_Game.Jobs
         public string Name => "Merchant";
         public int BaseWeightLimit => 2500;
         public double SpJobModifier => 3.0;
-        public string[] Skills => new[] { "Enlarge Weight Limit", "Discount", "Overcharge", "Pushcart", "Identify", "Vending", "Mammonite", "Cart Revolution", "Change Cart", "Loud Exclamation", "Buying Store", "Cart Decoration" };
+        public string[] Skills => new[] { "Increase Weight Limit", "Discount", "Overcharge", "Pushcart", "Identify", "Vending", "Mammonite", "Cart Revolution", "Change Cart", "Loud Exclamation", "Buying Store", "Cart Decoration" };
         public string[] AllowedWeapons => new[] { "Hand", "Dagger", "One-Handed-Sword", "One-Handed-Axe", "Two-Handed-Axe", "One-Handed-Mace", "Two-Handed-Mace" };
         public int GetMaxHp(int baseLevel) => JobStatTable.GetMaxHP(Name, baseLevel);
         public int GetStatBonus(string stat, int jobLevel) => JobStatTable.GetBonus(Name, stat, jobLevel);
@@ -35,7 +35,7 @@ namespace Modsim_Game.Jobs
                 JobLabel = "Merchant",
                 Unlocked = new List<Skill>
                 {
-                    new Skill("Enlarge Weight Limit", 0, 10, "passive"),
+                    new Skill("Increase Weight Limit", 0, 10, "passive"),
                     new Skill("Identify",             0, 1,  "active"),
                     new Skill("Mammonite",            0, 10, "active"),
                     new Skill("Cart Revolution",      1, 1,  "quest", "active"),
@@ -45,9 +45,9 @@ namespace Modsim_Game.Jobs
                 },
                 Locked = new List<LockedSkill>
                 {
-                    new LockedSkill("Discount",     10, "Enlarge Weight Limit Lv 3", "passive"),
+                    new LockedSkill("Discount",     10, "Increase Weight Limit Lv 3", "passive"),
                     new LockedSkill("Overcharge",   10, "Discount Lv 3",             "passive"),
-                    new LockedSkill("Pushcart",     10, "Enlarge Weight Limit Lv 5", "passive"),
+                    new LockedSkill("Pushcart",     10, "Increase Weight Limit Lv 5", "passive"),
                     new LockedSkill("Vending",      10, "Pushcart Lv 3",             "active"),
                     new LockedSkill("Buying Store", 1,  "Vending Lv 1",              "active"),
                 }
